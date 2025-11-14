@@ -1,0 +1,390 @@
+[
+    {
+        "id": "Aceh",
+        "name_en": "Aceh",
+        "name_local": "Nanggroe Aceh Darussalam",
+        "description_web": "Aceh is the westernmost province of Indonesia, located at the northern tip of Sumatra Island, with Banda Aceh as its capital. Known as “The Veranda of Mecca”, Aceh holds a special place as the center of Islamic civilization in Southeast Asia, deeply rooted in Islamic law and values. With its special autonomy status, Aceh implements Sharia law, reflecting a society guided by faith and tradition. The province carries a long and remarkable history from the glory of the Aceh Sultanate and its resistance against colonial powers, to the modern peace achieved through the 2005 Helsinki Agreement. Its economy thrives on agriculture, fisheries, energy, and tourism, with the world-renowned Gayo coffee as one of its finest products. Beyond its economic strength, Aceh captivates visitors with its natural beauty, resilience after the 2004 tsunami, and rich cultural heritage such as the traditional Saman Dance and the iconic Baiturrahman Grand Mosque. Today, Aceh stands as a symbol of faith, endurance, and cultural pride offering a journey that connects history, spirituality, and nature in one unforgettable destination.",
+        "description": "Aceh is known for its strong Islamic heritage, unique traditions, and stunning beaches along the western coast of Sumatra.",
+        "image": "img/province/aceh.jpg",
+        "gallery": [
+            "img/province/Aceh/Thumbnail1.jpg",
+            "img/province/Aceh/Thumbnail2.jpg",
+            "img/province/Aceh/Thumbnail3.jpg",
+            "img/province/Aceh/Thumbnail4.jpg"
+        ],
+        "highlights": [
+            "Baiturrahman Grand Mosque",
+            "Weh Island (Sabang)",
+            "Tsunami Museum",
+            "Aceh Culinary Street"
+        ],
+        "best_time_to_visit": "December - March",
+        "climate": "Tropical with high humidity and occasional rain.",
+        "popular_foods": [
+            "Mie Aceh - a spicy noodle dish served with beef, goat, or seafood and rich curry-like sauce.",
+            "Kopi Ulee Kareng - strong and aromatic Acehnese coffee brewed traditionally.",
+            "Kuah Pliek U - a traditional vegetable curry made with fermented coconut and local spices.",
+            "Ayam Tangkap - fried chicken served with crispy curry leaves, shallots, and chilies.",
+            "Sate Matang - grilled beef skewers served with spicy peanut sauce, originating from Matang, Bireuen.",
+            "Boh Piah - Acehnese-style spring rolls with savory fillings.",
+            "Kue Timphan - steamed banana-leaf cakes filled with sweet coconut or banana paste."
+        ],
+        "top_activities": [
+            "Diving and snorkeling in Weh Island - explore pristine coral reefs and crystal-clear waters at Iboih and Gapang Beach.",
+            "Visiting the Baiturrahman Grand Mosque - an iconic landmark symbolizing Aceh’s resilience and Islamic heritage.",
+            "Cultural tour around Banda Aceh - discover Aceh Tsunami Museum, PLTD Apung Ship, and historical heritage sites.",
+            "Relaxing at Lampuuk Beach - a scenic coastal escape with soft sand and sunset views.",
+            "Exploring coffee plantations in Ulee Kareng - learn about traditional Acehnese coffee-making and enjoy authentic brews.",
+            "Hiking to Blang Kolam Waterfall - a serene nature retreat surrounded by tropical forests.",
+            "Island-hopping from Sabang - visit Rubiah Island and enjoy vibrant marine life."
+        ],
+        "travel_tips": [
+            "Dress modestly and respect local Islamic customs when visiting public areas.",
+            "Avoid public displays of affection, as Aceh adheres to strict Sharia law.",
+            "Women travelers are advised to wear loose-fitting clothing and a headscarf in certain areas.",
+            "Refrain from consuming alcohol, as it is prohibited in the province.",
+            "Always ask permission before photographing people, especially in rural or religious settings.",
+            "Friday is considered a special prayer day, so some shops or attractions may close temporarily.",
+            "Respect prayer times and avoid loud behavior near mosques."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Dress modestly and respectfully, especially in public areas reflecting appreciation for Islamic values and local culture.",
+            "Interact with warmth and courtesy, as the people of Aceh highly value politeness and good manners.",
+            "When visiting mosques or religious sites such as the Baiturrahman Grand Mosque, dress appropriately according to local customs.",
+            "Experience Aceh’s unique cuisine, including Mie Aceh, Gayo Coffee, and other traditional delicacies.",
+            "Respect local customs and prayer times for example, avoid loud activities during the adhan (call to prayer).",
+            "Keep the environment clean and orderly, as the people of Aceh take great pride in maintaining their surroundings."
+        ],
+        "Dont": [
+            "Avoid being alone (khalwat) with someone of the opposite sex who is not your mahram in public areas, as it is prohibited under Sharia law.",
+            "Refrain from wearing revealing or inappropriate clothing, for both men and women.",
+            "Do not consume or carry alcoholic beverages or illegal drugs they are strictly forbidden under Islamic law in Aceh.",
+            "Gambling or engaging in any form of betting, including online, is prohibited.",
+            "Avoid public displays of affection, such as hugging or kissing.",
+            "Respect Sharia regulations, including observing prayer times and maintaining proper behavior in and around mosques."
+        ]
+    },
+    {
+        "id": "North Sumatra",
+        "name_en": "North Sumatra",
+        "name_local": "Sumatera Utara",
+        "description_web": "North Sumatra, located on the northern part of Sumatra Island, is one of Indonesia’s most diverse and captivating provinces. It’s home to breathtaking landscapes — from the volcanic highlands of Mount Sinabung and Mount Sibayak to the serene beauty of Lake Toba, the largest volcanic lake in the world. The region’s cultural richness comes from its multiethnic population, including Batak, Malay, Karo, Mandailing, and Nias communities, each with distinct traditions, music, and architecture. Its capital, Medan, is a bustling city known for its colonial heritage, culinary diversity, and warm hospitality. North Sumatra blends natural wonders, history, and culture, making it one of Indonesia’s most fascinating destinations.",
+        "description": "North Sumatra — Land of Lakes, Volcanoes, and Cultural Harmony",
+        "image": "https://images.unsplash.com/photo-1591284915748-bc48608e894d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1615009820619-d69e2f948e8d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1626696445855-5f1f90db7ae8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1701497595733-750a330d26fe?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1705830707830-7ce2806baae9?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Lake Toba — The world’s largest volcanic lake with Samosir Island at its center.",
+            "Sipiso-piso Waterfall — A 120-meter-high waterfall offering panoramic lake views.",
+            "Berastagi — Highland town known for volcano treks, fruit markets, and cool weather.",
+            "Medan — The capital city with Dutch colonial architecture and vibrant street food.",
+            "Bukit Lawang — Gateway to Gunung Leuser National Park, home to wild orangutans.",
+            "Nias Island — Renowned for its surfing waves and traditional stone-jumping culture."
+        ],
+        "best_time_to_visit": "May - September (dry season with clear skies and great outdoor conditions)",
+        "climate": "Tropical rainforest climate with warm temperatures year-round (average 23–32°C). Rainfall is frequent, especially from October to March.",
+        "popular_foods": [
+            "Bika Ambon — Sweet and chewy honeycomb cake made with coconut milk and pandan.",
+            "Soto Medan — Rich coconut milk soup with beef or chicken and aromatic spices.",
+            "Lontong Medan — Rice cake served with vegetables, curry, and sambal.",
+            "Arsik — Traditional Batak fish dish cooked with andaliman and torch ginger.",
+            "Naniura — Raw carp fish marinated with Batak spices, often called Batak-style sashimi.",
+            "BPK (Babi Panggang Karo) — Grilled pork served with spicy sambal and rice (popular among Karo Batak).",
+            "Durian Medan — Famous for its creamy texture and strong aroma, a must-try fruit in the region."
+        ],
+        "top_activities": [
+            "Explore Lake Toba and visit Samosir Island to experience Batak culture.",
+            "Trek Mount Sibayak or Mount Sinabung for stunning sunrise views.",
+            "Visit Sipiso-piso Waterfall and enjoy the view of Lake Toba from above.",
+            "Go jungle trekking in Bukit Lawang to see wild orangutans in their natural habitat.",
+            "Stroll around Medan’s Maimun Palace and the Grand Mosque for historical insight.",
+            "Surf at Sorake Beach on Nias Island — one of the best surf spots in Indonesia.",
+            "Experience traditional Batak dance and music performances in Tomok or Simanindo.",
+            "Visit local coffee plantations in Berastagi and try authentic Sumatran Arabica coffee."
+        ],
+        "travel_tips": [
+            "Bring light, comfortable clothing but also a jacket for highland areas like Berastagi.",
+            "Be respectful when visiting Batak villages — ask before taking photos.",
+            "Always negotiate prices gently in local markets.",
+            "Cash is essential in rural areas; ATMs may be limited outside Medan.",
+            "Avoid swimming in restricted areas of Lake Toba for safety reasons.",
+            "Try local transportation like becak (motor rickshaw) for short city trips.",
+            "Respect wildlife regulations and avoid feeding animals in national parks."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Learn basic local phrases such as 'Horas!' — a Batak greeting symbolizing warmth and respect.",
+            "Visit cultural villages and support local artisans by buying handmade crafts.",
+            "Dress modestly when entering religious sites or traditional Batak houses.",
+            "Try regional coffee and food — North Sumatra is famous for its rich flavors.",
+            "Take time to talk with locals; they are friendly and enjoy sharing their culture.",
+            "Respect nature — keep national parks and waterfalls clean.",
+            "Join local festivals like Lake Toba Festival to experience authentic traditions."
+        ],
+        "Dont": [
+            "Avoid littering, especially near lakes and natural sites.",
+            "Do not disrespect traditional ceremonies or interrupt local rituals.",
+            "Avoid public criticism of local customs or religion — maintain cultural sensitivity.",
+            "Do not swim or dive in unmarked areas of Lake Toba without a guide.",
+            "Avoid touching people’s heads — it is considered impolite in local culture.",
+            "Do not bargain aggressively or show frustration when negotiating prices.",
+            "Avoid feeding or disturbing wildlife in protected areas like Bukit Lawang."
+        ]
+    },
+    {
+        "id": "West Sumatra",
+        "name_en": "West Sumatra",
+        "description": "Known for its Minangkabau culture, spicy cuisine, and the beautiful city of Padang surrounded by green hills.",
+        "image": "img/province/west-sumatra.jpg"
+    },
+    {
+        "id": "Riau",
+        "name_en": "Riau",
+        "description": "Riau is a province of vast oil resources and Malay cultural heritage with peaceful coastal landscapes.",
+        "image": "img/province/riau.jpg"
+    },
+    {
+        "id": "Riau Islands",
+        "name_en": "Riau Islands",
+        "description": "A group of tropical islands close to Singapore, famous for Batam and Bintan as popular resort destinations.",
+        "image": "img/province/riau-islands.jpg"
+    },
+    {
+        "id": "Jambi",
+        "name_en": "Jambi",
+        "description": "Located in central Sumatra, Jambi offers natural beauty, rainforests, and the ancient Muaro Jambi Temple Complex.",
+        "image": "img/province/jambi.jpg"
+    },
+    {
+        "id": "Bengkulu",
+        "name_en": "Bengkulu",
+        "description": "Bengkulu is known for its British colonial history, Fort Marlborough, and quiet coastal scenery.",
+        "image": "img/province/bengkulu.jpg"
+    },
+    {
+        "id": "South Sumatra",
+        "name_en": "South Sumatra",
+        "description": "Home to the city of Palembang, known for the Ampera Bridge and the famous traditional dish, Pempek.",
+        "image": "img/province/south-sumatra.jpg"
+    },
+    {
+        "id": "Lampung",
+        "name_en": "Lampung",
+        "description": "The southern gateway of Sumatra, offering beautiful beaches, coffee plantations, and Krakatau Island.",
+        "image": "img/province/lampung.jpg"
+    },
+    {
+        "id": "Banten",
+        "name_en": "Banten",
+        "description": "Located on the western tip of Java Island, Banten features historical sites and the beautiful Sawarna Beach.",
+        "image": "img/province/banten.jpg"
+    },
+    {
+        "id": "Jakarta",
+        "name_en": "Jakarta",
+        "description": "The bustling capital city of Indonesia, blending modern skyscrapers with rich historical landmarks.",
+        "image": "img/province/jakarta.jpg"
+    },
+    {
+        "id": "West Java",
+        "name_en": "West Java",
+        "description": "West Java is home to Bandung and volcanic landscapes, offering a mix of nature, culture, and modern city life.",
+        "image": "img/province/west-java.jpg"
+    },
+    {
+        "id": "Central Java",
+        "name_en": "Central Java",
+        "description": "Known for Borobudur and Prambanan Temples, Central Java reflects the heart of Javanese culture and heritage.",
+        "image": "img/province/central-java.jpg"
+    },
+    {
+        "id": "Yogyakarta",
+        "name_en": "Yogyakarta",
+        "description": "A special region famous for its royal palace, cultural traditions, and proximity to Mount Merapi.",
+        "image": "img/province/yogyakarta.jpg"
+    },
+    {
+        "id": "East Java",
+        "name_en": "East Java",
+        "description": "Home to Mount Bromo, Ijen Crater, and the modern city of Surabaya, East Java offers adventure and culture.",
+        "image": "img/province/east-java.jpg"
+    },
+    {
+        "id": "Bali",
+        "name_en": "Bali",
+        "name_local": "Bali",
+        "description_web": "Bali, one of Indonesia’s most iconic provinces, is often called the Island of the Gods for its natural beauty, rich culture, and deep spirituality. Located between Java and Lombok, it’s home to pristine beaches, lush rice terraces, sacred temples, and warm-hearted people. The Balinese follow Hindu Dharma and live by the philosophy of Tri Hita Karana — harmony among humans, nature, and the divine — a belief that shapes their art, rituals, and way of life. Every part of Bali reflects this balance, making the island not just beautiful, but deeply meaningful.",
+        "description": "Bali — The Island of the Gods",
+        "image": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=1170&auto=format&fit=crop",
+        "gallery": [
+            "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2070&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=2070&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1542897644-e04428948020?q=80&w=2070&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1552301726-570d51466ae2?q=80&w=2070&auto=format&fit=crop"
+        ],
+        "highlights": [
+            "Ubud — The cultural heart of Bali known for arts, dance, and rice terraces.",
+            "Tanah Lot Temple — An iconic sea temple with dramatic sunset views.",
+            "Pura Besakih — The Mother Temple, largest and holiest Hindu temple on the island.",
+            "Mount Batur — Popular sunrise trek with views of the caldera lake.",
+            "Nusa Penida — Island paradise famous for Kelingking Beach and crystal waters.",
+            "Seminyak & Canggu — Trendy coastal areas with cafes, beach clubs, and surf spots."
+        ],
+        "best_time_to_visit": "April - October (dry season with pleasant weather and calm seas)",
+        "climate": "Tropical climate with warm temperatures year-round (average 26–32°C), featuring distinct dry and wet seasons.",
+        "popular_foods": [
+            "Babi Guling — Traditional roasted suckling pig seasoned with Balinese spices.",
+            "Ayam Betutu — Spiced chicken slow-cooked in banana leaves.",
+            "Lawar — A mix of vegetables, coconut, and minced meat with rich seasoning.",
+            "Sate Lilit — Minced fish or chicken satay wrapped around lemongrass sticks.",
+            "Bebek Bengil — Crispy duck served with sambal and vegetables.",
+            "Nasi Campur Bali — Rice with various side dishes representing Balinese flavors.",
+            "Kopi Luwak — One of the world’s most expensive coffees, produced in Bali."
+        ],
+        "top_activities": [
+            "Visit ancient temples such as Tanah Lot, Uluwatu, and Besakih.",
+            "Watch traditional dance performances like Kecak, Barong, and Legong.",
+            "Surf or relax at beaches in Kuta, Seminyak, and Uluwatu.",
+            "Explore Ubud’s art markets, rice terraces, and sacred Monkey Forest.",
+            "Dive or snorkel in Nusa Penida and Amed’s coral reefs.",
+            "Hike Mount Batur for a breathtaking sunrise view.",
+            "Relax with Balinese spa treatments and yoga retreats.",
+            "Join cultural workshops — making canang sari, Balinese cooking, or painting."
+        ],
+        "travel_tips": [
+            "Wear modest clothing when visiting temples; sarongs and sashes are often required.",
+            "Avoid stepping on offerings (canang sari) placed on the ground.",
+            "Do not enter temples if you are menstruating, as it is considered impure.",
+            "Respect local ceremonies — do not disturb or walk through processions.",
+            "Use cash for small transactions; many rural areas do not accept cards.",
+            "Negotiate politely at local markets, as bargaining is common.",
+            "Always follow rules during Nyepi (Day of Silence) — stay indoors and avoid noise or lights."
+        ],
+        "region": "Lesser Sunda Islands",
+        "Do": [
+            "Dress respectfully, especially when visiting temples or rural villages.",
+            "Use a sarong and sash when entering temple grounds.",
+            "Learn basic Balinese greetings to show appreciation for local culture.",
+            "Participate in cultural experiences like cooking classes or dance shows.",
+            "Support local artisans by buying handmade crafts and artworks.",
+            "Dispose of waste properly and respect the environment.",
+            "Smile and be polite — Balinese people value friendliness and respect."
+        ],
+        "Dont": [
+            "Do not touch people’s heads — it is considered the most sacred part of the body.",
+            "Avoid public displays of affection, especially in religious sites.",
+            "Do not point at people or objects with your feet.",
+            "Never climb sacred structures or pose disrespectfully near temples.",
+            "Avoid using your left hand when giving or receiving items.",
+            "Do not litter or damage coral reefs when snorkeling or diving.",
+            "Refrain from loud behavior near temples or during ceremonies."
+        ]
+    },
+    {
+        "id": "West Nusa Tenggara",
+        "name_en": "West Nusa Tenggara",
+        "description": "Home to Lombok Island and Mount Rinjani, offering pristine beaches and vibrant Sasak culture.",
+        "image": "img/province/west-ntb.jpg"
+    },
+    {
+        "id": "East Nusa Tenggara",
+        "name_en": "East Nusa Tenggara",
+        "description": "Known for Komodo National Park, pink beaches, and diverse island cultures across Flores and Sumba.",
+        "image": "img/province/east-ntt.jpg"
+    },
+    {
+        "id": "West Kalimantan",
+        "name_en": "West Kalimantan",
+        "description": "A province rich in Dayak culture, tropical rainforests, and the Equator Monument in Pontianak.",
+        "image": "img/province/west-kalimantan.jpg"
+    },
+    {
+        "id": "Central Kalimantan",
+        "name_en": "Central Kalimantan",
+        "description": "Famous for its orangutan conservation areas and vast peatland forests.",
+        "image": "img/province/central-kalimantan.jpg"
+    },
+    {
+        "id": "South Kalimantan",
+        "name_en": "South Kalimantan",
+        "description": "Known for its floating markets and Banjar culture, with rivers playing a vital role in daily life.",
+        "image": "img/province/south-kalimantan.jpg"
+    },
+    {
+        "id": "East Kalimantan",
+        "name_en": "East Kalimantan",
+        "description": "The new home of Indonesia's future capital, Nusantara, rich with forests and coastal beauty.",
+        "image": "img/province/east-kalimantan.jpg"
+    },
+    {
+        "id": "North Kalimantan",
+        "name_en": "North Kalimantan",
+        "description": "The youngest province in Kalimantan, featuring untouched forests and cross-border culture with Malaysia.",
+        "image": "img/province/north-kalimantan.jpg"
+    },
+    {
+        "id": "North Sulawesi",
+        "name_en": "North Sulawesi",
+        "description": "Known for Bunaken Marine Park and the friendly people of Manado.",
+        "image": "img/province/north-sulawesi.jpg"
+    },
+    {
+        "id": "Central Sulawesi",
+        "name_en": "Central Sulawesi",
+        "description": "A province of diverse ethnic groups and natural wonders like Lake Poso and Lore Lindu National Park.",
+        "image": "img/province/central-sulawesi.jpg"
+    },
+    {
+        "id": "South Sulawesi",
+        "name_en": "South Sulawesi",
+        "description": "Home to the Bugis and Toraja tribes, offering traditional architecture and scenic highlands.",
+        "image": "img/province/south-sulawesi.jpg"
+    },
+    {
+        "id": "Southeast Sulawesi",
+        "name_en": "Southeast Sulawesi",
+        "description": "Rich in marine biodiversity, home to the stunning Wakatobi National Park.",
+        "image": "img/province/southeast-sulawesi.jpg"
+    },
+    {
+        "id": "West Sulawesi",
+        "name_en": "West Sulawesi",
+        "description": "A peaceful province with mountainous landscapes and rich cultural traditions.",
+        "image": "img/province/west-sulawesi.jpg"
+    },
+    {
+        "id": "Gorontalo",
+        "name_en": "Gorontalo",
+        "description": "A quiet coastal province with historic mosques and beautiful coral reefs.",
+        "image": "img/province/gorontalo.jpg"
+    },
+    {
+        "id": "Maluku",
+        "name_en": "Maluku",
+        "description": "The legendary Spice Islands, offering turquoise waters and diverse island cultures.",
+        "image": "img/province/maluku.jpg"
+    },
+    {
+        "id": "North Maluku",
+        "name_en": "North Maluku",
+        "description": "Once the heart of the global spice trade, now known for its volcanic islands and clear seas.",
+        "image": "img/province/north-maluku.jpg"
+    },
+    {
+        "id": "West Papua",
+        "name_en": "West Papua",
+        "description": "Home to Raja Ampat, a world-famous diving paradise with pristine coral reefs and biodiversity.",
+        "image": "img/province/west-papua.jpg"
+    },
+    {
+        "id": "Papua",
+        "name_en": "Papua",
+        "description": "The easternmost province of Indonesia, home to mountains, rainforests, and indigenous Papuan tribes.",
+        "image": "img/province/papua.jpg"
+    }
+]
