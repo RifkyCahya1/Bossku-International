@@ -20,6 +20,7 @@
                         </svg> Max Price ($) </label> <input type="range" min="200" max="4000" step="100" x-model="filters.price" class="w-full accent-[#3B5BDB] mt-2">
                     <p class="text-sm text-gray-500 mt-1">$<span x-text="filters.price"></span></p>
                 </div>
+                
                 <div class="space-y-2"> 
                     <label class="text-sm font-medium text-gray-600 flex items-center gap-2">
                         <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,6 +34,7 @@
                         </template>
                     </select>
                 </div>
+
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="text-sm font-medium text-gray-600">Category</label>

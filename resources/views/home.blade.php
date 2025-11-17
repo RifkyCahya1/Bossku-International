@@ -70,7 +70,7 @@
 @include('section.hotel')
 @include('section.destination')
 @include('section.about')
-@include('section.testimonial')
+{{-- @include('section.testimonial') --}}
 
 <section class="relative bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a1a] text-white py-8 overflow-hidden">
     <div class="absolute inset-0 opacity-10">

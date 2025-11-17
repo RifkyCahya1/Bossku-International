@@ -139,80 +139,862 @@
     {
         "id": "West Sumatra",
         "name_en": "West Sumatra",
-        "description": "Known for its Minangkabau culture, spicy cuisine, and the beautiful city of Padang surrounded by green hills.",
-        "image": "img/province/west-sumatra.jpg"
+        "name_local": "Sumatera Barat",
+        "description_web": "West Sumatra is a province on the island of Sumatra with its capital in Padang. It is known as the homeland of the Minangkabau people, who follow a matrilineal kinship system and uphold the philosophy of “Adat basandi syarak, syarak basandi Kitabullah” — customs grounded in Islamic principles. The region features stunning natural landscapes, including the Bukit Barisan mountains, Lake Maninjau, Lake Singkarak, lush valleys, and beaches along the western coast. Its economy is supported by agriculture, trade, tourism, and its world-famous cuisine, especially Rendang. Historically, West Sumatra played an important role in Indonesia’s independence movement and produced many national figures such as Mohammad Hatta and Buya Hamka. With its strong cultural identity, rich traditions, beautiful nature, and remarkable cuisine, West Sumatra stands as one of Indonesia’s most captivating destinations.",
+        "description": "West Sumatra — Land of Minangkabau Heritage, Majestic Nature & Strong Cultural Identity",
+        "image": "https://images.unsplash.com/photo-1653910729824-df4f32c60acf?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1653292952844-c1dd83d94967?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1674794966574-b2feec2a119f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1638199406429-f0c6cf5de006?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1654941762521-644b3ba9c0fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Istano Basa Pagaruyung — the historical and cultural center of Minangkabau.",
+            "Jam Gadang — the iconic landmark of Bukittinggi.",
+            "Lake Maninjau — a scenic volcanic lake perfect for relaxation.",
+            "Lake Singkarak — home to the endemic Bilih fish.",
+            "Harau Valley — towering granite cliffs with natural waterfalls.",
+            "Air Manis Beach — famous for the legend of Malin Kundang.",
+            "Mount Marapi & Mount Singgalang — popular choices for sunrise trekking."
+        ],
+        "best_time_to_visit": "May - September (dry season with clear and comfortable weather for outdoor activities)",
+        "climate": "Tropical humid climate with average temperatures between 22–31°C. Heavy rainfall occurs from October to March.",
+        "popular_foods": [
+            "Rendang — the globally famous Minang dish.",
+            "Sate Padang — tender meat served with thick, spicy gravy.",
+            "Dendeng Balado — thin-sliced beef with spicy red chili.",
+            "Gulai Itiak — duck curry from Koto Gadang with rich spices.",
+            "Lamang Tapai — roasted sticky rice served with sweet fermented rice.",
+            "Gulai Nangka — a traditional Minang jackfruit curry.",
+            "Karupuak Sanjai — Bukittinggi’s signature cassava chips."
+        ],
+        "top_activities": [
+            "Explore Istano Basa Pagaruyung to learn Minangkabau history.",
+            "Enjoy sunsets at Lake Maninjau or Lake Singkarak.",
+            "Hike Mount Marapi or Mount Singgalang.",
+            "Visit Harau Valley for cliff views and waterfalls.",
+            "City tour in Bukittinggi: Jam Gadang, Pasar Atas, and Sianok Canyon.",
+            "Go on a culinary trip across Padang for authentic Minang flavors.",
+            "Watch traditional performances like Tari Piring or Randai.",
+            "Relax at beaches in Pesisir Selatan such as Carocok and Air Manis."
+        ],
+        "travel_tips": [
+            "Dress modestly, especially in traditional villages.",
+            "Respect local customs and religious norms.",
+            "Always ask before taking photos in adat (traditional) areas.",
+            "Bring a jacket when visiting highland areas like Bukittinggi.",
+            "Carry cash for rural areas with limited ATMs.",
+            "Try authentic Padang eateries for the best local flavors."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Dress appropriately and respect local customs.",
+            "Try iconic Minang dishes like Rendang and Sate Padang.",
+            "Visit cultural sites such as Jam Gadang and Pagaruyung Palace.",
+            "Be friendly and polite when interacting with locals.",
+            "Join traditional ceremonies if invited.",
+            "Keep natural sites clean and well-preserved."
+        ],
+        "Dont": [
+            "Avoid wearing revealing clothing, especially in public or cultural sites.",
+            "Do not disrespect elders or traditional leaders.",
+            "Avoid consuming alcohol or being intoxicated in public areas.",
+            "Never mock local customs or religious practices.",
+            "Avoid inappropriate behavior towards women.",
+            "Do not bargain aggressively at markets."
+        ]
     },
     {
         "id": "Riau",
         "name_en": "Riau",
-        "description": "Riau is a province of vast oil resources and Malay cultural heritage with peaceful coastal landscapes.",
-        "image": "img/province/riau.jpg"
+        "name_local": "Riau",
+        "description_web": "Riau is a province located on the central eastern coast of Sumatra, with Pekanbaru as its capital. Known for its abundant natural resources, Riau is home to a diverse population, with Malay as the dominant ethnic group alongside Minangkabau, Batak, Javanese, and Chinese communities. Its economy is driven by oil and gas, plantations, forestry, and processing industries, making it one of Indonesia's largest producers of petroleum, palm oil, and rubber. Strategically positioned along the Strait of Malacca, Riau plays an important role in both national and regional trade. Culturally, Riau is recognized as a strong center of Malay heritage, where traditional arts, literature, and music—such as zapin and makyong—continue to thrive. Historically, the region is closely tied to the powerful Siak Sri Indrapura Sultanate, one of the most influential Malay Islamic kingdoms of its era. Today, Riau is known for its harmonious blend of cultural richness, natural beauty, and economic significance, featuring landmarks like Siak Palace, Muara Takus Temple, Tesso Nilo National Park, and various coastal destinations.",
+        "description": "Riau — Heart of Malay Culture, Natural Wealth, and Historical Heritage",
+        "image": "https://images.unsplash.com/photo-1696305339683-1813d1fa5fe0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_daus50MUiEzL51oW5xuVH9tx-5hren73YTlf2LoUu_jFXAdLGqWOcD4CVZm31EOou1P4A3tnalf6rBUDYjxseTXcOnzgRKsxEOJwn2UO5AbuP3Y6bNrAyAbzGg6MDLA-z2n2QS-xb_Y/s1600/Rumah+Adat+Provinsi+Riau+%2528+Rumah+melayu+selaso+jatuh+kembar+%2529.jpg",
+            "https://images.unsplash.com/photo-1632717512645-b2ed7a147290?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://i.pinimg.com/736x/4b/34/4f/4b344fd93429e5db19442c45dc36accf.jpg",
+            "https://i.pinimg.com/736x/a7/f3/6c/a7f36c0b20607736f0b9a01960f17536.jpg"
+        ],
+        "highlights": [
+            "Siak Sri Indrapura Palace — the magnificent legacy of the Siak Sultanate.",
+            "Muara Takus Temple — an ancient Buddhist temple complex from the Srivijaya era.",
+            "Pulau Rupat — a coastal island known for white sand beaches and mangrove ecosystems.",
+            "Tesso Nilo National Park — home to elephants and one of the world's richest biodiversity zones.",
+            "An-Nur Great Mosque — an architectural landmark in Pekanbaru.",
+            "Senapelan Old Town — historical Malay and colonial heritage area."
+        ],
+        "best_time_to_visit": "June - September (dry season, best for outdoor exploration and island visits)",
+        "climate": "Tropical rainforest climate with average temperatures between 23–32°C. Heavy rainfall usually occurs from October to March.",
+        "popular_foods": [
+            "Gulai Ikan Patin — rich catfish curry, iconic to Riau.",
+            "Tempoyak — fermented durian dish, often paired with patin.",
+            "Asam Pedas — spicy sour stew, a staple in local cuisine.",
+            "Ayam Buah Keluak — chicken cooked with keluak nuts.",
+            "Roti Jala — Malay-style net bread served with curry.",
+            "Kuih Lapis — colorful layered dessert.",
+            "Mie Lakse — Riau’s unique coconut-based noodle soup."
+        ],
+        "top_activities": [
+            "Explore Siak Palace and its historical royal artifacts.",
+            "Visit Muara Takus Temple and learn about its Srivijaya-era heritage.",
+            "Enjoy beach relaxation and sunset views on Rupat Island.",
+            "Trekking and wildlife spotting in Tesso Nilo National Park.",
+            "Watch traditional performances like Zapin and Makyong.",
+            "Join Malay cultural ceremonies such as Berzanji or Kenduri.",
+            "Shop for local crafts like songket weaving and pandanus handicrafts.",
+            "Culinary tour in Pekanbaru for Patin Curry, Asam Pedas, and Tempoyak."
+        ],
+        "travel_tips": [
+            "Speak politely and maintain respectful language.",
+            "Show appreciation for pantun, gurindam, and other cultural expressions.",
+            "Respect places of worship and traditional customs.",
+            "Use your right hand when giving gifts or money.",
+            "Ask permission before taking photos of people or sacred places.",
+            "Dress modestly in public or during cultural events."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Use polite and refined language in conversations.",
+            "Respect Malay traditions and customs.",
+            "Dress appropriately when visiting cultural or sacred sites.",
+            "Participate respectfully in traditional ceremonies if allowed.",
+            "Support local artisans by purchasing handicrafts.",
+            "Learn basic Malay phrases to engage with locals."
+        ],
+        "Dont": [
+            "Do not discuss sensitive topics openly.",
+            "Avoid touching someone’s head without permission.",
+            "Do not wear revealing clothing in public or cultural events.",
+            "Avoid photographing people or sacred sites without consent.",
+            "Do not behave rudely or mock cultural practices.",
+            "Do not be loud or disruptive during religious events."
+        ]
     },
     {
         "id": "Riau Islands",
         "name_en": "Riau Islands",
-        "description": "A group of tropical islands close to Singapore, famous for Batam and Bintan as popular resort destinations.",
-        "image": "img/province/riau-islands.jpg"
+        "name_local": "Riau Islands",
+        "description_web": "Riau Islands is a maritime province in western Indonesia, consisting of thousands of large and small islands spread between the Malacca Strait and the South China Sea. Its capital is Tanjungpinang, while Batam serves as the largest city and the main economic hub. Positioned directly across Singapore and Malaysia, the province holds a highly strategic role in international trade, maritime transport, and tourism. The population is a blend of ethnic groups such as Malay, Bugis, Javanese, and Chinese, with the Malay culture as the dominant identity known for politeness, hospitality, and strong Islamic values. The region is famous for its pristine beaches, marine tourism, fresh seafood cuisine, and rapidly growing industrial and port sectors. Historically, the islands were part of the powerful Malay kingdoms, including the Riau–Lingga Sultanate, which shaped Malay culture, literature, and Islamic scholarship across the archipelago. Today, Riau Islands thrives as a cultural center, maritime gateway, and tropical destination featuring iconic landmarks such as Penyengat Island, Barelang Bridge, Trikora Beach, and the natural wonders of Natuna and Anambas.",
+        "description": "Riau Islands — Maritime Gateway of Indonesia, Stronghold of Malay Culture, and Home to Thousands of Stunning Islands",
+        "image": "https://i0.wp.com/wisatalova.com/wp-content/uploads/2016/06/pulau-anambas-kepri.jpg",
+        "gallery": [
+            "https://images.pexels.com/photos/1537931/pexels-photo-1537931.jpeg",
+            "https://images.unsplash.com/photo-1626505985606-e14b6817f5f3?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1628506918761-b76697876826?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/10686258/pexels-photo-10686258.jpeg"
+        ],
+        "highlights": [
+            "Penyengat Island — historical center of Malay culture and literature.",
+            "Barelang Bridge — Batam’s iconic engineering landmark connecting major islands.",
+            "Trikora Beach — a pristine white-sand coastline in Bintan.",
+            "Anambas Islands — world-class marine paradise with turquoise waters.",
+            "Natuna Islands — dramatic granite landscapes and untouched beaches.",
+            "Grand Mosque of Sultan Riau — historic mosque built on Penyengat Island."
+        ],
+        "best_time_to_visit": "March - October (ideal for islands, snorkeling, and dry season trips)",
+        "climate": "Tropical maritime climate with temperatures averaging 24–32°C. Rainfall is heavier from November to February.",
+        "popular_foods": [
+            "Gonggong — sea snail delicacy unique to the region.",
+            "Otak-otak — grilled fish cake wrapped in banana leaves.",
+            "Laksa Johor / Laksa Melayu — rich coconut-based noodle soup.",
+            "Ikan Bakar — freshly grilled fish with Malay spices.",
+            "Lempah Kuning — sour-spicy yellow fish soup.",
+            "Seafood Platter — crabs, prawns, and clams from local waters."
+        ],
+        "top_activities": [
+            "Island hopping across Batam, Bintan, and nearby islands.",
+            "Visit Penyengat Island to explore Malay royal heritage.",
+            "Relax at Trikora Beach or Lagoi Bay.",
+            "Snorkeling and diving in Anambas and Natuna.",
+            "Enjoy seafood culinary tours in Tanjungpinang and Batam.",
+            "Explore historical sites such as the Riau–Lingga Sultanate complex.",
+            "Cross the Barelang Bridge and visit each connected island.",
+            "Join cultural events featuring Zapin dance and Malay poetry."
+        ],
+        "travel_tips": [
+            "Dress modestly, especially at religious or cultural locations.",
+            "Use polite speech — Malay culture highly values courtesy.",
+            "Ask permission before taking photos of people or ceremonies.",
+            "Respect local customs tied to Islamic traditions.",
+            "Carry cash when visiting smaller islands with limited ATMs.",
+            "Be mindful of marine conservation rules."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Dress respectfully in public and cultural areas.",
+            "Try local seafood and traditional Malay dishes.",
+            "Be polite and respectful when interacting with locals.",
+            "Participate in cultural events if invited.",
+            "Explore marine areas responsibly.",
+            "Visit historical sites to learn about Malay heritage."
+        ],
+        "Dont": [
+            "Do not wear revealing clothing in public or religious areas.",
+            "Avoid disrespecting Malay customs or Islamic practices.",
+            "Do not litter or damage the natural environment.",
+            "Avoid public displays of affection.",
+            "Do not act arrogantly or use harsh language.",
+            "Avoid consuming alcohol in conservative areas."
+        ]
     },
     {
         "id": "Jambi",
         "name_en": "Jambi",
-        "description": "Located in central Sumatra, Jambi offers natural beauty, rainforests, and the ancient Muaro Jambi Temple Complex.",
-        "image": "img/province/jambi.jpg"
+        "name_local": "Jambi",
+        "description_web": "Jambi is a province located on the eastern coast of central Sumatra, with its capital in Jambi City. The region is known for its rich cultural heritage, long history, and abundant natural resources. The dominant ethnic group is Malay Jambi, accompanied by Batak, Minangkabau, Javanese, and Bugis communities, creating a blended cultural identity. Jambi’s economy is driven by plantations, mining, forestry, and agriculture, with key commodities such as palm oil, rubber, timber, coal, and petroleum. Geographically, the province features diverse landscapes—lowlands, coastal regions, rivers, and mountainous areas in the west, including Mount Kerinci, the highest peak in Sumatra. Major attractions include Kerinci Seblat National Park, home to the Sumatran tiger, and the Muaro Jambi Temple Complex, the largest Hindu-Buddhist archaeological site in Sumatra. Historically, Jambi played a key role in maritime trade routes and was part of major ancient kingdoms such as Melayu and Sriwijaya. Today, Jambi continues to grow as a province rich in natural beauty, cultural preservation, and economic potential.",
+        "description": "Jambi — Land of Ancient Kingdoms, Majestic Mountains, and Timeless Malay Heritage",
+        "image": "https://images.unsplash.com/photo-1649603249196-30c7d155f280?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.pexels.com/photos/4409799/pexels-photo-4409799.jpeg",
+            "https://images.unsplash.com/photo-1599797272454-a129ff8cbfe7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1595562704137-cd55f334de73?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1649420425890-dfbcfb5be793?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Muaro Jambi Temple Complex — the largest Hindu-Buddhist temple site in Sumatra.",
+            "Mount Kerinci — the highest volcano in Indonesia and the tallest peak in Sumatra.",
+            "Kerinci Seblat National Park — vast rainforest and habitat of the Sumatran tiger.",
+            "Danau Kaco — a glowing blue lake known for its crystal-like clarity.",
+            "Sungai Batanghari — the longest river in Sumatra and lifeline of local communities.",
+            "Traditional Malay Jambi culture — ceremonies, clothing, and performing arts."
+        ],
+        "best_time_to_visit": "June - September (best weather for trekking, nature exploration, and outdoor activities)",
+        "climate": "Tropical rainforest climate with temperatures ranging from 23–32°C. Rainy season usually occurs from October to April.",
+        "popular_foods": [
+            "Tempoyak — fermented durian used in savory dishes.",
+            "Gulai Tepek Ikan — traditional fish and tapioca curry.",
+            "Nasi Gemuk — Jambi-style coconut rice with sambal and side dishes.",
+            "Dodol Kentang Kerinci — sweet potato-based traditional snack.",
+            "Kue Putri Kandis — layered traditional Jambi dessert.",
+            "Lemang — glutinous rice cooked in bamboo."
+        ],
+        "top_activities": [
+            "Trekking and mountain climbing at Mount Kerinci.",
+            "Exploring Kerinci Seblat National Park.",
+            "Visiting the historical Muaro Jambi temple complex.",
+            "Relaxing at Danau Kaco and nearby natural attractions.",
+            "Watching traditional dances such as Sekapur Sirih and Randai Kerinci.",
+            "Shopping for local crafts like Jambi songket, pandan weaving, and batik.",
+            "Enjoying local cuisine at traditional markets.",
+            "Participating in Malay cultural ceremonies if invited."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting cultural or religious sites.",
+            "Use your right hand when giving or receiving items.",
+            "Ask for permission before entering traditional houses or sacred areas.",
+            "Show respect to elders, community leaders, and cultural figures.",
+            "Bring proper gear if trekking in Kerinci or the national park.",
+            "Follow conservation rules to protect wildlife and forests."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Respect Malay customs and traditional ceremonies.",
+            "Dress properly during religious or cultural events.",
+            "Show politeness when interacting with elders.",
+            "Try local dishes and explore traditional markets.",
+            "Support local artisans by buying handmade crafts.",
+            "Practice responsible tourism in natural areas."
+        ],
+        "Dont": [
+            "Do not disrespect sacred objects, offerings, or cultural symbols.",
+            "Avoid sitting carelessly in adat halls or sacred places without permission.",
+            "Do not touch traditional headpieces such as tengkuluk or lacak without consent.",
+            "Avoid loud or rude behavior during ceremonies.",
+            "Do not litter or harm natural environments.",
+            "Avoid eating or drinking impolitely during cultural events."
+        ]
     },
     {
         "id": "Bengkulu",
         "name_en": "Bengkulu",
-        "description": "Bengkulu is known for its British colonial history, Fort Marlborough, and quiet coastal scenery.",
-        "image": "img/province/bengkulu.jpg"
+        "name_local": "Bengkulu",
+        "description_web": "Bengkulu is a province located on the western coast of Sumatra, with its capital in Bengkulu City. The province borders West Sumatra to the north, South Sumatra and Jambi to the east, and the Indian Ocean to the west. Known as the “Land of Rafflesia,” Bengkulu is home to the world’s largest flower, Rafflesia arnoldii. The region also holds significant historical value, having served as the exile location of Indonesia’s first president, Soekarno, during the Dutch colonial era. Bengkulu’s population consists of diverse ethnic groups—Rejang, Serawai, Lembak, and Malay Bengkulu—each contributing to the province’s rich cultural heritage. Beyond its cultural depth, Bengkulu offers natural attractions such as the long coastal stretch of Pantai Panjang, the serene Danau Dendam Tak Sudah, and the historic British-built Marlborough Fort. Historically influenced by Malay kingdoms, British colonialism, and later Dutch rule, Bengkulu officially became Indonesia’s 26th province in 1968 and continues to develop with strong historical identity, natural beauty, and cultural diversity.",
+        "description": "Bengkulu — Land of Rafflesia, Colonial Heritage, and Coastal Wonders",
+        "image": "https://images.unsplash.com/photo-1667256868520-a039cf2379a3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1665012606236-cd53348976d9?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/33372324/pexels-photo-33372324.jpeg",
+            "https://images.unsplash.com/photo-1604590084578-2fb4fa683984?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1759457307485-2f0c529166e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Rafflesia arnoldii — the world’s largest flower and Bengkulu’s iconic species.",
+            "Fort Marlborough — the biggest British fort in Southeast Asia, built in the early 18th century.",
+            "Pantai Panjang — a long, beautiful coastline ideal for sunsets and relaxing walks.",
+            "Danau Dendam Tak Sudah — a mystical lake surrounded by lush landscapes.",
+            "House of Soekarno — historic residence of Indonesia’s first president during exile.",
+            "Traditional Rejang and Serawai culture — unique dances, music, and rituals."
+        ],
+        "best_time_to_visit": "June - September (drier season with calm weather for outdoor and coastal activities)",
+        "climate": "Tropical rainforest climate with temperatures ranging from 24–32°C. Rainy season typically occurs from October to April.",
+        "popular_foods": [
+            "Pendap — spiced fish wrapped in taro leaves and cooked slowly.",
+            "Lempuk Durian — sticky durian-based traditional sweet.",
+            "Gulai Pisang — savory banana curry unique to Bengkulu.",
+            "Bagar Hiu — shark-based spiced dish (often served during special occasions).",
+            "Kue Tat — traditional butter pastry often gifted during celebrations.",
+            "Batik Basurek-themed snacks or souvenirs."
+        ],
+        "top_activities": [
+            "Exploring Fort Marlborough and other colonial heritage sites.",
+            "Visiting the Soekarno Exile House for historical insight.",
+            "Relaxing or cycling along Pantai Panjang.",
+            "Hiking and sightseeing at Danau Dendam Tak Sudah.",
+            "Joining or watching the Tabot Festival, a major cultural celebration.",
+            "Discovering Rafflesia blooms in protected forest areas.",
+            "Enjoying local dishes at traditional Bengkulu eateries.",
+            "Shopping for Basurek batik and local handicrafts."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting villages, cultural sites, or attending ceremonies.",
+            "Show respect when entering traditional houses or historical buildings.",
+            "Use polite language and maintain good manners, as local culture values courtesy.",
+            "Ask locals before taking photos in traditional or sacred spaces.",
+            "Prepare light rain gear, especially during the wet season.",
+            "Stay environmentally conscious when visiting forests or beaches."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Respect local customs and cultural traditions.",
+            "Dress properly when visiting religious or cultural sites.",
+            "Greet locals politely and maintain friendly interactions.",
+            "Taste Bengkulu’s traditional dishes and visit local markets.",
+            "Support local artisans by purchasing Basurek batik or crafts.",
+            "Maintain cleanliness in natural areas and historical sites."
+        ],
+        "Dont": [
+            "Do not wear revealing clothing, especially in villages or cultural events.",
+            "Avoid disrespecting ceremonies or traditional rituals such as Tabot.",
+            "Do not raise your voice or behave arrogantly toward locals.",
+            "Avoid littering or damaging natural environments, especially in forest reserves.",
+            "Do not show excessive public affection, as it is considered inappropriate.",
+            "Avoid consuming alcohol in sensitive cultural or religious areas."
+        ]
     },
     {
         "id": "South Sumatra",
         "name_en": "South Sumatra",
-        "description": "Home to the city of Palembang, known for the Ampera Bridge and the famous traditional dish, Pempek.",
-        "image": "img/province/south-sumatra.jpg"
+        "name_local": "Sumatera Selatan",
+        "description_web": "South Sumatra is a province located in the southern part of Sumatra Island, with Palembang as its capital city. The region is known for its rich ethnic, cultural, and religious diversity, with the Malay ethnic group forming the majority alongside Komering, Ogan, Palembang, and migrants such as Javanese and Minangkabau communities. Its economy is supported by mining, plantations, agriculture, and the energy sector. The province is one of Indonesia’s major producers of coal, petroleum, natural gas, rubber, and palm oil. Historically, South Sumatra holds significant importance as the center of the Sriwijaya Empire—a powerful maritime kingdom that dominated Southeast Asia between the 7th and 13th centuries. Palembang, one of the oldest cities in Indonesia, features iconic sites such as Ampera Bridge, Musi River, and Kampung Kapitan. The province also offers stunning natural landscapes including Lake Ranau, Bukit Serelo, and the protected wetlands of Sembilang National Park. Officially established on September 12, 1950, South Sumatra continues to grow as a strategic economic hub in Sumatra, combining its rich cultural heritage, natural resources, and developing infrastructure.",
+        "description": "South Sumatra — The Legacy of Sriwijaya, Cultural Heritage, and Natural Beauty",
+        "image": "https://images.unsplash.com/photo-1658982167988-86e1499be061?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1707925885049-f4b2339c46b7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/33372324/pexels-photo-33372324.jpeg",
+            "https://images.pexels.com/photos/1620372/pexels-photo-1620372.jpeg",
+            "https://images.pexels.com/photos/21998302/pexels-photo-21998302.jpeg"
+        ],
+        "highlights": [
+            "Historical legacy of the Sriwijaya Empire, one of Southeast Asia’s greatest maritime kingdoms.",
+            "Ampera Bridge — the iconic landmark of Palembang spanning the Musi River.",
+            "Lake Ranau — the largest lake in South Sumatra, surrounded by mountains and hot springs.",
+            "Bukit Serelo (Gunung Jempol) — a unique thumb-shaped mountain popular for trekking.",
+            "Benteng Kuto Besak — an 18th-century fortress from the Palembang Sultanate.",
+            "Traditional Palembang textile heritage including luxurious Songket."
+        ],
+        "best_time_to_visit": "June - September for the most comfortable weather and fewer rainy days.",
+        "climate": "Tropical climate with average temperatures between 24–33°C. Rainy season usually occurs from October to April.",
+        "popular_foods": [
+            "Pempek — Palembang’s most iconic fishcake dish served with tangy vinegar sauce.",
+            "Tekwan — savory fishball soup with mushrooms and vegetables.",
+            "Pindang Patin — spicy-sour fish soup rich in herbs.",
+            "Maksuba Cake — a layered traditional cake made from rich egg batter.",
+            "Kue Delapan Jam — steamed caramel-like cake traditionally cooked for eight hours.",
+            "Model Soup — fishcake dumpling soup similar to Tekwan but with different texture."
+        ],
+        "top_activities": [
+            "Exploring the historical heritage of the Sriwijaya Empire and Palembang Sultanate.",
+            "Visiting Benteng Kuto Besak, Museum Sultan Mahmud Badaruddin II, and Rumah Limas.",
+            "Trekking at Bukit Serelo and enjoying the scenic views.",
+            "Relaxing at natural hot springs in Pagar Alam.",
+            "Exploring the ancient megaliths in Pagar Alam’s highlands.",
+            "Enjoying lake activities and sightseeing at Lake Ranau.",
+            "Watching cultural performances such as Gending Sriwijaya and Tanggai Dance.",
+            "Shopping for authentic Songket textiles in Tangga Buntung or 13 Ulu."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting traditional ceremonies or religious sites.",
+            "Ask permission before taking photos during cultural rituals or inside traditional houses.",
+            "Follow local etiquette such as proper sitting posture in Rumah Limas.",
+            "Respect elders and avoid interrupting conversations or ceremonies.",
+            "Try local dishes from trusted traditional Palembang eateries.",
+            "Be mindful when visiting forests, lakes, or protected cultural sites."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Respect local customs, especially during traditional ceremonies and rituals.",
+            "Dress appropriately at religious events or when visiting Rumah Limas.",
+            "Ask for permission before photographing people or sacred items.",
+            "Try local culinary specialties and visit Songket artisan centers.",
+            "Follow proper etiquette when sitting or entering traditional Palembang houses.",
+            "Show appreciation for local arts such as Gending Sriwijaya and Tanggai Dance."
+        ],
+        "Dont": [
+            "Do not enter Rumah Limas or ceremonial areas without permission.",
+            "Avoid touching traditional accessories such as Siger or Songket without consent.",
+            "Do not speak or eat disrespectfully during formal cultural events.",
+            "Avoid sitting in sacred or elevated areas within traditional houses.",
+            "Do not litter or harm natural landscapes such as Lake Ranau or Bukit Serelo.",
+            "Avoid dismissing cultural rituals or speaking arrogantly to locals."
+        ]
     },
     {
         "id": "Lampung",
         "name_en": "Lampung",
-        "description": "The southern gateway of Sumatra, offering beautiful beaches, coffee plantations, and Krakatau Island.",
-        "image": "img/province/lampung.jpg"
+        "name_local": "Lampung",
+        "description_web": "Lampung is a province located at the southern tip of Sumatra, with Bandar Lampung as its capital city. The region is home to the indigenous Lampung people while also shaped by diverse ethnic groups such as Javanese, Sundanese, and Malay communities. Supported by agriculture and plantations, Lampung is one of Indonesia’s leading producers of robusta coffee, palm oil, pepper, and rubber. Historically, Lampung played a strategic role in inter-island trade routes through the Sunda Strait and was once part of the Tulang Bawang Kingdom and Lampung Sultanate. Today, the province is known for its national parks, pristine beaches, underwater ecosystems, and cultural richness. Way Kambas National Park, Pahawang Island, Mutun Beach, and Kiluan Bay are among its most iconic destinations. Bandar Lampung continues to grow as a major economic and transportation hub connecting Sumatra and Java.",
+        "description": "Lampung — Nature, Heritage, and the Gateway of Sumatra",
+        "image": "https://images.unsplash.com/photo-1587793433184-9b9a1191802c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1662083823095-c509c12e3d7d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/2166643/pexels-photo-2166643.jpeg",
+            "https://images.unsplash.com/photo-1597130193653-29bd48fdcc26?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/19062251/pexels-photo-19062251.jpeg"
+        ],
+        "highlights": [
+            "Way Kambas National Park — one of Indonesia’s oldest national parks and home to Sumatran elephants.",
+            "Pahawang Island — famous for crystal-clear waters and vibrant marine life perfect for snorkeling.",
+            "Kiluan Bay — known as the 'Dolphin Village' where wild dolphins can be seen offshore.",
+            "Mount Anak Krakatau — an active volcanic island formed after the 1883 Krakatoa eruption.",
+            "Gigi Hiu Beach — a stunning beach with dramatic jagged rock formations.",
+            "Traditional Lampung culture symbolized by Tapis textile and the Siger crown."
+        ],
+        "best_time_to_visit": "June - September to enjoy dry weather, calm seas, and ideal outdoor conditions.",
+        "climate": "Tropical climate with temperatures averaging between 24–33°C, featuring a wet season from October to April and a dry season from May to September.",
+        "popular_foods": [
+            "Seruit — Lampung’s signature fish dish served with sambal terasi, tempoyak, and fresh vegetables.",
+            "Tempoyak Ikan — fermented durian cooked with fish and spices.",
+            "Gulai Taboh — a creamy coconut-milk dish made with vegetables or fish.",
+            "Engkung Daun — traditional chicken cooked with Lampung herbs.",
+            "Geguduh — sweet banana fritters often served as snacks.",
+            "Lapis Legit Lampung — layered cake popular during celebrations and festivals."
+        ],
+        "top_activities": [
+            "Snorkeling and diving in Pahawang Island’s coral gardens.",
+            "Relaxing or swimming at Mutun Beach and other coastal areas.",
+            "Dolphin watching at Kiluan Bay during sunrise.",
+            "Exploring Way Kambas National Park, including elephant conservation tours.",
+            "Summiting Mount Tanggamus or trekking in Bukit Barisan Selatan National Park.",
+            "Visiting Way Lalaan Waterfall and other hidden natural gems.",
+            "Experiencing Lampung cultural ceremonies such as Begawi and Cangget.",
+            "Learning about Lampung heritage at the Museum Lampung or traditional houses."
+        ],
+        "travel_tips": [
+            "Wear modest clothing when visiting villages, religious sites, or traditional ceremonies.",
+            "Always ask for permission before taking photos of people or cultural rituals.",
+            "Respect local customs such as seating arrangements in traditional houses.",
+            "Keep beaches, forests, and sacred areas clean.",
+            "Try Lampung robusta coffee in local cafes or plantations.",
+            "Follow safety guidelines when visiting active volcanic areas like Anak Krakatau."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Respect local traditions and cultural symbols such as Tapis and the Siger crown.",
+            "Participate in cultural experiences like traditional dances or ceremonies when invited.",
+            "Keep natural attractions clean and follow conservation rules.",
+            "Dress politely in rural villages and religious sites.",
+            "Show gratitude and politeness when receiving food or gifts.",
+            "Support local artisans by purchasing handmade textiles and crafts."
+        ],
+        "Dont": [
+            "Do not sit or stand carelessly during traditional ceremonies.",
+            "Avoid loud or disrespectful behavior in public spaces or sacred areas.",
+            "Do not take photos of rituals or locals without permission.",
+            "Avoid littering in beaches, waterfalls, or cultural sites.",
+            "Do not mishandle or step on Tapis textiles or the Siger crown.",
+            "Avoid ignoring local etiquette when entering traditional houses or events."
+        ]
     },
     {
         "id": "Banten",
         "name_en": "Banten",
-        "description": "Located on the western tip of Java Island, Banten features historical sites and the beautiful Sawarna Beach.",
-        "image": "img/province/banten.jpg"
+        "name_local": "Banten",
+        "description_web": "Banten is a province located at the western tip of Java Island, with Serang as its capital city. It holds a strategic position bordered directly by Jakarta and serving as the main gateway from Sumatra through Merak Port. Historically, Banten was a major center of Islamic civilization in the archipelago through the powerful Banten Sultanate, known for its international trade networks and religious influence. Today, the province is rich in historical heritage, cultural traditions, and natural beauty, ranging from Anyer and Carita Beaches to Ujung Kulon National Park, home to the endangered Javan rhino. The people of Banten uphold strong Islamic values, hospitality, and communal spirit, with cultural expressions such as Debus, Rampak Bedug, and the living traditions of the Baduy community.",
+        "description": "Banten — Gateway of Java, Heritage of the Sultanate, and Home of the Javan Rhino",
+        "image": "https://images.unsplash.com/photo-1658061927500-7c55a64af6c5?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1707378175150-faa2903feefc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/2599138/pexels-photo-2599138.jpeg",
+            "https://images.unsplash.com/photo-1658061927507-e135012dbe20?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/6702777/pexels-photo-6702777.jpeg"
+        ],
+        "highlights": [
+            "Banten Sultanate heritage including the Great Mosque of Banten and Surosowan Palace.",
+            "Ujung Kulon National Park — UNESCO World Heritage Site and habitat of the Javan rhino.",
+            "Anyer & Carita Beaches — historic coastal destinations near the Sunda Strait.",
+            "Umang Island and Sangiang Island — marine tourism and snorkeling spots.",
+            "Baduy community — indigenous people preserving ancient traditions and simplicity.",
+            "Debus martial art and Rampak Bedug — iconic expressions of Banten culture."
+        ],
+        "best_time_to_visit": "May - September during the dry season for beach trips and outdoor exploration.",
+        "climate": "Tropical climate with average temperatures ranging from 23–33°C, with a rainy season from November to April and a dry season from May to October.",
+        "popular_foods": [
+            "Sate Bandeng — milkfish satay prepared with deboned and seasoned fish.",
+            "Rabeg — spicy-sweet goat stew influenced by Middle Eastern flavors.",
+            "Emping Melinjo — traditional crackers made from melinjo seeds.",
+            "Nasi Sumsum — rice cooked with bone marrow essence.",
+            "Sayur Besan — traditional Betawi-Banten wedding dish.",
+            "Kue Jojorong — soft traditional cake made with rice flour and palm sugar."
+        ],
+        "top_activities": [
+            "Exploring historical sites at Banten Lama including Surosowan Palace and Speelwijk Fortress.",
+            "Snorkeling and diving at Umang Island or Sangiang Island.",
+            "Relaxing at Anyer and Carita Beaches facing the Sunda Strait.",
+            "Trekking in Ujung Kulon National Park and observing wildlife.",
+            "Hiking Mount Karang or Mount Pulosari.",
+            "Visiting the Baduy community to learn about indigenous culture.",
+            "Watching cultural performances such as Debus and Rampak Bedug.",
+            "Joining religious or historical tours around the Great Mosque of Banten."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting religious or traditional sites such as Banten Lama.",
+            "Always ask for permission before taking photos of locals, especially the Baduy community.",
+            "Keep beaches, mountains, and national parks clean and follow conservation rules.",
+            "Respect cultural etiquette, especially during religious events or ceremonies.",
+            "Avoid disturbing wildlife in protected areas such as Ujung Kulon.",
+            "Try local cuisine and support small local businesses for souvenirs."
+        ],
+        "region": "Java",
+        "Do": [
+            "Wear respectful clothing at religious and traditional sites.",
+            "Show politeness and friendliness when interacting with locals.",
+            "Participate in cultural or religious events respectfully when invited.",
+            "Support local artisans by purchasing traditional crafts such as batik Banten and emping.",
+            "Follow environmental rules in beaches, mountains, and national parks.",
+            "Keep noise low in sacred areas or during religious activities."
+        ],
+        "Dont": [
+            "Do not litter or damage natural or historical sites.",
+            "Avoid wearing revealing clothing in religious areas.",
+            "Do not disturb wildlife, especially protected species in Ujung Kulon.",
+            "Avoid taking photos of rituals or traditional communities without permission.",
+            "Do not speak harshly or behave disrespectfully toward elders or religious figures.",
+            "Avoid bringing alcohol or causing disturbances in public areas, as local norms are conservative."
+        ]
     },
     {
-        "id": "Jakarta",
+        "id": "DKI Jakarta",
         "name_en": "Jakarta",
-        "description": "The bustling capital city of Indonesia, blending modern skyscrapers with rich historical landmarks.",
-        "image": "img/province/jakarta.jpg"
+        "name_local": "Jakarta",
+        "description_web": "Jakarta is the capital city of Indonesia, located on the northwest coast of Java. Formerly known as Sunda Kelapa and later Batavia under Dutch rule, the city became Jakarta after Indonesia’s independence in 1945 and was officially designated as the Special Capital Region (DKI) in 1957. As the nation’s political, economic, business, and cultural hub, Jakarta is home to more than 10 million residents from diverse ethnic backgrounds, including the indigenous Betawi people. Despite challenges such as traffic, flooding, and pollution, the city continues to develop with major infrastructure improvements and modern urban innovations. Landmarks like Monas, Kota Tua, and the Thousand Islands highlight Jakarta’s mix of history, culture, and coastal beauty.",
+        "description": "Jakarta — The Capital of Indonesia, Where Heritage Meets Modern Urban Life",
+        "image": "https://images.unsplash.com/photo-1555899434-94d1368aa7af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1555043722-4523972f07ee?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/2310754/pexels-photo-2310754.jpeg",
+            "https://images.unsplash.com/photo-1590930754517-64d5fffa06ac?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/2516863/pexels-photo-2516863.jpeg"
+        ],
+        "highlights": [
+            "Monas — Indonesia’s national monument and symbol of independence.",
+            "Kota Tua — historic district with Dutch colonial architecture.",
+            "Thousand Islands — a tropical escape just off the coast of Jakarta.",
+            "Setu Babakan — cultural center dedicated to Betawi heritage.",
+            "Ancol Dreamland — major recreation area featuring Dufan, Sea World, and beaches.",
+            "Modern cityscape with skyscrapers, malls, and cultural centers."
+        ],
+        "best_time_to_visit": "June - September for clearer weather and reduced rainfall.",
+        "climate": "Tropical monsoon climate with temperatures between 24–33°C, featuring a rainy season from November to April and a drier period from May to October.",
+        "popular_foods": [
+            "Kerak Telor — Betawi-style rice omelette with coconut and spices.",
+            "Soto Betawi — creamy beef soup with coconut milk.",
+            "Nasi Uduk — fragrant coconut rice served with side dishes.",
+            "Asinan Betawi — pickled vegetables with a tangy peanut dressing.",
+            "Roti Buaya — Betawi traditional crocodile-shaped bread for ceremonies.",
+            "Bir Pletok — Betawi herbal drink."
+        ],
+        "top_activities": [
+            "Island-hopping, snorkeling, and diving in the Thousand Islands.",
+            "Cultural exploration at Setu Babakan and Kota Tua.",
+            "Urban adventures such as museum tours, shopping, and culinary hunts.",
+            "Relaxing at spas or joining wellness activities like yoga.",
+            "Visiting Ancol Dreamland for amusement parks and beachfront facilities.",
+            "Attending Betawi cultural festivals, ondel-ondel performances, and traditional ceremonies."
+        ],
+        "travel_tips": [
+            "Dress appropriately when visiting cultural or religious locations.",
+            "Ask permission before taking photos of people or cultural ceremonies.",
+            "Respect public cleanliness, especially in parks, museums, and beaches.",
+            "Be mindful of local etiquette, especially in traditional Betawi communities.",
+            "Stay hydrated and plan commuting times to avoid heavy traffic.",
+            "Use official transportation services or reputable ride-hailing apps."
+        ],
+        "region": "Java",
+        "Do": [
+            "Respect cultural diversity and local traditions.",
+            "Keep public spaces clean and orderly.",
+            "Participate in cultural events and festivals respectfully.",
+            "Dress modestly at religious or traditional sites.",
+            "Try Betawi foods and support local culinary businesses.",
+            "Follow traffic and public area rules to maintain safety."
+        ],
+        "Dont": [
+            "Do not act rudely or arrogantly in public areas.",
+            "Avoid taking photos of people or ceremonies without permission.",
+            "Do not litter in public facilities, museums, or beaches.",
+            "Avoid using harsh language or ignoring local etiquette.",
+            "Do not cause disturbances, especially in cultural or residential areas.",
+            "Avoid inappropriate behavior near religious sites."
+        ]
     },
     {
         "id": "West Java",
         "name_en": "West Java",
-        "description": "West Java is home to Bandung and volcanic landscapes, offering a mix of nature, culture, and modern city life.",
-        "image": "img/province/west-java.jpg"
+        "name_local": "Jawa Barat",
+        "description_web": "West Java is a province located in the western part of Java Island, with Bandung as its capital city. Known for its strong Sundanese cultural identity, the region blends natural beauty, historical heritage, and modern urban life. From misty mountains, volcanic craters, and serene lakes to cultural centers, traditional villages, and beaches along the southern coast, West Java offers a rich and diverse travel experience. The Sundanese people are known for their politeness, hospitality, and emphasis on harmony, reflected in their arts, cuisine, and daily traditions.",
+        "description": "West Java — Land of Sundanese Harmony, Cool Mountains, and Timeless Culture",
+        "image": "https://images.pexels.com/photos/1483880/pexels-photo-1483880.jpeg",
+        "gallery": [
+            "https://images.unsplash.com/photo-1696819648159-158b5b721c0e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/16110884/pexels-photo-16110884.jpeg",
+            "https://images.pexels.com/photos/2892012/pexels-photo-2892012.jpeg",
+            "https://images.pexels.com/photos/2032110/pexels-photo-2032110.jpeg"
+        ],
+        "highlights": [
+            "Tangkuban Perahu — legendary volcano tied to the folklore of Sangkuriang.",
+            "Kawah Putih Ciwidey — surreal turquoise sulfur lake in a highland crater.",
+            "Gedung Sate — iconic architectural landmark and administrative center.",
+            "Pangandaran Beach — family-friendly beach on the southern coast.",
+            "Saung Angklung Udjo — cultural hub preserving Sundanese music and arts.",
+            "Kampung Naga — traditional village maintaining ancient Sundanese customs.",
+            "Keraton Kasepuhan Cirebon — historical palace of the Cirebon Sultanate."
+        ],
+        "best_time_to_visit": "May - September for cooler weather and ideal outdoor activities.",
+        "climate": "Tropical highland climate with temperatures between 18–30°C. Mountain areas are cooler while the southern coast is warmer and more humid.",
+        "popular_foods": [
+            "Sate Maranggi — marinated grilled beef satay with bold flavors.",
+            "Peuyeum Bandung — fermented cassava specialty.",
+            "Lotek — Sundanese vegetable salad with peanut sauce.",
+            "Nasi Timbel — steamed banana leaf rice served with traditional sides.",
+            "Surabi Bandung — sweet or savory rice-flour pancake.",
+            "Mie Kocok — beef noodle soup with chewy textures."
+        ],
+        "top_activities": [
+            "Hiking and sightseeing at Tangkuban Perahu, Kawah Putih, and Mount Gede Pangrango.",
+            "Exploring cultural sites such as Saung Angklung Udjo and Keraton Kasepuhan.",
+            "Relaxing at tea plantations and mountain resorts across Puncak and Lembang.",
+            "Beach hopping and surfing along the southern coast including Pangandaran.",
+            "Culinary adventures in Bandung's vibrant food and cafe scene.",
+            "Shopping at factory outlets and traditional markets."
+        ],
+        "travel_tips": [
+            "Use polite and soft language when interacting with locals, reflecting Sundanese etiquette.",
+            "Respect nature and maintain cleanliness when visiting mountains, lakes, and beaches.",
+            "Dress modestly in traditional villages, religious areas, or cultural sites.",
+            "Support local artisans and small businesses when buying souvenirs.",
+            "Follow safety guidelines when hiking or entering volcanic regions.",
+            "Avoid disturbing traditional ceremonies or sacred rituals."
+        ],
+        "region": "Java",
+        "Do": [
+            "Greet locals politely and use friendly tones.",
+            "Maintain cleanliness at natural attractions.",
+            "Participate respectfully in cultural performances and local traditions.",
+            "Try Sundanese cuisine and support local food vendors.",
+            "Dress appropriately at traditional or religious sites."
+        ],
+        "Dont": [
+            "Do not speak loudly or harshly, as Sundanese culture values gentleness.",
+            "Avoid littering in nature or public spaces.",
+            "Do not interrupt or photograph traditional ceremonies without permission.",
+            "Avoid disrespectful behavior in sacred or historical areas.",
+            "Do not disturb wildlife or damage natural environments."
+        ]
     },
     {
         "id": "Central Java",
         "name_en": "Central Java",
-        "description": "Known for Borobudur and Prambanan Temples, Central Java reflects the heart of Javanese culture and heritage.",
-        "image": "img/province/central-java.jpg"
+        "name_local": "Jawa Tengah",
+        "description_web": "Central Java is a province located in the heart of Java Island, officially established in 1950 with Semarang as its capital. Known as the cultural core of Javanese civilization, the region preserves strong traditions, language, etiquette, and customs passed down for centuries. Since the 8th century, Central Java has been home to major ancient kingdoms such as the Medang (Mataram Kuno), responsible for building Borobudur and Prambanan — both UNESCO World Heritage Sites. Today, Central Java blends heritage, spirituality, agriculture, and modern urban development through cities like Semarang, Surakarta (Solo), and Magelang.",
+        "description": "Central Java — The Heart of Javanese Culture, Ancient Heritage, and Timeless Traditions",
+        "image": "https://images.unsplash.com/photo-1548876408-cd93a72cdd93?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1708443103317-7fe1041dd74d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1684189162727-3b0fd73ba9e3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1572198975137-0c6beeb90331?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1549973890-38d08b229439?q=80&w=672&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Borobudur Temple — the world's largest Buddhist temple and UNESCO World Heritage Site.",
+            "Prambanan Temple — iconic Hindu temple complex with exquisite reliefs.",
+            "Lawang Sewu — historic Dutch-era landmark in Semarang.",
+            "Kota Lama Semarang — preserved colonial-era district.",
+            "Kasunanan Surakarta Palace — center of Javanese royal culture.",
+            "Sikunir Hill — famous golden sunrise viewpoint.",
+            "Pekalongan Batik Museum — showcasing classic and modern batik heritage.",
+            "Kebumen Beaches — scenic white-sand shores with limestone cliffs."
+        ],
+        "best_time_to_visit": "June - September for dry weather and the clearest views.",
+        "climate": "Tropical monsoon climate with temperatures ranging from 21–32°C. Mountain regions are cool while coastal areas are warm and humid.",
+        "popular_foods": [
+            "Gudeg — jackfruit stew with traditional spices.",
+            "Garang Asem — tangy chicken cooked in banana leaves.",
+            "Nasi Liwet — savory coconut rice from Solo.",
+            "Tahu Gimbal — tofu and shrimp dish from Semarang.",
+            "Lumpia Semarang — savory spring rolls with bamboo shoots.",
+            "Soto Kudus — aromatic chicken soup in a small serving bowl."
+        ],
+        "top_activities": [
+            "Exploring Borobudur, Prambanan, and heritage sites across Semarang and Solo.",
+            "Trekking Mount Merbabu and Mount Lawu for panoramic highland views.",
+            "Adventuring in Pindul Cave and Jomblang Cave.",
+            "Relaxing in natural hot springs and retreat centers.",
+            "Trying Central Javanese culinary specialties and visiting traditional markets.",
+            "Witnessing cultural rituals such as Sekaten, Grebeg ceremonies, and Wayang performances."
+        ],
+        "travel_tips": [
+            "Use polite language and observe Javanese etiquette, especially when speaking to elders.",
+            "Dress modestly when visiting temples, palaces, and traditional communities.",
+            "Ask permission before photographing people or sacred ceremonies.",
+            "Maintain cleanliness at cultural sites, beaches, caves, and mountains.",
+            "Respect local customs, especially during religious or royal events."
+        ],
+        "region": "Java",
+        "Do": [
+            "Participate respectfully in local traditions and ceremonies.",
+            "Keep public spaces and heritage areas clean.",
+            "Wear modest and appropriate clothing.",
+            "Show politeness and respect toward diverse cultures and religions.",
+            "Learn basic Javanese greetings to connect with locals."
+        ],
+        "Dont": [
+            "Do not disturb or photograph ceremonies without permission.",
+            "Avoid littering, especially in cultural or natural sites.",
+            "Do not ignore etiquette when visiting elders or traditional leaders.",
+            "Avoid speaking loudly or acting aggressively in public spaces.",
+            "Do not damage temple structures or touch fragile carvings."
+        ]
     },
     {
         "id": "Yogyakarta",
         "name_en": "Yogyakarta",
-        "description": "A special region famous for its royal palace, cultural traditions, and proximity to Mount Merapi.",
-        "image": "img/province/yogyakarta.jpg"
+        "name_local": "Special Region of Yogyakarta",
+        "description_web": "The Special Region of Yogyakarta is a unique province in Indonesia known as a cultural, educational, and tourism hub. Located on the southern part of Java Island, it is governed by Sri Sultan Hamengkubuwono X and holds special autonomous status due to the Sultanate’s vital contribution during Indonesia’s independence. Yogyakarta blends ancient Javanese traditions, academic excellence, artistic heritage, and warm hospitality. Iconic attractions such as the Yogyakarta Palace, Malioboro Street, Prambanan Temple, and Parangtritis Beach highlight the region’s cultural and natural richness, while local cuisine like gudeg and bakpia adds even more charm.",
+        "description": "Yogyakarta — A Living Kingdom of Culture, Learning, and Timeless Javanese Harmony",
+        "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1602057512587-76d5cc4b34e2?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1715244808942-d8e47462dabd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1580883688613-b2c0f57a1f89?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1703714723087-4206b9df6aff?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D "
+        ],
+        "highlights": [
+            "Yogyakarta Palace (Keraton) — the cultural and political heart of the Sultanate.",
+            "Malioboro Street — iconic shopping and cultural district.",
+            "Prambanan Temple — magnificent Hindu UNESCO heritage site.",
+            "Ratu Boko — ancient palace ruins with panoramic sunsets.",
+            "Parangtritis Beach — mystical southern coastline.",
+            "Kotagede — historical center for silver crafting and heritage houses.",
+            "Hutan Pinus Mangunan — scenic pine forest with fresh mountain breeze."
+        ],
+        "best_time_to_visit": "May - September during the dry season for the best weather and outdoor activities.",
+        "climate": "Tropical climate with temperatures ranging from 23–32°C. Coastal areas are warm, while highlands around Imogiri and Mangunan are cooler.",
+        "popular_foods": [
+            "Gudeg — sweet young jackfruit stew, the signature dish of Yogyakarta.",
+            "Sate Klathak — skewered lamb grilled with salt, iconic from Bantul.",
+            "Bakpia — sweet pastry filled with mung bean.",
+            "Angkringan — traditional Javanese street food with rice dishes and skewers.",
+            "Oseng Mercon — spicy stir-fried beef brisket."
+        ],
+        "top_activities": [
+            "Exploring the Yogyakarta Palace, Taman Sari, and cultural performances.",
+            "Visiting Prambanan, Ratu Boko, and historical temples around the region.",
+            "Caving adventures at Pindul Cave and outdoor activities in Mangunan.",
+            "Beach-hopping across Gunungkidul’s stunning white-sand coastlines.",
+            "Enjoying local culinary tours, angkringan nights, and traditional markets.",
+            "Joining workshops such as batik making, silver crafting, and classical dance.",
+            "Educational visits to museums, cultural centers, and top universities."
+        ],
+        "travel_tips": [
+            "Speak politely and maintain respectful body language, especially with elders.",
+            "Wear appropriate clothing when visiting temples, Keraton, or sacred areas.",
+            "Ask permission before taking photos of rituals or traditional ceremonies.",
+            "Keep tourist areas, beaches, and heritage sites clean.",
+            "Learn basic Javanese greetings to build warm interactions with locals."
+        ],
+        "region": "Java",
+        "Do": [
+            "Respect local customs, etiquette, and traditional spaces.",
+            "Dress modestly at cultural and religious sites.",
+            "Enjoy local food while maintaining cleanliness.",
+            "Interact politely — Jogja people value softness and humility.",
+            "Follow rules in sacred sites like Keraton and heritage villages."
+        ],
+        "Dont": [
+            "Do not speak loudly or act rudely in public areas.",
+            "Avoid touching sacred objects or sitting in restricted areas.",
+            "Do not litter or damage natural and cultural sites.",
+            "Do not disrespect ceremonies or wear inappropriate clothing.",
+            "Avoid bargaining aggressively at traditional markets."
+        ]
     },
     {
         "id": "East Java",
         "name_en": "East Java",
-        "description": "Home to Mount Bromo, Ijen Crater, and the modern city of Surabaya, East Java offers adventure and culture.",
-        "image": "img/province/east-java.jpg"
+        "name_local": "Jawa Timur",
+        "description_web": "East Java is a province located on the eastern tip of Java Island, officially established in 1950 with Surabaya as its capital. The region is culturally rich, shaped by Javanese, Madurese, and Osing communities. Since the 8th century, East Java has been a center of early civilizations such as the Kanjuruhan Kingdom, and later reached its golden age under the Majapahit Empire (1293–1500 CE), one of Southeast Asia’s greatest empires. Its diverse geography includes active volcanoes like Semeru, Bromo, and Ijen, fertile highlands, coastal regions, and outlying islands such as Madura and Bawean. The economy thrives on agriculture, industry, trade, and tourism. Cities like Surabaya, Malang, Kediri, and Banyuwangi contribute to its economic, cultural, and educational growth. With heritage such as Reog Ponorogo, Madura’s Karapan Sapi, and Majapahit archaeological sites in Trowulan, East Java stands as a modern and progressive province that still proudly preserves its cultural identity.",
+        "description": "East Java — Land of Majapahit Legacy, Volcano Adventures, and Cultural Diversity",
+        "image": "https://images.unsplash.com/photo-1687226012369-36ec24bec4c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1665389103300-352afd526043?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/28277476/pexels-photo-28277476.jpeg",
+            "https://images.unsplash.com/photo-1601906558859-a58fe3bd6274?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/7064356/pexels-photo-7064356.jpeg"
+        ],
+        "highlights": [
+            "Mount Bromo — iconic active volcano with dramatic crater views.",
+            "Mount Semeru — the highest peak on Java Island.",
+            "Ijen Crater — home to the world-famous blue fire phenomenon.",
+            "Trowulan — archaeological remains of the Majapahit Empire.",
+            "Surabaya — historic port city with modern landmarks and colonial sites.",
+            "Reog Ponorogo — powerful traditional dance performance.",
+            "Karapan Sapi — traditional Madurese bull-racing festival.",
+            "Balekambang Beach — often called the 'Tanah Lot of East Java'."
+        ],
+        "best_time_to_visit": "June - September during the dry season for the clearest mountain views and outdoor activities.",
+        "climate": "Tropical monsoon climate with temperatures ranging from 22–33°C. Highland regions such as Malang and Ijen are cool, while coastal areas and the Madura region are warmer.",
+        "popular_foods": [
+            "Rawon — black beef soup seasoned with keluak.",
+            "Rujak Cingur — traditional salad with cooked cow snout and peanut-petis sauce.",
+            "Soto Lamongan — savory chicken soup with koya powder.",
+            "Lontong Balap — tofu, beansprouts, and savory broth from Surabaya.",
+            "Pecel Madiun — spicy peanut-sauce vegetable dish.",
+            "Tahu Tek — fried tofu tossed with lontong and sweet-salty sauce."
+        ],
+        "top_activities": [
+            "Hiking Mount Bromo, Semeru, and exploring the Ijen crater.",
+            "Enjoying beaches such as Balekambang, G-Land, and Banyuwangi's coastline.",
+            "Exploring waterfalls like Tumpak Sewu and Madakaripura.",
+            "Visiting historical sites of Majapahit in Trowulan.",
+            "Watching cultural traditions such as Reog Ponorogo and Karapan Sapi.",
+            "Joining lifestyle and culinary tours across Surabaya and Malang.",
+            "Relaxing at yoga retreats and nature escapes in highland areas."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting temples, mosques, or cultural sites.",
+            "Maintain cleanliness at natural attractions, especially beaches and waterfalls.",
+            "Ask permission before taking photos of ceremonies or traditional events.",
+            "Respect elders, cultural leaders, and community traditions.",
+            "Be mindful of local customs, especially in Madura and rural areas."
+        ],
+        "region": "Java",
+        "Do": [
+            "Participate respectfully in local traditions and cultural activities.",
+            "Keep public spaces and natural sites clean.",
+            "Wear appropriate clothing at religious and traditional locations.",
+            "Appreciate the cultural diversity across Javanese, Madurese, and Osing communities.",
+            "Maintain polite and friendly communication with locals."
+        ],
+        "Dont": [
+            "Do not photograph religious or cultural ceremonies without permission.",
+            "Avoid littering in nature, beaches, and heritage sites.",
+            "Do not speak harshly or act disrespectfully toward elders and community leaders.",
+            "Avoid creating noise or disturbances in public spaces.",
+            "Do not damage or vandalize cultural, historical, or natural attractions."
+        ]
     },
     {
         "id": "Bali",
@@ -288,103 +1070,1154 @@
     {
         "id": "West Nusa Tenggara",
         "name_en": "West Nusa Tenggara",
-        "description": "Home to Lombok Island and Mount Rinjani, offering pristine beaches and vibrant Sasak culture.",
-        "image": "img/province/west-ntb.jpg"
+        "name_local": "Nusa Tenggara Barat",
+        "description_web": "West Nusa Tenggara (NTB) is a province consisting of Lombok and Sumbawa Islands, with Mataram as its capital. Officially established in 1958 after separating from the former Nusa Tenggara region, NTB is known for its breathtaking natural beauty—from exotic beaches and tropical highlands to wide savanna landscapes. Its cultural identity is strongly shaped by the Sasak people of Lombok and the Sumbawa communities, each with distinct customs and heritage. Traditional arts such as Gendang Beleq, Peresean stick fighting, and various local ceremonies remain deeply rooted in daily life. NTB is home to major attractions including Mount Rinjani, Indonesia’s second-highest volcano, and the famous Gili Islands (Gili Trawangan, Gili Air, Gili Meno), renowned worldwide for snorkeling and diving. The province’s economy thrives on tourism, agriculture, fisheries, and local crafts. As Mataram continues to grow as a regional hub, other areas like Central Lombok and Sumbawa offer significant potential in agriculture and energy development.",
+        "description": "West Nusa Tenggara — Land of Rinjani Peaks, Gili Paradise Islands, and Rich Sasak–Sumbawa Heritage",
+        "image": "https://images.unsplash.com/photo-1720059757160-e183892f5c2b?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1720059903451-29db5eb3767f?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1576035739438-345e4b4e5698?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1697443508913-2c8c2ce66119?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/2499769/pexels-photo-2499769.jpeg"
+        ],
+        "highlights": [
+            "Mount Rinjani — Indonesia’s second-highest volcano with the iconic Segara Anak crater lake.",
+            "Gili Islands — world-class snorkeling and diving destinations.",
+            "Pink Beach — a rare shoreline with naturally pink-tinted sand.",
+            "Istana Dalam Loka — historic wooden palace of the Sumbawa Sultanate.",
+            "Benang Kelambu Waterfall — a unique waterfall flowing like a natural curtain.",
+            "Sasak traditional villages — showcasing local architecture and weaving traditions.",
+            "Sumbawa savannas — wide open landscapes for off-road and nature exploration."
+        ],
+        "best_time_to_visit": "April – October during the dry season for clear skies, beach activities, and outdoor adventures.",
+        "climate": "Tropical climate with temperatures ranging between 22–32°C. Coastal areas are warm and sunny, while Rinjani highlands offer cooler mountain weather.",
+        "popular_foods": [
+            "Ayam Taliwang — spicy grilled chicken with strong chili flavors.",
+            "Plecing Kangkung — water spinach with sambal served cold and spicy.",
+            "Sate Rembiga — savory beef satay with bold seasoning.",
+            "Se'i Sumbawa — traditional smoked beef from Sumbawa.",
+            "Bebalung — Sasak-style rib soup with warming spices."
+        ],
+        "top_activities": [
+            "Snorkeling and diving at Gili Trawangan, Gili Air, and Gili Meno.",
+            "Exploring beaches such as Kuta Lombok, Tanjung Aan, and Pink Beach.",
+            "Climbing Mount Rinjani and exploring nearby valleys and waterfalls.",
+            "Adventure trips across Sumbawa’s savanna and rugged terrains.",
+            "Culinary and lifestyle tours across local markets and weaving villages.",
+            "Joining yoga retreats and wellness escapes around Lombok.",
+            "Watching cultural traditions such as Gendang Beleq, Peresean, and Bau Nyale Festival."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting religious sites or attending traditional ceremonies.",
+            "Maintain cleanliness at beaches, cultural sites, and natural attractions.",
+            "Ask permission before taking photos of ceremonies or religious rituals.",
+            "Be respectful when interacting with elders, local leaders, and community members."
+        ],
+        "region": "Lesser Sunda Islands",
+        "Do": [
+            "Respect and participate in local customs with an open and polite attitude.",
+            "Keep public and natural areas clean at all times.",
+            "Wear appropriate attire when visiting temples, mosques, or cultural events.",
+            "Appreciate the cultural and religious diversity across the Sasak and Sumbawa communities."
+        ],
+        "Dont": [
+            "Do not take photos or videos of ceremonies without proper permission.",
+            "Avoid littering, especially in culturally sensitive or natural areas.",
+            "Do not speak rudely or act disrespectfully towards elders or traditional leaders.",
+            "Avoid creating disturbances or inappropriate behavior in public spaces."
+        ]
     },
     {
         "id": "East Nusa Tenggara",
         "name_en": "East Nusa Tenggara",
-        "description": "Known for Komodo National Park, pink beaches, and diverse island cultures across Flores and Sumba.",
-        "image": "img/province/east-ntt.jpg"
+        "name_local": "Nusa Tenggara Timur",
+        "description_web": "East Nusa Tenggara (NTT) is a province in eastern Indonesia known for its dramatic landscapes, cultural diversity, and rich traditions. The province consists of major islands such as Flores, Sumba, Timor, and Alor, with Kupang as its capital. NTT offers a wide range of natural wonders—from mountains, beaches, and savannas to exotic islands like Komodo Island, home to the world’s last surviving Komodo dragons. The people of NTT come from various ethnic groups and speak numerous local languages, living harmoniously with strong communal values. Christianity, especially Catholicism, is the dominant religion, and cultural practices blend seamlessly with local beliefs. With its natural beauty and unique cultural heritage, NTT stands as an essential destination for travelers seeking authentic experiences in eastern Indonesia.",
+        "description": "East Nusa Tenggara — Islands of Komodo Dragons, Mystic Highlands, and Timeless Cultural Traditions",
+        "image": "https://images.unsplash.com/photo-1578019448201-09ad2ac7995a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1604560929658-bbc3c2ba6a36?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1576035739438-345e4b4e5698?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1642510099705-206661e94bfd?q=80&w=784&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1720059939248-d09b08c72847?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Komodo National Park — habitat of the rare Komodo dragons.",
+            "Kelimutu Crater Lakes — three-color volcanic lakes on Flores.",
+            "Pulau Padar — iconic island with breathtaking ridge views.",
+            "Bena Traditional Village — a living symbol of ancestral culture.",
+            "Nihiwatu Beach — world-class surf and luxury escape in Sumba.",
+            "Alor and its underwater world — pristine coral reefs for diving.",
+            "Sumba's savannas — wide landscapes with striking natural beauty."
+        ],
+        "best_time_to_visit": "May – October during the dry season for trekking, sailing, and island hopping.",
+        "climate": "Tropical climate with a drier profile compared to other Indonesian regions. Temperatures range from 23–32°C, with savanna landscapes that turn lush after the rainy season.",
+        "popular_foods": [
+            "Se'i Sapi — smoked beef with distinctive local spices.",
+            "Jagung Bose — mashed corn cooked with coconut milk.",
+            "Kopi Flores Bajawa — signature coffee with chocolate and nutty notes."
+        ],
+        "top_activities": [
+            "Visiting Bena Traditional Village and experiencing local heritage.",
+            "Watching the Pasola tradition in Sumba.",
+            "Learning traditional ikat weaving techniques.",
+            "Participating in Penti ceremony on Flores.",
+            "Snorkeling and diving around Kanawa Island.",
+            "Island hopping from Labuan Bajo.",
+            "Surfing at world-class beaches such as Nihiwatu."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting churches, traditional villages, or community ceremonies.",
+            "Be friendly and respectful when interacting with locals who value politeness and hospitality.",
+            "Always ask for permission before taking photos or videos in traditional areas.",
+            "Keep nature clean and respect wildlife, especially Komodo dragons.",
+            "Follow local rules during ceremonies to avoid cultural misunderstandings."
+        ],
+        "region": "Lesser Sunda Islands",
+        "Do": [
+            "Respect local customs and traditions, especially in traditional villages.",
+            "Wear appropriate clothing when visiting religious or cultural sites.",
+            "Engage politely with locals who are warm and welcoming.",
+            "Protect natural environments and follow conservation rules.",
+            "Ask permission before taking pictures in cultural areas."
+        ],
+        "Dont": [
+            "Do not speak harshly or behave disrespectfully, as courtesy is important in local culture.",
+            "Do not enter traditional houses or villages without permission.",
+            "Avoid littering at beaches, forests, and natural attractions.",
+            "Do not disturb wildlife, especially Komodo dragons in the national park.",
+            "Do not ignore traditional rules during ceremonies or rituals.",
+            "Avoid taking photos during sacred rituals without explicit consent."
+        ]
     },
     {
         "id": "West Kalimantan",
         "name_en": "West Kalimantan",
-        "description": "A province rich in Dayak culture, tropical rainforests, and the Equator Monument in Pontianak.",
-        "image": "img/province/west-kalimantan.jpg"
+        "name_local": "Kalimantan Barat",
+        "description_web": "West Kalimantan is a province on the island of Borneo, officially established on January 1, 1957, with Pontianak as its capital — the only city in the world located directly on the Equator. Known as the 'Province of a Thousand Rivers', the region is home to vast tropical forests, major river systems such as the Kapuas River, and abundant natural resources. Its population is ethnically diverse, consisting of Dayak, Malay, Chinese, Madurese, and other groups who live harmoniously with their cultural traditions. The province's economy relies on agriculture, plantations, forestry, mining, and cross-border trade with Malaysia. Tourism in West Kalimantan showcases its nature, multicultural heritage, and historical legacy.",
+        "description": "West Kalimantan — Land of Thousand Rivers, Equator Heritage, and Living Dayak Traditions",
+        "image": "https://i.pinimg.com/1200x/cd/77/4c/cd774c1a1f42a70f7bcae55985c4afee.jpg",
+        "gallery": [
+            "https://images.pexels.com/photos/27009846/pexels-photo-27009846.jpeg",
+            "https://images.pexels.com/photos/1266459/pexels-photo-1266459.jpeg",
+            "https://images.pexels.com/photos/3337611/pexels-photo-3337611.jpeg",
+            "https://images.unsplash.com/photo-1609469490840-8c7cc39690b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Equator Monument in Pontianak — the iconic spot marking the Earth's equatorial line.",
+            "Kapuas River — the longest river in Indonesia stretching over 1,143 km.",
+            "Danau Sentarum National Park — a seasonal lake system in the heart of Borneo’s rainforest.",
+            "Keraton Kadriah — the royal palace of Pontianak Sultanate built in 1771.",
+            "Randayan Island — a serene tropical escape known for marine life and turtle nesting.",
+            "Pasir Panjang Beach — a long, scenic coastline near Singkawang.",
+            "Betung Kerihun National Park — vast rainforest ideal for trekking and exploration."
+        ],
+        "best_time_to_visit": "June – September for dry weather, clearer skies, and easier access to national parks.",
+        "climate": "Tropical rainforest climate with hot temperatures year-round (24–33°C) and high humidity. Heavy rainfall occurs mainly between November and March.",
+        "popular_foods": [
+            "Pengkang — grilled sticky rice filled with dried shrimp.",
+            "Bubur Pedas Sambas — spicy traditional porridge with herbs.",
+            "Choipan — steamed Hakka dumplings popular in Pontianak.",
+            "Asam Pedas Tempoyak Patin — sour-spicy catfish with fermented durian.",
+            "Kue Kantong Semar — unique snack steamed inside a pitcher-plant leaf."
+        ],
+        "top_activities": [
+            "Exploring Danau Sentarum and its floating villages.",
+            "Cruising along the Kapuas River.",
+            "Visiting Rumah Panjang (longhouses) and learning Dayak traditions.",
+            "Enjoying beaches like Pasir Panjang and Temajuk.",
+            "Sampling local culinary specialties in Pontianak and Singkawang.",
+            "Attending cultural festivals such as Robo-robo and Naik Dango.",
+            "Observing Chinese cultural celebrations such as Cap Go Meh."
+        ],
+        "travel_tips": [
+            "Show respect when visiting Dayak longhouses and Malay or Chinese cultural sites.",
+            "Dress modestly when entering religious buildings such as mosques, temples, or churches.",
+            "Always ask permission before taking photos during rituals or ceremonies.",
+            "Keep rivers, forests, and sacred areas clean as these places are culturally significant.",
+            "Be courteous and soft-spoken, as locals value humility and respectful behavior."
+        ],
+        "region": "Borneo",
+        "Do": [
+            "Participate respectfully in Dayak, Malay, and Chinese traditional activities.",
+            "Keep the environment clean, especially rivers and forests.",
+            "Dress appropriately when visiting cultural or religious sites.",
+            "Respect cultural diversity including Dayak Kaharingan beliefs and Chinese traditions.",
+            "Engage politely with locals and follow house rules when entering longhouses."
+        ],
+        "Dont": [
+            "Do not take photos or videos during Dayak ceremonies without permission.",
+            "Do not litter in rivers, forests, or sacred sites.",
+            "Avoid rude behavior, mockery, or loud arguments in traditional areas.",
+            "Do not enter longhouses or village areas without proper greeting or approval.",
+            "Do not cause disturbances in public spaces as it is considered disrespectful."
+        ]
     },
     {
         "id": "Central Kalimantan",
         "name_en": "Central Kalimantan",
-        "description": "Famous for its orangutan conservation areas and vast peatland forests.",
-        "image": "img/province/central-kalimantan.jpg"
+        "name_local": "Kalimantan Tengah",
+        "description_web": "Central Kalimantan is a province on the island of Borneo with Palangka Raya as its capital city. Dominated by vast tropical rainforests, large rivers such as the Kahayan and Barito, and abundant natural resources including timber, coal, and gold, the province is culturally rooted in strong Dayak traditions. Known as one of the 'lungs of the world', Central Kalimantan plays an essential role in preserving Indonesia’s rainforest ecosystem. Its people live harmoniously with nature through a deep cultural philosophy and respect for the environment.",
+        "description": "Central Kalimantan — Heart of Borneo’s Rainforests and Living Dayak Heritage",
+        "image": "https://i.pinimg.com/1200x/fc/9c/8f/fc9c8f66d27a8abf879e63a7a5dbb9bf.jpg",
+        "gallery": [
+            "https://images.pexels.com/photos/15075318/pexels-photo-15075318.jpeg",
+            "https://images.pexels.com/photos/27627209/pexels-photo-27627209.jpeg",
+            "https://i.pinimg.com/736x/d1/d0/17/d1d01717affacacbf2efda1d0d61e85d.jpg",
+            "https://images.unsplash.com/photo-1649594540637-837ba4901b44?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Tanjung Puting National Park — world-famous orangutan conservation area.",
+            "Kahayan River — a major river supporting river cruises and local life.",
+            "Rumah Betang — traditional longhouse symbolizing unity and communal living.",
+            "Tumbang Malahoi Village — authentic Dayak cultural village with traditional crafts.",
+            "Bukit Batu Nature Park — a scenic highland and spiritual landmark near Palangka Raya.",
+            "Barito River — one of Borneo's largest rivers with rich cultural significance."
+        ],
+        "best_time_to_visit": "June – September for drier conditions and better access to river and forest areas.",
+        "climate": "Tropical rainforest climate with warm temperatures (24–32°C) and heavy rainfall during the monsoon, especially from November to March.",
+        "popular_foods": [
+            "Wadi — fermented fish or meat, a traditional Dayak delicacy.",
+            "Juhu Umbut Rotan — rattan shoot vegetable dish.",
+            "Ikan Baung Bakar — grilled river fish with local spices.",
+            "Kue Apam — traditional steamed cake served during ceremonies.",
+            "Kelakai Stir-fry — unique wild fern dish native to Borneo."
+        ],
+        "top_activities": [
+            "River cruising along Sungai Sekonyer to observe orangutans.",
+            "Exploring tropical rainforests and wildlife in Tanjung Puting.",
+            "Visiting traditional Betang longhouses in Kapuas and Katingan.",
+            "Cultural immersion in Dayak villages including dance and ritual observations.",
+            "Hiking around Bukit Tangkiling and Bukit Batu.",
+            "Trying local Dayak cuisine and purchasing handcrafted rattan or beadwork.",
+            "Joining or witnessing the Tiwah ceremony when permitted."
+        ],
+        "travel_tips": [
+            "Show respect when entering Betang longhouses or Dayak villages.",
+            "Dress modestly when attending cultural events or visiting spiritual sites.",
+            "Always ask permission before photographing rituals or private areas.",
+            "Keep forests, rivers, and sacred spaces clean and undisturbed.",
+            "Follow local guidance when traveling through protected or sacred forests.",
+            "Be polite and soft-spoken, as communities value harmony and humility."
+        ],
+        "region": "Borneo",
+        "Do": [
+            "Respect Dayak customs, especially during ceremonies or village visits.",
+            "Dress appropriately and behave politely around local communities.",
+            "Ask for permission before entering Betang longhouses or cultural sites.",
+            "Support local artisans by purchasing traditional crafts.",
+            "Keep the environment clean and follow conservation guidelines."
+        ],
+        "Dont": [
+            "Do not enter sacred forests or adat areas without permission.",
+            "Avoid loud or disrespectful behavior, especially during rituals.",
+            "Do not damage nature or wildlife, including illegal logging or hunting.",
+            "Do not take photos of ceremonies without asking elders or organizers.",
+            "Avoid mocking or mishandling Dayak cultural symbols and artifacts."
+        ]
     },
     {
         "id": "South Kalimantan",
         "name_en": "South Kalimantan",
-        "description": "Known for its floating markets and Banjar culture, with rivers playing a vital role in daily life.",
-        "image": "img/province/south-kalimantan.jpg"
+        "name_local": "Kalimantan Selatan",
+        "description_web": "South Kalimantan is a province on the island of Borneo, officially established on August 14, 1950, with Banjarmasin as its capital. Known as 'Bumi Lambung Mangkurat', the region spans approximately 38,744 km² and is defined by major rivers such as the Barito and Martapura. Its population is ethnically diverse, with the Banjar people as the majority, alongside Dayak, Javanese, Bugis, and Madurese communities. Strongly influenced by Islamic culture, South Kalimantan is historically linked to the powerful Banjar Kingdom, a key center of trade and Islamic dissemination in Borneo. Today, the province’s economy thrives on mining, agriculture, fisheries, forestry, plantations, and trade. Tourism highlights include floating markets, the Meratus Mountains, Dayak Meratus culture, and iconic Banjar culinary specialties such as Soto Banjar.",
+        "description": "South Kalimantan — Land of Rivers, Meratus Highlands, and Vibrant Banjar Heritage",
+        "image": "https://images.unsplash.com/photo-1626269952530-b0ff5bb48853?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1761789672627-c916c8464412?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1663503539364-594c6236a20c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1655283687311-f90476583284?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1625122565991-7fdb56d0f799?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Lok Baintan Floating Market — traditional river market on the Martapura River.",
+            "Meratus Mountains — home to rainforest treks and Dayak Meratus culture.",
+            "Sasirangan Craft Centers — traditional hand-dyed textile unique to Banjar people.",
+            "Danau Biru Pengaron — stunning turquoise-blue lake in a former quarry zone.",
+            "Batakan Beach and Takisung Beach — popular coastal getaways.",
+            "Martapura Diamond Center — famous marketplace for gemstones and jewelry.",
+            "Banjarmasin River Cruise — explore the city’s waterways aboard traditional kelotok boats."
+        ],
+        "best_time_to_visit": "June – September for better weather, easier outdoor activities, and clearer river conditions.",
+        "climate": "Tropical rainforest climate with warm temperatures (24–32°C) year-round. Heavy rainfall typically occurs between November and March.",
+        "popular_foods": [
+            "Soto Banjar — aromatic chicken soup with spices and lontong.",
+            "Ketupat Kandangan — smoked fish served with coconut gravy.",
+            "Gangan Asam Banjar — sour fish soup with local herbs.",
+            "Amparan Tatak — layered banana and coconut milk dessert.",
+            "Iwak Pakasam — fermented fish delicacy.",
+            "Lontong Orari — rice cake dish with savory coconut broth."
+        ],
+        "top_activities": [
+            "River cruising through Barito and Martapura on traditional kelotok boats.",
+            "Exploring the Meratus Highlands for trekking and nature adventures.",
+            "Visiting Lok Baintan Floating Market during sunrise.",
+            "Shopping for Sasirangan fabrics and purun woven crafts.",
+            "Enjoying local Banjar cuisine across Banjarmasin and Martapura.",
+            "Watching traditional performances such as Baksa Kembang and Radap Rahayu.",
+            "Attending cultural festivals including Haul Guru Sekumpul and Floating Market Festival."
+        ],
+        "travel_tips": [
+            "Be respectful and polite when attending cultural events or entering villages.",
+            "Dress modestly, especially in Islamic-majority areas or religious sites.",
+            "Always ask permission before taking photos during rituals or ceremonies.",
+            "Keep rivers and environment clean as waterways are vital to local life.",
+            "Speak softly and avoid confrontational behavior, as locals value harmony."
+        ],
+        "region": "Borneo",
+        "Do": [
+            "Respect and participate politely in local cultural attractions.",
+            "Maintain cleanliness in public places and natural sites.",
+            "Show courtesy and follow local etiquette when speaking or acting.",
+            "Support local artisans by purchasing Sasirangan and purun crafts.",
+            "Dress appropriately, especially in conservative or religious areas."
+        ],
+        "Dont": [
+            "Do not speak harshly, loudly, or disrespectfully toward locals.",
+            "Avoid recording religious or cultural rituals without permission.",
+            "Do not dress immodestly in public or sensitive cultural areas.",
+            "Do not litter in rivers, villages, or natural attractions.",
+            "Avoid causing disturbances or acting arrogantly as it goes against local values."
+        ]
     },
     {
         "id": "East Kalimantan",
         "name_en": "East Kalimantan",
-        "description": "The new home of Indonesia's future capital, Nusantara, rich with forests and coastal beauty.",
-        "image": "img/province/east-kalimantan.jpg"
+        "name_local": "Kalimantan Timur",
+        "description_web": "East Kalimantan is a resource-rich province on the eastern side of Borneo, with Samarinda as its capital and Balikpapan as its major economic hub. Known as 'Bumi Etam' or 'Our Land', the region blends ancient Dayak and Kutai heritage with rapid modern development, especially as the site of Indonesia’s new capital city, Nusantara (IKN). The province is home to diverse ethnic groups including Dayak, Kutai, Banjar, Bugis, and Javanese communities. Its landscape spans lush rainforests, turquoise lakes, pristine islands, and long rivers such as the Mahakam. East Kalimantan is renowned for world-class natural attractions like Derawan Islands and Labuan Cermin Lake, while also holding deep historical significance as the location of the Kutai Martadipura Kingdom, the oldest Hindu kingdom in Indonesia.",
+        "description": "East Kalimantan — Land of Ancient Kingdoms, Rainforests, and the Future Capital of Indonesia",
+        "image": "https://images.unsplash.com/photo-1696603050529-86a5075959d5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1719010421345-690bc8ea1d84?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1688281614696-fda6d7edcbd4?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1670670942843-ad958e253d36?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1696713142004-89e949c4cf05?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Derawan Islands — world-class snorkeling and diving paradise.",
+            "Lake Labuan Cermin — two-layered freshwater lake with crystal clarity.",
+            "Mahakam River — cultural and wildlife corridor home to the rare Mahakam dolphin.",
+            "Kutai National Park — rainforest reserve with orangutans and tropical biodiversity.",
+            "Erau Cultural Festival — grand royal tradition of the Kutai Sultanate.",
+            "IKN (Nusantara) — Indonesia’s new sustainable capital city in development.",
+            "Mulawarman Museum — historical center in Tenggarong showcasing Kutai heritage."
+        ],
+        "best_time_to_visit": "April – October for drier weather and ideal conditions for outdoor and marine activities.",
+        "climate": "Tropical rainforest climate with temperatures ranging between 24–33°C. Rainfall is heavier from November to March.",
+        "popular_foods": [
+            "Amplang — crispy fish crackers from Tenggarong.",
+            "Sate Payau — venison satay with spicy seasoning.",
+            "Nasi Bakar — grilled rice stuffed with spices and protein.",
+            "Bingka Kentang — soft sweet potato cake.",
+            "Gence Ruan — spicy grilled snakehead fish.",
+            "Pepes Kepiting — spiced steamed crab in banana leaves."
+        ],
+        "top_activities": [
+            "Snorkeling and diving at Derawan, Maratua, and Kakaban Island.",
+            "Exploring Lake Labuan Cermin and its unique layered water.",
+            "River cruising along the Mahakam to see Dayak villages and dolphins.",
+            "Visiting Kutai National Park for orangutan spotting.",
+            "Joining Erau Cultural Festival in Tenggarong.",
+            "Discovering the heritage sites of the ancient Kutai Kingdom.",
+            "Exploring the modern development of Indonesia’s new capital, Nusantara."
+        ],
+        "travel_tips": [
+            "Respect local customs, especially when visiting Dayak villages or sacred areas.",
+            "Ask for permission before taking photos during ceremonies or inside tribal houses.",
+            "Protect natural sites—do not take corals, plants, or wildlife.",
+            "Wear modest clothing when attending cultural or traditional events.",
+            "Follow guides’ instructions when exploring forests, rivers, or wildlife zones."
+        ],
+        "region": "Borneo",
+        "Do": [
+            "Respect and maintain the cleanliness of forests, rivers, and natural attractions.",
+            "Interact politely with locals, who are generally warm and welcoming.",
+            "Seek permission before recording cultural or religious rituals.",
+            "Support local crafts such as beads, rattan weaving, and wood carvings.",
+            "Observe proper etiquette when visiting Dayak communities or sacred sites."
+        ],
+        "Dont": [
+            "Do not damage or illegally take protected plants, animals, or forest products.",
+            "Avoid disrespectful behavior during cultural ceremonies or religious events.",
+            "Do not hunt protected wildlife such as orangutans, proboscis monkeys, or Mahakam dolphins.",
+            "Avoid littering in rivers, forests, or beaches.",
+            "Do not touch sacred objects or enter restricted areas without permission.",
+            "Avoid causing social disturbances related to ethnicity, religion, or tradition."
+        ]
     },
     {
         "id": "North Kalimantan",
         "name_en": "North Kalimantan",
-        "description": "The youngest province in Kalimantan, featuring untouched forests and cross-border culture with Malaysia.",
-        "image": "img/province/north-kalimantan.jpg"
+        "name_local": "Kalimantan Utara",
+        "description_web": "North Kalimantan is Indonesia’s youngest province, officially established on October 25, 2012 after separating from East Kalimantan. Its capital, Tanjung Selor, sits in the northern part of Borneo, directly bordering Malaysia’s Sabah and Sarawak regions. Covering around 71,827 km², the province features vast tropical rainforests, major rivers such as the Kayan River, highland areas, and coastal zones. Home to diverse ethnic communities including Tidung, Dayak, Bulungan, Banjar, Bugis, and Javanese, the region is known for cultural harmony and rich traditions. North Kalimantan is endowed with natural resources such as coal, oil, gas, forestry, and renewable energy potential. Its economic growth is supported by mining, plantations, fisheries, and national strategic projects like the Tanah Kuning–Mangkupadi Industrial Zone.",
+        "description": "North Kalimantan — Indonesia’s Youngest Province of Forests, Rivers, and Borderland Heritage",
+        "image": "https://images.pexels.com/photos/34470519/pexels-photo-34470519.jpeg",
+        "gallery": [
+            "https://images.pexels.com/photos/34437804/pexels-photo-34437804.jpeg",
+            "https://i.pinimg.com/1200x/07/42/9a/07429a931ff81fdecca9d35f6fd1b825.jpg",
+            "https://i.pinimg.com/1200x/9c/21/67/9c2167a527ef354c3f7a75ea6bfe6931.jpg",
+            "https://i.pinimg.com/1200x/91/b0/f0/91b0f093c1ea97aefb131480d5dfb84a.jpg"
+        ],
+        "highlights": [
+            "Tanjung Selor — the provincial capital and cultural center.",
+            "Kayan River — one of the major rivers flowing through forests and indigenous villages.",
+            "Nunukan Blue Lake — crystal-clear blue lake with exotic island scenery.",
+            "Betung Kerihun–Kayan Mentarang Forest Region — untouched tropical rainforest and wildlife habitat.",
+            "Baloy Traditional House — iconic cultural house of the Tidung people.",
+            "Tarakan City — coastal hub with diverse ethnic influences.",
+            "Tanah Kuning–Mangkupadi Industrial Zone — major national strategic development area."
+        ],
+        "best_time_to_visit": "March – September for clearer skies and easier travel across rivers and forest regions.",
+        "climate": "Tropical rainforest climate with warm temperatures between 24–32°C. Rainfall is more frequent from November to March.",
+        "popular_foods": [
+            "Ikan Asin Tidung — signature salted fish delicacy.",
+            "Nasi Kuning — fragrant turmeric rice enjoyed across the region.",
+            "Sambal Timpal — spicy local chili mix.",
+            "Sayur Ares — vegetable dish made from young palm stems.",
+            "Seafood dishes from Tarakan — fresh and flavorful coastal specialties.",
+            "Traditional cakes and snacks from Tidung and Dayak communities."
+        ],
+        "top_activities": [
+            "Exploring tropical forests and river routes by boat.",
+            "Light trekking through highlands and protected nature areas.",
+            "Relaxing at Sesayap Beach and Sebuku Beach.",
+            "Enjoying cultural performances such as the Irau ceremony or traditional dances.",
+            "Visiting local craft centers for songket weaving, rattan crafts, and Dayak beadwork.",
+            "Tasting traditional foods from indigenous communities.",
+            "Attending maritime cultural festivals in coastal towns."
+        ],
+        "travel_tips": [
+            "Dress modestly when visiting traditional houses, religious sites, or cultural ceremonies.",
+            "Show respect when participating in Dayak and Tidung traditions or rituals.",
+            "Keep the environment clean, especially forests, rivers, and sacred natural areas.",
+            "Be mindful of local customs and avoid behavior that may be seen as disrespectful.",
+            "Always ask for permission before taking photos during rituals or inside traditional buildings."
+        ],
+        "region": "Borneo",
+        "Do": [
+            "Respect and politely participate in Dayak and Tidung cultural ceremonies.",
+            "Maintain cleanliness in forests, rivers, beaches, and cultural sites.",
+            "Dress appropriately when entering traditional or religious areas.",
+            "Show appreciation for local beliefs, including traditional Dayak and Tidung practices.",
+            "Support local artisans by purchasing handmade crafts such as songket and rattan works."
+        ],
+        "Dont": [
+            "Do not take photos or videos during rituals without permission.",
+            "Do not litter in sacred natural sites such as forests and rivers.",
+            "Avoid rude or disrespectful behavior toward cultural traditions.",
+            "Do not create disturbances or conflict in public spaces.",
+            "Avoid touching sacred objects or entering restricted areas without guidance."
+        ]
     },
     {
         "id": "North Sulawesi",
         "name_en": "North Sulawesi",
-        "description": "Known for Bunaken Marine Park and the friendly people of Manado.",
-        "image": "img/province/north-sulawesi.jpg"
+        "name_local": "Sulawesi Utara",
+        "description_web": "North Sulawesi is a province located at the northern tip of Sulawesi Island, with its capital in Manado. Known for its world-renowned marine beauty, especially the Bunaken Marine Park, the region features stunning coral reefs, volcanic landscapes, long coastlines, and lush highlands. Its population consists of Minahasa, Bolaang Mongondow, Sangir, and Talaud ethnic groups, with a predominantly Christian community known for warmth, hospitality, and strong religious tolerance. Supported by agriculture, fisheries, tourism, and trade, North Sulawesi is one of Eastern Indonesia’s most vibrant provinces. The iconic nickname “Nyiur Melambai” reflects its tropical charm and welcoming local culture.",
+        "description": "North Sulawesi — Land of Coral Kingdoms, Volcanic Peaks, and ‘Nyiur Melambai’ Hospitality",
+        "image": "https://images.unsplash.com/photo-1600481171699-a5c3359c3aa5?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.pexels.com/photos/7826348/pexels-photo-7826348.jpeg",
+            "https://images.pexels.com/photos/16174269/pexels-photo-16174269.jpeg",
+            "https://images.unsplash.com/photo-1735916881865-9fcda629483f?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/16174390/pexels-photo-16174390.jpeg"
+        ],
+        "highlights": [
+            "Bunaken Marine Park — one of the world’s top diving destinations.",
+            "Likupang Beach — a super-priority national tourism area with turquoise waters.",
+            "Lake Tondano — serene volcanic lake surrounded by highlands.",
+            "Mount Lokon — active volcano ideal for trekking lovers.",
+            "Bukit Kasih Kanonang — a hill symbolizing interfaith harmony.",
+            "Lihaga Island — pristine white-sand paradise.",
+            "Manado Boulevard Area — waterfront hub for dining and nightlife."
+        ],
+        "best_time_to_visit": "July – October for the clearest diving conditions and low rainfall.",
+        "climate": "Tropical climate with temperatures between 23–32°C. Rainy season peaks from November to February.",
+        "popular_foods": [
+            "Tinutuan (Manado porridge) — vegetable-rich comfort food.",
+            "Cakalang Fufu — smoked skipjack tuna specialty.",
+            "Rica-Rica — spicy chili-based seasoning used in many dishes.",
+            "Sambal Dabu-Dabu — fresh and tangy Manado-style chili.",
+            "Paniki — traditional Minahasan dish with rich spices.",
+            "Brenebon Soup — hearty red bean soup."
+        ],
+        "top_activities": [
+            "Diving and snorkeling at Bunaken Marine Park.",
+            "Island hopping to Lihaga, Siladen, and Bangka.",
+            "Exploring Likupang’s beaches and scenic bays.",
+            "Trekking Mount Lokon and visiting Tomohon’s highland spots.",
+            "Cultural tours in Minahasa villages like Woloan and Kanonang.",
+            "Visiting historical sites such as Sentrum Church Manado.",
+            "Exploring culinary spots around Manado Boulevard."
+        ],
+        "travel_tips": [
+            "Be respectful when visiting churches or cultural ceremony areas.",
+            "Locals are very friendly—return greetings politely.",
+            "Protect marine life by avoiding coral contact during dives.",
+            "Dispose waste properly, especially at beaches and islands.",
+            "Wear modest clothing during traditional events.",
+            "Ask for permission before taking photos during ceremonies."
+        ],
+        "region": "Sulawesi",
+        "Do": [
+            "Respect local customs in Minahasa, Sangir-Talaud, and Bolaang Mongondow areas.",
+            "Be friendly and polite to locals who highly value hospitality.",
+            "Help maintain cleanliness in beaches, lakes, and marine parks.",
+            "Try local dishes and support small family-owned restaurants.",
+            "Participate in local festivals such as the Tulude Festival when permitted."
+        ],
+        "Dont": [
+            "Do not litter in the sea, beaches, or nature spots.",
+            "Avoid touching or stepping on coral reefs while diving.",
+            "Do not behave rudely or use harsh language toward locals.",
+            "Do not interrupt religious ceremonies or cultural rituals.",
+            "Avoid causing noise disturbances or being intolerant in public spaces."
+        ]
     },
     {
         "id": "Central Sulawesi",
         "name_en": "Central Sulawesi",
-        "description": "A province of diverse ethnic groups and natural wonders like Lake Poso and Lore Lindu National Park.",
-        "image": "img/province/central-sulawesi.jpg"
+        "name_local": "Sulawesi Tengah",
+        "description_web": "Central Sulawesi is a vast province in the heart of Sulawesi Island, with Palu as its capital. Covering around 61,841 km², the region features mountains, deep valleys, tropical forests, and long coastlines facing the Tomini and Tolo Bays. The area is home to diverse ethnic groups such as Kaili, Pamona, Mori, Banggai, and Bugis, each maintaining strong traditions and cultural identity. Its economy thrives on agriculture, fisheries, mining, and tourism, producing key commodities such as cocoa, coconut, gold, and nickel. Central Sulawesi is also known for its natural wonders including Lore Lindu National Park—home to endemic species like the anoa and babirusa—and Lake Poso, one of Indonesia’s deepest lakes. Rich cultural heritage, traditional houses, vibrant rituals, and friendly communities make the province a unique center of nature and tradition.",
+        "description": "Central Sulawesi — Land of Ancient Megaliths, Deep Mountains, and the Legendary Poso Waters",
+        "image": "https://images.unsplash.com/photo-1701039557228-d320d9f2f386?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.pexels.com/photos/5928049/pexels-photo-5928049.jpeg",
+            "https://images.pexels.com/photos/12203156/pexels-photo-12203156.jpeg",
+            "https://images.pexels.com/photos/4904658/pexels-photo-4904658.jpeg",
+            "https://images.pexels.com/photos/17276142/pexels-photo-17276142.jpeg"
+        ],
+        "highlights": [
+            "Lore Lindu National Park — home to ancient megaliths and endemic wildlife.",
+            "Togean Islands — world-class diving and snorkeling paradise.",
+            "Lake Poso — one of the deepest lakes in Indonesia with stunning scenery.",
+            "Bada Valley — famous for prehistoric stone megaliths.",
+            "Mount Nokilalaki — a popular trekking spot.",
+            "Palu City — a fast-growing urban center with unique geography.",
+            "Tanjung Karang Beach — clear blue waters perfect for relaxing and diving."
+        ],
+        "best_time_to_visit": "June – October for drier weather and easier access to national parks and islands.",
+        "climate": "Tropical climate with warm temperatures ranging from 23–32°C. Rainfall varies by region, heavier from November to March.",
+        "popular_foods": [
+            "Kaledo — Donggala-style beef leg soup.",
+            "Uta Dada — coconut-based chicken dish.",
+            "Ikan Bakar Palu — grilled fish with local spices.",
+            "Sup Ikan Jambal — savory salted fish soup.",
+            "Lalampa — grilled sticky rice snack with fish filling.",
+            "Kapurut — traditional steamed sago dish."
+        ],
+        "top_activities": [
+            "Exploring the ancient megaliths of Bada Valley.",
+            "Diving and snorkeling in the Togean Islands.",
+            "Trekking through Lore Lindu National Park.",
+            "Climbing Mount Nokilalaki and enjoying panoramic views.",
+            "Visiting traditional villages and cultural heritage sites.",
+            "Relaxing at Donggala’s pristine beaches.",
+            "Enjoying local food tours in Palu."
+        ],
+        "travel_tips": [
+            "Respect local customs, especially during cultural events or traditional ceremonies.",
+            "People are very welcoming—respond politely and maintain friendly manners.",
+            "Do not disturb wildlife or damage natural sites in national parks.",
+            "Dress modestly when visiting sacred areas or places of worship.",
+            "Ask permission before photographing rituals or sacred objects.",
+            "Keep the environment clean, especially beaches, lakes, and forest areas."
+        ],
+        "region": "Sulawesi",
+        "Do": [
+            "Respect traditional customs and ceremonies in Kaili, Pamona, Mori, and Banggai regions.",
+            "Be polite and friendly toward locals who value hospitality and togetherness.",
+            "Keep natural attractions like Poso Lake, Lore Lindu, and Togean Islands clean.",
+            "Try local dishes and support traditional craft communities.",
+            "Participate in cultural festivals when invited, such as Vunja or Dero celebrations."
+        ],
+        "Dont": [
+            "Do not litter or damage natural habitats, especially marine and forest ecosystems.",
+            "Avoid insulting or looking down on traditional values and ancestral heritage.",
+            "Do not behave arrogantly or disrespectfully toward locals.",
+            "Avoid disturbing sacred ceremonies or taking photos without permission.",
+            "Do not wear inappropriate clothing in sacred or conservative areas.",
+            "Avoid illegal activities such as taking cultural artifacts or forest products."
+        ]
     },
     {
         "id": "South Sulawesi",
         "name_en": "South Sulawesi",
-        "description": "Home to the Bugis and Toraja tribes, offering traditional architecture and scenic highlands.",
-        "image": "img/province/south-sulawesi.jpg"
+        "name_local": "Sulawesi Selatan",
+        "description_web": "South Sulawesi is a province located in the southern part of Sulawesi Island with Makassar as its capital. The region is home to major ethnic groups such as Bugis, Makassar, Toraja, and Mandar, each with distinct traditions, social structures, and ancestral customs. Its landscapes range from coastal plains and island clusters to fertile lowlands and the dramatic highlands of Tana Toraja. The economy is supported by agriculture, fisheries, marine trade, cacao, coffee, and textile craftsmanship, with Makassar serving as a major trading gateway in Eastern Indonesia. South Sulawesi is known for its maritime legacy, the historical Kingdoms of Gowa and Bone, and iconic cultural sites. Popular attractions include the Toraja highlands with their cliff-side burial traditions, Bantimurung National Park, Losari Beach, Fort Rotterdam, and the scenic Bira Beach. With its cultural richness, unique traditions, and strong economic influence, South Sulawesi stands as one of the most dynamic provinces in the archipelago.",
+        "description": "South Sulawesi — The Land of Bugis Seafarers, Toraja Highlands, and Timeless Maritime Heritage",
+        "image": "https://images.unsplash.com/photo-1617004165342-a6e38b655213?q=80&w=2156&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1680415519056-ba3e3b99a0dd?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1582426007790-f5a2e2392dd3?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1675206362603-b3c3c3ca47c6?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1630396805791-e682f0c335ae?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Tana Toraja — mystical highlands famous for traditional houses and cliff burials.",
+            "Bantimurung National Park — known as the 'Kingdom of Butterflies'.",
+            "Fort Rotterdam — a 17th-century fortress in Makassar.",
+            "Losari Beach — the city's iconic waterfront sunset spot.",
+            "Bira Beach — white sands and vibrant diving scenes.",
+            "Sengkang Lake (Danau Tempe) — floating houses and traditional weaving.",
+            "Karst Maros–Pangkep — one of the largest karst landscapes in the world."
+        ],
+        "best_time_to_visit": "June – September for dry weather, calm seas, and clear skies ideal for highland travel and beach trips.",
+        "climate": "Tropical climate with average temperatures of 23–32°C. Rainy season typically spans November to March.",
+        "popular_foods": [
+            "Coto Makassar — traditional beef soup with rich spices.",
+            "Pallubasa — thick and savory coconut-based beef soup.",
+            "Konro — grilled or stewed beef ribs with black spices.",
+            "Barongko — steamed banana dessert traditionally served in Bugis ceremonies.",
+            "Pisang Epe — grilled banana snack from Losari Beach.",
+            "Sop Saudara — spicy broth soup from Pangkep."
+        ],
+        "top_activities": [
+            "Exploring Toraja’s burial cliffs, traditional Tongkonan houses, and cultural rituals.",
+            "Diving and relaxing at Bira Beach.",
+            "Trekking through the karst towers of Maros–Pangkep.",
+            "Visiting Fort Rotterdam and historical Makassar sites.",
+            "Butterfly watching and caving in Bantimurung National Park.",
+            "Experiencing Bugis weaving traditions in Sengkang.",
+            "Enjoying Makassar's culinary scene, especially Coto and Konro."
+        ],
+        "travel_tips": [
+            "Respect cultural ceremonies in Toraja, especially funeral rituals.",
+            "Ask permission before photographing traditional homes or people in ceremonial attire.",
+            "Dress modestly when visiting sacred or traditional areas.",
+            "Be mindful of environmental conservation in beaches, caves, and karst areas.",
+            "Use polite language and acknowledge local community leaders.",
+            "Avoid touching ceremonial objects or ancestral items without permission."
+        ],
+        "region": "Sulawesi",
+        "Do": [
+            "Respect traditional customs, especially Toraja rituals and Bugis-Makassar etiquette.",
+            "Participate politely when invited to observe local ceremonies.",
+            "Keep natural attractions clean, especially beaches and karst areas.",
+            "Use polite language when communicating with locals.",
+            "Support local craftsmen by purchasing traditional weaving or handmade goods."
+        ],
+        "Dont": [
+            "Do not wear inappropriate clothing at sacred sites or during ceremonies.",
+            "Avoid touching or moving cultural artifacts, ancestral objects, or ceremonial tools.",
+            "Do not photograph sacred rituals or traditional burial sites without consent.",
+            "Avoid mocking or belittling local traditions, beliefs, or customs.",
+            "Do not damage coral reefs, caves, or protected karst environments."
+        ]
     },
     {
         "id": "Southeast Sulawesi",
         "name_en": "Southeast Sulawesi",
-        "description": "Rich in marine biodiversity, home to the stunning Wakatobi National Park.",
-        "image": "img/province/southeast-sulawesi.jpg"
+        "name_local": "Southeast Sulawesi",
+        "description_web": "Southeast Sulawesi is a province located in the southeastern part of Sulawesi Island with Kendari as its capital. Covering around 38,067 km², the region includes both mainland areas and major islands such as Buton, Muna, Kabaena, and Wakatobi. Its landscape consists of tropical mountains, pristine beaches, clear turquoise waters, and rich marine biodiversity. The province is home to various ethnic groups including Tolaki, Buton, Muna, Wolio, and the seafaring Bajo community, each preserving strong traditions. Islamic culture is dominant, reflected through rituals, traditional clothing, and social customs. The local economy thrives on nickel mining, fisheries, agriculture, and rapidly growing tourism. Iconic attractions include Wakatobi National Park—one of the world’s best diving spots—Labengki Island, the historic Buton Palace Fortress, and the 100-meter Moramo Waterfall. With its cultural richness, natural beauty, and marine potential, Southeast Sulawesi continues to rise as one of Eastern Indonesia’s most strategic provinces.",
+        "description": "Southeast Sulawesi — The Realm of Wakatobi Seas, Buton Heritage, and Untouched Tropical Wonders",
+        "image": "https://images.pexels.com/photos/4511087/pexels-photo-4511087.jpeg",
+        "gallery": [
+            "https://images.pexels.com/photos/33507201/pexels-photo-33507201.jpeg",
+            "https://images.unsplash.com/photo-1602144586078-7d95c8d7808c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/30187266/pexels-photo-30187266.jpeg",
+            "https://images.unsplash.com/photo-1602144586285-6495e9ec81e0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Wakatobi National Park — one of the world's top diving destinations.",
+            "Labengki & Sombori Islands — often called the 'Raja Ampat of Sulawesi'.",
+            "Buton Palace Fortress — one of the largest fortresses made of stone in the world.",
+            "Moramo Waterfall — a multi-tiered natural cascade with emerald pools.",
+            "Mount Mekongga — the highest peak in Southeast Sulawesi.",
+            "Meleura Beach — dramatic karst cliffs meeting turquoise waters.",
+            "Nirwana Beach — white sands and crystal-clear sea perfect for relaxation."
+        ],
+        "best_time_to_visit": "April – October for calm seas, clear skies, and ideal diving conditions in Wakatobi.",
+        "climate": "Tropical maritime climate with temperatures of 24–32°C. Rainy season typically spans November to March.",
+        "popular_foods": [
+            "Sinonggi — sago-based dish similar to papeda.",
+            "Kasuami — steamed grated cassava.",
+            "Lapa-lapa — grilled fish wrapped in banana leaves.",
+            "Parende — spicy fish soup from Buton.",
+            "Sate Pokea — skewered shellfish satay.",
+            "Kabuto — roasted cassava dish from Muna."
+        ],
+        "top_activities": [
+            "Snorkeling and diving in Wakatobi’s world-famous coral reefs.",
+            "Exploring Labengki and Sombori’s limestone islands and blue lagoons.",
+            "Hiking Mount Mekongga.",
+            "Visiting historic Buton Palace and traditional villages.",
+            "Swimming at Moramo Waterfall’s natural pools.",
+            "Tasting local culinary specialties across Kendari and Baubau.",
+            "Watching Lulo traditional dances during cultural festivals."
+        ],
+        "travel_tips": [
+            "Keep beaches and marine areas clean, especially Wakatobi and Labengki.",
+            "Always ask permission before photographing people in traditional attire.",
+            "Dress modestly when visiting traditional or sacred areas.",
+            "Respect local leaders and customs, particularly in Buton and Tolaki communities.",
+            "Use polite language when interacting with locals.",
+            "Avoid touching sacred objects, heirlooms, or ceremonial items without permission."
+        ],
+        "region": "Sulawesi",
+        "Do": [
+            "Maintain cleanliness and order in public and cultural areas.",
+            "Participate respectfully in traditional ceremonies such as Lulo dances or Buton Sultanate rituals.",
+            "Respect local customs and the role of community leaders.",
+            "Use polite and friendly language when communicating with locals.",
+            "Appreciate marine conservation efforts, especially in Wakatobi."
+        ],
+        "Dont": [
+            "Avoid wearing inappropriate clothing when visiting traditional sites or ceremonies.",
+            "Do not touch or move sacred items or heirlooms without permission.",
+            "Do not photograph women in traditional attire or people participating in rituals without consent.",
+            "Avoid criticizing or belittling local customs, beliefs, or traditions.",
+            "Do not damage coral reefs, marine life, or protected natural areas."
+        ]
     },
     {
         "id": "West Sulawesi",
         "name_en": "West Sulawesi",
-        "description": "A peaceful province with mountainous landscapes and rich cultural traditions.",
-        "image": "img/province/west-sulawesi.jpg"
+        "name_local": "Sulawesi Barat",
+        "description_web": "West Sulawesi is a province located on the western side of Sulawesi Island with Mamuju as its capital. The region is home to ethnic groups such as Mandar, Toraja, and Kaili, each with distinctive traditions rooted in maritime heritage, highland culture, and ancestral customs. Its landscapes include rugged mountains, coastal plains, blue-water beaches, and fertile agricultural areas famous for cocoa and coffee. The province has a strong seafaring identity, especially among the Mandar people, known for their sandeq boats—traditional outriggers designed for speed and endurance. The economy relies on fisheries, agriculture, cocoa plantations, and growing tourism. Popular landmarks include Karampuang Island, Limbong Sitodo waterfall, Bambalamotu mangrove forest, and the annual Sandeq Race. With its cultural depth and natural beauty, West Sulawesi continues to emerge as a rising destination in Eastern Indonesia.",
+        "description": "West Sulawesi — Land of Sandeq Sailors, Mountain Valleys, and Coastal Serenity",
+        "image": "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1560761940/yxcmukfq88lo89qbus4e.jpg",
+        "gallery": [
+            "https://cdn.rri.co.id/berita/Mamuju/o/1718019814400-zzzzzzzzzzzzAnjoro_Pitu2/69xis3aoxkuk4hp.jpeg",
+            "https://i.pinimg.com/1200x/5d/a6/b4/5da6b412019d7b1826d058ed1b6e4bea.jpg",
+            "https://i.pinimg.com/1200x/72/f1/a6/72f1a6c1f87e058991fbe9c60741c9c7.jpg",
+            "https://i.pinimg.com/1200x/1a/5b/75/1a5b750eaf30775663d15e5535bdd996.jpg"
+        ],
+        "highlights": [
+            "Karampuang Island — clear waters and peaceful snorkeling spots.",
+            "Sandeq Race — iconic Mandar traditional boat sailing competition.",
+            "Limbong Sitodo Waterfall — natural pools with refreshing mountain water.",
+            "Bambalamotu Mangrove Forest — scenic green coastal ecosystem.",
+            "Bukit Anjoro Pitu — panoramic viewpoint near Mamuju.",
+            "Batu Kandoro — unique rock formations and cultural site.",
+            "D’Maleo Beach — calm waves and golden sands ideal for sunset viewing."
+        ],
+        "best_time_to_visit": "June – September for calmer seas, good sailing conditions, and clear skies for island hopping.",
+        "climate": "Tropical humid climate with temperatures ranging 24–32°C. Rainy season typically lasts from November to March.",
+        "popular_foods": [
+            "Jepa — Mandar cassava flatbread usually paired with fish.",
+            "Kapurung — sago-based dish served with vegetables and fish broth.",
+            "Loka Satti — sticky rice cooked inside bamboo.",
+            "Ikan Sunu — fresh reef fish grilled with Mandar spices.",
+            "Bolu Parandu — traditional steamed cake.",
+            "Pude — sweet pudding made from sago."
+        ],
+        "top_activities": [
+            "Snorkeling around Karampuang Island’s clear waters.",
+            "Watching or joining the traditional Sandeq Race.",
+            "Exploring Limbong Sitodo waterfall and natural pools.",
+            "Hiking scenic hill viewpoints around Mamuju.",
+            "Visiting Mandar cultural villages and weaving communities.",
+            "Tasting fresh seafood along the Mandar coast.",
+            "Enjoying sunset at Mamuju’s waterfront and beaches."
+        ],
+        "travel_tips": [
+            "Respect Mandar maritime traditions and local rituals.",
+            "Ask permission before photographing traditional boats or ceremonies.",
+            "Dress modestly when visiting villages or cultural events.",
+            "Avoid littering in beaches, mangrove forests, or island areas.",
+            "Be polite and greet locals, especially elders, when entering villages.",
+            "Do not touch ceremonial items or traditional boats without approval."
+        ],
+        "region": "Sulawesi",
+        "Do": [
+            "Keep coastal and island areas clean during your visit.",
+            "Respect elders and local leaders, especially in Mandar villages.",
+            "Participate politely when invited to observe cultural traditions.",
+            "Use friendly and polite language when interacting with locals.",
+            "Support local weavers, fishermen, and village crafts."
+        ],
+        "Dont": [
+            "Do not wear revealing clothing in traditional or rural areas.",
+            "Avoid touching ceremonial objects, boats, or cultural artifacts.",
+            "Do not photograph people in ceremonial attire without permission.",
+            "Avoid mocking or belittling local traditions or maritime culture.",
+            "Do not damage coral reefs, mangroves, or marine life."
+        ]
     },
     {
         "id": "Gorontalo",
         "name_en": "Gorontalo",
-        "description": "A quiet coastal province with historic mosques and beautiful coral reefs.",
-        "image": "img/province/gorontalo.jpg"
+        "name_local": "Provinsi Gorontalo",
+        "description_web": "Gorontalo is a province located in the northern part of Sulawesi Island, bordered by the Sulawesi Sea to the north and Tomini Bay to the south. Established on December 5, 2000, the province is known for its strong Islamic cultural identity, traditional kingdoms, and the famous philosophical foundation: 'Adat bersendikan syarak, syarak bersendikan Kitabullah.' Its landscapes include coastal areas, fertile plains, and green highlands, with iconic destinations such as Olele Marine Park, Otanaha Fortress, and Saronde Island. The economy is supported by agriculture, fisheries, and trade, with corn, coconut, and marine products as major commodities. Gorontalo also hosts unique traditions such as Tumbilotohe—the Festival of a Thousand Lights—and Mopotilolo ceremonial welcoming rituals. With its peaceful atmosphere, rich heritage, and natural beauty, Gorontalo continues to grow as a serene cultural and marine tourism destination in northern Sulawesi.",
+        "description": "Gorontalo — Land of Thousand Lights, Ancient Kingdoms, and Serene Blue Waters",
+        "image": "https://images.unsplash.com/photo-1627442421625-101677b916e9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1637238254897-9692508476d5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1628000294467-5df143f6bae4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1605852967399-59aaa3e7ef19?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1634671813653-c817a18c2398?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Olele Marine Park — world-famous diving spot with coral walls and the unique Salvador Dali sponge.",
+            "Otanaha Fortress — historic hilltop fortress with sweeping lake views.",
+            "Botubarani Bay — spot to observe whale sharks up close near the shoreline.",
+            "Saronde Island — crystal-clear waters, soft white sands, and perfect sunrise–sunset views.",
+            "Benteng Oranje (Otanaha Complex) — ancient fortress built by Gorontalo kings and Portuguese hands.",
+            "Lake Limboto — historical lake and cultural landmark surrounding the Gorontalo kingdoms.",
+            "Tumbilotohe Festival — annual 'night of a thousand lights' before Eid."
+        ],
+        "best_time_to_visit": "June – October for calm seas, optimal diving visibility, and clearer island views.",
+        "climate": "Tropical humid climate with temperatures between 24–33°C. Rainy season generally lasts from November to March.",
+        "popular_foods": [
+            "Binte Biluhuta — sweet corn soup mixed with shrimp or fish.",
+            "Ilabulo — sago stuffed with chicken liver and spices, similar to pepes.",
+            "Sayur Putungo — savory young coconut meat cooked with local herbs.",
+            "Kue Apang — traditional steamed cake with coconut aroma.",
+            "Kue Cara Isi — soft cake filled with sweet coconut.",
+            "Ikan Nike — small local fish cooked into pepes, fritters, or soup."
+        ],
+        "top_activities": [
+            "Diving and snorkeling at Olele Marine Park.",
+            "Observing whale sharks at Botubarani Bay.",
+            "Exploring Otanaha Fortress and its historical complex.",
+            "Island hopping around Saronde and its surrounding islets.",
+            "Experiencing Tumbilotohe Festival during Ramadan.",
+            "Visiting traditional weaving villages and handicraft centers.",
+            "Tasting local seafood and Gorontalo signature dishes."
+        ],
+        "travel_tips": [
+            "Use polite language when speaking with elders and local communities.",
+            "Dress modestly when visiting villages or attending cultural events.",
+            "Ask permission before taking photos of rituals or traditional clothing.",
+            "Avoid touching historical artifacts or ritual items without approval.",
+            "Keep beaches, marine areas, and public spaces clean.",
+            "Respect Islamic customs, especially during Ramadan or traditional ceremonies."
+        ],
+        "region": "Sulawesi",
+        "Do": [
+            "Greet elders respectfully when entering villages.",
+            "Keep coastal and underwater areas clean.",
+            "Participate politely if invited to local ceremonies or traditions.",
+            "Support local crafts, fishermen, and small vendors.",
+            "Use friendly communication and respect cultural hierarchy."
+        ],
+        "Dont": [
+            "Do not wear revealing clothing in rural or traditional areas.",
+            "Avoid touching sacred objects, ritual tools, or historic artifacts.",
+            "Do not interrupt formal discussions or adat meetings.",
+            "Avoid insensitive jokes about religion, ancestors, or traditions.",
+            "Do not damage coral reefs, marine life, or protected coastal zones."
+        ]
     },
     {
         "id": "Maluku",
         "name_en": "Maluku",
-        "description": "The legendary Spice Islands, offering turquoise waters and diverse island cultures.",
-        "image": "img/province/maluku.jpg"
+        "name_local": "Provinsi Maluku",
+        "description_web": "Maluku is an eastern Indonesian archipelagic province with Ambon as its capital. Known as the 'Province of a Thousand Islands', it consists of over 1,400 islands including Seram, Buru, Ambon, and the Kei Islands. Historically, Maluku was the world center of the spice trade—especially cloves and nutmeg—which attracted Arab, Indian, Chinese, Portuguese, Spanish, and Dutch traders for centuries. The region is culturally diverse, home to various ethnic groups living in harmony under the values of 'Pela and Gandong', a traditional system symbolizing unity and brotherhood among villages. Maluku is rich in marine biodiversity, tropical forests, historical forts, and pristine beaches. Its economy thrives on fisheries, agriculture, and tourism, with iconic destinations such as Ora Beach, Banda Neira, Kei Islands, and Natsepa Beach. Today, Maluku stands as a region blending rich cultural heritage, colonial history, and breathtaking natural beauty across its vast island chains.",
+        "description": "Maluku — Islands of Spices, Sea Legends, and Timeless Harmony",
+        "image": "https://images.unsplash.com/photo-1630396381364-36fce64bac34?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1725085194365-be716929b5d4?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ",
+            "https://images.unsplash.com/photo-1703081350237-ef57fafb6f6a?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1687958129750-fa7d1618c905?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1631180388083-31d3420a1fdc?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Ora Beach — known as Indonesia’s hidden paradise with crystal-clear waters and dramatic limestone cliffs.",
+            "Banda Neira — historic spice islands filled with colonial forts and nutmeg heritage.",
+            "Ngurtafur Beach — iconic white sandbar stretching in the middle of the sea in Kei Islands.",
+            "Belgica Fortress — pentagon-shaped colonial fort standing on Banda Neira.",
+            "Natsepa Beach — scenic seaside spot famous for its legendary rujak.",
+            "Baileo Traditional House — cultural hall for adat ceremonies and village gatherings.",
+            "Tanimbar Islands — serene remote islands with rich megalithic traditions."
+        ],
+        "best_time_to_visit": "September – December for the best underwater visibility, calm seas, and clear skies across major islands.",
+        "climate": "Tropical maritime climate with temperatures around 24–31°C. Maluku's unique split seasons vary between northern and southern regions.",
+        "popular_foods": [
+            "Papeda — sago porridge served with yellow fish broth.",
+            "Ikan Kuah Kuning — turmeric-based fish soup with local spices.",
+            "Sambal Colo-colo — fresh spicy condiment for grilled fish.",
+            "Nasi Lapola — steamed rice mixed with corn and coconut.",
+            "Ikan Bakar Dabu-dabu — grilled fish with spicy Maluku-style salsa.",
+            "Kohu-kohu — shredded vegetables with grated coconut and fish."
+        ],
+        "top_activities": [
+            "Diving and snorkeling in the Banda Islands’ legendary coral reefs.",
+            "Island hopping around Kei Islands and Seram’s coastline.",
+            "Exploring colonial forts such as Belgica and Nassau.",
+            "Hiking Mount Binaiya, the highest peak in Maluku.",
+            "Visiting traditional Baileo houses and attending cultural ceremonies.",
+            "Sailing with local fishermen or joining inter-island boat trips.",
+            "Exploring Ambon markets to taste authentic Maluku cuisine."
+        ],
+        "travel_tips": [
+            "Respect Pela and Gandong traditions when visiting villages.",
+            "Dress modestly in rural areas or religious sites.",
+            "Ask permission before photographing sacred rituals or adat events.",
+            "Be mindful of your tone—Maluku people value respect and politeness.",
+            "Keep beaches and marine areas clean to preserve ecosystems.",
+            "Avoid loud or provocative behavior that disrupts local harmony."
+        ],
+        "region": "Maluku",
+        "Do": [
+            "Show respect toward local customs and community harmony values.",
+            "Be friendly, polite, and warm when interacting with locals.",
+            "Dress appropriately when visiting villages or cultural sites.",
+            "Support local fishermen, artisans, and traditional markets.",
+            "Join cultural festivals respectfully and follow local rules."
+        ],
+        "Dont": [
+            "Do not act disrespectfully or use harsh words in public.",
+            "Avoid littering in coastal or underwater environments.",
+            "Do not take photos of sacred ceremonies without permission.",
+            "Avoid wearing revealing clothing in rural or religious areas.",
+            "Do not provoke religious or ethnic conflict—tolerance is core to Maluku identity."
+        ]
     },
     {
         "id": "North Maluku",
         "name_en": "North Maluku",
-        "description": "Once the heart of the global spice trade, now known for its volcanic islands and clear seas.",
-        "image": "img/province/north-maluku.jpg"
+        "name_local": "Provinsi Maluku Utara",
+        "description_web": "North Maluku is a province in the northern part of the Maluku Islands, centered around major islands such as Halmahera, Ternate, Tidore, Bacan, and Morotai. Historically known as the global heart of the clove and nutmeg trade, the region drew merchants from Arabia, China, Portugal, Spain, and the Netherlands. The powerful Islamic Sultanates of Ternate and Tidore shaped the politics, trade routes, and culture of Eastern Indonesia for centuries. Today, North Maluku blends volcanic landscapes, tropical rainforests, crystal-clear bays, and rich marine life. Its people—Ternate, Tidore, Tobelo, Galela, Makian, and more—preserve strong cultural traditions rooted in harmony and respect. The economy thrives on nickel mining, fisheries, spice plantations, and tourism. Iconic attractions include Sulamadaha Beach, Tolire Lake, WWII relics in Morotai, Mount Gamalama, and ancient forts of the Ternate Sultanate.",
+        "description": "North Maluku — Spice Kingdoms, Blue Waters, and Volcano-Carved Legends",
+        "image": "https://images.unsplash.com/photo-1632824624318-9d9aea257041?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://i.pinimg.com/736x/7f/47/ae/7f47ae9a6b99a1c43b489cb91198b91a.jpg",
+            "https://i.pinimg.com/1200x/05/e6/7d/05e67df09eb6b6b892a36447e296b0c1.jpg",
+            "https://i.pinimg.com/1200x/70/54/52/7054525202e6af7fef715def4cd81c62.jpg",
+            "https://i.pinimg.com/1200x/29/3e/f1/293ef1c07fe755bc4d8475044f00f184.jpg"
+        ],
+        "highlights": [
+            "Sulamadaha Beach — famous for its glass-clear turquoise water.",
+            "Tolire Lake — dramatic volcanic crater lake wrapped in local legends.",
+            "Morotai Island — WWII battlefield island rich with underwater relics.",
+            "Fort Oranje — historic Dutch stronghold in Ternate.",
+            "Gamalama Volcano — iconic volcanic peak towering over Ternate Island.",
+            "Maitara & Tidore Islands — featured on the old Rp1,000 banknote.",
+            "Cibi-cibi Waterfall — hidden tropical waterfall deep in Morotai’s forests."
+        ],
+        "best_time_to_visit": "October – March for the best sea conditions, clear skies, and comfortable weather across Ternate, Tidore, and Morotai.",
+        "climate": "Tropical humid climate with average temperatures of 24–32°C. Rainfall varies by island, especially around volcanic zones.",
+        "popular_foods": [
+            "Papeda — sago porridge paired with fresh yellow fish broth.",
+            "Gohu Ikan — Maluku’s signature raw tuna with lime, chilies, and basil.",
+            "Ikan Bakar Colo-colo — grilled fish served with tangy spicy sauce.",
+            "Halua Kenari — sweet kenari nut confectionery.",
+            "Ikan Fufu — smoked fish with traditional spices.",
+            "Nasi Jaha — glutinous rice cooked in bamboo."
+        ],
+        "top_activities": [
+            "Snorkeling at Sulamadaha’s crystal waters and coral gardens.",
+            "Hiking Gamalama Volcano for sunrise city views.",
+            "Exploring WWII wreckage sites around Morotai.",
+            "Visiting Ternate and Tidore Sultanate palaces and forts.",
+            "Hopping between volcanic and coral islands around Halmahera.",
+            "Trying authentic Maluku Utara cuisine at Ternate street markets.",
+            "Enjoying sunset views at Maitara–Tidore viewpoint."
+        ],
+        "travel_tips": [
+            "Be respectful at Sultanate sites—many areas are sacred.",
+            "Dress modestly when visiting villages or religious spaces.",
+            "Ask permission before photographing women in traditional attire.",
+            "Avoid disturbing relics, forts, or WWII remains.",
+            "Keep beaches and lakes clean—many are protected zones.",
+            "Speak politely; locals value respect and gentle communication."
+        ],
+        "region": "Maluku",
+        "Do": [
+            "Show respect to elders, Sultanate customs, and cultural etiquette.",
+            "Ask locals for permission before entering traditional areas.",
+            "Support local fishermen, markets, and traditional crafts.",
+            "Dress appropriately in cultural or rural environments.",
+            "Participate politely when invited to observe traditional events."
+        ],
+        "Dont": [
+            "Do not wear revealing clothes in villages or sacred locations.",
+            "Avoid touching sacred heirlooms, graves, or ceremonial objects.",
+            "Do not photograph rituals or adat ceremonies without approval.",
+            "Avoid disrespectful jokes about religion, culture, or royalty.",
+            "Do not litter at beaches, lakes, mangroves, or island areas."
+        ]
     },
     {
         "id": "West Papua",
         "name_en": "West Papua",
-        "description": "Home to Raja Ampat, a world-famous diving paradise with pristine coral reefs and biodiversity.",
-        "image": "img/province/west-papua.jpg"
+        "name_local": "Provinsi Papua Barat",
+        "description_web": "West Papua is a province in the western region of Papua Island, known for its extraordinary natural beauty, rich marine biodiversity, and deeply rooted indigenous cultures. Dominated by dense tropical forests, towering mountains, and crystal-clear seas, the region is home to world-class destinations such as Raja Ampat—one of the most biodiverse marine environments on Earth. The people of West Papua, including the Arfak, Meyah, Hatam, Biak, and many other tribes, preserve strong traditions and a harmonious relationship with nature. As a center of eco-tourism and conservation, West Papua offers breathtaking landscapes, vibrant cultural experiences, and wildlife found nowhere else in the world.",
+        "description": "West Papua — Untouched Nature, Indigenous Cultures, and the World’s Ocean Paradise",
+        "image": "https://images.unsplash.com/photo-1724258391590-6cfdc2d783b4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1724258207520-7870359e112a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1724258232395-46f581595fca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/13454788/pexels-photo-13454788.jpeg",
+            "https://images.pexels.com/photos/4603275/pexels-photo-4603275.jpeg"
+        ],
+        "highlights": [
+            "Raja Ampat — the world-famous marine paradise with unmatched coral biodiversity.",
+            "Piaynemo — iconic karst islands with turquoise lagoons.",
+            "Cenderawasih Bay — home to friendly whale sharks.",
+            "Arfak Mountains — trekking trails to Anggi Giji and Anggi Gida lakes.",
+            "Pulau Mansinam — historic island where Christianity first entered Papua.",
+            "Kaimana — known for spectacular golden sunsets.",
+            "Birdwatching — rare endemic species including the Vogelkop bird-of-paradise."
+        ],
+        "best_time_to_visit": "October – April for calm seas, ideal diving conditions, and clearer skies.",
+        "climate": "Tropical rainforest climate with temperatures ranging from 23–31°C. Rainfall is high year-round, especially in mountainous areas.",
+        "popular_foods": [
+            "Papeda — sago porridge served with tuna or yellowfish soup.",
+            "Ikan Kuah Kuning — aromatic yellow-spiced fish soup.",
+            "Sagu Lempeng — baked sago cake, a staple of Papuan cuisine.",
+            "Udang Selingkuh — freshwater prawn with a unique lobster-like appearance.",
+            "Ikan Bakar Pedas Manis — grilled fish with sweet-spicy Papuan sauce.",
+            "Keripik Keladi — taro chips famous in Manokwari."
+        ],
+        "top_activities": [
+            "Diving and snorkeling in Raja Ampat’s coral gardens.",
+            "Swimming with whale sharks in Cenderawasih Bay.",
+            "Trekking the Arfak Mountains and visiting indigenous villages.",
+            "Exploring karst islands and panoramic lookouts in Piaynemo.",
+            "Visiting Mansinam Island’s historical monuments.",
+            "Island-hopping through pristine beaches and hidden lagoons.",
+            "Birdwatching rare Papuan species in untouched forests."
+        ],
+        "travel_tips": [
+            "Ask for permission before photographing local people or cultural events.",
+            "Use reef-safe sunscreen to protect marine ecosystems.",
+            "Bring sufficient cash—many islands lack digital payment options.",
+            "Travel with licensed local guides, especially for trekking or diving.",
+            "Respect protected areas and avoid touching corals or marine animals.",
+            "Learn basic local greetings—Papuan communities appreciate friendliness."
+        ],
+        "region": "Papua",
+        "Do": [
+            "Respect local customs, traditions, and village etiquette.",
+            "Ask permission before entering traditional areas or taking photos.",
+            "Support local guides, artisans, and small businesses.",
+            "Keep nature clean—Papua Barat’s environment is highly protected.",
+            "Be polite and patient; Papuan culture values calm communication."
+        ],
+        "Dont": [
+            "Do not touch corals, marine animals, or protected plants.",
+            "Avoid wearing revealing clothing in traditional villages.",
+            "Do not photograph rituals or ceremonies without approval.",
+            "Avoid loud, aggressive, or disrespectful behavior.",
+            "Do not buy illegal wildlife products or cultural artifacts."
+        ]
     },
     {
         "id": "Papua",
         "name_en": "Papua",
-        "description": "The easternmost province of Indonesia, home to mountains, rainforests, and indigenous Papuan tribes.",
-        "image": "img/province/papua.jpg"
+        "name_local": "Provinsi Papua",
+        "description_web": "Papua is a province located in the easternmost part of Indonesia, with Jayapura as its capital. Known for its dramatic mountain ranges, dense tropical forests, and rich marine ecosystems, Papua is home to diverse Melanesian tribes such as the Dani, Asmat, and Yali. The region is famous for iconic natural attractions like Baliem Valley, Carstensz Pyramid, and Cenderawasih Bay. Traditional culture remains strong, reflected in Honai houses, wood carvings, war dances, and rituals such as the Bakar Batu ceremony. Despite its vast natural resources, including major gold and copper mines, Papua continues to face developmental challenges in infrastructure, health, and education.",
+        "description": "Papua — Land of Majestic Peaks, Ancient Cultures, and Untamed Wilderness",
+        "image": "https://images.unsplash.com/photo-1622638989794-3c2dd13726ed?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.pexels.com/photos/13454756/pexels-photo-13454756.jpeg",
+            "https://images.unsplash.com/photo-1582426750875-13465457b9ce?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1582465561886-0ed86d2bdc6c?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1650518239974-c7883c9d1408?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        "highlights": [
+            "Baliem Valley — home to the Dani tribe and highland cultural festivals.",
+            "Carstensz Pyramid — the highest peak in Indonesia, part of the Seven Summits.",
+            "Cenderawasih Bay — Indonesia’s largest marine national park and whale shark habitat.",
+            "Sentani Lake — famous for cultural festivals, traditional boats, and art.",
+            "Asmat Region — renowned for world-class wood carvings and tribal heritage.",
+            "Jayawijaya Mountains — dramatic alpine landscapes in the heart of Papua."
+        ],
+        "best_time_to_visit": "May – October for clearer skies, dry trekking routes, and better outdoor conditions.",
+        "climate": "Tropical rainforest climate with temperatures ranging from 20–32°C depending on altitude. Highland areas can be cold at night.",
+        "popular_foods": [
+            "Papeda — sago porridge served with yellowfish broth.",
+            "Ikan Kuah Kuning — turmeric-based fish soup.",
+            "Sayur Ganemo — young papaya leaf vegetable dish.",
+            "Ikan Bakar Colo-colo — grilled fish with spicy-sour condiment.",
+            "Sagu Lempeng — baked sago cake.",
+            "Ulat Sagu — traditional sago grub delicacy."
+        ],
+        "top_activities": [
+            "Trekking in Baliem Valley and visiting highland villages.",
+            "Climbing Carstensz Pyramid for extreme alpine adventure.",
+            "Snorkeling and diving with whale sharks in Cenderawasih Bay.",
+            "Exploring Sentani Lake and cultural festivals.",
+            "Watching traditional war dances and Asmat wood carving demonstrations.",
+            "Participating in Bakar Batu communal feast rituals."
+        ],
+        "travel_tips": [
+            "Greet locals politely when entering villages.",
+            "Use local guides, especially for trekking or visiting tribal areas.",
+            "Ask permission before taking pictures of people or cultural activities.",
+            "Prepare cash, as many areas do not support digital payments.",
+            "Respect traditional boundaries and avoid touching sacred objects.",
+            "Keep forests, rivers, and villages clean at all times."
+        ],
+        "region": "Papua",
+        "Do": [
+            "Appreciate traditional carvings, dances, and local crafts respectfully.",
+            "Use local community guides to build trust and support the economy.",
+            "Greet villagers politely when passing through rural areas.",
+            "Observe cultural ceremonies with respect and follow elders’ instructions.",
+            "Support eco-tourism activities to help conservation efforts."
+        ],
+        "Dont": [
+            "Do not spread sensitive or misleading information about local communities.",
+            "Avoid dominant or forceful behavior when interacting with tribal groups.",
+            "Do not litter in forests, rivers, or traditional villages.",
+            "Avoid unnecessary physical contact without consent.",
+            "Do not take photos of ceremonies or private moments without permission."
+        ]
+    },
+    {
+        "id": "Bangka-Belitung",
+        "name_en": "Bangka Belitung",
+        "name_local": "Bangka Belitung",
+        "description_web": "Bangka Belitung is an island province located east of Sumatra, consisting of two main islands—Bangka and Belitung—along with hundreds of smaller islands. Its capital is Pangkalpinang. The region is known for stunning white-sand beaches, giant granite boulders, crystal-clear blue waters, and its long history as one of the world’s major tin-producing areas. The population is predominantly Malay, enriched by Chinese cultural influences and other migrant communities, creating a harmonious multicultural society. Bangka Belitung is also globally recognized thanks to the film Laskar Pelangi, which showcased the beauty and spirit of Belitung’s people. Tourism, fisheries, tin mining, and cultural heritage form the backbone of the province’s identity.",
+        "description": "Bangka Belitung — White Sands, Granite Giants, and Island Serenity",
+        "image": "https://images.unsplash.com/photo-1647783291741-c4755db2f02a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+            "https://images.unsplash.com/photo-1672717567780-6d5c2eb6e01c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1571748946799-c9840e06b6a5?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1715236201330-613436deb21e?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.pexels.com/photos/1125979/pexels-photo-1125979.jpeg"
+        ],
+        "highlights": [
+            "Tanjung Tinggi Beach — famous for massive granite boulders and Laskar Pelangi filming site.",
+            "Parai Tenggiri Beach — premium beach destination with turquoise waters.",
+            "Lengkuas Island — iconic Dutch lighthouse with panoramic views.",
+            "Kaolin Lake — former tin mining site with striking turquoise water.",
+            "Museum Timah Indonesia — showcasing the region’s tin mining heritage.",
+            "Museum Kata Andrea Hirata — literary museum inspired by Laskar Pelangi."
+        ],
+        "best_time_to_visit": "April – September for the best weather, minimal rainfall, and calm seas.",
+        "climate": "Tropical maritime climate with temperatures ranging from 24–32°C. Summers are sunny with occasional sea breezes.",
+        "popular_foods": [
+            "Lempah Kuning — spicy sour fish soup with pineapple or herbs.",
+            "Mie Belitung — sweet-savory noodle dish topped with shrimp broth.",
+            "Otak-otak — grilled fish cake wrapped in banana leaves.",
+            "Rusip — fermented fish sauce dish served with vegetables.",
+            "Kemplang — crispy fish crackers.",
+            "Jeruk Kunci Ice — refreshing lime drink popular across the islands."
+        ],
+        "top_activities": [
+            "Island hopping around Belitung’s northern coast.",
+            "Climbing the Lengkuas Island lighthouse.",
+            "Exploring Tanjung Tinggi and Tanjung Kelayang beaches.",
+            "Visiting traditional Malay houses and old mosques.",
+            "Relaxing at Parai Tenggiri’s scenic coastline.",
+            "Enjoying seafood culinary tours around Bangka and Belitung."
+        ],
+        "travel_tips": [
+            "Keep beaches clean and avoid littering to preserve the natural beauty.",
+            "Dress modestly when visiting villages or religious sites.",
+            "Respect Malay and Chinese cultural customs when interacting with locals.",
+            "Avoid damaging granite formations or coral reefs.",
+            "Use reef-safe sunscreen when swimming or snorkeling.",
+            "Support local fishermen, guides, and small businesses."
+        ],
+        "region": "Sumatra",
+        "Do": [
+            "Enjoy the beaches and natural scenery while keeping the environment clean.",
+            "Greet and interact politely with locals who are known for their hospitality.",
+            "Dress appropriately, especially in traditional or religious areas.",
+            "Try local dishes like Mie Belitung, Lempah Kuning, and Otak-otak.",
+            "Capture photos of unique granite boulders and blue waters responsibly."
+        ],
+        "Dont": [
+            "Do not litter on beaches, small islands, or marine tourism areas.",
+            "Do not remove or damage granite rocks, corals, or marine life.",
+            "Avoid inappropriate clothing or behavior in public spaces.",
+            "Do not capture or harm wildlife, including turtles and reef fish.",
+            "Avoid drunken behavior or causing disturbances, as locals value order and respect."
+        ]
     }
 ]
