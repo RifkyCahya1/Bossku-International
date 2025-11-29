@@ -1,15 +1,27 @@
 @extends('main')
 
 @section('content')
-<div x-data="tourDetailApp()" x-init="init()" class="bg-[#FAFAFA] text-gray-800 font-sans">
+
+<div x-data='tourDetailApp(@json($tour))' x-init="init()" class="bg-[#FAFAFA] text-gray-800 font-sans">
 
     <section class="relative h-[70vh] overflow-hidden">
-        <template x-if="gallery.length">
-            <div class="absolute inset-0">
-                <img :src="gallery[currentImage]" alt="" class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700" :class="`scale-105`">
-                <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/25 to-black/60"></div>
-            </div>
-        </template>
+        <div x-data="{
+                currentImage: 0,
+                gallery: @js($tour['gallery']),
+                startSlider() {
+                    setInterval(() => {
+                        this.currentImage = (this.currentImage + 1) % this.gallery.length;
+                    }, 3000);
+                }
+            }"
+            x-init="startSlider()">
+            <template x-if="gallery.length">
+                <div class="absolute inset-0">
+                    <img :src="gallery[currentImage]" alt="" class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700" :class="`scale-105`">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/25 to-black/60"></div>
+                </div>
+            </template>
+        </div>
 
         <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6">
             <div class="inline-flex items-center gap-3 mb-4">
@@ -24,8 +36,8 @@
             </div>
 
             <h1 class="text-4xl md:text-6xl font-semibold mb-4 text-[#E6C068]" x-text="tour.name"></h1>
-            <p class="text-lg md:text-xl text-gray-200 max-w-2xl" x-text="tour.destination + ' • ' + tour.duration"></p>
-            <p class="mt-4 text-3xl font-bold text-white bg-clip-text" x-html="formattedPrice"></p>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl" x-text="tour.destination + ' • ' + tour.kota"></p>
+            <p class="mt-4 text-3xl font-bold text-white bg-clip-text" x-text="formattedPrice"></p>
 
             <div class="mt-6 flex gap-4">
                 <button @click="openGallery = true" class="px-6 py-3 rounded-lg border border-white/20 bg-white/10 text-white hover:bg-white/20 transition">View Photos</button>
@@ -46,7 +58,12 @@
         <div class="grid md:grid-cols-3 gap-8">
             <div class="md:col-span-2">
                 <h2 class="text-2xl font-semibold mb-4 text-[#0B0B0B]">Tour Overview</h2>
-                <p class="text-gray-600 leading-relaxed mb-6" x-text="tour.description"></p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Discover the best of Indonesia through a thoughtfully curated tour designed to offer comfort, excitement, and meaningful travel experiences. This package brings you to the country’s top destinations, showcasing breathtaking landscapes, rich cultural heritage, and authentic local flavors.
+                    Throughout the journey, you will be accompanied by a professional team dedicated to ensuring a smooth, enjoyable, and memorable travel experience. The itinerary balances guided exploration, leisure time, and visits to signature attractions, allowing you to enjoy the trip at a comfortable pace.
+                    Ideal for families, couples, and group travelers, this tour provides a complete and stress-free experience—from transportation and comfortable accommodations to curated activities that highlight the unique charm of each destination. Sit back, relax, and enjoy Indonesia’s beauty from the beginning to the end of your adventure.
+                </p>
+
 
                 <div class="mt-8 grid sm:grid-cols-2 gap-4">
                     <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
@@ -57,14 +74,6 @@
                         <p class="text-sm text-gray-500">Type</p>
                         <p class="font-semibold" x-text="tour.type"></p>
                     </div>
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
-                        <p class="text-sm text-gray-500">Start Location</p>
-                        <p class="font-semibold" x-text="tour.start"></p>
-                    </div>
-                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
-                        <p class="text-sm text-gray-500">End Location</p>
-                        <p class="font-semibold" x-text="tour.end"></p>
-                    </div>
                 </div>
 
                 <section class="bg-white rounded-2xl mt-10 p-6 border border-gray-100">
@@ -72,20 +81,58 @@
                     <div class="space-y-6">
                         <template x-for="(item, index) in tour.itinerary" :key="index">
                             <div class="flex items-start gap-4">
+                                <!-- Bullet dan line -->
                                 <div class="flex flex-col items-center">
-                                    <div class="w-9 h-9 rounded-full bg-[#E6C068] text-white flex items-center justify-center font-semibold" x-text="index+1"></div>
-                                    <div class="w-px bg-gray-200 h-full mt-2" :class="index === tour.itinerary.length-1 ? 'opacity-0' : ''"></div>
+                                    <div class="w-9 h-9 rounded-full bg-[#E6C068] text-white flex items-center justify-center font-semibold"
+                                        x-text="index + 1">
+                                    </div>
+                                    <div class="w-px bg-gray-200 h-full mt-2"
+                                        :class="index === tour.itinerary.length - 1 ? 'opacity-0' : ''">
+                                    </div>
                                 </div>
+
                                 <div class="flex-1">
+                                    <!-- Header Day -->
                                     <button @click="toggleDay(index)" class="w-full text-left">
                                         <div class="flex justify-between items-center">
-                                            <h4 class="text-lg font-semibold text-[#3B5BDB]" x-text="item.title"></h4>
-                                            <svg :class="openDay === index ? 'rotate-180' : ''" class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            <h4 class="text-lg font-bold "
+                                                x-text="'Day ' + item.hari + ' : ' + item.judul">
+                                            </h4>
+
+                                            <svg :class="openDay === index ? 'rotate-180' : ''"
+                                                class="w-5 h-5 text-gray-500 transition-transform"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7" />
                                             </svg>
                                         </div>
                                     </button>
-                                    <div x-show="openDay === index" x-transition class="mt-2 text-gray-600" x-text="item.detail"></div>
+
+                                    <!-- Content -->
+                                    <div x-show="openDay === index" x-transition class="mt-2 text-gray-600">
+
+                                        <!-- Tempat -->
+                                        <template x-for="tp in item.tempat">
+                                            <div class="mb-3">
+                                                <p class="font-bold text-[#02335B]">
+                                                    <span x-text="tp.nama"></span>
+                                                    <span x-show="tp.optional" class="text-xs text-red-500">(Optional)</span>
+                                                </p>
+                                                <p class="text-gray-600 text-sm" x-text="tp.deskripsi"></p>
+                                            </div>
+                                        </template>
+
+                                        <!-- Hotel -->
+                                        <p class="mt-2 font-semibold text-gray-800" x-show="item.hotel">
+                                            Menginap di Hotel Sesuai Itinerary
+                                        </p>
+
+                                        <!-- Meal -->
+                                        <div class="mt-3 text-sm text-gray-700">
+                                            <p><strong>Meal:</strong> <span x-text="item.meal"></span></p>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </template>
@@ -93,63 +140,194 @@
                 </section>
 
                 <div class="grid md:grid-cols-2 gap-6 mt-8">
-                    <div class="bg-white p-6 rounded-xl border border-gray-100">
-                        <h4 class="text-lg font-semibold mb-3 text-[#0B0B0B]">Included</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <template x-for="item in tour.include" :key="item">
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-[#E6C068] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span x-text="item"></span>
-                                </li>
-                            </template>
-                        </ul>
+                    <!-- Included -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div
+                            x-data="{
+                                include: [
+                                    'Tour activities & transportation as per combined itinerary',
+                                    'Hotel accommodation',
+                                    'Meals as scheduled',
+                                    'Entrance tickets for listed attractions',
+                                    'Driver also serving as guide',
+                                    'Assistance from local escort/guide',
+                                    'Indonesian-speaking tour leader',
+                                    'Complimentary souvenir'
+                                ]
+                            }">
+                            <h4 class="text-lg font-semibold mb-4 text-[#0B0B0B] tracking-wide">Included</h4>
+
+                            <ul class="space-y-3 text-gray-700">
+                                <template x-for="item in include" :key="item">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 flex items-center justify-center rounded-full bg-[#E6C068]/10">
+                                            <svg class="w-4 h-4 text-[#E6C068]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                        <span class="leading-relaxed" x-text="item"></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-100">
-                        <h4 class="text-lg font-semibold mb-3 text-[#0B0B0B]">Excluded</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <template x-for="item in tour.exclude" :key="item">
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                    <span x-text="item"></span>
-                                </li>
-                            </template>
-                        </ul>
+
+                    <!-- Excluded -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div
+                            x-data="{
+                                exclude: [
+                                    'International flight tickets, taxes & fuel surcharge',
+                                    'Guide tipping',
+                                    'Tour leader tipping',
+                                    'Porter services & personal expenses',
+                                    'Visa application fees',
+                                    'Travel insurance',
+                                    'Pocket Wi-Fi / modem rental',
+                                    'Required travel documents (e.g., passport)'
+                                ]
+                            }">
+                            <h4 class="text-lg font-semibold mb-4 text-[#0B0B0B] tracking-wide">Excluded</h4>
+
+                            <ul class="space-y-3 text-gray-700">
+                                <template x-for="item in exclude" :key="item">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 flex items-center justify-center rounded-full bg-red-100/40">
+                                            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                        <span class="leading-relaxed" x-text="item"></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <aside class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 md:sticky md:top-20">
+            <aside
+                class="bg-white rounded-3xl shadow-[0_8px_35px_-10px_rgba(0,0,0,0.15)] p-7
+           border border-gray-100/80 md:sticky md:top-20 backdrop-blur-lg
+           transition duration-300 hover:shadow-[0_12px_45px_-10px_rgba(0,0,0,0.20)]">
+
                 <div class="flex items-start justify-between gap-4">
-                    <div>
-                        <p class="text-sm text-gray-500">Price / Person</p>
-                        <div class="text-2xl font-bold text-[#E6C068]" x-text="'$' + tour.price"></div>
-                        <p class="text-sm text-gray-400">Next: <span x-text="tour.departure"></span></p>
+
+                    <div class="space-y-1">
+                        <p class="text-sm text-gray-500 tracking-wide">Price / Person</p>
+
+                        <div class="text-3xl font-extrabold text-[#E6C068] drop-shadow-sm
+                        transition duration-300 hover:scale-[1.03]"
+                            x-text="formattedPrice"></div>
+
+                        <p class="text-sm text-gray-400">
+                            Tour:
+                            <span class="font-medium text-gray-700" x-text="tour.name"></span>
+                        </p>
                     </div>
-                    <div class="text-right">
-                        <button @click="decrement()" class="w-9 h-9 rounded-md border border-gray-200 hover:bg-gray-50">−</button>
-                        <div class="text-center py-1 font-semibold" x-text="guests + ' guest(s)'"></div>
-                        <button @click="increment()" class="w-9 h-9 rounded-md border border-gray-200 hover:bg-gray-50">+</button>
+
+                </div>
+
+                <div class="mt-7">
+                    <label class="text-sm text-gray-700 font-semibold">Select Date</label>
+
+                    <div class="relative mt-2">
+                        <input
+                            datepicker
+                            datepicker-format="yyyy-mm-dd"
+                            x-model="date"
+                            type="text"
+                            class="w-full p-3 border border-gray-200 rounded-xl bg-white text-gray-700
+                            focus:ring-2 focus:ring-[#E6C068]/50 focus:border-[#E6C068]
+                            transition-all cursor-pointer shadow-sm hover:shadow
+                            placeholder-gray-400"
+                            placeholder="Select date">
+
+                        <!-- Gold Calendar Icon -->
+                        <svg class="w-5 h-5 text-[#E6C068] absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
+                        </svg>
                     </div>
                 </div>
 
-                <div class="mt-5">
-                    <label class="text-sm text-gray-500">Select Date</label>
-                    <input type="date" x-model="date" class="w-full mt-2 p-2 border rounded-md border-gray-200">
+                <!-- GUEST PICKER -->
+                <div class="mt-7 flex flex-col space-y-2">
+                    <div class="flex items-center justify-center space-x-4 bg-white rounded-2xl px-5 py-3 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 width-full">
+
+                        <!-- Minus Button -->
+                        <button
+                            @click="decrement()"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl 
+                            border border-gray-200 bg-white text-xl font-bold
+                            hover:bg-gray-100 hover:shadow-sm active:scale-95
+                            transition-all duration-200">
+                            -
+                        </button>
+
+                        <!-- Guest Count -->
+                        <div class="min-w-[90px] text-center font-semibold text-gray-700 text-lg tracking-wide
+                        transition duration-300"
+                            x-text="guests + ' Guest'">
+                        </div>
+
+                        <!-- Plus Button -->
+                        <button
+                            @click="increment()"
+                            class="w-11 h-11 flex items-center justify-center rounded-xl 
+                            border border-gray-200 bg-white text-xl font-bold
+                            hover:bg-gray-100 hover:shadow-sm active:scale-95
+                            transition-all duration-200">
+                            +
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-gray-500 italic">
+                        Number of guests affects the total price.
+                    </p>
                 </div>
 
-                <div class="mt-6">
-                    <p class="text-sm text-gray-500">Total</p>
-                    <div class="text-2xl font-bold text-[#3B5BDB]" x-text="totalPrice"></div>
+                <!-- TOTAL SECTION -->
+                <div class="mt-8">
+                    <p class="text-sm text-gray-600">Total</p>
+
+                    <div class="text-4xl font-extrabold text-[#3B5BDB] tracking-wide mt-1
+                    drop-shadow-sm transition duration-300 hover:scale-[1.03]"
+                        x-text="formattedTotalPrice"></div>
                 </div>
 
-                <button @click="openModal = true" class="w-full mt-6 py-3 rounded-lg bg-[#E6C068] text-white font-semibold hover:brightness-95 transition">Reserve Now</button>
+                <!-- CTA BUTTONS -->
+                <button
+                    @click="openModal = true"
+                    class="w-full mt-7 py-3.5 rounded-xl bg-gradient-to-r from-[#E6C068] to-[#d8b252]
+                    text-white font-semibold shadow-md hover:shadow-xl hover:brightness-105
+                    active:scale-[0.98] transition-all duration-300">
+                    Reserve Now
+                </button>
 
-                <button @click="openInquiry = true" class="w-full mt-3 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 transition">Ask a Question</button>
+                <!-- <button
+                    @click="downloadItinerary()"
+                    class="w-full mt-4 py-3 rounded-xl border border-[#E6C068] text-[#E6C068] font-medium
+                    bg-white hover:bg-[#E6C068]/5 hover:shadow-md active:scale-[0.98]
+                    transition-all duration-300 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download Itinerary
+                </button> -->
+
+                <button
+                    @click="openInquiry = true"
+                    class="w-full mt-4 py-3 rounded-xl border border-gray-200 text-gray-700 font-medium
+                    bg-white hover:bg-gray-50 hover:shadow-md active:scale-[0.98]
+                    transition-all duration-300">
+                    Ask a Question
+                </button>
             </aside>
+
         </div>
     </section>
 
@@ -183,14 +361,14 @@
         x-show="openModal"
         x-cloak
         x-trap.noscroll="openModal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-all duration-500 ease-out">
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-all duration-500 ease-out mt-12">
         <div
             @click.away="openModal = false"
             class="w-full max-w-4xl mx-4 bg-white dark:bg-[#161616] rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.3)] overflow-hidden transform transition-all duration-500 scale-95 hover:scale-100">
             <!-- Header Banner -->
             <div class="relative h-56">
                 <img
-                    :src="tour.image"
+                    :src="gallery[currentImage]"
                     alt="Tour Preview"
                     class="w-full h-full object-cover brightness-[.75]">
                 <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
@@ -240,10 +418,24 @@
                             <div x-show="errors.phone" class="text-red-500 text-xs mt-1" x-text="errors.phone"></div>
                         </div>
                         <div>
-                            <input type="date" x-model="form.date" :min="tour.minDate" required
-                                @blur="validateDate()"
-                                class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-[#1f1f1f] focus:ring-2 focus:ring-[#E6C068] outline-none transition"
-                                :class="{'border-red-500': errors.date}">
+                            <input
+                                datepicker
+                                datepicker-format="yyyy-mm-dd"
+                                x-model="date"
+                                :min="tour.minDate" required
+                                type="text"
+                                class="w-full p-3 border border-gray-200 rounded-xl bg-white text-gray-700
+                                focus:ring-2 focus:ring-[#E6C068]/50 focus:border-[#E6C068]
+                                transition-all cursor-pointer shadow-sm hover:shadow
+                                placeholder-gray-400"
+                                placeholder="Select date">
+
+                            <!-- Gold Calendar Icon -->
+                            <svg class="w-5 h-5 text-[#E6C068] absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
+                            </svg>
                             <div x-show="errors.date" class="text-red-500 text-xs mt-1" x-text="errors.date"></div>
                         </div>
                     </div>
@@ -252,14 +444,14 @@
                         <div>
                             <p class="text-sm text-gray-500 dark:text-gray-400">Guests</p>
                             <div class="flex items-center gap-3 mt-2">
-                                <button type="button" @click="decFormGuests()" class="px-3 py-1.5 border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">−</button>
-                                <div class="px-4 text-lg font-semibold text-gray-800 dark:text-white" x-text="form.guests"></div>
-                                <button type="button" @click="incFormGuests()" class="px-3 py-1.5 border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">+</button>
+                                <button type="button" @click="decrement()" class="px-3 py-1.5 border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">−</button>
+                                <div class="px-4 text-lg font-semibold text-gray-800 dark:text-white" x-text="guests"></div>
+                                <button type="button" @click="increment()" class="px-3 py-1.5 border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">+</button>
                             </div>
                         </div>
                         <div class="text-right">
                             <p class="text-sm text-gray-500 dark:text-gray-400">Total</p>
-                            <div class="text-3xl font-bold text-[#3B5BDB]" x-text="'$' + (tour.price * form.guests)"></div>
+                            <div class="text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
                         </div>
                     </div>
                 </div>
@@ -271,7 +463,8 @@
                             <span class="inline-block w-2 h-2 bg-[#E6C068] rounded-full"></span>
                             Booking Summary
                         </h4>
-                        <div class="rounded-xl bg-white/70 dark:bg-[#1f1f1f]/70 p-5 shadow-sm space-y-3">
+                        <div x-data="bookingForm()" class="rounded-xl bg-white/70 dark:bg-[#1f1f1f]/70 p-5 shadow-sm space-y-3">
+
                             <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
                                 <span>Tour Package</span>
                                 <span class="font-medium text-gray-800 dark:text-gray-100" x-text="tour.name"></span>
@@ -282,11 +475,11 @@
                             </div>
                             <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
                                 <span>Guests</span>
-                                <span class="font-medium text-gray-800 dark:text-gray-100" x-text="form.guests"></span>
+                                <span class="font-medium text-gray-800 dark:text-gray-100" x-text="guests + ' guest(s)'"></span>
                             </div>
                             <div class="border-t dark:border-gray-700 pt-3 flex justify-between font-semibold text-gray-800 dark:text-white">
                                 <span>Total</span>
-                                <span class="text-[#3B5BDB]" x-text="'$' + (tour.price * form.guests)"></span>
+                                <div class="text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
                             </div>
                         </div>
                     </div>
@@ -373,154 +566,136 @@
 
 </div>
 
+
 <script>
-    function tourDetailApp() {
+    function tourDetailApp(tour) {
         return {
-            // UI
-            openDay: null,
+            tour: tour,
+            date: '',
+            guests: 1,
             openModal: false,
             openGallery: false,
             openInquiry: false,
+            gallery: tour.gallery ?? [],
             currentImage: 0,
-            gallery: [
-                "https://images.unsplash.com/photo-1553514029-1318c9127859?auto=format&fit=crop&w=1600&q=80",
-                "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
-                "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80"
-            ],
-
-            // tour data
-            tour: {
-                name: "Bali Paradise Experience",
-                destination: "Bali",
-                duration: "5D4N",
-                price: 450,
-                rating: 5,
-                category: "Culture",
-                type: "Leisure",
-                start: "Denpasar",
-                end: "Ubud",
-                departure: "12 November 2025",
-                minDate: new Date().toISOString().split('T')[0],
-                description: "Nikmati pesona Pulau Dewata dengan kunjungan ke Uluwatu, Tanah Lot, dan pengalaman spa mewah di resort terbaik.",
-                itinerary: [{
-                        title: "Arrival & Uluwatu Temple",
-                        detail: "Tiba di Bandara Ngurah Rai, langsung menuju Uluwatu Temple dan menikmati sunset Kecak Dance."
-                    },
-                    {
-                        title: "Full Day Ubud Tour",
-                        detail: "Mengunjungi Monkey Forest, Sawah Tegalalang, dan makan siang di tepi sungai Ayung."
-                    },
-                    {
-                        title: "Nusa Penida Trip",
-                        detail: "Trip ke Kelingking Beach dan Angel’s Billabong dengan kapal cepat."
-                    },
-                    {
-                        title: "Spa & Shopping",
-                        detail: "Nikmati pijat relaksasi di spa mewah dan berbelanja di Seminyak."
-                    },
-                    {
-                        title: "Departure",
-                        detail: "Transfer ke bandara, perjalanan berakhir dengan kenangan indah."
-                    }
-                ],
-                include: [
-                    "Akomodasi hotel 4 malam",
-                    "Makan pagi dan siang",
-                    "Transportasi selama tour",
-                    "Guide lokal profesional",
-                    "Tiket masuk objek wisata"
-                ],
-                exclude: [
-                    "Tiket pesawat PP",
-                    "Asuransi perjalanan",
-                    "Makan malam",
-                    "Pengeluaran pribadi",
-                    "Tip untuk guide & driver"
-                ]
-            },
-
-            // booking states
-            guests: 2,
-            date: null,
-
-            // forms
+            openDay: null,
             form: {
                 name: '',
                 email: '',
                 phone: '',
                 date: '',
-                guests: 2
+                guests: 1,
             },
+
+            errors: {
+                name: '',
+                email: '',
+                phone: '',
+                date: '',
+            },
+
+            increment() {
+                this.guests++
+            },
+
+            decrement() {
+                if (this.guests > 1) this.guests--
+            },
+
             inquiry: {
                 name: '',
                 email: '',
                 message: ''
             },
 
-            init() {
-                this.date = this.tour.minDate;
-                this.form.date = this.tour.minDate;
+            bookingForm() {
+                console.log("Booking submitted!", this.date, this.guests, this.inquiry);
             },
 
-            // gallery controls
+            get formattedPrice() {
+                return new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                    minimumFractionDigits: 0
+                }).format(this.tour.price ?? 0);
+            },
+
+            get totalPrice() {
+                return (this.tour?.price ?? 0) * this.guests;
+            },
+
+            get formattedTotalPrice() {
+                return new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                    minimumFractionDigits: 0
+                }).format(this.totalPrice);
+            },
+
             nextImage() {
-                this.currentImage = (this.currentImage + 1) % this.gallery.length;
-            },
-            prevImage() {
-                this.currentImage = (this.currentImage - 1 + this.gallery.length) % this.gallery.length;
+                if (this.gallery.length > 0) {
+                    this.currentImage = (this.currentImage + 1) % this.gallery.length;
+                }
             },
 
-            // itinerary
+            prevImage() {
+                if (this.gallery.length > 0) {
+                    this.currentImage =
+                        (this.currentImage - 1 + this.gallery.length) % this.gallery.length;
+                }
+            },
+
             toggleDay(index) {
                 this.openDay = this.openDay === index ? null : index;
             },
 
-            // guests
-            increment() {
-                this.guests++;
-                this.form.guests = this.guests;
-            },
-            decrement() {
-                if (this.guests > 1) this.guests--;
-                this.form.guests = this.guests;
-            },
-
-            incFormGuests() {
+            incGuests() {
                 this.form.guests++;
-                this.guests = this.form.guests;
-            },
-            decFormGuests() {
-                if (this.form.guests > 1) {
-                    this.form.guests--;
-                    this.guests = this.form.guests;
-                }
             },
 
-            // computed
-            get totalPrice() {
-                return '$' + (this.tour.price * this.guests);
-            },
-            get formattedPrice() {
-                return `<span class="text-white/80">From</span> <span class="text-[#E6C068]">$${this.tour.price}</span> <span class="text-white/60 text-sm">/ person</span>`;
+            decGuests() {
+                if (this.form.guests > 1) this.form.guests--;
             },
 
-            // actions
+            validateName() {
+                this.errors.name = this.form.name.trim() === '' ? 'Name is required' : '';
+            },
+
+            validateEmail() {
+                const regex = /\S+@\S+\.\S+/;
+                this.errors.email = !regex.test(this.form.email) ?
+                    'Invalid email' :
+                    '';
+            },
+
+            validatePhone() {
+                this.errors.phone =
+                    this.form.phone.length < 8 ? 'Phone number too short' : '';
+            },
+
+            validateDate() {
+                this.errors.date = this.form.date === '' ? 'Please select a date' : '';
+            },
+
             book() {
-                // Simulate booking success and close modal; in real app send to backend
-                alert('Reservation confirmed for ' + this.form.name + ' — Total: $' + (this.tour.price * this.form.guests));
-                this.openModal = false;
+                this.validateName();
+                this.validateEmail();
+                this.validatePhone();
+                this.validateDate();
+
+                if (this.errors.name || this.errors.email || this.errors.phone || this.errors.date) {
+                    return;
+                }
+
+                alert("Booking success!");
             },
 
-            sendInquiry() {
-                alert('Inquiry sent. Kami akan menghubungi Anda di ' + this.inquiry.email);
-                this.openInquiry = false;
-                this.inquiry = {
-                    name: '',
-                    email: '',
-                    message: ''
-                };
+            init() {
+                console.log("Tour loaded:", tour);
+                console.log(this.gallery);
             }
-        }
+        };
     }
 </script>
+
 @endsection

@@ -24,30 +24,30 @@
             </div>
             <div class="flex-shrink-0 flex justify-center">
                 <a href="/">
-                    <img class="h-10 md:h-12 w-auto"
-                        :src="scrolled ? '{{ asset('img/Logo-Bossku.png') }}' : '{{ asset('img/Logo-Bossku-white.png') }}'"
+                    <img class="h-auto w-32 md:w-48"
+                        :src="scrolled ? '{{ asset('img/Bossku.tours.png') }}' : '{{ asset('img/BosskuWhite.png') }}'"
                         class="transition-all duration-300" alt="Logo">
                 </a>
             </div>
             
             <div class="hidden md:flex flex-1 justify-end items-center space-x-4">
-                <a href="Services" class="text-sm font-medium relative group">
-                    Services
+                <a href="/Tour" class="text-sm font-medium relative group">
+                    Tour Packages
                     <span
                         class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="#" class="text-sm font-medium relative group">
-                    Contact
+                <a href="/About" class="text-sm font-medium relative group">
+                    About
                     <span
                         class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="Login"
-                    :class="scrolled ? 'border border-black text-black' : 'border border-white text-white'"
+                <a href="/Login"
+                    :class="scrolled ? 'bg-[#02335B] text-white' : 'bg-[#FFCA10] text-black'"
                     class="text-sm font-medium px-6 py-2 rounded-sm transition-colors duration-200 hover:bg-black hover:text-white">
                     Login
                 </a>
 
-                <a href="#" :class="scrolled ? 'bg-[#FFCA10] text-black' : 'bg-white text-black'"
+                <a href="/Custom-Form" :class="scrolled ? 'bg-[#FFCA10] text-black' : 'bg-white text-black'"
                     class="text-sm font-medium px-6 py-2 rounded-sm transition-colors duration-200">
                     Custom Trip
                 </a>

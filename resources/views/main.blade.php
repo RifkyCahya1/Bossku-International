@@ -24,18 +24,24 @@
 
     <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
 
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
 </head>
 
 <body class="bg-[#f4f4f4] scroll-smooth">
 
     @if (!isset($excludeNavbar))
-        @include('Layout.navbar')
+    @include('Layout.navbar')
     @endif
 
     @yield('content')
 
     @if (!isset($excludeFooter))
-        @include('Layout.Footer')
+    @include('Layout.Footer')
     @endif
 
     <script>
@@ -53,7 +59,7 @@
         requestAnimationFrame(raf);
     </script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 
 </html>

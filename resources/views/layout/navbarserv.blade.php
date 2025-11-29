@@ -11,15 +11,15 @@
     <div class="px-4">
         <div class="flex items-center justify-between h-12 md:px-12">
             <div class="hidden md:flex flex-1 justify-start space-x-4">
-                <a href="Destination" class="text-sm font-medium relative group">
+                <a href="/Destination" class="text-sm font-medium relative group">
                     Destination
                     <span class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="#" class="text-sm font-medium relative group">
+                <a href="/Experience" class="text-sm font-medium relative group">
                     Experiences
                     <span class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="Explore-Indonesia" class="text-sm font-medium relative group">
+                <a href="/Explore-Indonesia" class="text-sm font-medium relative group">
                     Travel In Indonesia
                     <span class="absolute left-0 -bottom-1 w-[75%] h-[2px] bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
@@ -32,15 +32,15 @@
             </div>
 
             <div class="hidden md:flex flex-1 justify-end items-center space-x-4">
-                <a href="Services" class="text-sm font-medium relative group">
-                    Services
+                <a href="/Tour" class="text-sm font-medium relative group">
+                    Tour Package
                     <span class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="#" class="text-sm font-medium relative group">
-                    Contact
+                <a href="/About" class="text-sm font-medium relative group">
+                    About
                     <span class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="#" class="text-sm font-medium px-6 py-2 rounded-sm bg-[#FFCA10] text-black">
+                <a href="/Custom-Form" class="text-sm font-medium px-6 py-2 rounded-sm bg-[#FFCA10] text-black">
                     Custom Trip
                 </a>
             </div>
