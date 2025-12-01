@@ -4,7 +4,7 @@
         <img src="img/tari.jpg"
             alt="Background Indonesia"
             class="w-full h-full object-cover object-center" />
-        <div class="absolute inset-0 bg-gradient-to-br from-[#f9f7f3]/0 via-black/60 to-black/80"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#f9f7f3]/40 via-black/70 to-black/90"></div>
     </div>
 
     <div class="relative container mx-auto px-4 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">

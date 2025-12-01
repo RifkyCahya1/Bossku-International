@@ -2,7 +2,7 @@
     <div class="container mx-auto px-6 py-12">
         <div class="flex flex-col lg:flex-row justify-between items-start gap-8">
             <div class="flex items-start gap-4">
-                <img src="{{ asset('img/Logo-Bossku-white.png') }}" alt="Bossku Logo" class="w-36 h-auto object-contain">
+                <img src="{{ asset('img/Bossku.tours.png') }}" alt="Bossku Logo" class="w-36 h-auto object-contain">
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">

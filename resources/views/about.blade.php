@@ -23,10 +23,10 @@
                     <p class="text-sm uppercase tracking-widest text-gray-500">The Soul Behind Bossku</p>
                     <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Born from legacy. Driven by meaning.<br class="hidden md:inline"> Designed for travelers who feel more than they say.</h1>
 
-                    <p class="text-lg text-gray-600 max-w-prose">We design journeys that restore something inside you — not merely take you somewhere new. For curious travelers who want to feel again.</p>
+                    <p class="text-lg text-gray-600 max-w-prose">We design journeys that restore something inside you not merely take you somewhere new. For curious travelers who want to feel again.</p>
 
                     <div class="flex items-center gap-4">
-                        <a href="#" class="inline-flex items-center px-6 py-3 bg-black text-white rounded-2xl shadow-lg text-sm font-semibold hover:opacity-95">See Our Packages</a>
+                        <a href="Tour" class="inline-flex items-center px-6 py-3 bg-black text-white rounded-2xl shadow-lg text-sm font-semibold hover:opacity-95">See Our Packages</a>
                         <a href="#story" class="inline-flex items-center px-4 py-3 border border-gray-200 rounded-2xl text-sm text-gray-700 hover:bg-gray-50">Read Our Story</a>
                     </div>
 
@@ -50,7 +50,6 @@
 
                         </div>
 
-                        <!-- premium badges -->
                         <div class="absolute -left-6 -bottom-10 w-48 md:w-60 mt-20">
                             <div class="space-y-4">
                                 <div class="bg-gradient-to-br from-white/70 to-gray-50 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-yellow-50">
@@ -65,10 +64,11 @@
                             </div>
                         </div>
 
-                        <!-- elegant accent ribbon -->
                         <div class="absolute top-6 right-6">
                             <div class="inline-flex items-center gap-2 bg-gradient-to-r from-black/50 to-transparent rounded-full px-3 py-1.5 shadow-sm border border-black/50">
-                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3L18 8l-4 3.1L15 17 10 14.2 5 17l1-5.9L2 8l5.4-1.7L10 1z"/></svg>
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 1l2.6 5.3L18 8l-4 3.1L15 17 10 14.2 5 17l1-5.9L2 8l5.4-1.7L10 1z" />
+                                </svg>
                                 <span class="text-xs text-white font-bold">Curated Luxury</span>
                             </div>
                         </div>
@@ -82,18 +82,18 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             <article class="lg:col-span-2 space-y-6">
                 <h2 class="text-3xl font-extrabold">🌄 Our Story</h2>
-                <p class="text-gray-700 leading-relaxed">Bossku began with one simple truth: <em>travel isn’t about distance — it’s about depth.</em> For more than 15 years, our parent company has guided thousands across Indonesia and beyond. But Bossku grew from a question that refused to stay quiet: <strong>What if a journey could restore something inside us — not just take us somewhere new?</strong></p>
+                <p class="text-gray-700 leading-relaxed">Bossku began with one simple truth: <em>travel isn't about distance it's about depth.</em> For more than 15 years, our parent company has guided thousands across Indonesia and beyond. But Bossku grew from a question that refused to stay quiet: <strong>What if a journey could restore something inside us not just take us somewhere new?</strong></p>
                 <p class="text-gray-700 leading-relaxed">We watched travelers arrive tired, restless, numb from routine… and leave awake, grateful, more themselves. That transformation became our compass.</p>
             </article>
 
             <aside class="space-y-4 p-6 bg-white rounded-2xl shadow-md ring-1 ring-gray-100">
                 <h3 class="text-lg font-semibold">What We Believe</h3>
-                <p class="text-sm text-gray-600">We believe nothing lasts — and that’s exactly why it matters. Moments fade, memories shift, seasons change.</p>
+                <p class="text-sm text-gray-600">We believe nothing lasts and that's exactly why it matters. Moments fade, memories shift, seasons change.</p>
 
                 <dl class="mt-4 space-y-3">
                     <div>
                         <dt class="text-sm font-medium">• Impermanence</dt>
-                        <dd class="text-xs text-gray-500">Every journey is temporary — that’s why it's sacred.</dd>
+                        <dd class="text-xs text-gray-500">Every journey is temporary that's why it's sacred.</dd>
                     </div>
                     <div>
                         <dt class="text-sm font-medium">• Gratitude</dt>
@@ -111,28 +111,47 @@
     <section class="bg-white/60 py-12">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-extrabold mb-6">🌏 What We Do</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
                 <div class="p-6 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-md ring-1 ring-gray-100">
                     <h4 class="font-semibold">Premium Tour Packages</h4>
-                    <p class="text-sm text-gray-600 mt-2">Domestic & international journeys crafted for depth.</p>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Domestic & international journeys crafted for depth.
+                    </p>
                 </div>
+
                 <div class="p-6 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-md ring-1 ring-gray-100">
-                    <h4 class="font-semibold">Custom-designed Trips</h4>
-                    <p class="text-sm text-gray-600 mt-2">Individuals, couples, families & corporate groups.</p>
+                    <h4 class="font-semibold">Custom designed Trips</h4>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Individuals, couples, families, and corporate groups combined with curated local discoveries
+                        selected through trusted partners, giving you a journey that feels unique, personal, and far from mainstream.
+                    </p>
                 </div>
+
                 <div class="p-6 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-md ring-1 ring-gray-100">
                     <h4 class="font-semibold">Visa & Ticketing</h4>
-                    <p class="text-sm text-gray-600 mt-2">Flight ticketing, visa & passport services.</p>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Flight ticketing, visa & passport services.
+                    </p>
                 </div>
+
                 <div class="p-6 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-md ring-1 ring-gray-100">
-                    <h4 class="font-semibold">Hidden-gem Experiences</h4>
-                    <p class="text-sm text-gray-600 mt-2">Curated local discoveries through trusted partners.</p>
+                    <h4 class="font-semibold">Rent Transport</h4>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Flexible, comfortable transport crafted to match your travel style designed like a custom trip, without the hassle.
+                    </p>
                 </div>
+
             </div>
 
-            <div class="mt-8 text-sm text-gray-600">Everything we design begins with a single question: <em>“What feeling are you searching for?”</em></div>
+            <div class="mt-8 text-sm text-gray-600">
+                Everything we design begins with a single question:
+                <em>“What feeling are you searching for?”</em>
+            </div>
         </div>
     </section>
+
 
     <section class="max-w-6xl mx-auto px-6 py-12">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
@@ -142,7 +161,7 @@
                     <li><strong>15 years of operational expertise</strong> backed by a parent company with deep industry roots.</li>
                     <li><strong>Local connections & authentic partners</strong> that open doors to rare experiences.</li>
                     <li><strong>Human-first service</strong> where clarity, honesty, and care guide every step.</li>
-                    <li><strong>Meaning before marketing</strong> — our philosophy shapes what we design.</li>
+                    <li><strong>Meaning before marketing</strong> our philosophy shapes what we design.</li>
                 </ul>
             </div>
 
@@ -162,15 +181,15 @@
     <section class="bg-gradient-to-t from-white to-gray-50 py-16">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h3 class="text-2xl font-extrabold">🌙 A Note From Us</h3>
-            <p class="mt-4 text-gray-700">Bossku isn’t built to follow trends. It’s built for travelers who seek sincerity in a noisy world — those who want their next journey to matter. If you feel that calling, maybe it’s time to explore what Indonesia can awaken in you.</p>
+            <p class="mt-4 text-gray-700">Bossku isn't built to follow trends. It's built for travelers who seek sincerity in a noisy world those who want their next journey to matter. If you feel that calling, maybe it's time to explore what Indonesia can awaken in you.</p>
 
             <div class="mt-8 flex justify-center gap-4">
                 <a href="#team" class="px-6 py-3 bg-black text-white rounded-2xl shadow hover:opacity-95">Meet the Team</a>
-                <a href="#" class="px-6 py-3 border border-gray-200 rounded-2xl text-sm text-gray-700">See Our Packages</a>
+                <a href="Tour" class="px-6 py-3 border border-gray-200 rounded-2xl text-sm text-gray-700">See Our Packages</a>
             </div>
         </div>
     </section>
-    
+
     <section id="team" class="scroll-mt-16 max-w-6xl mx-auto px-6 py-12" x-data="teamModal()">
         <h3 class="text-2xl font-extrabold">Meet the Team</h3>
         <p class="text-sm text-gray-600 mt-2">A small, dedicated team that crafts big moments.</p>
@@ -189,7 +208,6 @@
             </template>
         </div>
 
-        <!-- modal -->
         <div x-show="isOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center">
             <div class="fixed inset-0 bg-black/40" @click="close()"></div>
             <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 z-10">
@@ -233,7 +251,7 @@
                     name: 'Bima Santoso',
                     role: 'Head of Operations',
                     avatar: '{{ asset("images/team/bima.jpg") }}',
-                    bio: 'Ensures trips run smoothly — logistics, partners, and local relationships.'
+                    bio: 'Ensures trips run smoothly   logistics, partners, and local relationships.'
                 },
                 {
                     id: 3,

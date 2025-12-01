@@ -1,6 +1,19 @@
 @extends('main')
 @section('content')
 
+<style>
+    .ExploreSlider .swiper-slide {
+        opacity: 0.4;
+        transform: scale(0.9);
+        transition: all .35s ease;
+    }
+
+    .ExploreSlider .swiper-slide.is-center {
+        opacity: 1;
+        transform: scale(1);
+    }
+</style>
+
 <div class="relative w-full">
     <img src="img/ExploreIndonesia.jpg" alt="Gambar Hotel" class="w-full h-screen object-cover">
     <div class="absolute inset-0 bg-black/50"></div>
@@ -48,70 +61,138 @@
     </div>
 </div>
 
-<div x-data="islandSection()" class="container mx-auto px-6 md:px-16 py-16">
-    <div class="text-center mb-12">
-        <h2 class="text-[#0B0B0B] text-3xl md:text-5xl font-semibold leading-snug tracking-tight mb-2">
-            Explore Indonesia’s Beauty
-        </h2>
-        <p class="text-gray-500 text-sm md:text-base font-medium  max-w-2xl mx-auto">
-            Explore our other enchanting islands and unveil the timeless beauty of Indonesia.
-        </p>
+<section class="relative text-white py-12 md:py-20 overflow-hidden">
+
+    <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1604973104381-870c92f10343?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Background Indonesia"
+            class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-br from-[#f9f7f3]/0 via-black/60 to-black/80"></div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <template x-for="card in cards" :key="card.name">
-            <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-500">
-                <img :src="card.image" :alt="card.name"
-                    loading="lazy"
-                    class="w-full h-64 md:h-72 object-cover transform group-hover:scale-105 transition duration-500 ease-out">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div class="absolute bottom-5 left-5 text-white">
-                    <h3 class="text-xl md:text-2xl font-semibold" x-text="card.name"></h3>
-                    <p class="text-xs md:text-sm text-gray-200" x-text="card.desc"></p>
-                </div>
+    <div class="relative items-center">
+        <div class="mx-auto px-4 md:px-16 grid grid-cols-2 gap-4 md:gap-24 text-center md:text-left order-1 md:order-1">
+            <div>
+                <p class="uppercase tracking-widest text-sm text-[#CB0001] font-semibold">Tour</p>
+                <h2 class="text-3xl md:text-6xl font-bold">
+                    Interesting Place of <span class="text-[#FF0000]">Indonesia</span>
+                </h2>
             </div>
-        </template>
+
+            <div class="mt-8 sm:mt-10 flex items-center gap-4">
+
+                <!-- Counter -->
+                <div class="flex items-end font-semibold gap-1">
+                    <span id="currentSlide" class="text-2xl sm:text-3xl text-[#CB0001] font-bold tracking-tight">01</span>
+                    <span class="text-gray-500 text-base sm:text-lg font-medium">/</span>
+                    <span id="totalSlide" class="text-gray-200 text-base sm:text-lg font-medium">03</span>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="flex-1 h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
+                    <div id="progressBar" class="h-full bg-[#CB0001] transition-all duration-500" style="width: 0%;"></div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex items-center gap-2">
+                    <button id="prevBtn"
+                        class="p-2.5 sm:p-3 border border-gray-400 rounded-full text-white hover:bg-[#CB0001] hover:border-[#CB0001] transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 sm:w-5 h-4 sm:h-5" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button id="nextBtn"
+                        class="p-2.5 sm:p-3 border border-gray-400 rounded-full text-white hover:bg-[#CB0001] hover:border-[#CB0001] transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 sm:w-5 h-4 sm:h-5" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div x-data="tourCategories" class="relative order-2 mt-10">
+            <div class="swiper ExploreSlider overflow-visible">
+                <div class="swiper-wrapper">
+
+                    <!-- LOOP SLIDES -->
+                    <template x-for="(item, index) in categories" :key="index">
+                        <div class="swiper-slide">
+                            <div class="relative rounded-2xl overflow-hidden group">
+
+                                <img :src="item.image"
+                                    class="object-cover w-full h-[220px] sm:h-[300px] md:h-[350px] lg:h-[420px] transition-transform duration-700 group-hover:scale-105"
+                                    :alt="item.title" />
+
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 sm:p-6 flex flex-col justify-end">
+                                    <h3 class="text-lg sm:text-xl font-semibold mb-1" x-text="item.title"></h3>
+                                    <p class="text-gray-300 text-xs sm:text-sm leading-snug" x-text="item.description"></p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </template>
+
+                </div>
+
+                <div class="swiper-pagination mt-3 md:hidden"></div>
+            </div>
+        </div>
+
     </div>
-</div>
+</section>
+
+<script src="JS/SwiperExplore.js"></script>
 
 <script>
     document.addEventListener('alpine:init', () => {
-        Alpine.data('islandSection', () => ({
-            cards: [{
-                    name: 'Bali',
-                    desc: 'Island of the Gods',
-                    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80'
+        Alpine.data('tourCategories', () => ({
+            categories: [{
+                    title: "Culinary Tourism",
+                    image: "https://images.unsplash.com/photo-1613653739328-e86ebd77c9c8?q=80&w=1170&auto=format&fit=crop",
+                    description: "Dive into Indonesia’s rich culinary scene, from sizzling street snacks to authentic traditional dishes."
                 },
                 {
-                    name: 'Lombok',
-                    desc: 'Tranquil tropical escape',
-                    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&q=80'
+                    title: "Marine Tourism",
+                    image: "https://images.unsplash.com/photo-1587015539194-a95a49797b66?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    description: "Discover crystal-clear waters, vibrant coral reefs, and stunning tropical coastlines perfect for snorkeling and diving."
                 },
                 {
-                    name: 'Java',
-                    desc: 'Cultural heart of Indonesia',
-                    image: 'https://images.unsplash.com/photo-1588335076481-8f3de2408a26?w=800&q=80'
+                    title: "Adventure Tourism",
+                    image: "https://images.unsplash.com/photo-1624731798627-6cea0017de7c?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    description: "Experience thrilling outdoor adventures from mountains and forests to waterfalls and extreme activities."
                 },
                 {
-                    name: 'Sumatra',
-                    desc: 'Untamed wilderness & beauty',
-                    image: 'https://images.unsplash.com/photo-1581167761644-7e97c0e8e0f0?w=800&q=80'
+                    title: "Arts & Culture",
+                    image: "https://images.unsplash.com/photo-1679141435935-7d8ff9659c9a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    description: "Explore traditional dances, spiritual rituals, heritage crafts, and Indonesia’s diverse artistic expressions."
                 },
                 {
-                    name: 'Sulawesi',
-                    desc: 'Diving paradise & unique culture',
-                    image: 'https://images.unsplash.com/photo-1605518865563-0f8d8d58b1f1?w=800&q=80'
+                    title: "Cultural Heritage",
+                    image: "https://images.unsplash.com/photo-1738245671004-ac736a44a134?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    description: "Journey through ancient temples, heritage sites, and historical landmarks that tell Indonesia’s timeless stories."
                 },
                 {
-                    name: 'Papua',
-                    desc: 'Frontier of natural wonders',
-                    image: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?w=800&q=80'
+                    title: "Religious Tourism",
+                    image: "https://images.unsplash.com/photo-1671811805878-a587da969fa7?q=80&w=1161&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    description: "Visit sacred sites, spiritual landmarks, and religious destinations rich with cultural meaning."
+                },
+                {
+                    title: "Village Tourism",
+                    image: "https://i.pinimg.com/1200x/f9/6a/9a/f96a9a98eaacbeffa2c29028a290d527.jpg",
+                    description: "Experience authentic rural life, local traditions, and community-based tourism in Indonesia’s charming villages."
                 },
             ]
-        }))
-    })
+        }));
+    });
 </script>
-
 
 <script src="JS/map.js"></script>
 @endsection

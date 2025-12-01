@@ -36,65 +36,53 @@
     </div>
 </div>
 
-<div class="container mx-auto py-4 px-4 md:px-12">
+<div class="container mx-auto max-w-lg py-4 px-4 md:px-12">
     <div class="flex flex-col items-center text-center">
-        <h2 class="text-xl md:text-3xl font-extrabold text-gray-800 mb-2 leading-tight tracking-tight">
+        <h2 class="text-xl md:text-4xl font-extrabold text-gray-800 mb-2 leading-tight tracking-tight">
             More Than Just a Journey
         </h2>
 
-        <p class="text-sm text-gray-600 mb-4 text-pretty max-w-3xl leading-relaxed tracking-wide">
-            The world is vast, filled with timeless wonders and untold stories. Yet beyond every destination lies something far deeper the emotions that define your journey. It's not only where you go, but how every moment lingers in your heart.
+        <p class="text-sm md:text-base text-gray-600 mb-4 text-pretty leading-relaxed tracking-wide">
+            Maybe what you need isn’t another vacation. Maybe it’s a pause. A breath. A moment to feel something real again.
         </p>
 
-        <p class="text-sm text-gray-600 mb-4 text-pretty max-w-3xl leading-relaxed tracking-wide">
-            We don't just create itineraries; we curate experiences. Each journey begins with listening understanding your dreams, desires, and rhythm. From snow-capped mountains to serene coastlines, we craft stories that are uniquely yours.
+        <p class="text-sm md:text-base text-gray-600 mb-4 text-pretty leading-relaxed tracking-wide">
+            At Bossku, travel is not an escape. It is a return. To meaning. To gratitude. To the parts of you time quietly set aside.
         </p>
 
-        <p class="text-sm text-gray-600 mb-4 text-pretty max-w-3xl leading-relaxed tracking-wide">
-            Designed with precision, flexibility, and discretion, every detail of your itinerary reflects your individuality. Effortless comfort, seamless planning, and a sense of exclusivity in every step you take.
-        </p>
-
-        <p class="text-sm text-gray-600 mb-4 text-pretty max-w-2xl leading-relaxed tracking-wide">
-            Perhaps this isn't just travel, it's the beginning of something truly meaningful, where every destination becomes a part of who you are.
-        </p>
 
         <div class="mt-6">
-            <a href="contact.php" class="inline-block border border-[#02335B] text-[#02335B] hover:bg-[#FFCA10] hover:text-[#02335B] font-semibold px-8 py-3 rounded-full shadow-sm transition-all duration-300 text-lg tracking-wide">
-                Start Your Journey
+            <a href="contact.php"
+                class="inline-block border border-[#02335B] text-[#02335B] hover:bg-[#FFCA10] hover:text-[#02335B] font-semibold px-8 py-3 rounded-full shadow-sm transition-all duration-300 text-lg tracking-wide">
+                Find The Journey That Calls You
             </a>
         </div>
+
     </div>
 </div>
 
 @include('section.attraction')
 @include('section.hotel')
 @include('section.destination')
-@include('section.about')
-{{-- @include('section.testimonial') --}}
 
 <section class="relative bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a1a] text-white py-8 overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-        <img src="https://source.unsplash.com/1600x900/?luxury,texture" class="w-full h-full object-cover object-center" alt="Background" />
-    </div>
 
     <div class="relative container mx-auto px-6 md:px-16 text-center space-y-8">
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">
-            Setiap Perjalanan Adalah Kisah, <br class="hidden md:block">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#071F35] to-[#E3EFFB]">Kami Siap Menulisnya Bersama Anda</span>
+            The Soul Behind <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#bfa76b] via-[#d8c27a] to-[#f5e7b0]">Bossku</span>
         </h2>
 
         <p class="max-w-2xl mx-auto text-gray-300 leading-relaxed">
-            Terima kasih telah mempercayakan perjalanan Anda bersama kami.
-            Kami berkomitmen memberikan pengalaman terbaik karena bagi kami,
-            perjalanan bukan hanya tentang tujuan, tapi tentang makna di setiap langkahnya.
+            Born from 15 years of travel legacy, Bossku bridges heart and horizon — crafting journeys across Indonesia that reach deeper than distance.
         </p>
 
         <div>
             <a href="#contact"
-                class="inline-block bg-gradient-to-r from-[#071F35] to-[#E3EFFB] text-[#0a0a0a] font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-[#E3EFFB]/40 transition-all duration-300">
-                Hubungi Kami
+                class="inline-block bg-gradient-to-r from-[#a89258] to-[#E3EFFB] text-[#0a0a0a] font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-[#E3EFFB]/40 transition-all duration-300">
+                Meet Our Story
             </a>
         </div>
+
 
         <div class="pt-4 border-t border-white/10">
             <p class="text-sm text-gray-400 leading-relaxed text-pretty">

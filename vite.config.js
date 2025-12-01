@@ -9,7 +9,5 @@ export default defineConfig({
             refresh: true,
         }),
         tailwindcss(),
-
-        require('flowbite/plugin'),
     ],
 });

@@ -10,11 +10,15 @@
         <div class="absolute inset-0 bg-black/50"></div>
     </div>
 
-    <div class="relative z-10 flex flex-col justify-center items-start md:w-2/5
-                text-white px-4 md:px-20 py-4 text-center md:text-left">
-        <img src="{{ asset('img/Bossku.tours.png') }}"
-            alt="Bossku.Tours"
-            class="w-64 md:w-5xl mb-2 mx-auto md:mx-0">
+    <div class="relative z-10 flex flex-col justify-center items-start md:w-2/5 text-white px-4 md:px-20 py-4 text-center md:text-left">
+        <a href="javascript:history.back()" class="inline-flex items-center gap-2 text-gray-300 text-sm md:text-base leading-relaxed mb-12">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+            </svg>
+            <span>Back</span>
+        </a>
+        <img src="{{ asset('img/Bossku.tours.png') }}" alt="Bossku.Tours" class="w-64 md:w-5xl mb-2 mx-auto md:mx-0">
+
         <h1 class="text-xl md:text-4xl font-semibold mb-2 leading-snug">
             Explore Indonesia <br class="hidden md:block"> in Luxury & Comfort
         </h1>
@@ -23,7 +27,6 @@
             <span class="text-[#bfa46f] font-medium">Bossku.Tours</span>
             a premium journey designed exclusively for those who seek true comfort, beauty, and luxury.
         </p>
-
     </div>
 
     <div class="relative z-10 flex items-center justify-center md:w-3/5 px-4 py-4">

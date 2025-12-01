@@ -235,22 +235,13 @@
 
                     <div class="relative mt-2">
                         <input
-                            datepicker
-                            datepicker-format="yyyy-mm-dd"
                             x-model="date"
-                            type="text"
+                            type="date"
                             class="w-full p-3 border border-gray-200 rounded-xl bg-white text-gray-700
                             focus:ring-2 focus:ring-[#E6C068]/50 focus:border-[#E6C068]
                             transition-all cursor-pointer shadow-sm hover:shadow
                             placeholder-gray-400"
                             placeholder="Select date">
-
-                        <!-- Gold Calendar Icon -->
-                        <svg class="w-5 h-5 text-[#E6C068] absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
-                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
-                        </svg>
                     </div>
                 </div>
 
@@ -419,23 +410,17 @@
                         </div>
                         <div>
                             <input
-                                datepicker
-                                datepicker-format="yyyy-mm-dd"
                                 x-model="date"
+                                type="date"
                                 :min="tour.minDate" required
-                                type="text"
                                 class="w-full p-3 border border-gray-200 rounded-xl bg-white text-gray-700
                                 focus:ring-2 focus:ring-[#E6C068]/50 focus:border-[#E6C068]
                                 transition-all cursor-pointer shadow-sm hover:shadow
-                                placeholder-gray-400"
-                                placeholder="Select date">
-
-                            <!-- Gold Calendar Icon -->
-                            <svg class="w-5 h-5 text-[#E6C068] absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
-                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
-                            </svg>
+                              placeholder-gray-400"
+                                placeholder="Select date"
+                                @blur="validateDate()"
+                                :class="{'border-red-500': errors.date}">
+                           
                             <div x-show="errors.date" class="text-red-500 text-xs mt-1" x-text="errors.date"></div>
                         </div>
                     </div>
@@ -471,7 +456,7 @@
                             </div>
                             <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
                                 <span>Date</span>
-                                <span class="font-medium text-gray-800 dark:text-gray-100" x-text="form.date || '-'"></span>
+                                <span class="font-medium text-gray-800 dark:text-gray-100" x-text="date || '-'"></span>
                             </div>
                             <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
                                 <span>Guests</span>
@@ -513,7 +498,7 @@
             <div class="flex items-start justify-between gap-4 mb-4">
                 <div>
                     <h4 class="text-lg font-semibold text-[#0B0B0B]">Ask a Question</h4>
-                    <p class="text-sm text-gray-500 mt-1">Tim kami akan membalas secepatnya dengan informasi lengkap.</p>
+                    <p class="text-sm text-gray-500 mt-1">Our team will get back to you as soon as possible with complete information.</p>
                 </div>
                 <button @click="openInquiry = false" aria-label="Close" class="text-gray-400 hover:text-gray-600">
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -529,6 +514,7 @@
                         <input x-model="inquiry.name" type="text" placeholder="Full name" required
                             class="w-full p-3 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E6C068]/30" />
                     </div>
+                    <div x-show="errors.name" class="text-red-500 text-xs mt-1" x-text="errors.name"></div>
                 </div>
 
                 <div>
@@ -537,6 +523,7 @@
                         <input x-model="inquiry.email" type="email" placeholder="you@domain.com" required
                             class="w-full p-3 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E6C068]/30" />
                     </div>
+                    <div x-show="errors.email" class="text-red-500 text-xs mt-1" x-text="errors.email"></div>
                 </div>
 
                 <div>
@@ -545,6 +532,7 @@
                         <textarea x-model="inquiry.message" placeholder="Write your question or request details" rows="6"
                             class="w-full p-3 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E6C068]/30"></textarea>
                     </div>
+                    <div x-show="errors.message" class="text-red-500 text-xs mt-1" x-text="errors.message"></div>
                 </div>
 
                 <div class="flex items-center justify-between gap-3 pt-2">
@@ -559,13 +547,12 @@
                     </button>
                 </div>
 
-                <p class="text-xs text-gray-400 mt-2">Dengan mengirim, Anda setuju untuk dihubungi oleh tim Bossku.Tours.</p>
+                <p class="text-xs text-gray-400 mt-2">By submitting, you agree to be contacted by the Bossku.Tours team.</p>
             </form>
         </aside>
     </div>
 
 </div>
-
 
 <script>
     function tourDetailApp(tour) {
@@ -606,6 +593,55 @@
                 name: '',
                 email: '',
                 message: ''
+            },
+
+            validateInquiry() {
+                this.errors = {
+                    name: '',
+                    email: '',
+                    message: ''
+                };
+                let valid = true;
+
+                // Name
+                if (!this.inquiry.name.trim()) {
+                    this.errors.name = "Name is required.";
+                    valid = false;
+                }
+
+                // Email format
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!this.inquiry.email.trim()) {
+                    this.errors.email = "Email is required.";
+                    valid = false;
+                } else if (!emailPattern.test(this.inquiry.email)) {
+                    this.errors.email = "Please enter a valid email address.";
+                    valid = false;
+                }
+
+                // Message
+                if (!this.inquiry.message.trim()) {
+                    this.errors.message = "Message cannot be empty.";
+                    valid = false;
+                }
+
+                return valid;
+            },
+
+            async sendInquiry() {
+                if (!this.validateInquiry()) return;
+
+                // Kirim data (contoh fetch)
+                console.log("Sending inquiry...", this.inquiry);
+
+                // Reset form
+                this.inquiry = {
+                    name: '',
+                    email: '',
+                    message: ''
+                };
+
+                alert("Your inquiry has been sent!");
             },
 
             bookingForm() {

@@ -116,8 +116,10 @@
                         </div>
 
                         <div>
-                            <label class="text-sm font-medium text-gray-600">kota</label> <select x-model="filters.kota" class="mt-2 w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm">
-                                <option value="">All</option> <template x-for="country in availableCountries()" :key="country">
+                            <label class="text-sm font-medium text-gray-600">kota</label>
+                            <select x-model="filters.kota" class="mt-2 w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm">
+                                <option value="">All</option>
+                                <template x-for="country in availableCountries()" :key="country">
                                     <option x-text="country"></option>
                                 </template>
                             </select>
