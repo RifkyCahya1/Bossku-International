@@ -9,13 +9,33 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $attractions = DB::table('list_tempat as lt')
+            ->leftJoin('list_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
+            ->select(
+                'lt.id',
+                'lt.tempat as name',
+                'lt.city as location',
+                'lt.price',
+                'lt.keterangan',
+                'lti.winter_img',
+                'lti.autumn_img',
+                'lti.summer_img'
+            )
+            ->where('lt.price', '>', 0)
+            ->where('lt.negara', 'LIKE', '%INDONESIA%')
+            ->where('lt.tempat', 'LIKE', '%WNA%')
+            ->inRandomOrder()
+            ->take(8)
+            ->get();
+
+        return view('home', compact('attractions'));
     }
 
     public function explore()
     {
         return view('explore-indonesia');
     }
+
 
     public function provinsi()
     {
@@ -32,7 +52,7 @@ class HomeController extends Controller
             })
             ->where('det.negara', 'INDONESIA')
             ->where('det.agent_twn', '>', 0)
-            ->where('det.pax', '<', 10)
+            ->where('det.pax', '<', 4)
             ->select(
                 'iti.judul',
                 'iti.id as itinerary_id',
@@ -99,16 +119,11 @@ class HomeController extends Controller
     }
 
 
-
     public function destination()
     {
         return view('destination');
     }
 
-    public function experience()
-    {
-        return view('experience');
-    }
 
     public function booking()
     {

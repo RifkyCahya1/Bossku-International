@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Services\GeminiService;
 use Illuminate\Http\Request;
 
 class TourController extends Controller
 {
-    private function formatItinerary($tourId, $json_day)
+    private function formatItinerary($tourId, $json_day, GeminiService $ai)
     {
         $itinerary = [];
 
@@ -25,10 +26,10 @@ class TourController extends Controller
 
             $setMeal = "";
             if ($meal && ($meal->bf != '0' || $meal->ln != '0' || $meal->dn != '0')) {
-                $b = $meal->bf != '0' ? "B" : "";
-                $l = $meal->ln != '0' ? "L" : "";
-                $d = $meal->dn != '0' ? "D" : "";
-                $setMeal = "(" . $b . " " . $l . " " . $d . ")";
+                $b = $meal->bf != '0' ? "Breakfast" : "";
+                $l = $meal->ln != '0' ? "Lunch" : "";
+                $d = $meal->dn != '0' ? "Dinner" : "";
+                $setMeal = "(" . implode(" ", array_filter([$b, $l, $d])) . ")";
             }
 
             $listTmp = DB::table('LT_add_listTmp')
@@ -48,8 +49,8 @@ class TourController extends Controller
                     ->first();
 
                 $tempat[] = [
-                    "nama" => $detail->tempat2 ?? "",
-                    "deskripsi" => $detail->keterangan ?? "",
+                    "nama" => $ai->translateToEnglish($detail->tempat2 ?? ""),
+                    "deskripsi" => $ai->translateToEnglish($detail->keterangan ?? ""),
                     "optional" => isset($ops->optional) && $ops->optional == 1
                 ];
             }
@@ -61,15 +62,16 @@ class TourController extends Controller
 
             $itinerary[] = [
                 "hari" => $hari,
-                "judul" => $rute->nama ?? "",
+                "judul" => $ai->translateToEnglish($rute->nama ?? ""),
                 "meal" => $setMeal,
                 "tempat" => $tempat,
-                "hotel" => isset($hotel->hotel) && $hotel->hotel == 1,
+                "hotel" => isset($hotel->hotel) && $hotel->hotel == 1
             ];
         }
 
         return $itinerary;
     }
+
 
 
     private function baseImg($file)
@@ -79,7 +81,7 @@ class TourController extends Controller
         return asset('img/images/' . ltrim($file, '/'));
     }
 
-    public function details($kode)
+    public function details($kode, GeminiService $ai)
     {
         $data = DB::select(
             "
@@ -146,8 +148,9 @@ class TourController extends Controller
             "category" => $data[0]->kategori ?? "Tour",
             "type" => $data[0]->tipe ?? "Group",
             "itinerary" => $this->formatItinerary(
-                $data[0]->id,          // tour_id
-                $data[0]->hari      // jumlah hari itinerary
+                $data[0]->id,      
+                $data[0]->hari,
+                $ai    
             ),
             "include" => explode('|', $data[0]->include ?? ''),
             "exclude" => explode('|', $data[0]->exclude ?? ''),

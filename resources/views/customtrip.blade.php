@@ -47,7 +47,7 @@
                     Design My Journey
                 </button>
 
-                <a href="https://wa.me/628xxxxxx"
+                <a href="https://wa.me/6285727767777" target="_blank"
                     class="px-10 py-4 bg-white/50 backdrop-blur-sm border border-[#b79a5b]/30 text-[#2b2b2b] font-semibold rounded-lg hover:bg-white/80 transition-all duration-300 flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.781 1.149c-1.488.694-2.744 1.613-3.594 2.766-.85 1.153-1.307 2.437-1.309 3.763 0 3.585 2.487 6.9 6.156 7.813.565.149 1.159.226 1.756.226h.005c3.51 0 6.424-2.505 7.178-5.953.285-1.33.286-2.823 0-4.181-.751-3.446-3.67-5.985-7.178-5.984z" />
@@ -58,7 +58,6 @@
         </div>
     </div>
 
-    <!-- Modal -->
     <div
         x-show="openCustom"
         x-transition.opacity.duration-300ms
@@ -71,7 +70,6 @@
             x-transition.scale.duration-300ms
             @click.stop>
 
-            <!-- Modal Header with Gradient -->
             <div class="sticky top-0 bg-gradient-to-r from-[#b79a5b]/10 to-[#d4af86]/10 border-b border-white/5 px-8 py-6 flex items-center justify-between backdrop-blur-xl z-50">
                 <div>
                     <h3 class="text-2xl text-white font-light tracking-tight">Craft Your Experience</h3>
@@ -86,7 +84,6 @@
                 </button>
             </div>
 
-            <!-- Modal Body -->
             <div class="p-8">
                 <p class="text-gray-300 text-sm text-center mb-8 leading-relaxed">
                     Share your vision. The more transparent you are about your desires, the more authentic the experience we'll curate.
@@ -94,7 +91,6 @@
 
                 <form @submit.prevent="submitForm" class="space-y-6">
 
-                    <!-- Row 1 -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Full Name *</label>
@@ -121,7 +117,6 @@
                         </div>
                     </div>
 
-                    <!-- Row 2 -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Phone / WhatsApp *</label>
@@ -146,7 +141,6 @@
                         </div>
                     </div>
 
-                    <!-- Row 3 -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Travel Dates</label>
@@ -159,7 +153,6 @@
                         </div>
                     </div>
 
-                    <!-- Row 4 -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Traveling With</label>
@@ -179,25 +172,21 @@
                         </div>
                     </div>
 
-                    <!-- Budget -->
                     <div class="space-y-2">
                         <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Budget (per person)</label>
                         <input type="text" x-model="form.budget" placeholder="e.g., $2,000 - $5,000" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
                     </div>
 
-                    <!-- Intention -->
                     <div class="space-y-2">
                         <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Intention or Vision</label>
                         <textarea x-model="form.intention" rows="4" placeholder="What feeling are you seeking? Share a memory, a mood, or a single word that defines this journey..." class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500 resize-none"></textarea>
                     </div>
 
-                    <!-- Special Requests -->
                     <div class="space-y-2">
                         <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Special Requests or Considerations</label>
                         <textarea x-model="form.special" rows="2" placeholder="Any dietary needs, accessibility requirements, or unique requests..." class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500 resize-none"></textarea>
                     </div>
 
-                    <!-- Consent -->
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4 space-y-3">
                         <label class="flex items-start gap-3 cursor-pointer group">
                             <input type="checkbox" x-model="form.consent" @change="validate('consent')" class="w-5 h-5 mt-0.5 rounded border-white/20 bg-white/5 accent-[#b79a5b] cursor-pointer">
@@ -206,7 +195,6 @@
                         <p x-show="error.consent" class="text-red-400 text-xs ml-8" x-text="error.consent"></p>
                     </div>
 
-                    <!-- Submit Button -->
                     <button
                         type="submit"
                         class="w-full bg-gradient-to-r from-[#b79a5b] to-[#d4af86] hover:from-[#c9aa6b] hover:to-[#e0bb96] text-white font-semibold py-4 rounded-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 group">
@@ -232,7 +220,6 @@
         </div>
     </div>
 
-    <!-- Philosophy Section -->
     <section class="bg-gradient-to-r from-[#faf8f2] to-[#f5ede3] text-gray-800 py-24 border-t border-gray-200/50">
         <div class="container mx-auto px-6 md:px-16">
             <div class="max-w-3xl mx-auto text-center space-y-8">
@@ -253,7 +240,6 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section class="bg-gradient-to-b from-[#f3f0eb] to-[#ede5d9] text-gray-800 py-24">
         <div class="container mx-auto px-6 md:px-16 space-y-16">
 
@@ -306,7 +292,6 @@
         </div>
     </section>
 
-    <!-- What You'll Receive -->
     <section class="bg-gradient-to-r from-[#faf8f2] to-[#f5ede3] text-gray-800 py-24">
         <div class="container mx-auto px-6 md:px-16 space-y-12">
             <h2 class="text-4xl md:text-5xl text-center font-light">
@@ -361,7 +346,6 @@
         </div>
     </section>
 
-    <!-- Why Choose BossKu -->
     <section class="bg-gradient-to-b from-[#f3f0eb] to-[#ede5d9] text-gray-800 py-24">
         <div class="container mx-auto px-6 md:px-16">
             <h2 class="text-4xl md:text-5xl text-center font-light mb-16">
@@ -398,7 +382,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="bg-gradient-to-r from-[#1a1a1a] via-[#252525] to-[#1f1f1f] text-white py-24 relative overflow-hidden">
         <div class="absolute inset-0 opacity-20">
             <svg class="w-full h-full" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice">
@@ -429,7 +412,7 @@
                     Begin Now
                 </button>
 
-                <a href="https://wa.me/628xxxxxx"
+                <a href="https://wa.me/6285727767777" target="_blank"
                     class="px-10 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300">
                     Chat with Nina
                 </a>

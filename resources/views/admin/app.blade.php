@@ -59,9 +59,17 @@
 
             <div class="flex items-center gap-3">
                <p class="text-sm text-gray-300 dark:text-gray-700">Welcome back,</p>
-               <div class="text-sm font-medium text-[#bfa46f] dark:text-[#bfa46f]">Admin</div>
-               <a href="{{ route('logout') }}" class="px-3 py-2 rounded-lg bg-gradient-to-r from-[#bfa46f] to-[#a38c58] text-white text-sm hover:opacity-95 transition">Logout</a>
+
+               <div class="text-sm font-medium text-[#bfa46f] dark:text-[#bfa46f]">
+                  {{ auth()->user()->name }}
+               </div>
+
+               <a href="{{ route('logout') }}"
+                  class="px-3 py-2 rounded-lg bg-gradient-to-r from-[#bfa46f] to-[#a38c58] text-white text-sm hover:opacity-95 transition">
+                  Logout
+               </a>
             </div>
+
          </div>
 
          <div class="md:hidden flex items-center gap-2">

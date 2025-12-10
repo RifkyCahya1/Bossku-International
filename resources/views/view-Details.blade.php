@@ -420,7 +420,7 @@
                                 placeholder="Select date"
                                 @blur="validateDate()"
                                 :class="{'border-red-500': errors.date}">
-                           
+
                             <div x-show="errors.date" class="text-red-500 text-xs mt-1" x-text="errors.date"></div>
                         </div>
                     </div>
@@ -475,9 +475,19 @@
                             Cancel
                         </button>
                         <button type="submit"
-                            class="px-6 py-2.5 rounded-lg bg-[#E6C068] text-white font-semibold hover:bg-[#d4aa4c] transition shadow-lg hover:shadow-xl">
-                            Confirm Reservation
+                            :disabled="loading"
+                            class="px-6 py-2.5 rounded-lg bg-[#E6C068] text-white font-semibold transition shadow-lg hover:shadow-xl
+                            disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+
+                            <template x-if="!loading">
+                                <span>Pay Now</span>
+                            </template>
+
+                            <template x-if="loading">
+                                <span class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
+                            </template>
                         </button>
+
                     </div>
                 </div>
             </form>
@@ -710,21 +720,59 @@
             },
 
             validateDate() {
-                this.errors.date = this.form.date === '' ? 'Please select a date' : '';
+                this.errors.date = this.date === '' ? 'Please select a date' : '';
             },
+
+            loading: false,
 
             book() {
-                this.validateName();
-                this.validateEmail();
-                this.validatePhone();
-                this.validateDate();
+                this.loading = true;
 
-                if (this.errors.name || this.errors.email || this.errors.phone || this.errors.date) {
-                    return;
-                }
+                fetch('/payment/doku/create', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            name: this.form.name,
+                            email: this.form.email,
+                            phone: this.form.phone,
+                            date: this.date,
+                            guests: this.guests,
+                            total: this.totalPrice,
+                            tour_id: this.tour.id,
+                        })
+                    })
+                    .then(async r => {
+                        const text = await r.text();
 
-                alert("Booking success!");
+                        let res;
+                        try {
+                            res = JSON.parse(text);
+                        } catch {
+                            console.error("Server ngirim HTML / ERROR PAGE:", text);
+                            throw new Error("Response bukan JSON");
+                        }
+
+                        return res;
+                    })
+                    .then(res => {
+                        if (res.redirect_url) {
+                            window.location = res.redirect_url;
+                        } else {
+                            alert("Gagal mengambil URL pembayaran.");
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("Waduh server error, coba ulangi.");
+                    })
+                    .finally(() => {
+                        this.loading = false;
+                    });
             },
+
 
             init() {
                 console.log("Tour loaded:", tour);

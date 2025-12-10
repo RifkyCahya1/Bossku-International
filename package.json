@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "@alpinejs/focus": "^3.15.1",
+        "@google/genai": "^1.30.0",
         "alpinejs": "^3.15.0",
         "flowbite": "^4.0.1",
         "flowbite-datepicker": "^2.0.0"

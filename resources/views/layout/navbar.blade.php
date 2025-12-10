@@ -16,7 +16,7 @@
                     <span
                         class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="/Explore-Indonesia" class="text-sm font-medium relative group">
+                <a href="/Explore" class="text-sm font-medium relative group">
                     Travel In Indonesia
                     <span
                         class="absolute left-0 -bottom-1 w-[75%] h-0.5 bg-[#02335B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
@@ -74,9 +74,9 @@
         <div x-show="open" x-transition class="md:hidden mt-2 bg-white rounded shadow-lg text-black">
             <a href="/Destination" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Destination</a>
             <a href="/Experience" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Experiences</a>
-            <a href="/Explore-Indonesia" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Travel In
+            <a href="/Explore" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Travel In
                 Indonesia</a>
-            <a href="/Services" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Services</a>
+            <a href="/Tour" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Services</a>
             <a href="/About" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">About</a>
             <a href="/Login" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Login</a>
             <a href="/Custom-Form" class="block px-4 py-2 text-sm font-medium rounded bg-[#FFCA10] text-black mt-2">Custom

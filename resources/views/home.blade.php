@@ -1,6 +1,6 @@
 @extends('main')
 @section('content')
-@include('component.loadingScreen')
+<!-- @include('component.loadingScreen') -->
 
 <div class="relative overflow-hidden">
     <video src="videos/Cinematic1.mp4" autoplay muted loop playsinline
@@ -12,7 +12,7 @@
     <div class="absolute inset-0 flex flex-col items-center justify-center px-6 text-white text-center animate-fadeIn">
 
         <div class="absolute left-0 right-0 bottom-12 md:bottom-40 flex flex-col md:flex-row gap-4 justify-center items-center">
-            <a href="/destinasi"
+            <a href="/Tour"
                 class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-white font-semibold tracking-wide px-10 py-3 rounded-xl shadow-lg transition-all duration-300 uppercase flex items-center gap-2">
                 <span>Explore All Destinations</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -22,7 +22,7 @@
                 </svg>
             </a>
 
-            <a href="/customized-tours"
+            <a href="/Custom-Form"
                 class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-white font-semibold tracking-wide px-10 py-3 rounded-xl border border-white/20 shadow-md transition-all duration-300 uppercase flex items-center gap-2 backdrop-blur-sm">
                 <span>Create Your Custom Journey</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -61,7 +61,8 @@
     </div>
 </div>
 
-@include('section.attraction')
+@include('section.attraction', ['attractions' => $attractions])
+
 @include('section.hotel')
 @include('section.destination')
 
@@ -77,7 +78,7 @@
         </p>
 
         <div>
-            <a href="#contact"
+            <a href="/About"
                 class="inline-block bg-gradient-to-r from-[#a89258] to-[#E3EFFB] text-[#0a0a0a] font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-[#E3EFFB]/40 transition-all duration-300">
                 Meet Our Story
             </a>
@@ -92,7 +93,6 @@
     </div>
 </section>
 
-<script src="JS/SwiperAttraction.js"></script>
 <script src="JS/SwiperDestination.js"></script>
 
 <style>

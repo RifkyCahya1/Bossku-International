@@ -64,47 +64,47 @@
 <section class="relative text-white py-12 md:py-20 overflow-hidden">
 
     <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1604973104381-870c92f10343?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        <img src="https://images.unsplash.com/photo-1604973104381-870c92f10343?q=80&w=1170&auto=format&fit=crop"
             alt="Background Indonesia"
-            class="w-full h-full object-cover object-center" />
+            class="w-full h-full object-cover object-center">
         <div class="absolute inset-0 bg-gradient-to-br from-[#f9f7f3]/0 via-black/60 to-black/80"></div>
     </div>
 
-    <div class="relative items-center">
-        <div class="mx-auto px-4 md:px-16 grid grid-cols-2 gap-4 md:gap-24 text-center md:text-left order-1 md:order-1">
+    <div class="relative max-w-screen-xl mx-auto px-4 md:px-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16 text-center md:text-left">
+
             <div>
                 <p class="uppercase tracking-widest text-sm text-[#CB0001] font-semibold">Tour</p>
-                <h2 class="text-3xl md:text-6xl font-bold">
+                <h2 class="text-3xl md:text-6xl font-bold leading-tight">
                     Interesting Place of <span class="text-[#FF0000]">Indonesia</span>
                 </h2>
             </div>
 
-            <div class="mt-8 sm:mt-10 flex items-center gap-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-4">
 
-                <!-- Counter -->
                 <div class="flex items-end font-semibold gap-1">
-                    <span id="currentSlide" class="text-2xl sm:text-3xl text-[#CB0001] font-bold tracking-tight">01</span>
-                    <span class="text-gray-500 text-base sm:text-lg font-medium">/</span>
-                    <span id="totalSlide" class="text-gray-200 text-base sm:text-lg font-medium">03</span>
+                    <span id="currentSlide" class="text-2xl sm:text-3xl text-[#CB0001] font-bold">01</span>
+                    <span class="text-gray-500 text-base sm:text-lg">/</span>
+                    <span id="totalSlide" class="text-gray-200 text-base sm:text-lg">03</span>
                 </div>
 
-                <!-- Progress bar -->
-                <div class="flex-1 h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden">
-                    <div id="progressBar" class="h-full bg-[#CB0001] transition-all duration-500" style="width: 0%;"></div>
+                <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div id="progressBar" class="h-full bg-[#CB0001] transition-all duration-500 w-0"></div>
                 </div>
 
-                <!-- Buttons -->
-                <div class="flex items-center gap-2">
+                <div class="flex justify-between md:justify-end items-center gap-2">
                     <button id="prevBtn"
-                        class="p-2.5 sm:p-3 border border-gray-400 rounded-full text-white hover:bg-[#CB0001] hover:border-[#CB0001] transition-all duration-300">
+                        class="p-2.5 sm:p-3 border border-gray-400 rounded-full text-white hover:bg-[#CB0001] hover:border-[#CB0001] transition-all">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 sm:w-5 h-4 sm:h-5" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
+
                     <button id="nextBtn"
-                        class="p-2.5 sm:p-3 border border-gray-400 rounded-full text-white hover:bg-[#CB0001] hover:border-[#CB0001] transition-all duration-300">
+                        class="p-2.5 sm:p-3 border border-gray-400 rounded-full text-white hover:bg-[#CB0001] hover:border-[#CB0001] transition-all">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 sm:w-5 h-4 sm:h-5" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -112,28 +112,26 @@
                         </svg>
                     </button>
                 </div>
-
             </div>
+
         </div>
 
-
-        <div x-data="tourCategories" class="relative order-2 mt-10">
+        <div x-data="tourCategories" class="relative mt-10">
             <div class="swiper ExploreSlider overflow-visible">
                 <div class="swiper-wrapper">
 
-                    <!-- LOOP SLIDES -->
                     <template x-for="(item, index) in categories" :key="index">
                         <div class="swiper-slide">
                             <div class="relative rounded-2xl overflow-hidden group">
 
                                 <img :src="item.image"
                                     class="object-cover w-full h-[220px] sm:h-[300px] md:h-[350px] lg:h-[420px] transition-transform duration-700 group-hover:scale-105"
-                                    :alt="item.title" />
+                                    :alt="item.title">
 
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 sm:p-6 flex flex-col justify-end">
                                     <h3 class="text-lg sm:text-xl font-semibold mb-1" x-text="item.title"></h3>
-                                    <p class="text-gray-300 text-xs sm:text-sm leading-snug" x-text="item.description"></p>
+                                    <p class="text-gray-300 text-xs sm:text-sm" x-text="item.description"></p>
                                 </div>
 
                             </div>
@@ -142,12 +140,13 @@
 
                 </div>
 
-                <div class="swiper-pagination mt-3 md:hidden"></div>
+                <div class="swiper-pagination mt-4 md:hidden"></div>
             </div>
         </div>
 
     </div>
 </section>
+
 
 <script src="JS/SwiperExplore.js"></script>
 

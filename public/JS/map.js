@@ -1,16 +1,153 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map("map", {
-        zoomControl: false,
-        dragging: false,
-        scrollWheelZoom: false,
-        doubleClickZoom: false,
-        boxZoom: false,
-        keyboard: false,
-        touchZoom: false,
-        tap: false,
-        minZoom: 5.4,
-        maxZoom: 5.4,
-    }).setView([-2.5, 118], 5);
+    function getMapConfig() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const isDesktop = width >= 1024;
+        const isTablet = width >= 768 && width < 1024;
+        const isMobile = width < 768;
+
+        let minZoom, maxZoom, initialZoom;
+        if (width >= 1440) {
+            minZoom = 5.2;
+            maxZoom = 6.2;
+            initialZoom = 5.4;
+        } else if (width >= 1024) {
+            minZoom = 5.2;
+            maxZoom = 5.8;
+            initialZoom = 5.4;
+        } else if (width >= 768) {
+            minZoom = 5.0;
+            maxZoom = 5.6;
+            initialZoom = 5.2;
+        } else if (width >= 480) {
+            minZoom = 4.6;
+            maxZoom = 5.4;
+            initialZoom = 4.8;
+        } else {
+            // Very small screens (e.g., phones)
+            minZoom = 4.0;
+            maxZoom = 5.0;
+            initialZoom = 4.2;
+        }
+
+        return {
+            isDesktop,
+            isTablet,
+            isMobile,
+            minZoom,
+            maxZoom,
+            initialZoom,
+            width,
+            height,
+        };
+    }
+
+    // Save zoom control manually
+    let zoomCtrl = null;
+
+    function createMap() {
+        const cfg = getMapConfig();
+
+        // Dynamically set map height for responsiveness
+        const mapElement = document.getElementById("map");
+        if (cfg.isMobile) {
+            mapElement.style.height = `${cfg.height * 0.7}px`; // 70% of screen height on mobile
+        } else if (cfg.isTablet) {
+            mapElement.style.height = `${cfg.height * 0.8}px`; // 80% on tablet
+        } else {
+            mapElement.style.height = `${cfg.height * 0.9}px`; // 90% on desktop
+        }
+        mapElement.style.width = "100%";
+
+        const map = L.map("map", {
+            zoomControl: false, // We handle manually
+            dragging: true, // Enable dragging on all devices (flip from original if you want to disable on desktop)
+            scrollWheelZoom: cfg.isDesktop,
+            doubleClickZoom: false,
+            boxZoom: false,
+            keyboard: false,
+            touchZoom: true,
+            tap: true,
+            minZoom: cfg.minZoom,
+            maxZoom: cfg.maxZoom,
+        }).setView([-2.5, 118], cfg.initialZoom);
+
+        // Add zoom control if desktop
+        if (cfg.isDesktop) {
+            zoomCtrl = L.control.zoom({ position: "topleft" }).addTo(map);
+        }
+
+        setTimeout(() => map.invalidateSize(), 300);
+        return map;
+    }
+
+    const map = createMap();
+
+    // Debounce function
+    function debounce(fn, wait = 150) {
+        let t;
+        return (...args) => {
+            clearTimeout(t);
+            t = setTimeout(() => fn.apply(this, args), wait);
+        };
+    }
+
+    // Handle window resize
+    window.addEventListener(
+        "resize",
+        debounce(() => {
+            const cfg = getMapConfig();
+
+            // Update map height dynamically
+            const mapElement = document.getElementById("map");
+            if (cfg.isMobile) {
+                mapElement.style.height = `${cfg.height * 0.7}px`;
+            } else if (cfg.isTablet) {
+                mapElement.style.height = `${cfg.height * 0.8}px`;
+            } else {
+                mapElement.style.height = `${cfg.height * 0.9}px`;
+            }
+
+            // Adjust dragging (enabled on all now, but you can customize)
+            if (!map.dragging.enabled()) {
+                map.dragging.enable();
+            }
+
+            // Toggle zoom control
+            if (cfg.isDesktop) {
+                if (!zoomCtrl) {
+                    zoomCtrl = L.control
+                        .zoom({ position: "topleft" })
+                        .addTo(map);
+                }
+            } else {
+                if (zoomCtrl) {
+                    map.removeControl(zoomCtrl);
+                    zoomCtrl = null;
+                }
+            }
+
+            map.setMinZoom(cfg.minZoom);
+            map.setMaxZoom(cfg.maxZoom);
+            map.invalidateSize();
+        }, 200)
+    );
+
+    // Handle orientation change (especially for mobile)
+    window.addEventListener("orientationchange", () => {
+        setTimeout(() => {
+            const cfg = getMapConfig();
+            const mapElement = document.getElementById("map");
+            if (cfg.isMobile) {
+                mapElement.style.height = `${cfg.height * 0.7}px`;
+            } else if (cfg.isTablet) {
+                mapElement.style.height = `${cfg.height * 0.8}px`;
+            } else {
+                mapElement.style.height = `${cfg.height * 0.9}px`;
+            }
+            map.invalidateSize();
+        }, 500); // Delay to allow orientation to settle
+    });
 
     map.getContainer().style.background = "#f4f4f4";
 
@@ -46,22 +183,24 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Gambar -->
         <div class="relative">
           <img src="${data.image}" alt="${data.name_en}"
-               class="w-full h-96 object-cover">
+               class="w-full h-64 md:h-96 object-cover"> <!-- Made height responsive -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-          <h2 class="absolute bottom-4 left-6 text-white text-3xl font-bold drop-shadow-lg">${
+          <h2 class="absolute bottom-4 left-6 text-white text-2xl md:text-3xl font-bold drop-shadow-lg">${
               data.name_en
           }</h2>
         </div>
 
         <!-- Konten -->
-        <div class="p-6">
-          <p class="text-gray-700 leading-relaxed mb-6">${data.description}</p>
+        <div class="p-4 md:p-6">
+          <p class="text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">${
+              data.description
+          }</p>
           <div class="flex justify-end">
             <button 
               onclick="window.location.href='/Province/${encodeURIComponent(
                   data.name_en
               )}'"
-              class="bg-gradient-to-r from-blue-700 to-blue-900 text-white font-medium px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 ease-out">
+              class="bg-gradient-to-r from-blue-700 to-blue-900 text-white font-medium px-4 py-2 md:px-6 md:py-2.5 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 ease-out text-sm md:text-base">
               Learn More
             </button>
           </div>

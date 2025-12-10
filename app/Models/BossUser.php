@@ -5,28 +5,24 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class BossUser extends Authenticatable
 {
     use Notifiable;
 
     protected $table = 'boss_users';
-    protected $primaryKey = 'id_users';
-    public $timestamps = false;
+    protected $primaryKey = 'id';
+    public $incrementing = true;
+    protected $keyType = 'int';
 
     protected $fillable = [
         'name',
         'email',
         'password',
         'role',
-        'id_level'
     ];
 
     protected $hidden = [
         'password',
+        'remember_token',
     ];
-
-    public function getAuthPassword()
-    {
-        return $this->password;
-    }
 }
