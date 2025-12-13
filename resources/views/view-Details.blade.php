@@ -641,17 +641,33 @@
             async sendInquiry() {
                 if (!this.validateInquiry()) return;
 
-                // Kirim data (contoh fetch)
-                console.log("Sending inquiry...", this.inquiry);
+                try {
+                    const res = await fetch("/send-inquiry", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify(this.inquiry)
+                    });
 
-                // Reset form
-                this.inquiry = {
-                    name: '',
-                    email: '',
-                    message: ''
-                };
+                    const data = await res.json();
 
-                alert("Your inquiry has been sent!");
+                    if (!res.ok) throw new Error(data.message || "Failed");
+
+                    alert("Your inquiry has been sent!");
+
+                    // reset
+                    this.inquiry = {
+                        name: "",
+                        email: "",
+                        message: ""
+                    };
+
+                } catch (err) {
+                    console.error(err);
+                    alert("Gagal ngirim email cak, coba maneh.");
+                }
             },
 
             bookingForm() {

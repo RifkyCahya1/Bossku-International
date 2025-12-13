@@ -2,7 +2,7 @@
     style="position:fixed;inset:0;z-index:9999;background:#0b0b0b;display:flex;align-items:center;justify-content:center;overflow:hidden;box-sizing:border-box;padding:4vh 6vw;">
     <div style="text-align:center;color:#D6C7A1;padding:2.5vh 3vw;max-width:960px;width:100%;box-sizing:border-box;border-radius:12px;backdrop-filter: blur(4px);-webkit-backdrop-filter: blur(4px);">
         <div style="font-size:clamp(18px,3.5vw,48px);letter-spacing:.18em;font-weight:300;text-transform:uppercase;margin-bottom:0.5rem;opacity:0;animation:bs-fadeUp 1.4s ease forwards 0.4s;line-height:1;">
-            Bossku Travel
+            Bossku Tours
         </div>
         <div style="color:#89A1B2;margin:0.75rem auto 1rem;font-size:clamp(12px,2.2vw,16px);opacity:0;animation:bs-fadeUp 1.4s ease forwards 1.2s;max-width:min(36rem,92%);">
             Welcome aboard. Your exquisite journey begins here.

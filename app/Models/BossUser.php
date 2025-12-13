@@ -10,9 +10,6 @@ class BossUser extends Authenticatable
     use Notifiable;
 
     protected $table = 'boss_users';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
-    protected $keyType = 'int';
 
     protected $fillable = [
         'name',

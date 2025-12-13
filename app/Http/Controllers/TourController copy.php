@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Services\GeminiService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class TourController extends Controller
 {
@@ -157,7 +158,7 @@ class TourController extends Controller
             "departure" => $data[0]->tanggal_berangkat ?? "-"
         ];
 
-
+        
 
         return view('view-Details', [
             "tour" => $tour

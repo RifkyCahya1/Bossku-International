@@ -73,11 +73,11 @@
         </div>
 
         <div class="absolute inset-y-0 left-2 md:left-10 flex items-center z-10">
-            <div class="swiper-button-prev bg-[#071F35] !text-[#d6c08a] p-3 rounded-full shadow-lg"></div>
+            <div class="swiper-button-prev bg-[#071F35] !text-gold p-3 rounded-full shadow-lg"></div>
         </div>
 
         <div class="absolute inset-y-0 right-2 md:right-10 flex items-center z-10">
-            <div class="swiper-button-next bg-[#071F35] !text-[#d6c08a] p-3 rounded-full shadow-lg"></div>
+            <div class="swiper-button-next bg-[#071F35] !text-gold p-3 rounded-full shadow-lg"></div>
         </div>
     </div>
 
@@ -118,7 +118,7 @@
                 <option value="high" {{ request('sort') == 'high' ? 'selected' : '' }}>Highest Price</option>
             </select>
 
-            <button class="bg-[#071F35] text-[#d6c08a] font-semibold py-3 rounded-xl hover:bg-black transition">
+            <button class="bg-[#071F35] text-gold font-semibold py-3 rounded-xl hover:bg-black transition">
                 Apply Filter
             </button>
 
@@ -164,9 +164,17 @@
         @endforelse
 
     </div>
-    <div class="px-6 md:px-16 mt-10">
-        {{ $allProducts->links('pagination.custom') }}
+    <div class="px-6 md:px-16 mt-10 mb-6 flex items-center justify-between text-black text-sm">
+        <span>
+            Menampilkan {{ $allProducts->firstItem() }} – {{ $allProducts->lastItem() }} dari {{ $allProducts->total() }} produk
+        </span>
+
+        <div>
+            {{ $allProducts->links('pagination.custom') }}
+        </div>
     </div>
+
+
 
 </section>
 

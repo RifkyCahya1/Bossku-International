@@ -31,7 +31,6 @@ class AuthController extends Controller
 
             Auth::login($user);
 
-            // 🔥 REDIRECT SESUAI ROLE
             if ($user->role === 'superadmin' || $user->role === 'admin') {
                 return redirect()->route('admin.app');
             }
@@ -74,14 +73,67 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        // 🔥 USER BARU (role = user) → home
         return redirect()->route('home');
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        $user = Auth::user();
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+        return back()->with('success', 'Profile updated!');
+    }
+
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|min:8|confirmed',
+        ]);
+
+        if (!Hash::check($request->current_password, Auth::user()->password)) {
+            return back()->with('error', 'Password lama salah!');
+        }
+
+        Auth::user()->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        return back()->with('success', 'Password updated!');
+    }
+
+    public function deleteAccount(Request $request)
+    {
+        $request->validate([
+            'password' => 'required',
+        ]);
+
+        $user = Auth::user();
+
+        if (! Hash::check($request->password, $user->password)) {
+            return back()->with('success', 'Password salah, bro. Coba dicek maneh. 😅');
+        }
+
+        Auth::logout();
+        $user->delete();
+
+        return redirect()->route('login')
+            ->with('status', 'Akunmu wis kehapus. Semoga ketemu maneh nang dunia maya 🤝');
     }
 
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login')
-            ->with('status', 'Kamu sudah logout.');
+            ->with('status', 'You Have Been Logged Out.');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class TourController extends Controller
 {
@@ -159,5 +160,21 @@ class TourController extends Controller
         return view('view-Details', [
             "tour" => $tour
         ]);
+    }
+
+    public function send(Request $req)
+    {
+        $req->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        Mail::raw("Name: {$req->name}\nEmail: {$req->email}\n\nMessage:\n{$req->message}", function ($mail) use ($req) {
+            $mail->to("rifkycahyaputraa@gmail.com")
+                ->subject("New Inquiry from Website");
+        });
+
+        return response()->json(['message' => 'Email sent']);
     }
 }

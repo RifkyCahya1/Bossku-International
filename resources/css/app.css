@@ -1,16 +1,45 @@
-@import 'tailwindcss';
+/* 1. Import Flowbite dulu */
 @import "flowbite/src/themes/default";
 
+/* 2. Plugin Flowbite */
 @plugin "flowbite/plugin";
 
+/* 3. Import Tailwind WAJIB setelah Flowbite */
+@import "tailwindcss";
+
+/* 4. Source scanning */
 @source "../../node_modules/flowbite";
+@source "../../node_modules/flowbite/**/*.js";
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
+
+/* 5. Dark mode variant */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* 6. FIX: Flowbite + Apexcharts double !important */
+.apexcharts-tooltip,
+.apexcharts-xaxistooltip,
+.apexcharts-tooltip-title,
+.apexcharts-tooltip-text-y-label,
+.apexcharts-tooltip-text-y-value,
+.apexcharts-legend-text,
+.apexcharts-datalabel-value,
+.apexcharts-datalabel-label,
+.apexcharts-gridline,
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+    background-color: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    box-shadow: inherit !important;
+}
+
+/* 7. Custom theme (warna, font, dll) */
 @theme {
     --font-sans: 'Plus Jakarta Sans', sans-serif;
     --color-brand: #bfa46f;
+    --color-gold: #d6c08a;
+    --color-navy: #071F35;
 }

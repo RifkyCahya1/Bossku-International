@@ -25,7 +25,7 @@ class AttractionController extends Controller
             ->where('lt.negara', 'LIKE', '%INDONESIA%')
             ->where('lt.tempat', 'LIKE', '%WNA%')
             ->inRandomOrder()
-            ->take(8)
+            ->take(10)
             ->get();
  
         $all = DB::table('list_tempat as lt')

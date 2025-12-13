@@ -5,67 +5,66 @@ namespace App\Http\Controllers;
 use App\Models\BossUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class AccountController extends Controller
 {
+    use AuthorizesRequests;
+
     public function index()
     {
-        $users = BossUser::all();
-        return view('admin.component.account', compact('users'));
+        $users = BossUser::orderBy('id', 'desc')->get();
+
+        return view('admin.users', compact('users'));
     }
 
-    public function store(Request $req)
+    public function store(Request $request)
     {
-        $req->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'role' => 'required',
-            'password' => 'required|min:6'
+        $request->validate([
+            "name"     => "required|string|max:255",
+            "email"    => "required|email|max:255|unique:boss_users,email",
+            "password" => "required|string|min:6",
+            "role"     => "required|in:user,admin,superadmin",
         ]);
 
         BossUser::create([
-            'name' => $req->name,
-            'email' => $req->email,
-            'role' => $req->role,
-            'password' => Hash::make($req->password)
+            "name"     => $request->name,
+            "email"    => $request->email,
+            "password" => Hash::make($request->password),
+            "role"     => $request->role,
         ]);
 
-        return back()->with('success', 'Akun berhasil ditambahkan.');
+        return redirect()->back()->with("success", "User berhasil ditambahkan!");
     }
 
-    public function update(Request $req, $id)
+    public function update(Request $request, $id)
     {
+        $this->authorize('manage-users');
+
         $user = BossUser::findOrFail($id);
 
-        $req->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'role' => 'required',
+        $request->validate([
+            "name"  => "required|string|max:255",
+            "email" => "required|email|max:255|unique:boss_users,email,$id",
+            "role"  => "required|in:user,admin,superadmin",
         ]);
 
-        $user->name = $req->name;
-        $user->email = $req->email;
-        $user->role = $req->role;
+        $user->update([
+            "name"  => $request->name,
+            "email" => $request->email,
+            "role"  => $request->role,
+        ]);
 
-        if ($req->password) {
-            $user->password = Hash::make($req->password);
-        }
-
-        $user->save();
-
-        return back()->with('success', 'Akun berhasil diupdate.');
+        return redirect()->back()->with("success", "User berhasil diperbarui!");
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
-        $user = BossUser::findOrFail($id);
+        $this->authorize('manage-users');
 
-        // superadmin tidak boleh delete dirinya sendiri
-        if (auth()->id() == $id) {
-            return back()->with('error', 'Tidak bisa hapus akun sendiri.');
-        }
+        BossUser::findOrFail($id)->delete();
 
-        $user->delete();
-        return back()->with('success', 'Akun berhasil dihapus.');
+        return redirect()->back()->with("success", "User berhasil dihapus!");
     }
 }

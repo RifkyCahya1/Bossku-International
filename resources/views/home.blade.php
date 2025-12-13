@@ -14,7 +14,7 @@
         <div class="absolute left-0 right-0 bottom-12 md:bottom-40 flex flex-col md:flex-row gap-4 justify-center items-center">
             <a href="/Tour"
                 class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-white font-semibold tracking-wide px-10 py-3 rounded-xl shadow-lg transition-all duration-300 uppercase flex items-center gap-2">
-                <span>Explore All Destinations</span>
+                <span>Explore My Journey</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1"
                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
@@ -24,7 +24,7 @@
 
             <a href="/Custom-Form"
                 class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-white font-semibold tracking-wide px-10 py-3 rounded-xl border border-white/20 shadow-md transition-all duration-300 uppercase flex items-center gap-2 backdrop-blur-sm">
-                <span>Create Your Custom Journey</span>
+                <span>Create My Journey</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1"
                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<div class="container mx-auto max-w-lg py-4 px-4 md:px-12">
+<div class="container mx-auto max-w-xl py-4 px-4 md:px-12">
     <div class="flex flex-col items-center text-center">
         <h2 class="text-xl md:text-4xl font-extrabold text-gray-800 mb-2 leading-tight tracking-tight">
             More Than Just a Journey

@@ -19,67 +19,96 @@
             <aside class="hidden md:block w-full md:w-80 bg-white/70 backdrop-blur-md border border-gray-100 rounded-2xl p-6 space-y-6 shadow-lg sticky top-28 h-fit">
 
                 <div class="flex items-center justify-between">
-                    <h2 class="text-lg font-semibold text-[#0B0B0B]">Refine Packages</h2>
-                    <button @click="filters = { kota:'', category:'', type:'', harga_final:4000, start:'', end:'' }, search='', currentPage=1" class="text-sm text-[#3B5BDB] hover:underline">Reset</button>
+                    <h2 class="text-lg font-semibold text-[#0B0B0B]">Refine Your Journey</h2>
+                    <button
+                        @click="resetFilters()"
+                        class="text-sm text-[#3B5BDB] hover:underline">
+                        Reset
+                    </button>
                 </div>
 
+                <!-- DESTINATION -->
                 <div class="space-y-2">
-                    <label class="text-sm font-medium text-gray-600 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
-                        </svg>
-                        Max Price (IDR)
+                    <label class="text-sm font-medium text-gray-600">
+                        Where in Indonesia
+                        <span class="block text-xs text-gray-400">Regions that call you</span>
                     </label>
-                    <input type="range" min="200" max="20000000" step="100" x-model="filters.harga_final" class="w-full accent-[#3B5BDB] mt-2">
-                    <p class="text-sm text-gray-500 mt-1">
-                        <span class="mr-1">IDR</span>
-                        <span x-text="Number(filters.harga_final || 0).toLocaleString('id-ID')"></span>
-                    </p>
+                    <input
+                        type="text"
+                        x-model="filters.destination"
+                        placeholder="Bali, Flores, Raja Ampat…"
+                        class="w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm focus:ring-2 focus:ring-[#3B5BDB]" />
                 </div>
 
+                <!-- DURATION -->
                 <div class="space-y-2">
-                    <label class="text-sm font-medium text-gray-600 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                        </svg>
-                        Cities
-                    </label>
-
-                    <select x-model="filters.kota" class="mt-2 w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm focus:ring-2 focus:ring-[#3B5BDB]">
-                        <option value="">All</option>
-
-                        <template x-for="country in availableCountries()" :key="country">
-                            <option x-text="country"></option>
-                        </template>
-
+                    <label class="text-sm font-medium text-gray-600">Duration</label>
+                    <select x-model="filters.duration"
+                        class="w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm">
+                        <option value="">Any</option>
+                        <option value="weekend">Weekend Escape (2–3 days)</option>
+                        <option value="short">Short Breaks (4–6 days)</option>
+                        <option value="week">One-Week Journeys (7–9 days)</option>
+                        <option value="extended">Extended Trips (10+ days)</option>
                     </select>
                 </div>
 
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-sm font-medium text-gray-600">Category</label>
-                        <select x-model="filters.category" class="mt-2 w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm focus:ring-2 focus:ring-[#3B5BDB]">
-                            <option value="">All</option>
-                            <option>Adventure</option>
-                            <option>Culture</option>
-                            <option>Religious</option>
-                            <option>Nature</option>
-                            <option>Luxury</option>
-                        </select>
-                    </div>
+                <!-- PRICE -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-600">Your Comfort Range</label>
+                    <input type="range"
+                        min="200000"
+                        max="20000000"
+                        step="100000"
+                        x-model="filters.harga_final"
+                        class="w-full accent-[#3B5BDB]">
+                    <p class="text-xs text-gray-500">
+                        IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
+                    </p>
+                </div>
 
-                    <div>
-                        <label class="text-sm font-medium text-gray-600">Tour Type</label>
-                        <select x-model="filters.type" class="mt-2 w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm focus:ring-2 focus:ring-[#3B5BDB]">
-                            <option value="">All</option>
-                            <option>Private</option>
-                            <option>Group</option>
-                            <option>Custom</option>
-                        </select>
-                    </div>
+                <!-- DEPARTURE -->
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-600">Departure Flexibility</label>
+                    <select x-model="filters.departure"
+                        class="w-full bg-white border border-gray-200 rounded-xl py-2.5 px-3 text-sm">
+                        <option value="">Any Day (Recommended)</option>
+                        <option value="soon">Soon (within 30 days)</option>
+                        <option value="season">This Season</option>
+                        <option value="next">Next Season</option>
+                        <option value="specific">Choose Specific Date…</option>
+                    </select>
+
+                    <input
+                        x-show="filters.departure === 'specific'"
+                        type="date"
+                        x-model="filters.departure_date"
+                        class="w-full mt-2 border rounded-xl py-2 px-3 text-sm" />
+                </div>
+
+                <!-- SIGNATURE THEMES -->
+                <div class="space-y-3">
+                    <label class="text-sm font-semibold text-gray-700">
+                        SIGNATURE BOSSKU THEMES
+                        <span class="block text-xs text-gray-400">Curated journeys</span>
+                    </label>
+
+                    <template x-for="theme in themes" :key="theme.key">
+                        <label class="flex items-start gap-2 text-sm">
+                            <input
+                                type="checkbox"
+                                x-model="filters.themes"
+                                :value="theme.key"
+                                class="mt-1 rounded">
+                            <div>
+                                <div class="font-medium" x-text="theme.label"></div>
+                                <div class="text-xs text-gray-400" x-text="theme.desc"></div>
+                            </div>
+                        </label>
+                    </template>
                 </div>
             </aside>
+
 
             <div x-show="mobileOpen" x-cloak class="fixed inset-0 z-40 md:hidden">
                 <div class="absolute inset-0 bg-black/40" @click="mobileOpen=false"></div>
@@ -230,10 +259,6 @@
                                     View Details
                                 </a>
 
-                                <a href="#" class="px-5 py-2.5 rounded-lg border border-[#3B5BDB] text-[#3B5BDB] text-sm font-medium hover:bg-[#3B5BDB] hover:text-white transition">
-                                    Book Now
-                                </a>
-
                                 <div class="ml-auto text-right text-xs text-gray-400">
                                     <div class="font-semibold text-gray-700">
                                         IDR
@@ -301,138 +326,150 @@
     function tourApp(serverData) {
         return {
             mobileOpen: false,
+            search: "",
+            currentPage: 1,
+
             allTours: [],
             filtered: [],
+
+            themes: [{
+                    key: 'sunrise',
+                    label: 'Chasing Sunrises',
+                    desc: 'Introvert & nature-seekers'
+                },
+                {
+                    key: 'island',
+                    label: 'Island & Sea',
+                    desc: '43% wisata bahari'
+                },
+                {
+                    key: 'volcano',
+                    label: 'Volcano Journeys',
+                    desc: 'Adventure seekers'
+                },
+                {
+                    key: 'hidden',
+                    label: 'Hidden Gems Collection',
+                    desc: 'Culture & immersive trips'
+                },
+                {
+                    key: 'premium',
+                    label: 'Premium Stays Only',
+                    desc: 'Age 25–44 comfort-driven'
+                },
+                {
+                    key: 'photo',
+                    label: 'Photogenic Routes',
+                    desc: '80% visual-driven travelers'
+                },
+            ],
+
+            filters: {
+                destination: "",
+                duration: "",
+                harga_final: 20000000,
+                departure: "",
+                departure_date: "",
+                themes: []
+            },
 
             init() {
                 let sd = serverData || [];
                 if (!Array.isArray(sd)) sd = [sd];
 
-                this.allTours = sd.reduce((acc, item) => {
-                    if (Array.isArray(item)) {
-                        item.forEach(sub => acc.push(sub));
-                    } else {
-                        acc.push(item);
-                    }
-                    return acc;
-                }, []);
-
+                this.allTours = sd.flat();
                 this.filtered = this.allTours.map(t => {
 
-                    const validImage = t.image || null;
+                    // ===== HITUNG JUMLAH HARI DARI ITINERARY =====
+                    let days = 0;
+
+                    // CASE 1: itinerary berupa ARRAY
+                    if (Array.isArray(t.itinerary)) {
+                        days = t.itinerary.length;
+                    }
+
+                    // CASE 2: itinerary berupa STRING (HTML / TEXT)
+                    else if (typeof t.itinerary === 'string') {
+                        const matches = t.itinerary.match(/day\s*\d+/gi);
+                        days = matches ? matches.length : 0;
+                    }
+
+                    // FALLBACK: minimal 1 hari
+                    if (!days || days < 1) days = 1;
 
                     return {
                         id: t.itinerary_id ?? t.id,
                         name: (t.judul || '').toString(),
-                        image: this.findImagePath(validImage),
+                        kota: (t.kota || '').toString(),
+                        negara: (t.negara || '').toString(),
                         harga_final: Number(t.harga_final || 0),
                         kode: (t.landtour || '').toString(),
-                        kota: (t.kota || '').toString(),
-                        pax: (t.pax ? (t.pax + " pax") : ''),
+                        duration_days: days,
+                        pax: (t.pax ? (t.pax + " pax") : ''),   
                         type: (t.tour_type || 'Group'),
-                        negara: (t.negara),
-                        start: (t.start_city || 'Start City'),
-                        end: (t.end_city || 'End City'),
-                        description: t.deskripsi || t.description || ''
+                        departure_date: t.departure_date || null,
+                        themes: t.themes || [],
+                        image: t.image || '/images/default.png',
+                        description: t.deskripsi || ''
                     }
                 });
 
 
-                if (this.$watch) {
-                    this.$watch('filters', () => {
-                        this.currentPage = 1;
-                    }, {
-                        deep: true
-                    });
-                    this.$watch('search', () => {
-                        this.currentPage = 1;
-                    });
-                }
-            },
-
-            findImagePath(filename) {
-                if (!filename) return "/images/default.png";
-
-                if (typeof filename === 'string' && (filename.startsWith('http') || filename.startsWith('/'))) {
-                    return filename;
-                }
-
-                // return a sensible default storage path for relative filenames
-                return "img/images/" + filename;
-            },
-
-            loadTours() {
-                // kept for compatibility
-                this.filtered = this.allTours.map(t => {
-                    const imgs = [t.gambar1, t.gambar2, t.gambar3, t.gambar4];
-                    const firstValid = imgs.find(i => i && i !== "");
-
-                    return {
-                        id: t.itinerary_id ?? t.id,
-                        name: t.judul,
-                        image: this.findImagePath(firstValid),
-                        harga_final: Number(t.harga_final || 0),
-                    };
+                this.$watch('filters', () => this.currentPage = 1, {
+                    deep: true
                 });
+                this.$watch('search', () => this.currentPage = 1);
             },
 
-            search: "",
-            filters: {
-                kota: "",
-                category: "",
-                type: "",
-                harga_final: 20000000,
-                start: "",
-                end: ""
+            resetFilters() {
+                this.filters = {
+                    destination: "",
+                    duration: "",
+                    harga_final: 20000000,
+                    departure: "",
+                    departure_date: "",
+                    themes: []
+                };
+                this.search = "";
+                this.currentPage = 1;
             },
-            currentPage: 1,
 
-            // Core filtering logic (search + semua filter)
             filteredTours() {
-                const q = (this.search || '').toString().trim().toLowerCase();
-
                 return this.filtered.filter(t => {
-                    // search across name, kota, description
-                    if (q) {
-                        const hay = (
-                            (t.name || '') + ' ' +
-                            (t.kota || '') + ' ' +
-                            (t.description || '') + ' ' +
-                            (t.start || '') + ' ' +
-                            (t.end || '')
-                        ).toLowerCase();
 
-                        if (!hay.includes(q)) return false;
+                    if (this.search) {
+                        const q = this.search.toLowerCase();
+                        if (!(t.name + t.kota + t.negara).toLowerCase().includes(q)) return false;
                     }
 
-                    // kota exact (if selected)
-                    if (this.filters.kota) {
-                        if ((t.kota || '').toString() !== this.filters.kota.toString()) return false;
+                    if (this.filters.destination) {
+                        const d = this.filters.destination.toLowerCase();
+                        if (!(t.kota.toLowerCase().includes(d) || t.negara.toLowerCase().includes(d))) return false;
                     }
 
-                    // category exact
-                    if (this.filters.category) {
-                        if ((t.category || '').toString().toLowerCase() !== this.filters.category.toString().toLowerCase()) return false;
+                    if (t.harga_final > this.filters.harga_final) return false;
+
+                    if (this.filters.duration) {
+                        const d = Number(t.duration_days || 0);
+
+                        if (this.filters.duration === 'weekend' && !(d >= 2 && d <= 3)) return false;
+                        if (this.filters.duration === 'short' && !(d >= 4 && d <= 6)) return false;
+                        if (this.filters.duration === 'week' && !(d >= 7 && d <= 9)) return false;
+                        if (this.filters.duration === 'extended' && d < 10) return false;
                     }
 
-                    // type exact
-                    if (this.filters.type) {
-                        if ((t.type || '').toString().toLowerCase() !== this.filters.type.toString().toLowerCase()) return false;
+
+                    if (this.filters.departure === 'soon' && t.departure_date) {
+                        const diff = (new Date(t.departure_date) - new Date()) / 86400000;
+                        if (diff < 0 || diff > 30) return false;
                     }
 
-                    // harga_final max (t.harga_final numeric)
-                    if (this.filters.harga_final !== null && this.filters.harga_final !== undefined && this.filters.harga_final !== '') {
-                        if (Number(t.harga_final || 0) > Number(this.filters.harga_final || 0)) return false;
+                    if (this.filters.departure === 'specific' && this.filters.departure_date) {
+                        if (t.departure_date !== this.filters.departure_date) return false;
                     }
 
-                    // start substring
-                    if (this.filters.start) {
-                        if (!((t.start || '').toString().toLowerCase().includes(this.filters.start.toString().toLowerCase()))) return false;
-                    }
-
-                    // end substring
-                    if (this.filters.end) {
-                        if (!((t.end || '').toString().toLowerCase().includes(this.filters.end.toString().toLowerCase()))) return false;
+                    if (this.filters.themes.length) {
+                        if (!this.filters.themes.some(th => t.themes.includes(th))) return false;
                     }
 
                     return true;
@@ -441,49 +478,74 @@
 
             paginatedTours() {
                 const perPage = 6;
-                let start = (this.currentPage - 1) * perPage;
+                const start = (this.currentPage - 1) * perPage;
                 return this.filteredTours().slice(start, start + perPage);
-            },
-
-            middlePages() {
-                let pages = [];
-                let total = this.totalPages();
-                let start = Math.max(2, this.currentPage - 1);
-                let end = Math.min(total - 1, this.currentPage + 1);
-
-                for (let i = start; i <= end; i++) {
-                    pages.push(i);
-                }
-                return pages;
-            },
-            showLeftEllipsis() {
-                return this.currentPage > 3;
-            },
-            showRightEllipsis() {
-                return this.currentPage < this.totalPages() - 2;
             },
 
             totalPages() {
                 return Math.max(1, Math.ceil(this.filteredTours().length / 6));
             },
 
-            // list destinasi yang tersedia (unik, sorted)
-            availableCountries() {
-                return [...new Set(this.filtered.map(x => (x.kota || '').toString()))].filter(Boolean).sort();
-            },
-
-            goToPage(p) {
-                this.currentPage = p;
-            },
-            prevPage() {
-                if (this.currentPage > 1) this.currentPage--;
-            },
             nextPage() {
                 if (this.currentPage < this.totalPages()) this.currentPage++;
             },
+
+            prevPage() {
+                if (this.currentPage > 1) this.currentPage--;
+            },
+
+            goToPage(page) {
+                const p = Number(page);
+                if (p >= 1 && p <= this.totalPages()) {
+                    this.currentPage = p;
+                }
+            },
+
+            // === PAGINATION LOGIC ===
+            showLeftEllipsis() {
+                return this.totalPages() > 5 && this.currentPage > 3;
+            },
+
+            showRightEllipsis() {
+                return this.totalPages() > 5 && this.currentPage < this.totalPages() - 2;
+            },
+
+            middlePages() {
+                const pages = [];
+                const total = this.totalPages();
+
+                if (total <= 5) {
+                    for (let i = 2; i < total; i++) pages.push(i);
+                    return pages;
+                }
+
+                let start = Math.max(2, this.currentPage - 1);
+                let end = Math.min(total - 1, this.currentPage + 1);
+
+                if (this.currentPage <= 3) {
+                    start = 2;
+                    end = 4;
+                }
+
+                if (this.currentPage >= total - 2) {
+                    start = total - 3;
+                    end = total - 1;
+                }
+
+                for (let i = start; i <= end; i++) pages.push(i);
+                return pages;
+            },
+
+            // === OPTIONAL (BIAR MOBILE FILTER GA ERROR) ===
+            availableCountries() {
+                return [...new Set(this.filtered.map(t => t.kota).filter(Boolean))];
+            },
+
+
         }
     }
 </script>
+
 
 
 @endsection
