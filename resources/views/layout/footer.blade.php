@@ -22,7 +22,7 @@
                 <h4 class="text-xs uppercase tracking-widest text-gray-400 mb-4">Information</h4>
                 <ul class="space-y-3 text-sm">
                     <li><a href="/About" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="/FAQ" class="hover:text-white transition">FAQ</a></li>
                     <li><a href="/terms" class="hover:text-white transition">Terms & Conditions</a></li>
                     <li><a href="/privacy" class="hover:text-white transition">Privacy Policy</a></li>
                 </ul>
@@ -52,9 +52,8 @@
                 <div class="mt-5">
                     <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Follow Us</p>
                     <div class="flex gap-4 text-sm">
-                        <a href="#" class="hover:text-white transition">IG</a>
+                        <a href="https://www.instagram.com/bossku.tours/" class="hover:text-white transition">Instagram</a>
                         <a href="#" class="hover:text-white transition">TikTok</a>
-                        <a href="#" class="hover:text-white transition">Pinterest</a>
                     </div>
                 </div>
             </div> 

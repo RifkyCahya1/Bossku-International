@@ -1,24 +1,21 @@
-/* 1. Import Flowbite dulu */
-@import "flowbite/src/themes/default";
-
-/* 2. Plugin Flowbite */
-@plugin "flowbite/plugin";
-
-/* 3. Import Tailwind WAJIB setelah Flowbite */
 @import "tailwindcss";
+ 
+@import "flowbite/src/themes/default";
+ 
+@plugin "flowbite/plugin";
+ 
+@source "../views/**/*.blade.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";
 
-/* 4. Source scanning */
 @source "../../node_modules/flowbite";
 @source "../../node_modules/flowbite/**/*.js";
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
 
-/* 5. Dark mode variant */
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+ 
 @custom-variant dark (&:where(.dark, .dark *));
-
-/* 6. FIX: Flowbite + Apexcharts double !important */
+ 
 .apexcharts-tooltip,
 .apexcharts-xaxistooltip,
 .apexcharts-tooltip-title,
@@ -35,11 +32,20 @@
     border-color: inherit !important;
     box-shadow: inherit !important;
 }
-
-/* 7. Custom theme (warna, font, dll) */
+ 
 @theme {
     --font-sans: 'Plus Jakarta Sans', sans-serif;
+
     --color-brand: #bfa46f;
     --color-gold: #d6c08a;
     --color-navy: #071F35;
+} 
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    @apply mx-auto px-6;
 }

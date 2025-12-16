@@ -184,48 +184,13 @@
             <p class="mt-4 text-gray-700">Bossku isn't built to follow trends. It's built for travelers who seek sincerity in a noisy world those who want their next journey to matter. If you feel that calling, maybe it's time to explore what Indonesia can awaken in you.</p>
 
             <div class="mt-8 flex justify-center gap-4">
-                <a href="#team" class="px-6 py-3 bg-black text-white rounded-2xl shadow hover:opacity-95">Meet the Team</a>
+                <a href="https://wa.me/628112557728" target="_blank" class="px-6 py-3 bg-black text-white rounded-2xl shadow hover:opacity-95">Contact Us</a>
                 <a href="Tour" class="px-6 py-3 border border-gray-200 rounded-2xl text-sm text-gray-700">See Our Packages</a>
             </div>
         </div>
     </section>
 
-    <section id="team" class="scroll-mt-16 max-w-6xl mx-auto px-6 py-12" x-data="teamModal()">
-        <h3 class="text-2xl font-extrabold">Meet the Team</h3>
-        <p class="text-sm text-gray-600 mt-2">A small, dedicated team that crafts big moments.</p>
-
-        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
-            <template x-for="member in members" :key="member.id">
-                <button @click="open(member)" class="bg-white rounded-2xl p-4 shadow hover:shadow-lg text-left text-sm">
-                    <div class="flex items-center gap-3">
-                        <img :src="member.avatar" alt="" class="w-12 h-12 rounded-full object-cover ring-1 ring-gray-100">
-                        <div>
-                            <div class="font-medium" x-text="member.name"></div>
-                            <div class="text-xs text-gray-500" x-text="member.role"></div>
-                        </div>
-                    </div>
-                </button>
-            </template>
-        </div>
-
-        <div x-show="isOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center">
-            <div class="fixed inset-0 bg-black/40" @click="close()"></div>
-            <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 z-10">
-                <div class="flex justify-between items-start gap-4">
-                    <div class="flex items-center gap-4">
-                        <img :src="selected.avatar" alt="" class="w-16 h-16 rounded-full object-cover ring-1 ring-gray-100">
-                        <div>
-                            <h4 class="font-bold" x-text="selected.name"></h4>
-                            <div class="text-sm text-gray-500" x-text="selected.role"></div>
-                        </div>
-                    </div>
-                    <button @click="close()" class="text-gray-400 hover:text-gray-600">✕</button>
-                </div>
-
-                <div class="mt-4 text-gray-700" x-text="selected.bio"></div>
-            </div>
-        </div>
-    </section>
+    
 </main>
 
 <script>

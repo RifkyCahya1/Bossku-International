@@ -3,7 +3,7 @@
 <!-- @include('component.loadingScreen') -->
 
 <div class="relative overflow-hidden">
-    <video src="videos/Cinematic1.mp4" autoplay muted loop playsinline
+    <video src="videos/IMG_9347.MOV" autoplay muted loop playsinline
         class="w-full h-screen object-cover"
         style="image-rendering: crisp-edges; transform: translateZ(0);"></video>
 
@@ -24,7 +24,7 @@
 
             <a href="/Custom-Form"
                 class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-white font-semibold tracking-wide px-10 py-3 rounded-xl border border-white/20 shadow-md transition-all duration-300 uppercase flex items-center gap-2 backdrop-blur-sm">
-                <span>Create My Journey</span>
+                <span>Design My Journey</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1"
                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
@@ -61,10 +61,6 @@
     </div>
 </div>
 
-@include('section.attraction', ['attractions' => $attractions])
-
-@include('section.hotel')
-@include('section.destination')
 
 <section class="relative bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a1a] text-white py-8 overflow-hidden">
 

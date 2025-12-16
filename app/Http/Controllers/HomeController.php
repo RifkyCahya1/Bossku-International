@@ -118,12 +118,30 @@ class HomeController extends Controller
         return asset('img/ExploreIndonesia.jpg');
     }
 
+    public function faq()
+    {
+        return view('faq');
+    }
+
+    public function terms()
+    {
+        return view ('terms');
+    }
+
+    public function privacy()
+    {
+        return view ('policy');
+    }
+
+    public function profil()
+    {
+        return view('profile');
+    }
 
     public function destination()
     {
         return view('destination');
     }
-
 
     public function booking()
     {
@@ -138,5 +156,10 @@ class HomeController extends Controller
     public function customForm()
     {
         return view('customtrip');
+    }
+
+    public function client()
+    {
+        return view('client.dashboard');
     }
 }
