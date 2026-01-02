@@ -742,6 +742,10 @@
             loading: false,
 
             book() {
+                console.log('TOUR OBJECT:', this.tour);
+                console.log('TOUR ID:', this.tour?.kode);
+                console.log('TOUR NAME:', this.tour?.name);
+
                 this.loading = true;
 
                 fetch('/payment/doku/create', {
@@ -757,7 +761,8 @@
                             date: this.date,
                             guests: this.guests,
                             total: this.totalPrice,
-                            tour_id: this.tour.id,
+                            tour_id: this.tour.kode,
+                            tour_name: this.tour.name,
                         })
                     })
                     .then(async r => {
@@ -792,7 +797,7 @@
 
             init() {
                 console.log("Tour loaded:", tour);
-                console.log(this.gallery);
+                console.log(this.tour);
             }
         };
     }

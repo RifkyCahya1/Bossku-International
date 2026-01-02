@@ -1,90 +1,99 @@
-<footer class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-200">
-    <div class="container mx-auto px-6 py-14">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
- 
-            <div>
-                <img src="{{ asset('img/Bossku.tours.png') }}" alt="Bossku Tours" class="w-40 mb-4">
-                <p class="text-sm text-gray-400 leading-relaxed">
-                    For travelers who seek what still feels real.
+<footer class="relative bg-gradient-to-bl from-[#1a1a1a] via-[#111] to-[#0a0a0a]  text-gray-300 overflow-hidden">
+
+    <div class="relative container mx-auto px-4 md:px-24 py-16">
+
+        <!-- GRID UTAMA -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+
+            <!-- Kolom 1 : Subscribe -->
+            <div class="lg:col-span-2">
+                <img src="{{ asset('img/Bossku.tours.png') }}"
+                    alt="BOSSKU"
+                    class="w-40 mb-10">
+
+                <h4 class="text-sm uppercase tracking-[0.35em] text-gray-500 mb-4">
+                    Stay in the Loop
+                </h4>
+
+                <h3 class="text-2xl md:text-3xl font-light text-white leading-tight mb-4 max-w-2xl">
+                    Journeys worth remembering. <br>
+                    Stories worth opening.
+                </h3>
+
+                <p class="text-base md:text-lg text-gray-400 leading-relaxed mb-12 max-w-xl">
+                    No spam. No noise. Just thoughtfully curated travel inspiration,
+                    exclusive routes, and rare departures delivered when it actually matters.
                 </p>
+
+                <form class="flex flex-col sm:flex-row gap-5 max-w-xl">
+                    <input
+                        type="email"
+                        placeholder="Your email address"
+                        class="w-full px-4 py-3 md:px-6 md:py-5 rounded-md bg-white/5 border border-white/15 text-base text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500/70 focus:bg-white/10 transition">
+
+                    <button
+                        type="submit"
+                        class="p-4 md:px-6 md:py-5 rounded-md bg-white text-black text-base font-semibold hover:bg-gray-200 transition whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </form>
             </div>
- 
+
+            <!-- Kolom 2 : Explore -->
             <div>
-                <h4 class="text-xs uppercase tracking-widest text-gray-400 mb-4">Explore</h4>
-                <ul class="space-y-3 text-sm">
+                <h4 class="text-[11px] uppercase tracking-[0.25em] text-gray-500 mb-4 mt-2">
+                    Explore
+                </h4>
+                <ul class="space-y-2 text-sm">
                     <li><a href="/Tour" class="hover:text-white transition">Tour Packages</a></li>
                     <li><a href="/Custom-Form" class="hover:text-white transition">Custom My Trip</a></li>
                     <li><a href="/Explore" class="hover:text-white transition">Destinations Map</a></li>
                 </ul>
             </div>
 
+            <!-- Kolom 3 : Information -->
             <div>
-                <h4 class="text-xs uppercase tracking-widest text-gray-400 mb-4">Information</h4>
-                <ul class="space-y-3 text-sm">
+                <h4 class="text-[11px] uppercase tracking-[0.25em] text-gray-500 mb-4 mt-2">
+                    Information
+                </h4>
+                <ul class="space-y-2 text-sm">
                     <li><a href="/About" class="hover:text-white transition">About Us</a></li>
                     <li><a href="/FAQ" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white transition">Sponsorship</a></li>
                     <li><a href="/terms" class="hover:text-white transition">Terms & Conditions</a></li>
                     <li><a href="/privacy" class="hover:text-white transition">Privacy Policy</a></li>
                 </ul>
             </div>
 
+            <!-- Kolom 4 : Associated By -->
             <div>
-                <h4 class="text-xs uppercase tracking-widest text-gray-400 mb-4">Contact</h4>
-                <ul class="space-y-4 text-sm text-gray-300">
-                    <li class="flex gap-3">
-                        <span>📍</span>
-                        <span>Jl. Mulyosari Baru No. 42–44, Kav. 89, Surabaya, Indonesia</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span>📞</span>
-                        <a href="tel:+628112557728" class="hover:text-white transition">
-                            +62 811 2557 728
-                        </a>
-                    </li>
-                    <li class="flex gap-3">
-                        <span>✉</span>
-                        <a href="mailto:info@bossku.tours" class="hover:text-white transition">
-                            info@bossku.tours
-                        </a>
-                    </li>
-                </ul>
+                <h4 class="text-[11px] uppercase tracking-[0.25em] text-gray-500 mb-8">
+                    Associated By
+                </h4>
 
-                <div class="mt-5">
-                    <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Follow Us</p>
-                    <div class="flex gap-4 text-sm">
-                        <a href="https://www.instagram.com/bossku.tours/" class="hover:text-white transition">Instagram</a>
-                        <a href="#" class="hover:text-white transition">TikTok</a>
-                    </div>
+                <div class="space-y-6">
+                    <img src="{{ asset('img/Asita.png') }}"
+                        alt="ASITA"
+                        class="w-24 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition">
+
+                    <img src="{{ asset('img/Astindo.png') }}"
+                        alt="ASTINDO"
+                        class="w-24 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition">
                 </div>
-            </div> 
-            <div>
-                <h4 class="text-xs uppercase tracking-widest text-gray-400 mb-4">Newsletter</h4>
-                <p class="text-sm text-gray-300 mb-4">
-                    Stay inspired. Travel with meaning.<br>
-                    Receive curated offers and travel updates.
-                </p>
-                <form class="flex gap-2">
-                    <input
-                        type="email"
-                        placeholder="Your Email"
-                        class="w-full px-4 py-2 rounded bg-gray-800 text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
-                    <button
-                        type="submit"
-                        class="px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-sm transition">
-                        Subscribe
-                    </button>
-                </form>
             </div>
-        </div> 
 
-        <div class="mt-12 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-sm text-gray-400">
-                © 2024–2025 BOSSKU.TOURS. All rights reserved.
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="mt-24 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <p>
+                © 2024–2025 BOSSKU.TOURS. Crafted with intention.
             </p>
-            <div class="flex gap-6 text-sm text-gray-400">
+            <div class="flex gap-6">
                 <a href="/terms" class="hover:text-white transition">Terms</a>
                 <a href="/privacy" class="hover:text-white transition">Privacy</a>
             </div>
         </div>
+
     </div>
 </footer>

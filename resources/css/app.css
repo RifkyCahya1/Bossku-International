@@ -43,9 +43,4 @@
 
 img {
     max-width: 100%;
-    height: auto;
-}
-
-.container {
-    @apply mx-auto px-6;
 }

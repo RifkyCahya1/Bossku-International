@@ -1,12 +1,9 @@
-@extends('main', ['excludeNavbar' => true])
-@include('layout.navbarserv')
+@extends('main')
 
 @section('content')
 
-<div x-data="customTripForm()"
-    class="relative bg-gradient-to-b from-[#faf6f0] via-[#f5ede3] to-[#fff9f0] text-[#1a1a1a] overflow-hidden">
-    
-    <!-- Hero Section with Parallax -->
+<div x-data="customTripForm()" class="relative bg-gradient-to-b from-[#faf6f0] via-[#f5ede3] to-[#fff9f0] text-[#1a1a1a] overflow-hidden">
+     
     <div class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <svg class="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">

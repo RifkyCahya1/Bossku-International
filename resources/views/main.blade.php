@@ -9,7 +9,8 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="icon" type="image/png" href="{{ asset('img/Icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/Icon.png') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('img/Icon.png') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

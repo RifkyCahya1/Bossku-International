@@ -40,7 +40,7 @@
                     class="block px-4 py-2 text-sm font-medium rounded-sm
                     bg-gradient-to-r from-[#b79a5b] via-[#e7d49c] to-[#f5e7b0] 
                     text-black hover:opacity-90 transition">
-                    Custom Trip
+                    Design My Journey
                 </a>
 
                 @auth
@@ -82,7 +82,7 @@
                 @else
                 <a href="/Login"
                     :class="scrolled 
-                    ? 'bg-[#02335B] text-white' 
+                    ? 'bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a1a] text-white' 
                     : 'bg-gradient-to-r from-[#a89258] via-[#c8b375] to-[#f5e7b0] text-black'"
                     class="text-sm font-medium px-6 py-2 rounded-sm transition-colors duration-200 hover:opacity-90">
                     Login
@@ -124,7 +124,7 @@
             <a href="/Tour" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Tour Packages</a>
             <a href="/About" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">About</a>
             <a href="/Login" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Login</a>
-            <a href="/Custom-Form" class="block px-4 py-2 text-sm font-medium rounded bg-[#FFCA10] text-black mt-2">Custom Trip</a>
+            <a href="/Custom-Form" class="block px-4 py-2 text-sm font-medium rounded bg-[#FFCA10] text-black mt-2">Design My Journey</a>
         </div>
     </div>
 </nav>

@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
             maxZoom = 5.4;
             initialZoom = 4.8;
         } else {
-            // Very small screens (e.g., phones)
             minZoom = 4.0;
             maxZoom = 5.0;
             initialZoom = 4.2;
@@ -41,47 +40,103 @@ document.addEventListener("DOMContentLoaded", function () {
             height,
         };
     }
-
-    // Save zoom control manually
+ 
     let zoomCtrl = null;
 
     function createMap() {
         const cfg = getMapConfig();
 
-        // Dynamically set map height for responsiveness
         const mapElement = document.getElementById("map");
         if (cfg.isMobile) {
-            mapElement.style.height = `${cfg.height * 0.7}px`; // 70% of screen height on mobile
+            mapElement.style.height = `${cfg.height * 0.7}px`;
         } else if (cfg.isTablet) {
-            mapElement.style.height = `${cfg.height * 0.8}px`; // 80% on tablet
+            mapElement.style.height = `${cfg.height * 0.8}px`;
         } else {
-            mapElement.style.height = `${cfg.height * 0.9}px`; // 90% on desktop
+            mapElement.style.height = `${cfg.height * 0.9}px`;
         }
         mapElement.style.width = "100%";
 
         const map = L.map("map", {
-            zoomControl: false, // We handle manually
-            dragging: true, // Enable dragging on all devices (flip from original if you want to disable on desktop)
-            scrollWheelZoom: cfg.isDesktop,
+            zoomControl: false,
+            dragging: false,
+            touchZoom: false,
+            scrollWheelZoom: false,
             doubleClickZoom: false,
             boxZoom: false,
             keyboard: false,
-            touchZoom: true,
-            tap: true,
-            minZoom: cfg.minZoom,
-            maxZoom: cfg.maxZoom,
+            tap: false,
+            minZoom: cfg.initialZoom,
+            maxZoom: cfg.initialZoom,
         }).setView([-2.5, 118], cfg.initialZoom);
-
-        // Add zoom control if desktop
-        if (cfg.isDesktop) {
-            zoomCtrl = L.control.zoom({ position: "topleft" }).addTo(map);
-        }
 
         setTimeout(() => map.invalidateSize(), 300);
         return map;
     }
 
     const map = createMap();
+
+    const provinceCenters = {
+        "East Java": {
+            name: "Jawa Timur",
+            latlng: [-7.7, 112.3],
+        },
+        Bali: {
+            name: "Bali",
+            latlng: [-8.4, 115.1],
+        },
+    };
+
+    const topDestinations = {
+        "East Java": [
+            {
+                name: "Bromo",
+                labelLatLng: [-9.755949, 111.747593],  
+            },
+        ],
+        Bali: [
+            {
+                name: "Nusa Dua",
+                labelLatLng: [-9.1, 114.6],
+            },
+        ],
+    };
+
+    function drawProvinceToDestination(map) {
+        Object.keys(topDestinations).forEach((provinceKey) => {
+            const province = provinceCenters[provinceKey];
+            const destinations = topDestinations[provinceKey];
+            if (!province) return;
+
+            L.circleMarker(province.latlng, {
+                radius: 3,
+                fillColor: "#000",
+                color: "#fff",
+                weight: 1,
+                fillOpacity: 1,
+            }).addTo(map);
+
+            destinations.forEach((dest) => { 
+                L.polyline([province.latlng, dest.labelLatLng], {
+                    color: "#000",
+                    weight: 2,
+                    opacity: 0.9,
+                    lineCap: "round",
+                }).addTo(map);
+
+                // Label destinasi (ujung garis)
+                L.marker(dest.labelLatLng, {
+                    icon: L.divIcon({
+                        className: "handwritten-label",
+                        html: dest.name,
+                        iconSize: [0, 0],
+                    }),
+                    interactive: false,
+                }).addTo(map);
+            });
+        });
+    }
+
+    drawProvinceToDestination(map);
 
     // Debounce function
     function debounce(fn, wait = 150) {
@@ -327,7 +382,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
             }).addTo(map);
 
+            geojsonLayer.eachLayer((layer) => {
+                layer.bringToBack();
+            });
+
             map.fitBounds(geojsonLayer.getBounds());
+            map.setMaxBounds(geojsonLayer.getBounds());
+            map.options.maxBoundsViscosity = 1.0;
         })
         .catch((err) => console.error("❌ Failed to load GeoJSON:", err));
 });

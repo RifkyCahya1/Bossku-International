@@ -10,7 +10,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $table = 'boss_users';
-    protected $primaryKey = 'id_users';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [

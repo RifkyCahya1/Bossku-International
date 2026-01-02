@@ -14,8 +14,46 @@
     }
 </style>
 
+
+<style>
+
+    .premium-destination-label span {
+        font-family: "Inter", "Helvetica Neue", sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        color: #1f2937;
+        /* slate-800 */
+        background: rgba(255, 255, 255, 0.85);
+
+        padding: 4px 10px;
+        border-radius: 999px;
+
+        box-shadow:
+            0 6px 18px rgba(0, 0, 0, 0.12);
+
+        transform: translate(-50%, -22px);
+        white-space: nowrap;
+        pointer-events: none;
+    }
+
+    .handwritten-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #000;
+        letter-spacing: 0.04em;
+        transform: rotate(-6deg);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+    }
+</style>
+
 <div class="relative w-full">
-    <img src="img/ExploreIndonesia.jpg" alt="Gambar Hotel" class="w-full h-screen object-cover">
+    <video autoplay muted loop playsinline preload="metadata"
+        src="{{ asset('Videos/IMG_0299.MOV') }}"
+        class="hidden md:block w-full h-screen object-cover">
+    </video>
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="absolute inset-0 flex flex-col justify-center px-4 md:px-22 py-10">
         <h1 class="text-white mx-auto text-3xl md:text-8xl text-pretty font-bold drop-shadow-md mb-2 tracking-wider text-center uppercase">

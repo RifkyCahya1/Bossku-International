@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -22,11 +23,41 @@ Route::get('Profile', [App\Http\Controllers\HomeController::class, 'profil']);
 Route::get('Dashboard', [App\Http\Controllers\HomeController::class, 'client']);
 Route::post('/send-inquiry', [App\Http\Controllers\TourController::class, 'send']);
 Route::post('/payment/doku/create', [App\Http\Controllers\PaymentController::class, 'createDoku']);
+
+Route::post('/payment/doku/notify', [App\Http\Controllers\PaymentController::class, 'notify']);
 Route::post('/payment/doku/callback', [App\Http\Controllers\PaymentController::class, 'callback']);
-Route::get('/payment/processing', [App\Http\Controllers\PaymentController::class, 'processing']);
+Route::post('/payment/doku/credit-card-webhook', [App\Http\Controllers\PaymentController::class, 'creditCardWebhook']);
+Route::get('/payment/return', [App\Http\Controllers\PaymentController::class, 'returnHandler']);
 Route::get('/payment/status/{invoice}', [App\Http\Controllers\PaymentController::class, 'checkStatus']);
+Route::get('/payment/processing/{invoice}', [App\Http\Controllers\PaymentController::class, 'processing']);
+Route::post('/payment/create-doku', [App\Http\Controllers\PaymentController::class, 'createDoku']);
+Route::get('/payment/simulate-notify', [App\Http\Controllers\PaymentController::class, 'simulateNotification']);
+
+Route::any('/payment/doku/debug', function (Request $req) {
+    $logFile = storage_path('logs/doku_debug_raw.txt');
+    $logContent = "[" . date('Y-m-d H:i:s') . "]\n";
+    $logContent .= "Method: " . $req->method() . "\n";
+    $logContent .= "URL: " . $req->fullUrl() . "\n";
+    $logContent .= "IP: " . $req->ip() . "\n";
+    $logContent .= "Headers:\n";
+    foreach ($req->headers->all() as $key => $values) {
+        $logContent .= "  {$key}: " . implode(', ', $values) . "\n";
+    }
+    $logContent .= "Body: " . $req->getContent() . "\n";
+    $logContent .= "=================================\n\n";
+
+    file_put_contents($logFile, $logContent, FILE_APPEND);
+
+    return response()->json([
+        'status' => 'ok',
+        'time' => date('Y-m-d H:i:s'),
+        'your_ip' => $req->ip(),
+        'content_length' => strlen($req->getContent())
+    ]);
+});
+
 Route::get('/testmail', function () {
-    $payment = \App\Models\Payment::first(); // ambil data dummy
+    $payment = \App\Models\Payment::first();
 
     Mail::to($payment->email)->send(new \App\Mail\PaymentStatusMail($payment));
 
@@ -67,4 +98,12 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::delete('/admin/profile/delete', [App\Http\Controllers\AuthController::class, 'deleteAccount'])
         ->name('admin.profile.delete');
+
+    Route::get('/admin/leads', [App\Http\Controllers\AdminLeadsController::class, 'lead']);
+    Route::post('/admin/leads/store', [App\Http\Controllers\AdminLeadsController::class, 'store'])->name('admin.leads.store');
+    Route::post('/admin/leads/{lead}/contact', [App\Http\Controllers\AdminLeadsController::class, 'contact']);
+    Route::post('/admin/leads/{lead}/status', [App\Http\Controllers\AdminLeadsController::class, 'updateStatus']);
+
+    Route::get('/admin/booking', [App\Http\Controllers\AdminBookingsController::class, 'index'])->name('admin.booking');
+    Route::post('/admin/booking/{id}/{status}', [App\Http\Controllers\AdminBookingsController::class, 'updateStatus']);
 });

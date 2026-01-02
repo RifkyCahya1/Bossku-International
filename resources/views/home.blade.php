@@ -1,42 +1,56 @@
 @extends('main')
+
 @section('content')
-<!-- @include('component.loadingScreen') -->
+@include('component.loadingScreen')
 
 <div class="relative overflow-hidden">
-    <video src="videos/IMG_9347.MOV" autoplay muted loop playsinline
-        class="w-full h-screen object-cover"
-        style="image-rendering: crisp-edges; transform: translateZ(0);"></video>
+    <!-- DESKTOP -->
+    <video autoplay muted loop playsinline preload="metadata"
+        src="{{ asset('Videos/IMG_9552.MOV') }}"
+        class="hidden md:block w-full h-screen object-cover">
+    </video>
 
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-[#f4f4f4]/20 to-[#f4f4f4]/100"></div>
+    <!-- MOBILE -->
+    <video autoplay muted loop playsinline preload="metadata"
+        src="{{ asset('Videos/IMG_9486.MOV') }}"
+        class="block md:hidden w-full h-screen object-cover">
+    </video>
 
     <div class="absolute inset-0 flex flex-col items-center justify-center px-6 text-white text-center animate-fadeIn">
 
-        <div class="absolute left-0 right-0 bottom-12 md:bottom-40 flex flex-col md:flex-row gap-4 justify-center items-center">
-            <a href="/Tour"
-                class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-white font-semibold tracking-wide px-10 py-3 rounded-xl shadow-lg transition-all duration-300 uppercase flex items-center gap-2">
-                <span>Explore My Journey</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                </svg>
-            </a>
+        <div class="absolute left-0 right-0 bottom-12 md:bottom-40 flex flex-col items-center gap-6">
 
-            <a href="/Custom-Form"
-                class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-white font-semibold tracking-wide px-10 py-3 rounded-xl border border-white/20 shadow-md transition-all duration-300 uppercase flex items-center gap-2 backdrop-blur-sm">
-                <span>Design My Journey</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                </svg>
-            </a>
+            <!-- BUTTONS -->
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <!-- PRIMARY -->
+                <a href="/Tour"
+                    class="group bg-[#BFA46F] hover:bg-[#a89258] text-black font-semibold tracking-wide px-10 py-3 rounded-xl shadow-xl transition-all duration-300 uppercase flex items-center gap-2">
+                    <span>Explore My Journey</span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </a>
+
+                <!-- SECONDARY -->
+                <a href="/Custom-Form"
+                    class="group bg-[#1A1A1D] hover:bg-[#242428] text-white font-semibold tracking-wide px-10 py-3 rounded-xl border border-[#BFA46F]/40 shadow-lg transition-all duration-300 uppercase flex items-center gap-2">
+                    <span>Design My Journey</span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </a>
+            </div>
         </div>
-
     </div>
 </div>
 
-<div class="container mx-auto max-w-xl py-4 px-4 md:px-12">
+<div class="container mx-auto max-w-xl py-12 px-4 md:px-12">
     <div class="flex flex-col items-center text-center">
         <h2 class="text-xl md:text-4xl font-extrabold text-gray-800 mb-2 leading-tight tracking-tight">
             More Than Just a Journey
@@ -51,7 +65,7 @@
         </p>
 
 
-        <div class="mt-6">
+        <div class="my-6">
             <a href="contact.php"
                 class="inline-block border border-[#02335B] text-[#02335B] hover:bg-[#FFCA10] hover:text-[#02335B] font-semibold px-8 py-3 rounded-full shadow-sm transition-all duration-300 text-lg tracking-wide">
                 Find The Journey That Calls You
@@ -89,7 +103,12 @@
     </div>
 </section>
 
-<script src="JS/SwiperDestination.js"></script>
+<script>
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+</script>
+
 
 <style>
     @keyframes fadeIn {

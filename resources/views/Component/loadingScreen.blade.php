@@ -181,22 +181,36 @@
     <script>
         (function() {
             const loader = document.getElementById('full-loader');
+            if (!loader) return;
 
-            function hideLoader() {
-                if (!loader) return;
-                loader.classList.add('bs-hidden');
-                setTimeout(() => loader?.parentNode?.removeChild(loader), 1000);
+            const LOADER_KEY = 'bossku_loader_shown';
+
+            // Nek wis tau tampil, langsung ilang
+            if (sessionStorage.getItem(LOADER_KEY)) {
+                loader.remove();
+                return;
             }
 
-            // Tampilkan selama ±4.5 detik total
+            // Tandai wis tau tampil
+            sessionStorage.setItem(LOADER_KEY, 'true');
+
+            function hideLoader() {
+                loader.classList.add('bs-hidden');
+                setTimeout(() => loader.remove(), 1000);
+            }
+
+            // First load only
             if (document.readyState === 'complete') {
                 setTimeout(hideLoader, 4000);
             } else {
-                window.addEventListener('load', () => setTimeout(hideLoader, 4000));
+                window.addEventListener('load', () => {
+                    setTimeout(hideLoader, 4000);
+                });
             }
 
             // Safety fallback
             setTimeout(hideLoader, 4500);
         })();
     </script>
+
 </div>

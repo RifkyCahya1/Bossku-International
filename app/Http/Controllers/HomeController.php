@@ -52,7 +52,7 @@ class HomeController extends Controller
             })
             ->where('det.negara', 'INDONESIA')
             ->where('det.agent_twn', '>', 0)
-            ->where('det.pax', '<', 4)
+            ->where('det.nationality_type', 'WNA')
             ->select(
                 'iti.judul',
                 'iti.id as itinerary_id',
@@ -70,7 +70,8 @@ class HomeController extends Controller
                 'det.expired',
                 'det.statuss',
                 'det.benua',
-                'det.negara'
+                'det.negara',
+                'det.nationality_type'
             )
             ->orderBy('iti.id')
             ->get();

@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
+    protected $table = 'boss_payments';
+
     protected $fillable = [
         'invoice_number',
         'name',
         'email',
         'phone',
+        'tour_id',
         'tour_name',
         'date',
         'guests',

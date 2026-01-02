@@ -19,7 +19,21 @@
             {{ request()->is('admin/users') ? 'text-white bg-white/20' : 'text-gray-300 hover:text-white hover:bg-white/10' }}">
             <i class="fa-solid fa-users"></i> Account Info
         </a>
-        
+
+        <a href="/admin/leads"
+            class="flex items-center gap-3 rounded-xl px-4 py-3 transition
+            {{ request()->is('admin/leads') ? 'text-white bg-white/20' : 'text-gray-300 hover:text-white hover:bg-white/10' }}">
+            <x-carbon-user-service-desk class="h-6 w-6"/>
+            Leads
+        </a>
+
+        <a href="/admin/booking"
+            class="flex items-center gap-3 rounded-xl px-4 py-3 transition
+            {{ request()->is('admin/booking') ? 'text-white bg-white/20' : 'text-gray-300 hover:text-white hover:bg-white/10' }}">
+            <x-heroicon-s-ticket class="h-6 w-6"/>
+            Bookings
+        </a>
+
         <a href="#"
             class="flex items-center gap-3 rounded-xl px-4 py-3 transition
             {{ request()->is('admin/settings') ? 'text-white bg-white/20' : 'text-gray-300 hover:text-white hover:bg-white/10' }}">
