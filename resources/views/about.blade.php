@@ -1,5 +1,5 @@
-@extends('main', ['excludeNavbar' => true])
-@include('layout.navbarserv')
+@extends('main')
+@section('content')
 
 @section('content')
 

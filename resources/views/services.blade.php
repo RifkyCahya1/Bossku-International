@@ -1,40 +1,39 @@
-@extends('main', ['excludeNavbar' => true])
-@include('layout.navbarserv')
+@extends('main')
 
 @section('content')
-
-
 
 <div
     x-data='tourApp(@json($tours))'
     x-init="init()"
     class="min-h-screen text-gray-800 font-sans py-24">
 
-    <div class="mx-auto px-6">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-10">
-            <h1 class="text-4xl md:text-6xl font-semibold tracking-wide text-[#0B1D26]">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wide text-[#0B1D26]">
                 Explore Indonesia
             </h1>
 
-            <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+            <p class="mt-4 text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                 Exclusive journeys curated with precision, taste, and quiet luxury.
             </p>
 
             <div class="mt-6 w-24 h-[2px] bg-gradient-to-r from-transparent via-[#C9A24D] to-transparent mx-auto"></div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-10">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Desktop Sidebar Filter (hidden on mobile) -->
             <aside
                 class="hidden lg:block relative
                 w-full lg:max-w-sm
                 bg-gradient-to-b from-[#FAF9F6] to-white
                 border border-[#E6D8A8]/40
                 rounded-2xl lg:rounded-[28px]
-                p-4 sm:p-6 lg:p-8
+                p-6 lg:p-8
                 shadow-[0_20px_60px_-25px_rgba(201,162,77,0.35)]
                 backdrop-blur-xl
-                space-y-6 lg:space-y-8">
+                space-y-6 lg:space-y-8
+                h-fit sticky top-24">
 
                 <!-- Header -->
                 <div class="flex items-center justify-between gap-4">
@@ -47,7 +46,7 @@
 
                     <button
                         @click="resetFilters()"
-                        class="text-[10px] uppercase tracking-[0.25em]
+                        class="text-xs uppercase tracking-[0.25em]
                       text-[#9E7C32] hover:text-[#0B1D26] transition">
                         Reset
                     </button>
@@ -55,7 +54,7 @@
 
                 <!-- Destination -->
                 <div class="space-y-2">
-                    <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                    <label class="block text-xs uppercase tracking-widest text-gray-500">
                         Destination
                     </label>
                     <input
@@ -64,29 +63,31 @@
                         placeholder="Bali, Flores, Raja Ampat"
                         class="w-full rounded-full px-4 lg:px-5 py-2.5 lg:py-3 text-sm
                         border border-[#E6D8A8]/60 bg-white
-                        focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]">
+                        focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]
+                        placeholder:text-gray-400">
                 </div>
 
                 <!-- Duration -->
                 <div class="space-y-2">
-                    <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                    <label class="block text-xs uppercase tracking-widest text-gray-500">
                         Duration
                     </label>
                     <select
                         x-model="filters.duration"
                         class="w-full rounded-full px-4 lg:px-5 py-2.5 lg:py-3 text-sm
-                        border border-[#E6D8A8]/60 bg-white">
+                        border border-[#E6D8A8]/60 bg-white
+                        focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]">
                         <option value="">Any duration</option>
-                        <option value="weekend">Weekend Escape</option>
-                        <option value="short">Short Break</option>
-                        <option value="week">One Week</option>
-                        <option value="extended">Extended Journey</option>
+                        <option value="weekend">Weekend Escape (2-3 days)</option>
+                        <option value="short">Short Break (4-6 days)</option>
+                        <option value="week">One Week (7-9 days)</option>
+                        <option value="extended">Extended Journey (10+ days)</option>
                     </select>
                 </div>
 
                 <!-- Price -->
                 <div class="space-y-3">
-                    <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                    <label class="block text-xs uppercase tracking-widest text-gray-500">
                         Investment Range
                     </label>
 
@@ -95,24 +96,24 @@
                         max="20000000"
                         step="100000"
                         x-model="filters.harga_final"
-                        class="w-full accent-[#C9A24D]">
+                        class="w-full h-2 accent-[#C9A24D]">
 
                     <div class="text-sm font-medium text-[#0B1D26]">
-                        IDR
-                        <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
+                        IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
                     </div>
                 </div>
 
                 <!-- Departure -->
                 <div class="space-y-2">
-                    <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                    <label class="block text-xs uppercase tracking-widest text-gray-500">
                         Departure
                     </label>
 
                     <select
                         x-model="filters.departure"
                         class="w-full rounded-full px-4 lg:px-5 py-2.5 lg:py-3 text-sm
-                        border border-[#E6D8A8]/60 bg-white">
+                        border border-[#E6D8A8]/60 bg-white
+                        focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]">
                         <option value="">Flexible</option>
                         <option value="soon">Within 30 Days</option>
                         <option value="season">This Season</option>
@@ -130,11 +131,11 @@
 
                 <!-- Themes -->
                 <div class="space-y-4">
-                    <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                    <label class="block text-xs uppercase tracking-widest text-gray-500">
                         Signature Themes
                     </label>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                    <div class="grid grid-cols-1 gap-3">
                         <template x-for="theme in themes" :key="theme.key">
                             <label class="flex gap-3 items-start text-sm cursor-pointer">
                                 <input
@@ -155,6 +156,7 @@
                 </div>
             </aside>
 
+            <!-- Mobile Filter Modal -->
             <div
                 x-show="openFilter"
                 x-transition:enter="transition ease-out duration-300"
@@ -163,89 +165,64 @@
                 x-transition:leave="transition ease-in duration-200"
                 x-transition:leave-start="translate-y-0"
                 x-transition:leave-end="translate-y-full"
+                x-cloak
                 class="fixed bottom-0 inset-x-0 z-50 lg:hidden
                 bg-gradient-to-b from-[#FAF9F6] to-white
                 rounded-t-3xl
                 max-h-[85vh] overflow-y-auto
-                p-5 space-y-6">
+                p-5 space-y-6 shadow-2xl">
 
                 <!-- drag handle -->
-                <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto"></div>
+                <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-2"></div>
 
                 <!-- header -->
-                <div class="flex items-center justify-between">
-                    <h2 class="text-base font-semibold text-[#0B1D26]">
+                <div class="flex items-center justify-between mb-2">
+                    <h2 class="text-lg font-semibold text-[#0B1D26]">
                         Refine Your Journey
                     </h2>
                     <button
                         @click="openFilter = false"
-                        class="text-sm text-[#9E7C32]">
+                        class="text-sm text-[#9E7C32] hover:text-[#0B1D26]">
                         Tutup
                     </button>
                 </div>
 
-                <aside
-                    class="hidden lg:block relative
-                w-full lg:max-w-sm
-                bg-gradient-to-b from-[#FAF9F6] to-white
-                border border-[#E6D8A8]/40
-                rounded-2xl lg:rounded-[28px]
-                p-4 sm:p-6 lg:p-8
-                shadow-[0_20px_60px_-25px_rgba(201,162,77,0.35)]
-                backdrop-blur-xl
-                space-y-6 lg:space-y-8">
-
-                    <!-- Header -->
-                    <div class="flex items-center justify-between gap-4">
-                        <div>
-                            <h2 class="text-base lg:text-lg font-semibold tracking-wide text-[#0B1D26]">
-                                Refine Your Journey
-                            </h2>
-                            <div class="mt-1 w-10 lg:w-12 h-[1px] bg-[#C9A24D]"></div>
-                        </div>
-
-                        <button
-                            @click="resetFilters()"
-                            class="text-[10px] uppercase tracking-[0.25em]
-                      text-[#9E7C32] hover:text-[#0B1D26] transition">
-                            Reset
-                        </button>
-                    </div>
-
+                <!-- Mobile Filter Content -->
+                <div class="space-y-5 pb-6">
                     <!-- Destination -->
                     <div class="space-y-2">
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                        <label class="block text-xs uppercase tracking-widest text-gray-500">
                             Destination
                         </label>
                         <input
                             type="text"
                             x-model="filters.destination"
                             placeholder="Bali, Flores, Raja Ampat"
-                            class="w-full rounded-full px-4 lg:px-5 py-2.5 lg:py-3 text-sm
-                        border border-[#E6D8A8]/60 bg-white
-                        focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]">
+                            class="w-full rounded-full px-4 py-3 text-sm
+                            border border-[#E6D8A8]/60 bg-white
+                            focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]">
                     </div>
 
                     <!-- Duration -->
                     <div class="space-y-2">
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                        <label class="block text-xs uppercase tracking-widest text-gray-500">
                             Duration
                         </label>
                         <select
                             x-model="filters.duration"
-                            class="w-full rounded-full px-4 lg:px-5 py-2.5 lg:py-3 text-sm
-                        border border-[#E6D8A8]/60 bg-white">
+                            class="w-full rounded-full px-4 py-3 text-sm
+                            border border-[#E6D8A8]/60 bg-white">
                             <option value="">Any duration</option>
-                            <option value="weekend">Weekend Escape</option>
-                            <option value="short">Short Break</option>
-                            <option value="week">One Week</option>
-                            <option value="extended">Extended Journey</option>
+                            <option value="weekend">Weekend Escape (2-3 days)</option>
+                            <option value="short">Short Break (4-6 days)</option>
+                            <option value="week">One Week (7-9 days)</option>
+                            <option value="extended">Extended Journey (10+ days)</option>
                         </select>
                     </div>
 
                     <!-- Price -->
                     <div class="space-y-3">
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                        <label class="block text-xs uppercase tracking-widest text-gray-500">
                             Investment Range
                         </label>
 
@@ -254,24 +231,23 @@
                             max="20000000"
                             step="100000"
                             x-model="filters.harga_final"
-                            class="w-full accent-[#C9A24D]">
+                            class="w-full h-2 accent-[#C9A24D]">
 
                         <div class="text-sm font-medium text-[#0B1D26]">
-                            IDR
-                            <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
+                            IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
                         </div>
                     </div>
 
                     <!-- Departure -->
                     <div class="space-y-2">
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                        <label class="block text-xs uppercase tracking-widest text-gray-500">
                             Departure
                         </label>
 
                         <select
                             x-model="filters.departure"
-                            class="w-full rounded-full px-4 lg:px-5 py-2.5 lg:py-3 text-sm
-                        border border-[#E6D8A8]/60 bg-white">
+                            class="w-full rounded-full px-4 py-3 text-sm
+                            border border-[#E6D8A8]/60 bg-white">
                             <option value="">Flexible</option>
                             <option value="soon">Within 30 Days</option>
                             <option value="season">This Season</option>
@@ -283,17 +259,17 @@
                             x-show="filters.departure === 'specific'"
                             type="date"
                             x-model="filters.departure_date"
-                            class="w-full mt-2 rounded-full px-4 lg:px-5 py-2.5 lg:py-3 text-sm
-                        border border-[#E6D8A8]/60 bg-white">
+                            class="w-full mt-2 rounded-full px-4 py-3 text-sm
+                            border border-[#E6D8A8]/60 bg-white">
                     </div>
 
                     <!-- Themes -->
                     <div class="space-y-4">
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500">
+                        <label class="block text-xs uppercase tracking-widest text-gray-500">
                             Signature Themes
                         </label>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <template x-for="theme in themes" :key="theme.key">
                                 <label class="flex gap-3 items-start text-sm cursor-pointer">
                                     <input
@@ -312,28 +288,53 @@
                             </template>
                         </div>
                     </div>
-                </aside>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3 pt-4">
+                        <button
+                            @click="resetFilters()"
+                            class="flex-1 rounded-full px-4 py-3 text-sm
+                            border border-[#E6D8A8] text-[#9E7C32]
+                            hover:bg-[#FAF9F6]">
+                            Reset Filters
+                        </button>
+                        <button
+                            @click="openFilter = false"
+                            class="flex-1 rounded-full px-4 py-3 text-sm
+                            bg-[#0B1D26] text-white
+                            hover:bg-opacity-90">
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
             </div>
 
+            <!-- Mobile Filter Toggle Button -->
             <button
                 @click="openFilter = true"
-                class="fixed bottom-5 left-1/2 -translate-x-1/2 z-40
-                            flex items-center gap-2
-                            px-6 py-3 rounded-full
-                            bg-[#0B1D26] text-white text-sm font-medium
-                            shadow-lg lg:hidden">
-                🔍 Filter Journey
+                class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40
+                        flex items-center justify-center gap-2
+                        px-6 py-3 rounded-full
+                        bg-[#0B1D26] text-white text-sm font-medium
+                        shadow-lg hover:shadow-xl hover:scale-105
+                        transition-all duration-300 lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                </svg>
+                Filter Journeys
             </button>
 
-            <main class="flex-1 space-y-10">
+            <!-- Main Content -->
+            <main class="flex-1 space-y-8">
+                <!-- Search Bar -->
                 <div class="relative">
                     <div class="flex items-center gap-4">
                         <div class="relative flex-1">
                             <input
                                 type="text"
                                 x-model="search"
-                                placeholder="Search destinations or journeys"
-                                class="w-full rounded-full px-6 py-4 text-sm
+                                placeholder="Search destinations or journeys..."
+                                class="w-full rounded-full px-6 py-4 text-sm sm:text-base
                                 bg-white border border-[#E6D8A8]/60
                                 focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]
                                 placeholder:text-gray-400">
@@ -345,148 +346,176 @@
                                     d="M21 21l-4.35-4.35m1.35-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
+
+                        <!-- Results Count -->
+                        <div class="hidden md:block text-sm text-gray-600 whitespace-nowrap">
+                            <span x-text="filteredTours().length"></span> journeys found
+                        </div>
+                    </div>
+
+                    <!-- Mobile Results Count -->
+                    <div class="mt-2 md:hidden text-xs text-gray-500">
+                        <span x-text="filteredTours().length"></span> journeys match your criteria
                     </div>
                 </div>
 
+                <!-- No Results -->
                 <template x-if="filteredTours().length === 0">
-                    <p class="text-center mt-16 text-sm tracking-wide text-gray-400">
-                        No journeys match your preferences
-                    </p>
-                </template>
-
-                <template x-for="(tour, i) in paginatedTours()" :key="tour.id + '-' + i">
-                    <div
-                        class="group bg-white rounded-[28px] overflow-hidden
-                        shadow-[0_40px_100px_-40px_rgba(0,0,0,0.35)]
-                        hover:-translate-y-2 transition duration-500
-                        flex flex-col md:flex-row">
-
-                        <div class="relative w-full md:w-1/3 h-72 md:h-auto">
-                            <img
-                                :src="tour.image"
-                                :alt="tour.name"
-                                class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-
-                            <div class="absolute top-4 left-4
-                                bg-gradient-to-r from-[#9E7C32] via-[#C9A24D] to-[#F5E6B8]
-                                text-[#0B1D26] text-xs font-semibold
-                                rounded-full px-4 py-1 shadow">
-                                <span x-text="tour.negara"></span>
-                            </div>
-
-                            <div class="absolute bottom-4 right-4
-                                bg-[#0B1D26] text-[#F5E6B8]
-                                rounded-2xl px-5 py-2 text-sm font-medium">
-                                IDR
-                                <span x-text="Number(tour.harga_final).toLocaleString('id-ID')"></span>
-                            </div>
+                    <div class="text-center py-16">
+                        <div class="text-gray-300 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                         </div>
-
-                        <div class="flex-1 p-8 flex flex-col justify-between">
-                            <div>
-                                <h3 class="text-2xl font-semibold text-[#0B1D26]"
-                                    x-text="tour.name"></h3>
-
-                                <div class="text-xs tracking-wide text-gray-400">
-                                    <span x-text="'#' + tour.kode"></span>
-                                </div>
-
-                                <div class="mt-2 text-sm text-gray-500">
-                                    Tour Type:
-                                    <span class="font-medium text-[#9E7C32]"
-                                        x-text="tour.type"></span>
-                                </div>
-                            </div>
-
-                            <!-- ACTION -->
-                            <div class="flex items-center mt-8">
-                                <a
-                                    :href="`/tour/detail/${tour.kode}`"
-                                    class="rounded-full px-7 py-3
-                                    border border-[#C9A24D]
-                                    bg-[#0B1D26]
-                                    text-[#C9A24D] text-sm tracking-wide
-                                    hover:bg-[#C9A24D] hover:text-[#0B1D26]
-                                    transition">
-                                    View Details
-                                </a>
-
-                                <div class="ml-auto text-right text-xs text-gray-400">
-                                    <div class="font-medium text-[#0B1D26]">
-                                        IDR
-                                        <span x-text="Number(tour.harga_final).toLocaleString('id-ID')"></span>
-                                    </div>
-                                    per person
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-lg text-gray-400 mb-2">No journeys match your preferences</p>
+                        <button
+                            @click="resetFilters()"
+                            class="text-sm text-[#C9A24D] hover:text-[#0B1D26] underline">
+                            Reset filters to see all journeys
+                        </button>
                     </div>
                 </template>
 
-                <!-- PAGINATION -->
-                <div class="flex flex-wrap justify-center mt-16 gap-3 items-center select-none">
+                <!-- Tours Grid -->
+                <div class="space-y-6 sm:space-y-8">
+                    <template x-for="(tour, i) in paginatedTours()" :key="tour.id + '-' + i">
+                        <div
+                            class="group bg-white rounded-2xl md:rounded-[28px] overflow-hidden
+                            shadow-lg hover:shadow-2xl
+                            hover:-translate-y-1 transition-all duration-500
+                            flex flex-col md:flex-row">
 
-                    <button
-                        @click="prevPage()"
-                        :disabled="currentPage === 1"
-                        class="px-4 py-2 rounded-full text-sm
-                        border border-[#E6D8A8]
-                        text-[#0B1D26]
-                        hover:bg-[#FAF9F6]
-                        disabled:opacity-40 disabled:cursor-not-allowed">
-                        ← Prev
-                    </button>
+                            <div class="relative w-full md:w-2/5 lg:w-1/3 h-64 sm:h-72 md:h-auto">
+                                <img
+                                    :src="tour.image"
+                                    :alt="tour.name"
+                                    class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
 
-                    <button
-                        @click="goToPage(1)"
-                        :class="currentPage === 1
-                        ? 'bg-[#0B1D26] text-[#F5E6B8]'
-                        : 'bg-white border border-[#E6D8A8] text-[#0B1D26]'"
-                        class="px-4 py-2 rounded-full text-sm transition">
-                        1
-                    </button>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
 
-                    <template x-if="showLeftEllipsis()">
-                        <span class="px-3 py-2 text-gray-400">…</span>
+                                <div class="absolute top-4 left-4
+                                    bg-gradient-to-r from-[#9E7C32] via-[#C9A24D] to-[#F5E6B8]
+                                    text-[#0B1D26] text-xs font-semibold
+                                    rounded-full px-3 py-1 shadow">
+                                    <span x-text="tour.negara"></span>
+                                </div>
+
+                                <div class="absolute bottom-4 right-4
+                                    bg-[#0B1D26] text-[#F5E6B8]
+                                    rounded-xl sm:rounded-2xl px-3 sm:px-4 py-1.5 sm:py-2 
+                                    text-xs sm:text-sm font-medium">
+                                    IDR <span x-text="Number(tour.harga_final).toLocaleString('id-ID')"></span>
+                                </div>
+                            </div>
+
+                            <div class="flex-1 p-6 md:p-8 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-semibold text-[#0B1D26]"
+                                        x-text="tour.name"></h3>
+
+                                    <div class="text-xs tracking-wide text-gray-400 mt-1">
+                                        <span x-text="'#' + tour.kode"></span>
+                                        <span class="mx-2">•</span>
+                                        <span x-text="tour.duration_days + ' days'"></span>
+                                    </div>
+
+                                    <div class="mt-3 text-sm text-gray-500">
+                                        Tour Type:
+                                        <span class="font-medium text-[#9E7C32]"
+                                            x-text="tour.type"></span>
+                                    </div>
+
+                                    <div class="mt-3 text-sm text-gray-600 line-clamp-2"
+                                        x-text="tour.description"></div>
+                                </div>
+
+                                <!-- Action -->
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mt-6 gap-4">
+
+                                    <div class="text-right md:order-2">
+                                        <div class="text-xs text-gray-400">Starting from</div>
+                                        <div class="text-lg font-semibold text-[#0B1D26]">
+                                            IDR <span x-text="Number(tour.harga_final).toLocaleString('id-ID')"></span>
+                                        </div>
+                                        <div class="text-xs text-gray-400">per person</div>
+                                    </div>
+
+                                    <a
+                                        :href="`/tour/detail/${tour.kode}`"
+                                        class="inline-flex items-center justify-center rounded-full px-6 py-3
+                                        border border-[#C9A24D]
+                                        bg-[#0B1D26]
+                                        text-[#C9A24D] text-sm tracking-wide
+                                        hover:bg-[#C9A24D] hover:text-[#0B1D26]
+                                        transition text-center">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </template>
+                </div>
 
-                    <template x-for="page in middlePages()" :key="page">
+                <!-- Pagination -->
+                <template x-if="totalPages() > 1">
+                    <div class="flex flex-wrap justify-center mt-12 gap-2 sm:gap-3 items-center select-none">
+
                         <button
-                            @click="goToPage(page)"
-                            :class="currentPage === page
+                            @click="prevPage()"
+                            :disabled="currentPage === 1"
+                            class="px-3 sm:px-4 py-2 rounded-full text-sm
+                            border border-[#E6D8A8] text-[#0B1D26]
+                            hover:bg-[#FAF9F6] disabled:opacity-40 disabled:cursor-not-allowed">
+                            ← Prev
+                        </button>
+
+                        <button
+                            @click="goToPage(1)"
+                            :class="currentPage === 1
                             ? 'bg-[#0B1D26] text-[#F5E6B8]'
                             : 'bg-white border border-[#E6D8A8] text-[#0B1D26]'"
-                            class="px-4 py-2 rounded-full text-sm transition">
-                            <span x-text="page"></span>
+                            class="px-3 sm:px-4 py-2 rounded-full text-sm transition min-w-[40px]">
+                            1
                         </button>
-                    </template>
 
-                    <template x-if="showRightEllipsis()">
-                        <span class="px-3 py-2 text-gray-400">…</span>
-                    </template>
+                        <template x-if="showLeftEllipsis()">
+                            <span class="px-3 py-2 text-gray-400">…</span>
+                        </template>
 
-                    <button
-                        @click="goToPage(totalPages())"
-                        :class="currentPage === totalPages()
-                        ? 'bg-[#0B1D26] text-[#F5E6B8]'
-                        : 'bg-white border border-[#E6D8A8] text-[#0B1D26]'"
-                        class="px-4 py-2 rounded-full text-sm transition">
-                        <span x-text="totalPages()"></span>
-                    </button>
+                        <template x-for="page in middlePages()" :key="page">
+                            <button
+                                @click="goToPage(page)"
+                                :class="currentPage === page
+                                ? 'bg-[#0B1D26] text-[#F5E6B8]'
+                                : 'bg-white border border-[#E6D8A8] text-[#0B1D26]'"
+                                class="px-3 sm:px-4 py-2 rounded-full text-sm transition min-w-[40px]">
+                                <span x-text="page"></span>
+                            </button>
+                        </template>
 
-                    <button
-                        @click="nextPage()"
-                        :disabled="currentPage === totalPages()"
-                        class="px-4 py-2 rounded-full text-sm
-                        border border-[#E6D8A8]
-                        text-[#0B1D26]
-                        hover:bg-[#FAF9F6]
-                        disabled:opacity-40 disabled:cursor-not-allowed">
-                        Next →
-                    </button>
-                </div>
+                        <template x-if="showRightEllipsis()">
+                            <span class="px-3 py-2 text-gray-400">…</span>
+                        </template>
+
+                        <button
+                            @click="goToPage(totalPages())"
+                            :class="currentPage === totalPages()
+                            ? 'bg-[#0B1D26] text-[#F5E6B8]'
+                            : 'bg-white border border-[#E6D8A8] text-[#0B1D26]'"
+                            class="px-3 sm:px-4 py-2 rounded-full text-sm transition min-w-[40px]">
+                            <span x-text="totalPages()"></span>
+                        </button>
+
+                        <button
+                            @click="nextPage()"
+                            :disabled="currentPage === totalPages()"
+                            class="px-3 sm:px-4 py-2 rounded-full text-sm
+                            border border-[#E6D8A8] text-[#0B1D26]
+                            hover:bg-[#FAF9F6] disabled:opacity-40 disabled:cursor-not-allowed">
+                            Next →
+                        </button>
+                    </div>
+                </template>
 
             </main>
 
@@ -497,7 +526,7 @@
 <script>
     function tourApp(serverData) {
         return {
-            mobileOpen: false,
+            openFilter: false,
             search: "",
             currentPage: 1,
 
@@ -551,22 +580,16 @@
 
                 this.allTours = sd.flat();
                 this.filtered = this.allTours.map(t => {
-
-                    // ===== HITUNG JUMLAH HARI DARI ITINERARY =====
+                    // Hitung jumlah hari dari itinerary
                     let days = 0;
 
-                    // CASE 1: itinerary berupa ARRAY
                     if (Array.isArray(t.itinerary)) {
                         days = t.itinerary.length;
-                    }
-
-                    // CASE 2: itinerary berupa STRING (HTML / TEXT)
-                    else if (typeof t.itinerary === 'string') {
+                    } else if (typeof t.itinerary === 'string') {
                         const matches = t.itinerary.match(/day\s*\d+/gi);
                         days = matches ? matches.length : 0;
                     }
 
-                    // FALLBACK: minimal 1 hari
                     if (!days || days < 1) days = 1;
 
                     return {
@@ -586,7 +609,6 @@
                     }
                 });
 
-
                 this.$watch('filters', () => this.currentPage = 1, {
                     deep: true
                 });
@@ -604,33 +626,37 @@
                 };
                 this.search = "";
                 this.currentPage = 1;
+                this.openFilter = false;
             },
 
             filteredTours() {
                 return this.filtered.filter(t => {
-
+                    // Search filter
                     if (this.search) {
                         const q = this.search.toLowerCase();
-                        if (!(t.name + t.kota + t.negara).toLowerCase().includes(q)) return false;
+                        const searchable = (t.name + t.kota + t.negara + t.description).toLowerCase();
+                        if (!searchable.includes(q)) return false;
                     }
 
+                    // Destination filter
                     if (this.filters.destination) {
                         const d = this.filters.destination.toLowerCase();
                         if (!(t.kota.toLowerCase().includes(d) || t.negara.toLowerCase().includes(d))) return false;
                     }
 
+                    // Price filter
                     if (t.harga_final > this.filters.harga_final) return false;
 
+                    // Duration filter
                     if (this.filters.duration) {
                         const d = Number(t.duration_days || 0);
-
                         if (this.filters.duration === 'weekend' && !(d >= 2 && d <= 3)) return false;
                         if (this.filters.duration === 'short' && !(d >= 4 && d <= 6)) return false;
                         if (this.filters.duration === 'week' && !(d >= 7 && d <= 9)) return false;
                         if (this.filters.duration === 'extended' && d < 10) return false;
                     }
 
-
+                    // Departure filter
                     if (this.filters.departure === 'soon' && t.departure_date) {
                         const diff = (new Date(t.departure_date) - new Date()) / 86400000;
                         if (diff < 0 || diff > 30) return false;
@@ -640,6 +666,7 @@
                         if (t.departure_date !== this.filters.departure_date) return false;
                     }
 
+                    // Themes filter
                     if (this.filters.themes.length) {
                         if (!this.filters.themes.some(th => t.themes.includes(th))) return false;
                     }
@@ -673,7 +700,6 @@
                 }
             },
 
-            // === PAGINATION LOGIC ===
             showLeftEllipsis() {
                 return this.totalPages() > 5 && this.currentPage > 3;
             },
@@ -706,18 +732,22 @@
 
                 for (let i = start; i <= end; i++) pages.push(i);
                 return pages;
-            },
-
-            // === OPTIONAL (BIAR MOBILE FILTER GA ERROR) ===
-            availableCountries() {
-                return [...new Set(this.filtered.map(t => t.kota).filter(Boolean))];
-            },
-
-
+            }
         }
     }
 </script>
 
+<style>
+    [x-cloak] {
+        display: none !important;
+    }
 
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
 
 @endsection

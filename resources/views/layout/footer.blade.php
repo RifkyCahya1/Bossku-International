@@ -1,11 +1,6 @@
 <footer class="relative bg-gradient-to-bl from-[#1a1a1a] via-[#111] to-[#0a0a0a]  text-gray-300 overflow-hidden">
-
     <div class="relative container mx-auto px-4 md:px-24 py-16">
-
-        <!-- GRID UTAMA -->
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-
-            <!-- Kolom 1 : Subscribe -->
             <div class="lg:col-span-2">
                 <img src="{{ asset('img/Bossku.tours.png') }}"
                     alt="BOSSKU"
@@ -39,7 +34,6 @@
                 </form>
             </div>
 
-            <!-- Kolom 2 : Explore -->
             <div>
                 <h4 class="text-[11px] uppercase tracking-[0.25em] text-gray-500 mb-4 mt-2">
                     Explore
@@ -51,7 +45,6 @@
                 </ul>
             </div>
 
-            <!-- Kolom 3 : Information -->
             <div>
                 <h4 class="text-[11px] uppercase tracking-[0.25em] text-gray-500 mb-4 mt-2">
                     Information
@@ -84,16 +77,26 @@
 
         </div>
 
-        <!-- BOTTOM BAR -->
         <div class="mt-24 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
             <p>
                 © 2024–2025 BOSSKU.TOURS. Crafted with intention.
             </p>
-            <div class="flex gap-6">
-                <a href="/terms" class="hover:text-white transition">Terms</a>
-                <a href="/privacy" class="hover:text-white transition">Privacy</a>
+            <div class="flex items-center gap-6">
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition text-lg">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/bossku.tours/" target="_blank" class="hover:text-white transition text-lg">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6285727767777" target="_blank" class="hover:text-white transition text-lg">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition text-lg">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
             </div>
         </div>
-
     </div>
 </footer>

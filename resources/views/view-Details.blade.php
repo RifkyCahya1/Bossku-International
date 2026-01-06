@@ -37,7 +37,23 @@
 
             <h1 class="text-4xl md:text-6xl font-semibold mb-4 text-[#E6C068]" x-text="tour.name"></h1>
             <p class="text-lg md:text-xl text-gray-200 max-w-2xl" x-text="tour.destination + ' • ' + tour.kota"></p>
-            <p class="mt-4 text-3xl font-bold text-white bg-clip-text" x-text="formattedPrice"></p>
+            <div class="mt-4">
+                <!-- Harga utama dalam IDR -->
+                <p class="text-3xl font-bold text-white" x-text="formattedPrice"></p>
+
+                <!-- Approximately USD -->
+                <div class="flex items-center justify-center gap-2 mt-2">
+                    <span class="text-lg text-white/80">≈</span>
+                    <span class="text-xl font-semibold text-[#E6C068]" x-text="formattedPriceUsd"></span>
+                    <span class="text-sm text-white/60">USD</span>
+                </div>
+
+                <!-- Info kurs kecil -->
+                <p class="text-sm text-white/60 mt-2">
+                    Kurs: 1 USD = Rp <span x-text="formattedKursUsd"></span>
+                    <span class="ml-2" x-text="'(' + new Date(tour.kurs_date).toLocaleDateString('id-ID') + ')'"></span>
+                </p>
+            </div>
 
             <div class="mt-6 flex gap-4">
                 <button @click="openGallery = true" class="px-6 py-3 rounded-lg border border-white/20 bg-white/10 text-white hover:bg-white/20 transition">View Photos</button>
@@ -215,14 +231,37 @@
 
                 <div class="flex items-start justify-between gap-4">
 
-                    <div class="space-y-1">
+                    <div class="space-y-2">
                         <p class="text-sm text-gray-500 tracking-wide">Price / Person</p>
 
+                        <!-- Harga IDR -->
                         <div class="text-3xl font-extrabold text-[#E6C068] drop-shadow-sm
-                        transition duration-300 hover:scale-[1.03]"
+    transition duration-300 hover:scale-[1.03]"
                             x-text="formattedPrice"></div>
 
-                        <p class="text-sm text-gray-400">
+                        <!-- Approximately USD -->
+                        <div class="flex items-center gap-1.5 py-2 px-3 bg-blue-50/80 rounded-lg border border-blue-100">
+                            <div class="text-sm text-gray-500">≈</div>
+                            <div class="text-lg font-semibold text-gray-800" x-text="formattedPriceUsd"></div>
+                            <div class="text-sm text-gray-500">USD</div>
+                        </div>
+
+                        <!-- Info kurs -->
+                        <div class="mt-3 p-3 bg-gray-50 rounded-xl">
+                            <div class="flex items-center gap-2 mb-1">
+                                <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-xs font-medium text-gray-600">Exchange Rate Info</span>
+                            </div>
+                            <p class="text-xs text-gray-500">
+                                1 USD = Rp <span class="font-semibold" x-text="formattedKursUsd"></span>
+                                <br>
+                                <span class="text-gray-400" x-text="'Updated: ' + new Date(tour.kurs_date).toLocaleDateString('id-ID')"></span>
+                            </p>
+                        </div>
+
+                        <p class="text-sm text-gray-400 mt-3">
                             Tour:
                             <span class="font-medium text-gray-700" x-text="tour.name"></span>
                         </p>
@@ -283,11 +322,29 @@
 
                 <!-- TOTAL SECTION -->
                 <div class="mt-8">
-                    <p class="text-sm text-gray-600">Total</p>
+                    <p class="text-sm text-gray-600">Total Price</p>
 
+                    <!-- Total IDR -->
                     <div class="text-4xl font-extrabold text-[#3B5BDB] tracking-wide mt-1
-                    drop-shadow-sm transition duration-300 hover:scale-[1.03]"
+    drop-shadow-sm transition duration-300 hover:scale-[1.03]"
                         x-text="formattedTotalPrice"></div>
+
+                    <!-- Approximately USD Total -->
+                    <div class="mt-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm font-medium text-gray-700">Approximately</span>
+                            </div>
+                            <div class="text-xl font-bold text-blue-700" x-text="formattedTotalPriceUsd"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2 text-center">
+                            Based on current exchange rate
+                        </p>
+                    </div>
                 </div>
 
                 <!-- CTA BUTTONS -->
@@ -462,9 +519,51 @@
                                 <span>Guests</span>
                                 <span class="font-medium text-gray-800 dark:text-gray-100" x-text="guests + ' guest(s)'"></span>
                             </div>
-                            <div class="border-t dark:border-gray-700 pt-3 flex justify-between font-semibold text-gray-800 dark:text-white">
-                                <span>Total</span>
-                                <div class="text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
+                            <div class="border-t dark:border-gray-700 pt-3">
+                                <!-- Total IDR -->
+                                <div class="flex justify-between font-semibold text-gray-800 dark:text-white mb-3">
+                                    <div>
+                                        <span>Total</span>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 font-normal mt-1">
+                                            in Indonesian Rupiah
+                                        </div>
+                                    </div>
+                                    <div class="text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
+                                </div>
+
+                                <!-- Approximately USD -->
+                                <div class="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                            </svg>
+                                            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Approximately USD</span>
+                                        </div>
+                                        <div class="text-xl font-bold text-blue-700 dark:text-blue-400" x-text="formattedTotalPriceUsd"></div>
+                                    </div>
+
+                                    <!-- Info kurs di modal -->
+                                    <div class="mt-2 pt-2 border-t border-blue-100 dark:border-blue-800/30">
+                                        <div class="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
+                                            <span>Exchange Rate:</span>
+                                            <span class="font-semibold">1 USD = Rp <span x-text="formattedKursUsd"></span></span>
+                                        </div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-500 mt-1 text-right">
+                                            <span x-text="'Updated: ' + new Date(tour.kurs_date).toLocaleDateString('id-ID')"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Note -->
+                                <div class="mt-3 p-2 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/30 rounded text-xs text-yellow-700 dark:text-yellow-300">
+                                    <div class="flex items-start gap-2">
+                                        <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                        </svg>
+                                        <span>USD amount is approximate and may vary based on actual exchange rate at time of payment.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -682,6 +781,15 @@
                 }).format(this.tour.price ?? 0);
             },
 
+            // Tambahkan getter untuk harga USD
+            get formattedPriceUsd() {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 2
+                }).format(this.tour.price_usd ?? 0);
+            },
+
             get totalPrice() {
                 return (this.tour?.price ?? 0) * this.guests;
             },
@@ -692,6 +800,26 @@
                     currency: 'IDR',
                     minimumFractionDigits: 0
                 }).format(this.totalPrice);
+            },
+
+            // Tambahkan getter untuk total harga USD
+            get totalPriceUsd() {
+                return (this.tour?.price_usd ?? 0) * this.guests;
+            },
+
+            get formattedTotalPriceUsd() {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 2
+                }).format(this.totalPriceUsd);
+            },
+
+            // Format kurs USD ke IDR
+            get formattedKursUsd() {
+                return new Intl.NumberFormat('id-ID', {
+                    minimumFractionDigits: 0
+                }).format(this.tour.kurs_usd ?? 0);
             },
 
             nextImage() {
@@ -794,7 +922,6 @@
                     });
             },
 
-
             init() {
                 console.log("Tour loaded:", tour);
                 console.log(this.tour);
@@ -803,4 +930,80 @@
     }
 </script>
 
+<style>
+    /* Style untuk approximately USD */
+    .approx-badge {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .approx-badge::before {
+        content: '≈';
+        margin-right: 4px;
+        font-weight: bold;
+    }
+
+    .exchange-rate-box {
+        background: rgba(230, 192, 104, 0.1);
+        border-left: 3px solid #E6C068;
+        padding: 12px;
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+    }
+
+    .currency-comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 12px;
+    }
+
+    .currency-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .currency-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .currency-card.idr {
+        border-top: 4px solid #3B5BDB;
+    }
+
+    .currency-card.usd {
+        border-top: 4px solid #10B981;
+    }
+
+    .currency-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: #6b7280;
+        letter-spacing: 0.05em;
+    }
+
+    .currency-amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 8px 0;
+    }
+
+    .currency-symbol {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        margin-left: 4px;
+    }
+</style>
 @endsection

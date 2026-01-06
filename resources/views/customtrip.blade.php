@@ -3,13 +3,13 @@
 @section('content')
 
 <div x-data="customTripForm()" class="relative bg-gradient-to-b from-[#faf6f0] via-[#f5ede3] to-[#fff9f0] text-[#1a1a1a] overflow-hidden">
-     
+
     <div class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <svg class="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
                 <defs>
                     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#b79a5b" stroke-width="0.5"/>
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#b79a5b" stroke-width="0.5" />
                     </pattern>
                 </defs>
                 <rect width="1200" height="600" fill="url(#grid)" />
@@ -17,10 +17,6 @@
         </div>
 
         <div class="container mx-auto px-6 md:px-16 text-center space-y-8 relative z-10">
-            <div class="inline-block px-4 py-2 rounded-full bg-[#b79a5b]/10 border border-[#b79a5b]/30 backdrop-blur-sm">
-                <p class="text-xs tracking-widest text-[#b79a5b] font-medium uppercase">Luxury Travel Curation</p>
-            </div>
-
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#b79a5b] via-[#d4af86] to-[#f3e7c1]">
                     Design a Journey
@@ -30,7 +26,7 @@
             </h1>
 
             <p class="max-w-3xl mx-auto text-gray-600 text-base md:text-lg leading-relaxed font-light">
-                Not a package. Not a plan. A carefully crafted experience—a journey shaped around the 
+                Not a package. Not a plan. A carefully crafted experience—a journey shaped around the
                 profound feeling you want to bring home.
             </p>
 
@@ -58,161 +54,174 @@
     <div
         x-show="openCustom"
         x-transition.opacity.duration-300ms
-        class="fixed inset-0 bg-black/40 backdrop-blur-md z-99 flex items-center justify-center p-4 overflow-y-auto"
-        @click.self="openCustom = false; document.body.classList.remove('overflow-hidden')"
+        x-cloak
+        @wheel.stop=""
+        @touchmove.stop=""
+        class="fixed inset-0 bg-black/40 backdrop-blur-md z-[9999] p-4"
+        @click.self="closeModal()"
         style="display:none">
 
-        <div
-            class="bg-gradient-to-br from-[#1a1a1a] via-[#252525] to-[#1f1f1f] w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-white/5 overflow-y-auto max-h-[90vh]"
-            x-transition.scale.duration-300ms
-            @click.stop>
+        <!-- Wrapper untuk centering -->
+        <div class="h-full flex items-center justify-center">
+            <!-- Modal -->
+            <div
+                class="bg-gradient-to-br from-[#1a1a1a] via-[#252525] to-[#1f1f1f] w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-white/5 max-h-[90vh] flex flex-col"
+                x-transition.scale.duration-300ms
+                @click.stop
+                @wheel.stop="handleModalScroll($event)"
+                @touchmove.stop="handleModalScroll($event)">
 
-            <div class="sticky top-0 bg-gradient-to-r from-[#b79a5b]/10 to-[#d4af86]/10 border-b border-white/5 px-8 py-6 flex items-center justify-between backdrop-blur-xl z-50">
-                <div>
-                    <h3 class="text-2xl text-white font-light tracking-tight">Craft Your Experience</h3>
-                    <p class="text-xs text-gray-400 mt-1">Personalized luxury journey design</p>
-                </div>
-                <button
-                    @click="openCustom = false; document.body.classList.remove('overflow-hidden')"
-                    class="text-gray-400 hover:text-white transition p-2 hover:bg-white/10 rounded-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            <div class="p-8">
-                <p class="text-gray-300 text-sm text-center mb-8 leading-relaxed">
-                    Share your vision. The more transparent you are about your desires, the more authentic the experience we'll curate.
-                </p>
-
-                <form @submit.prevent="submitForm" class="space-y-6">
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Full Name *</label>
-                            <input
-                                type="text"
-                                x-model="form.name"
-                                @blur="validate('name')"
-                                :class="error.name ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 hover:border-white/20'"
-                                class="w-full px-4 py-3 rounded-lg bg-white/5 border backdrop-blur-sm focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500"
-                                placeholder="John Doe">
-                            <p x-show="error.name" class="text-red-400 text-xs mt-1" x-text="error.name"></p>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Email Address *</label>
-                            <input
-                                type="email"
-                                x-model="form.email"
-                                @blur="validate('email')"
-                                :class="error.email ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 hover:border-white/20'"
-                                class="w-full px-4 py-3 rounded-lg bg-white/5 border backdrop-blur-sm focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500"
-                                placeholder="you@example.com">
-                            <p x-show="error.email" class="text-red-400 text-xs mt-1" x-text="error.email"></p>
-                        </div>
+                <!-- Header sticky -->
+                <div class="sticky top-0 bg-gradient-to-r from-[#b79a5b]/10 to-[#d4af86]/10 border-b border-white/5 px-8 py-6 flex items-center justify-between backdrop-blur-xl z-50 shrink-0">
+                    <div>
+                        <h3 class="text-2xl text-white font-light tracking-tight">Craft Your Experience</h3>
+                        <p class="text-xs text-gray-400 mt-1">Personalized luxury journey design</p>
                     </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Phone / WhatsApp *</label>
-                            <input
-                                type="text"
-                                x-model="form.phone"
-                                @blur="validate('phone')"
-                                :class="error.phone ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 hover:border-white/20'"
-                                class="w-full px-4 py-3 rounded-lg bg-white/5 border backdrop-blur-sm focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500"
-                                placeholder="+62 812 3456 7890">
-                            <p x-show="error.phone" class="text-red-400 text-xs mt-1" x-text="error.phone"></p>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Preferred Contact</label>
-                            <select x-model="form.contact" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition appearance-none cursor-pointer">
-                                <option value="" class="bg-[#1a1a1a]">Select method</option>
-                                <option value="Email" class="bg-[#1a1a1a]">Email</option>
-                                <option value="WhatsApp" class="bg-[#1a1a1a]">WhatsApp</option>
-                                <option value="Call" class="bg-[#1a1a1a]">Call</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Travel Dates</label>
-                            <input type="text" x-model="form.dates" placeholder="e.g., March 15-25, 2024" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Destination / Region</label>
-                            <input type="text" x-model="form.destination" placeholder="e.g., Bali, Java, Raja Ampat" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Traveling With</label>
-                            <input type="text" x-model="form.pax" placeholder="e.g., Solo, Couple, Family of 4" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Archetype</label>
-                            <select x-model="form.archetype" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition appearance-none cursor-pointer">
-                                <option value="" class="bg-[#1a1a1a]">Select archetype</option>
-                                <option value="The Dreamer" class="bg-[#1a1a1a]">The Dreamer</option>
-                                <option value="The Seeker" class="bg-[#1a1a1a]">The Seeker</option>
-                                <option value="The Thrillborn" class="bg-[#1a1a1a]">The Thrillborn</option>
-                                <option value="The Lover" class="bg-[#1a1a1a]">The Lover</option>
-                                <option value="Other" class="bg-[#1a1a1a]">Other</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Budget (per person)</label>
-                        <input type="text" x-model="form.budget" placeholder="e.g., $2,000 - $5,000" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Intention or Vision</label>
-                        <textarea x-model="form.intention" rows="4" placeholder="What feeling are you seeking? Share a memory, a mood, or a single word that defines this journey..." class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500 resize-none"></textarea>
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Special Requests or Considerations</label>
-                        <textarea x-model="form.special" rows="2" placeholder="Any dietary needs, accessibility requirements, or unique requests..." class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500 resize-none"></textarea>
-                    </div>
-
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4 space-y-3">
-                        <label class="flex items-start gap-3 cursor-pointer group">
-                            <input type="checkbox" x-model="form.consent" @change="validate('consent')" class="w-5 h-5 mt-0.5 rounded border-white/20 bg-white/5 accent-[#b79a5b] cursor-pointer">
-                            <p class="text-xs text-gray-400 group-hover:text-gray-300 transition">I consent to BossKu International using my details to prepare a personalized travel proposal and follow up with recommendations.</p>
-                        </label>
-                        <p x-show="error.consent" class="text-red-400 text-xs ml-8" x-text="error.consent"></p>
-                    </div>
-
                     <button
-                        type="submit"
-                        class="w-full bg-gradient-to-r from-[#b79a5b] to-[#d4af86] hover:from-[#c9aa6b] hover:to-[#e0bb96] text-white font-semibold py-4 rounded-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 group">
-                        <span x-show="!loading" class="flex items-center gap-2">
-                            <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                            Send My Request
-                        </span>
-                        <span x-show="loading" class="flex items-center gap-2">
-                            <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            Processing…
-                        </span>
+                        @click="closeModal()"
+                        class="text-gray-400 hover:text-white transition p-2 hover:bg-white/10 rounded-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
+                </div>
 
-                    <p class="text-xs text-gray-500 text-center">Our travel designers will review your request within 24 hours and craft a personalized proposal for you.</p>
+                <!-- Scrollable content area -->
+                <div class="overflow-y-auto flex-1 modal-scroll-content" id="modal-scroll-content">
+                    <div class="p-8">
+                        <p class="text-gray-300 text-sm text-center mb-8 leading-relaxed">
+                            Share your vision. The more transparent you are about your desires, the more authentic the experience we'll curate.
+                        </p>
 
-                </form>
+                        <form @submit.prevent="submitForm" class="space-y-6">
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Full Name *</label>
+                                    <input
+                                        type="text"
+                                        x-model="form.name"
+                                        @blur="validate('name')"
+                                        :class="error.name ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 hover:border-white/20'"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/5 border backdrop-blur-sm focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500"
+                                        placeholder="John Doe">
+                                    <p x-show="error.name" class="text-red-400 text-xs mt-1" x-text="error.name"></p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Email Address *</label>
+                                    <input
+                                        type="email"
+                                        x-model="form.email"
+                                        @blur="validate('email')"
+                                        :class="error.email ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 hover:border-white/20'"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/5 border backdrop-blur-sm focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500"
+                                        placeholder="you@example.com">
+                                    <p x-show="error.email" class="text-red-400 text-xs mt-1" x-text="error.email"></p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Phone / WhatsApp *</label>
+                                    <input
+                                        type="text"
+                                        x-model="form.phone"
+                                        @blur="validate('phone')"
+                                        :class="error.phone ? 'border-red-500/50 bg-red-500/5' : 'border-white/10 hover:border-white/20'"
+                                        class="w-full px-4 py-3 rounded-lg bg-white/5 border backdrop-blur-sm focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500"
+                                        placeholder="+62 812 3456 7890">
+                                    <p x-show="error.phone" class="text-red-400 text-xs mt-1" x-text="error.phone"></p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Preferred Contact</label>
+                                    <select x-model="form.contact" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition appearance-none cursor-pointer">
+                                        <option value="" class="bg-[#1a1a1a]">Select method</option>
+                                        <option value="Email" class="bg-[#1a1a1a]">Email</option>
+                                        <option value="WhatsApp" class="bg-[#1a1a1a]">WhatsApp</option>
+                                        <option value="Call" class="bg-[#1a1a1a]">Call</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Travel Dates</label>
+                                    <input type="text" x-model="form.dates" placeholder="e.g., March 15-25, 2024" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Destination / Region</label>
+                                    <input type="text" x-model="form.destination" placeholder="e.g., Bali, Java, Raja Ampat" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Traveling With</label>
+                                    <input type="text" x-model="form.pax" placeholder="e.g., Solo, Couple, Family of 4" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Archetype</label>
+                                    <select x-model="form.archetype" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition appearance-none cursor-pointer">
+                                        <option value="" class="bg-[#1a1a1a]">Select archetype</option>
+                                        <option value="The Dreamer" class="bg-[#1a1a1a]">The Dreamer</option>
+                                        <option value="The Seeker" class="bg-[#1a1a1a]">The Seeker</option>
+                                        <option value="The Thrillborn" class="bg-[#1a1a1a]">The Thrillborn</option>
+                                        <option value="The Lover" class="bg-[#1a1a1a]">The Lover</option>
+                                        <option value="Other" class="bg-[#1a1a1a]">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Budget (per person)</label>
+                                <input type="text" x-model="form.budget" placeholder="e.g., $2,000 - $5,000" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Intention or Vision</label>
+                                <textarea x-model="form.intention" rows="4" placeholder="What feeling are you seeking? Share a memory, a mood, or a single word that defines this journey..." class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500 resize-none"></textarea>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Special Requests or Considerations</label>
+                                <textarea x-model="form.special" rows="2" placeholder="Any dietary needs, accessibility requirements, or unique requests..." class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500 resize-none"></textarea>
+                            </div>
+
+                            <div class="bg-white/5 border border-white/10 rounded-lg p-4 space-y-3">
+                                <label class="flex items-start gap-3 cursor-pointer group">
+                                    <input type="checkbox" x-model="form.consent" @change="validate('consent')" class="w-5 h-5 mt-0.5 rounded border-white/20 bg-white/5 accent-[#b79a5b] cursor-pointer">
+                                    <p class="text-xs text-gray-400 group-hover:text-gray-300 transition">I consent to BossKu International using my details to prepare a personalized travel proposal and follow up with recommendations.</p>
+                                </label>
+                                <p x-show="error.consent" class="text-red-400 text-xs ml-8" x-text="error.consent"></p>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="w-full bg-gradient-to-r from-[#b79a5b] to-[#d4af86] hover:from-[#c9aa6b] hover:to-[#e0bb96] text-white font-semibold py-4 rounded-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 group">
+                                <span x-show="!loading" class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    Send My Request
+                                </span>
+                                <span x-show="loading" class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Processing…
+                                </span>
+                            </button>
+
+                            <p class="text-xs text-gray-500 text-center">Our travel designers will review your request within 24 hours and craft a personalized proposal for you.</p>
+
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -225,7 +234,7 @@
                 </h2>
 
                 <p class="text-gray-700 text-lg leading-relaxed font-light">
-                    Maybe you never saw the trip you wanted because it hasn't been designed yet. 
+                    Maybe you never saw the trip you wanted because it hasn't been designed yet.
                     Tell us the <span class="font-semibold text-[#b79a5b]">feeling</span> you're searching for—not just the dates or the places—
                     and we'll curate a journey that transcends expectations.
                 </p>
@@ -429,10 +438,11 @@
 </div>
 
 <script>
-    function customTripForm() {
-        return {
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('customTripForm', () => ({
             openCustom: false,
             loading: false,
+            scrollPosition: 0,
 
             form: {
                 name: '',
@@ -450,6 +460,41 @@
             },
 
             error: {},
+
+            init() {
+                // Inisialisasi jika diperlukan
+            },
+
+            // Fungsi untuk membuka modal
+            handleModalOpen() {
+                this.scrollPosition = window.pageYOffset;
+                document.body.classList.add('overflow-hidden', 'modal-open');
+                document.body.style.top = `-${this.scrollPosition}px`;
+            },
+
+            // Fungsi untuk menutup modal
+            closeModal() {
+                this.openCustom = false;
+                document.body.classList.remove('overflow-hidden', 'modal-open');
+                document.body.style.top = '';
+                window.scrollTo(0, this.scrollPosition);
+            },
+
+            // Fungsi untuk menangani scroll di dalam modal
+            handleModalScroll(event) {
+                const modalContent = event.currentTarget.querySelector('.modal-scroll-content');
+                if (!modalContent) return;
+
+                const isAtTop = modalContent.scrollTop === 0;
+                const isAtBottom = modalContent.scrollHeight - modalContent.scrollTop === modalContent.clientHeight;
+
+                // Jika sudah di paling atas dan scroll ke atas, atau di paling bawah dan scroll ke bawah
+                // Maka hentikan event agar tidak berpengaruh ke halaman belakang
+                if ((isAtTop && event.deltaY < 0) || (isAtBottom && event.deltaY > 0)) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            },
 
             validate(field) {
                 this.error[field] = null;
@@ -494,9 +539,8 @@
                 setTimeout(() => {
                     this.loading = false;
                     alert("✨ Your request has been received! Our travel designers will reach out within 24 hours to begin crafting your journey.");
-                    this.openCustom = false;
-                    document.body.classList.remove('overflow-hidden');
-                    
+                    this.closeModal();
+
                     // Reset form
                     this.form = {
                         name: '',
@@ -514,8 +558,96 @@
                     };
                 }, 1500);
             }
+        }));
+    });
+
+    // Mencegah scroll pada halaman ketika modal terbuka
+    document.addEventListener('wheel', (e) => {
+        if (document.body.classList.contains('modal-open')) {
+            e.preventDefault();
         }
-    }
+    }, {
+        passive: false
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (document.body.classList.contains('modal-open')) {
+            e.preventDefault();
+        }
+    }, {
+        passive: false
+    });
+
+    // Mencegah scroll dengan keyboard (Page Up/Down, Space, Arrow keys)
+    document.addEventListener('keydown', (e) => {
+        if (document.body.classList.contains('modal-open')) {
+            const keys = ['Space', 'PageUp', 'PageDown', 'ArrowUp', 'ArrowDown'];
+            if (keys.includes(e.code)) {
+                e.preventDefault();
+            }
+        }
+    });
 </script>
 
+<style>
+    /* Style untuk mengatasi scroll mouse */
+    #modal-scroll-content {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    #modal-scroll-content::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #modal-scroll-content::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+
+    #modal-scroll-content::-webkit-scrollbar-thumb {
+        background: rgba(183, 154, 91, 0.5);
+        border-radius: 4px;
+    }
+
+    #modal-scroll-content::-webkit-scrollbar-thumb:hover {
+        background: rgba(183, 154, 91, 0.7);
+    }
+
+    /* Untuk Firefox */
+    #modal-scroll-content {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(183, 154, 91, 0.5) rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hide modal when Alpine.js hasn't loaded yet */
+    [x-cloak] {
+        display: none !important;
+    }
+
+    /* Fix untuk z-index */
+    .z-\[9999\] {
+        z-index: 9999;
+    }
+
+    /* Style untuk mencegah scroll halaman */
+    body.modal-open {
+        position: fixed;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* Pastikan modal konten bisa discroll */
+    .modal-scroll-content {
+        pointer-events: auto;
+        max-height: calc(90vh - 80px);
+        /* Sesuaikan tinggi header */
+    }
+
+    /* Tambahan untuk mencegah scroll bubbling */
+    .prevent-scroll {
+        touch-action: none;
+    }
+</style>
 @endsection
