@@ -37,18 +37,16 @@
 
             <h1 class="text-4xl md:text-6xl font-semibold mb-4 text-[#E6C068]" x-text="tour.name"></h1>
             <p class="text-lg md:text-xl text-gray-200 max-w-2xl" x-text="tour.destination + ' • ' + tour.kota"></p>
+
             <div class="mt-4">
-                <!-- Harga utama dalam IDR -->
                 <p class="text-3xl font-bold text-white" x-text="formattedPrice"></p>
 
-                <!-- Approximately USD -->
                 <div class="flex items-center justify-center gap-2 mt-2">
                     <span class="text-lg text-white/80">≈</span>
                     <span class="text-xl font-semibold text-[#E6C068]" x-text="formattedPriceUsd"></span>
                     <span class="text-sm text-white/60">USD</span>
                 </div>
 
-                <!-- Info kurs kecil -->
                 <p class="text-sm text-white/60 mt-2">
                     Kurs: 1 USD = Rp <span x-text="formattedKursUsd"></span>
                     <span class="ml-2" x-text="'(' + new Date(tour.kurs_date).toLocaleDateString('id-ID') + ')'"></span>
@@ -80,7 +78,6 @@
                     Ideal for families, couples, and group travelers, this tour provides a complete and stress-free experience—from transportation and comfortable accommodations to curated activities that highlight the unique charm of each destination. Sit back, relax, and enjoy Indonesia’s beauty from the beginning to the end of your adventure.
                 </p>
 
-
                 <div class="mt-8 grid sm:grid-cols-2 gap-4">
                     <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
                         <p class="text-sm text-gray-500">Category</p>
@@ -97,7 +94,6 @@
                     <div class="space-y-6">
                         <template x-for="(item, index) in tour.itinerary" :key="index">
                             <div class="flex items-start gap-4">
-                                <!-- Bullet dan line -->
                                 <div class="flex flex-col items-center">
                                     <div class="w-9 h-9 rounded-full bg-[#E6C068] text-white flex items-center justify-center font-semibold"
                                         x-text="index + 1">
@@ -108,7 +104,6 @@
                                 </div>
 
                                 <div class="flex-1">
-                                    <!-- Header Day -->
                                     <button @click="toggleDay(index)" class="w-full text-left">
                                         <div class="flex justify-between items-center">
                                             <h4 class="text-lg font-bold "
@@ -124,10 +119,8 @@
                                         </div>
                                     </button>
 
-                                    <!-- Content -->
                                     <div x-show="openDay === index" x-transition class="mt-2 text-gray-600">
 
-                                        <!-- Tempat -->
                                         <template x-for="tp in item.tempat">
                                             <div class="mb-3">
                                                 <p class="font-bold text-[#02335B]">
@@ -138,12 +131,10 @@
                                             </div>
                                         </template>
 
-                                        <!-- Hotel -->
                                         <p class="mt-2 font-semibold text-gray-800" x-show="item.hotel">
                                             Menginap di Hotel Sesuai Itinerary
                                         </p>
 
-                                        <!-- Meal -->
                                         <div class="mt-3 text-sm text-gray-700">
                                             <p><strong>Meal:</strong> <span x-text="item.meal"></span></p>
                                         </div>
@@ -156,7 +147,6 @@
                 </section>
 
                 <div class="grid md:grid-cols-2 gap-6 mt-8">
-                    <!-- Included -->
                     <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                         <div
                             x-data="{
@@ -189,7 +179,6 @@
                         </div>
                     </div>
 
-                    <!-- Excluded -->
                     <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                         <div
                             x-data="{
@@ -226,27 +215,23 @@
 
             <aside
                 class="bg-white rounded-3xl shadow-[0_8px_35px_-10px_rgba(0,0,0,0.15)] p-7
-           border border-gray-100/80 md:sticky md:top-20 backdrop-blur-lg
-           transition duration-300 hover:shadow-[0_12px_45px_-10px_rgba(0,0,0,0.20)]">
+                        border border-gray-100/80 md:sticky md:top-20 backdrop-blur-lg
+                        transition duration-300 hover:shadow-[0_12px_45px_-10px_rgba(0,0,0,0.20)]">
 
                 <div class="flex items-start justify-between gap-4">
 
                     <div class="space-y-2">
                         <p class="text-sm text-gray-500 tracking-wide">Price / Person</p>
 
-                        <!-- Harga IDR -->
-                        <div class="text-3xl font-extrabold text-[#E6C068] drop-shadow-sm
-    transition duration-300 hover:scale-[1.03]"
+                        <div class="text-3xl font-extrabold text-[#E6C068] drop-shadow-sm transition duration-300 hover:scale-[1.03]"
                             x-text="formattedPrice"></div>
 
-                        <!-- Approximately USD -->
                         <div class="flex items-center gap-1.5 py-2 px-3 bg-blue-50/80 rounded-lg border border-blue-100">
                             <div class="text-sm text-gray-500">≈</div>
                             <div class="text-lg font-semibold text-gray-800" x-text="formattedPriceUsd"></div>
                             <div class="text-sm text-gray-500">USD</div>
                         </div>
 
-                        <!-- Info kurs -->
                         <div class="mt-3 p-3 bg-gray-50 rounded-xl">
                             <div class="flex items-center gap-2 mb-1">
                                 <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
@@ -284,11 +269,9 @@
                     </div>
                 </div>
 
-                <!-- GUEST PICKER -->
                 <div class="mt-7 flex flex-col space-y-2">
                     <div class="flex items-center justify-center space-x-4 bg-white rounded-2xl px-5 py-3 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 width-full">
 
-                        <!-- Minus Button -->
                         <button
                             @click="decrement()"
                             class="w-11 h-11 flex items-center justify-center rounded-xl 
@@ -298,13 +281,11 @@
                             -
                         </button>
 
-                        <!-- Guest Count -->
                         <div class="min-w-[90px] text-center font-semibold text-gray-700 text-lg tracking-wide
                         transition duration-300"
                             x-text="guests + ' Guest'">
                         </div>
 
-                        <!-- Plus Button -->
                         <button
                             @click="increment()"
                             class="w-11 h-11 flex items-center justify-center rounded-xl 
@@ -320,16 +301,12 @@
                     </p>
                 </div>
 
-                <!-- TOTAL SECTION -->
                 <div class="mt-8">
                     <p class="text-sm text-gray-600">Total Price</p>
 
-                    <!-- Total IDR -->
-                    <div class="text-4xl font-extrabold text-[#3B5BDB] tracking-wide mt-1
-    drop-shadow-sm transition duration-300 hover:scale-[1.03]"
+                    <div class="text-4xl font-extrabold text-[#3B5BDB] tracking-wide mt-1  drop-shadow-sm transition duration-300 hover:scale-[1.03]"
                         x-text="formattedTotalPrice"></div>
 
-                    <!-- Approximately USD Total -->
                     <div class="mt-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
@@ -347,7 +324,6 @@
                     </div>
                 </div>
 
-                <!-- CTA BUTTONS -->
                 <button
                     @click="openModal = true"
                     class="w-full mt-7 py-3.5 rounded-xl bg-gradient-to-r from-[#E6C068] to-[#d8b252]
@@ -355,17 +331,6 @@
                     active:scale-[0.98] transition-all duration-300">
                     Reserve Now
                 </button>
-
-                <!-- <button
-                    @click="downloadItinerary()"
-                    class="w-full mt-4 py-3 rounded-xl border border-[#E6C068] text-[#E6C068] font-medium
-                    bg-white hover:bg-[#E6C068]/5 hover:shadow-md active:scale-[0.98]
-                    transition-all duration-300 flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Download Itinerary
-                </button> -->
 
                 <button
                     @click="openInquiry = true"
@@ -409,187 +374,196 @@
         x-show="openModal"
         x-cloak
         x-trap.noscroll="openModal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-all duration-500 ease-out mt-12">
-        <div
-            @click.away="openModal = false"
-            class="w-full max-w-4xl mx-4 bg-white dark:bg-[#161616] rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.3)] overflow-hidden transform transition-all duration-500 scale-95 hover:scale-100">
-            <!-- Header Banner -->
-            <div class="relative h-56">
-                <img
-                    :src="gallery[currentImage]"
-                    alt="Tour Preview"
-                    class="w-full h-full object-cover brightness-[.75]">
-                <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
-                    <h3 class="text-3xl font-bold text-white drop-shadow-lg">
-                        Reserve <span class="text-[#E6C068]" x-text="tour.name"></span>
-                    </h3>
-                    <p class="text-sm text-gray-200 mt-1">Plan your next unforgettable journey</p>
-                </div>
-                <button
-                    @click="openModal = false"
-                    class="absolute top-4 right-4 text-white/90 hover:text-[#E6C068] text-2xl font-light transition-all">✕</button>
-            </div>
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md transition-all duration-500 ease-out mt-12 p-4">
 
-            <!-- Body -->
-            <form @submit.prevent="book()" class="grid md:grid-cols-2 gap-6 p-8 bg-gradient-to-b from-[#faf7f2] to-white dark:from-[#1b1b1b] dark:to-[#0f0f0f]">
+        <div class="w-full max-w-4xl max-h-[90vh]">
+            <div @click.away="openModal = false"
+                class="bg-white dark:bg-[#161616] rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.3)] overflow-hidden transform transition-all duration-500
+                   max-h-full flex flex-col">
 
-                <!-- Left Section -->
-                <div class="space-y-5">
-                    <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
-                        <span class="inline-block w-2 h-2 bg-[#E6C068] rounded-full"></span>
-                        Traveler Information
-                    </h4>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <input type="text" x-model="form.name" placeholder="Full Name" required
-                                @blur="validateName()"
-                                class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-[#1f1f1f] focus:ring-2 focus:ring-[#E6C068] outline-none transition"
-                                :class="{'border-red-500': errors.name}">
-                            <div x-show="errors.name" class="text-red-500 text-xs mt-1" x-text="errors.name"></div>
-                        </div>
-                        <div>
-                            <input type="email" x-model="form.email" placeholder="Email" required
-                                @blur="validateEmail()"
-                                class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-[#1f1f1f] focus:ring-2 focus:ring-[#E6C068] outline-none transition"
-                                :class="{'border-red-500': errors.email}">
-                            <div x-show="errors.email" class="text-red-500 text-xs mt-1" x-text="errors.email"></div>
-                        </div>
+                <!-- Header Banner - fixed height -->
+                <div class="relative h-48 flex-shrink-0">
+                    <img
+                        :src="gallery[currentImage]"
+                        alt="Tour Preview"
+                        class="w-full h-full object-cover brightness-[.75]">
+                    <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white drop-shadow-lg line-clamp-1">
+                            Reserve <span class="text-[#E6C068]" x-text="tour.name"></span>
+                        </h3>
+                        <p class="text-sm text-gray-200 mt-1">Plan your next unforgettable journey</p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <input type="tel" x-model="form.phone" placeholder="Phone" required
-                                @blur="validatePhone()"
-                                class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-[#1f1f1f] focus:ring-2 focus:ring-[#E6C068] outline-none transition"
-                                :class="{'border-red-500': errors.phone}">
-                            <div x-show="errors.phone" class="text-red-500 text-xs mt-1" x-text="errors.phone"></div>
-                        </div>
-                        <div>
-                            <input
-                                x-model="date"
-                                type="date"
-                                :min="tour.minDate" required
-                                class="w-full p-3 border border-gray-200 rounded-xl bg-white text-gray-700
-                                focus:ring-2 focus:ring-[#E6C068]/50 focus:border-[#E6C068]
-                                transition-all cursor-pointer shadow-sm hover:shadow
-                              placeholder-gray-400"
-                                placeholder="Select date"
-                                @blur="validateDate()"
-                                :class="{'border-red-500': errors.date}">
-
-                            <div x-show="errors.date" class="text-red-500 text-xs mt-1" x-text="errors.date"></div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between mt-6">
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Guests</p>
-                            <div class="flex items-center gap-3 mt-2">
-                                <button type="button" @click="decrement()" class="px-3 py-1.5 border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">−</button>
-                                <div class="px-4 text-lg font-semibold text-gray-800 dark:text-white" x-text="guests"></div>
-                                <button type="button" @click="increment()" class="px-3 py-1.5 border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">+</button>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Total</p>
-                            <div class="text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
-                        </div>
-                    </div>
+                    <button @click="openModal = false"
+                        class="absolute top-4 right-4 text-white/90 hover:text-[#E6C068] text-2xl font-light transition-all bg-black/30 hover:bg-black/50 w-10 h-10 rounded-full flex items-center justify-center">
+                        ✕
+                    </button>
                 </div>
 
-                <!-- Right Section -->
-                <div class="flex flex-col justify-between border-l border-gray-200 dark:border-gray-700 pl-6">
+                <!-- Form content - scrollable -->
+                <form @submit.prevent="book()"
+                    class="grid md:grid-cols-2 gap-6 p-6 md:p-8 flex-grow overflow-y-auto 
+                       scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 
+                       dark:scrollbar-thumb-gray-700 dark:scrollbar-track-gray-900">
+
+                    <!-- Left Section -->
                     <div class="space-y-5">
                         <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
                             <span class="inline-block w-2 h-2 bg-[#E6C068] rounded-full"></span>
-                            Booking Summary
+                            Traveler Information
                         </h4>
-                        <div x-data="bookingForm()" class="rounded-xl bg-white/70 dark:bg-[#1f1f1f]/70 p-5 shadow-sm space-y-3">
 
-                            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
-                                <span>Tour Package</span>
-                                <span class="font-medium text-gray-800 dark:text-gray-100" x-text="tour.name"></span>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <input type="text" x-model="form.name" placeholder="Full Name" required
+                                    @blur="validateName()"
+                                    class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-[#1f1f1f] focus:ring-2 focus:ring-[#E6C068] outline-none transition text-sm md:text-base"
+                                    :class="{'border-red-500': errors.name}">
+                                <div x-show="errors.name" class="text-red-500 text-xs mt-1" x-text="errors.name"></div>
                             </div>
-                            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
-                                <span>Date</span>
-                                <span class="font-medium text-gray-800 dark:text-gray-100" x-text="date || '-'"></span>
+                            <div class="space-y-1">
+                                <input type="email" x-model="form.email" placeholder="Email" required
+                                    @blur="validateEmail()"
+                                    class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-[#1f1f1f] focus:ring-2 focus:ring-[#E6C068] outline-none transition text-sm md:text-base"
+                                    :class="{'border-red-500': errors.email}">
+                                <div x-show="errors.email" class="text-red-500 text-xs mt-1" x-text="errors.email"></div>
                             </div>
-                            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
-                                <span>Guests</span>
-                                <span class="font-medium text-gray-800 dark:text-gray-100" x-text="guests + ' guest(s)'"></span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <input type="tel" x-model="form.phone" placeholder="Phone" required
+                                    @blur="validatePhone()"
+                                    class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-[#1f1f1f] focus:ring-2 focus:ring-[#E6C068] outline-none transition text-sm md:text-base"
+                                    :class="{'border-red-500': errors.phone}">
+                                <div x-show="errors.phone" class="text-red-500 text-xs mt-1" x-text="errors.phone"></div>
                             </div>
-                            <div class="border-t dark:border-gray-700 pt-3">
-                                <!-- Total IDR -->
-                                <div class="flex justify-between font-semibold text-gray-800 dark:text-white mb-3">
-                                    <div>
-                                        <span>Total</span>
-                                        <div class="text-sm text-gray-500 dark:text-gray-400 font-normal mt-1">
-                                            in Indonesian Rupiah
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
-                                </div>
+                            <div class="space-y-1">
+                                <input
+                                    x-model="date"
+                                    type="date"
+                                    :min="tour.minDate" required
+                                    class="w-full p-3 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-[#1f1f1f] text-gray-700 dark:text-gray-300
+                                focus:ring-2 focus:ring-[#E6C068]/50 focus:border-[#E6C068]
+                                transition-all cursor-pointer shadow-sm hover:shadow
+                                placeholder-gray-400 text-sm md:text-base"
+                                    placeholder="Select date"
+                                    @blur="validateDate()"
+                                    :class="{'border-red-500': errors.date}">
+                                <div x-show="errors.date" class="text-red-500 text-xs mt-1" x-text="errors.date"></div>
+                            </div>
+                        </div>
 
-                                <!-- Approximately USD -->
-                                <div class="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                                            </svg>
-                                            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Approximately USD</span>
-                                        </div>
-                                        <div class="text-xl font-bold text-blue-700 dark:text-blue-400" x-text="formattedTotalPriceUsd"></div>
-                                    </div>
-
-                                    <!-- Info kurs di modal -->
-                                    <div class="mt-2 pt-2 border-t border-blue-100 dark:border-blue-800/30">
-                                        <div class="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
-                                            <span>Exchange Rate:</span>
-                                            <span class="font-semibold">1 USD = Rp <span x-text="formattedKursUsd"></span></span>
-                                        </div>
-                                        <div class="text-xs text-gray-500 dark:text-gray-500 mt-1 text-right">
-                                            <span x-text="'Updated: ' + new Date(tour.kurs_date).toLocaleDateString('id-ID')"></span>
-                                        </div>
-                                    </div>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
+                            <div class="w-full sm:w-auto">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Guests</p>
+                                <div class="flex items-center gap-3 mt-2">
+                                    <button type="button" @click="decrement()"
+                                        class="w-10 h-10 flex items-center justify-center border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">−</button>
+                                    <div class="px-4 text-lg font-semibold text-gray-800 dark:text-white min-w-[60px] text-center" x-text="guests"></div>
+                                    <button type="button" @click="increment()"
+                                        class="w-10 h-10 flex items-center justify-center border rounded-lg text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">+</button>
                                 </div>
-
-                                <!-- Note -->
-                                <div class="mt-3 p-2 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/30 rounded text-xs text-yellow-700 dark:text-yellow-300">
-                                    <div class="flex items-start gap-2">
-                                        <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                                        </svg>
-                                        <span>USD amount is approximate and may vary based on actual exchange rate at time of payment.</span>
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="w-full sm:w-auto text-left sm:text-right">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Total</p>
+                                <div class="text-2xl md:text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex justify-end gap-3 mt-6">
-                        <button type="button" @click="openModal = false"
-                            class="px-5 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-medium">
-                            Cancel
-                        </button>
-                        <button type="submit"
-                            :disabled="loading"
-                            class="px-6 py-2.5 rounded-lg bg-[#E6C068] text-white font-semibold transition shadow-lg hover:shadow-xl
-                            disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+                    <!-- Right Section -->
+                    <div class="flex flex-col justify-between border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 pt-6 md:pt-0 md:pl-6">
+                        <div class="space-y-5">
+                            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
+                                <span class="inline-block w-2 h-2 bg-[#E6C068] rounded-full"></span>
+                                Booking Summary
+                            </h4>
 
-                            <template x-if="!loading">
-                                <span>Pay Now</span>
-                            </template>
+                            <div class="rounded-xl bg-white/70 dark:bg-[#1f1f1f]/70 p-5 shadow-sm space-y-3">
+                                <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                                    <span>Tour Package</span>
+                                    <span class="font-medium text-gray-800 dark:text-gray-100 text-right max-w-[150px] truncate" x-text="tour.name"></span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                                    <span>Date</span>
+                                    <span class="font-medium text-gray-800 dark:text-gray-100" x-text="date || '-'"></span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                                    <span>Guests</span>
+                                    <span class="font-medium text-gray-800 dark:text-gray-100" x-text="guests + ' guest(s)'"></span>
+                                </div>
 
-                            <template x-if="loading">
-                                <span class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
-                            </template>
-                        </button>
+                                <div class="border-t dark:border-gray-700 pt-3 mt-3">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <div>
+                                            <span class="font-semibold text-gray-800 dark:text-white">Total</span>
+                                            <div class="text-sm text-gray-500 dark:text-gray-400 font-normal mt-1">
+                                                in Indonesian Rupiah
+                                            </div>
+                                        </div>
+                                        <div class="text-2xl md:text-3xl font-bold text-[#3B5BDB]" x-text="formattedTotalPrice"></div>
+                                    </div>
 
+                                    <!-- USD Conversion -->
+                                    <div class="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                                </svg>
+                                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Approximately USD</span>
+                                            </div>
+                                            <div class="text-lg md:text-xl font-bold text-blue-700 dark:text-blue-400" x-text="formattedTotalPriceUsd"></div>
+                                        </div>
+
+                                        <div class="pt-2 border-t border-blue-100 dark:border-blue-800/30">
+                                            <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-600 dark:text-gray-400 gap-1">
+                                                <span>Exchange Rate:</span>
+                                                <span class="font-semibold">1 USD = Rp <span x-text="formattedKursUsd"></span></span>
+                                            </div>
+                                            <div class="text-xs text-gray-500 dark:text-gray-500 mt-1 text-right">
+                                                <span x-text="'Updated: ' + new Date(tour.kurs_date).toLocaleDateString('id-ID')"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Note -->
+                                    <div class="mt-3 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/30 rounded text-xs text-yellow-700 dark:text-yellow-300">
+                                        <div class="flex items-start gap-2">
+                                            <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                            </svg>
+                                            <span>USD amount is approximate and may vary based on actual exchange rate at time of payment.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex flex-col sm:flex-row justify-end gap-3 mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
+                            <button type="button" @click="openModal = false"
+                                class="w-full sm:w-auto px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-medium order-2 sm:order-1">
+                                Cancel
+                            </button>
+                            <button type="submit"
+                                :disabled="loading"
+                                class="w-full sm:w-auto px-6 py-3 rounded-lg bg-[#E6C068] text-white font-semibold transition shadow-lg hover:shadow-xl
+                            disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 order-1 sm:order-2">
+
+                                <template x-if="!loading">
+                                    <span>Pay Now</span>
+                                </template>
+
+                                <template x-if="loading">
+                                    <span class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
+                                </template>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -931,6 +905,32 @@
 </script>
 
 <style>
+    /* Custom scrollbar untuk modal */
+    .scrollbar-thin {
+        scrollbar-width: thin;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+        background-color: #d1d5db;
+        border-radius: 10px;
+    }
+
+    .scrollbar-track-gray-100::-webkit-scrollbar-track {
+        background-color: #f3f4f6;
+    }
+
+    .dark .scrollbar-thumb-gray-700::-webkit-scrollbar-thumb {
+        background-color: #374151;
+    }
+
+    .dark .scrollbar-track-gray-900::-webkit-scrollbar-track {
+        background-color: #111827;
+    }
+
     /* Style untuk approximately USD */
     .approx-badge {
         position: relative;

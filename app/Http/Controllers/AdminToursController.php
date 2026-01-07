@@ -29,6 +29,7 @@ class AdminToursController extends Controller
             })
             ->where('det.negara', 'INDONESIA')
             ->where('det.agent_twn', '>', 0)
+            ->where('det.nationality_type', 'WNA')
             ->where('det.pax', '<', 4)
             ->orderBy('iti.id')
             ->get();

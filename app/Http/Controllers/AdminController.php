@@ -20,13 +20,13 @@ class AdminController extends Controller
             })
             ->where('det.negara', 'INDONESIA')
             ->where('det.agent_twn', '>', 0)
+            ->where('det.nationality_type', 'WNA')
             ->where('det.pax', '<', 4)
             ->get()
             ->groupBy(fn($item) => $item->judul . '|' . $item->landtour)
             ->map(fn($g) => $g->first())
             ->count();
 
-        // Count users
         $totalUsers = BossUser::count();
 
         return view('admin.app', compact('totalUsers', 'activeTours'));
