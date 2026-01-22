@@ -145,24 +145,151 @@
                                 </div>
                             </div>
 
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Travel Dates</label>
-                                    <input type="text" x-model="form.dates" placeholder="e.g., March 15-25, 2024" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
+                            <!-- Travel Dates Section with 2 calendars -->
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Travel Dates</label>
+
+                                <!-- Calendar Container -->
+                                <div class="bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-xl p-4 backdrop-blur-sm">
+                                    <!-- Calendar Selection Area -->
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <!-- Start Date -->
+                                        <div class="space-y-3">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-[#b79a5b]/20 to-[#d4af86]/20 flex items-center justify-center">
+                                                    <svg class="w-4 h-4 text-[#b79a5b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                </div>
+                                                <span class="text-xs font-medium text-gray-300 tracking-wider">DEPARTURE</span>
+                                            </div>
+
+                                            <div class="relative group">
+                                                <div class="absolute inset-0 bg-gradient-to-r from-[#b79a5b]/10 to-[#d4af86]/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                                                <input
+                                                    type="date"
+                                                    x-model="form.startDate"
+                                                    @change="updateEndDateMin()"
+                                                    class="relative w-full px-4 py-4 rounded-lg bg-white/5 border border-white/10 hover:border-[#b79a5b]/50 focus:border-[#b79a5b] outline-none text-white transition-all duration-300 appearance-none cursor-pointer font-light tracking-wide text-sm backdrop-blur-sm"
+                                                    :min="today"
+                                                    placeholder="Select date">
+
+                                                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-[#b79a5b] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                                                    </svg>
+                                                </div>
+
+                                                <!-- Selected Date Display -->
+                                                <div x-show="form.startDate" class="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="text-white font-medium text-sm tracking-wide" x-text="formatDate(form.startDate)"></span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Placeholder -->
+                                                <div x-show="!form.startDate" class="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                                    <span class="text-gray-400 font-light text-sm tracking-wide">DD/MM/YYYY</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Date Details -->
+                                            <div x-show="form.startDate" class="flex items-center gap-2 text-xs text-gray-400">
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
+                                                <span x-text="getDayDetails(form.startDate)"></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- End Date -->
+                                        <div class="space-y-3">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-[#b79a5b]/20 to-[#d4af86]/20 flex items-center justify-center">
+                                                    <svg class="w-4 h-4 text-[#b79a5b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                </div>
+                                                <span class="text-xs font-medium text-gray-300 tracking-wider">RETURN</span>
+                                            </div>
+
+                                            <div class="relative group">
+                                                <div class="absolute inset-0 bg-gradient-to-r from-[#b79a5b]/10 to-[#d4af86]/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                                                <input
+                                                    type="date"
+                                                    x-model="form.endDate"
+                                                    class="relative w-full px-4 py-4 rounded-lg bg-white/5 border border-white/10 hover:border-[#b79a5b]/50 focus:border-[#b79a5b] outline-none text-white transition-all duration-300 appearance-none cursor-pointer font-light tracking-wide text-sm backdrop-blur-sm"
+                                                    :min="form.startDate || today"
+                                                    placeholder="Select date">
+
+                                                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-[#b79a5b] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                                                    </svg>
+                                                </div>
+
+                                                <!-- Selected Date Display -->
+                                                <div x-show="form.endDate" class="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="text-white font-medium text-sm tracking-wide" x-text="formatDate(form.endDate)"></span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Placeholder -->
+                                                <div x-show="!form.endDate" class="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                                    <span class="text-gray-400 font-light text-sm tracking-wide">DD/MM/YYYY</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Date Details -->
+                                            <div x-show="form.endDate" class="flex items-center gap-2 text-xs text-gray-400">
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
+                                                <span x-text="getDayDetails(form.endDate)"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Duration Display -->
+                                    <div x-show="form.startDate && form.endDate" class="mt-6 pt-4 border-t border-white/10">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#b79a5b] to-[#d4af86] flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <span class="text-xs font-medium text-gray-300">TRIP DURATION</span>
+                                            </div>
+                                            <span class="text-sm font-semibold bg-gradient-to-r from-[#b79a5b] to-[#d4af86] bg-clip-text text-transparent" x-text="calculateDuration()"></span>
+                                        </div>
+                                    </div>
                                 </div>
 
+                                <!-- Additional Form for "4 Days of July" style -->
+                                <div class="mt-4">
+                                    <label class="text-xs text-gray-400">Or describe your travel period (optional)</label>
+                                    <input
+                                        type="text"
+                                        x-model="form.travelPeriod"
+                                        placeholder="e.g., 4 Days of July, Last week of August, Mid-December, etc."
+                                        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500 text-sm font-light">
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Destination / Region</label>
                                     <input type="text" x-model="form.destination" placeholder="e.g., Bali, Java, Raja Ampat" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
                                 </div>
-                            </div>
 
-                            <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Traveling With</label>
                                     <input type="text" x-model="form.pax" placeholder="e.g., Solo, Couple, Family of 4" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
                                 </div>
+                            </div>
 
+                            <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Archetype</label>
                                     <select x-model="form.archetype" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition appearance-none cursor-pointer">
@@ -174,11 +301,11 @@
                                         <option value="Other" class="bg-[#1a1a1a]">Other</option>
                                     </select>
                                 </div>
-                            </div>
 
-                            <div class="space-y-2">
-                                <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Budget (per person)</label>
-                                <input type="text" x-model="form.budget" placeholder="e.g., $2,000 - $5,000" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Budget (per person)</label>
+                                    <input type="text" x-model="form.budget" placeholder="e.g., $2,000 - $5,000" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#b79a5b] focus:bg-white/10 outline-none text-white transition placeholder-gray-500">
+                                </div>
                             </div>
 
                             <div class="space-y-2">
@@ -444,12 +571,19 @@
             loading: false,
             scrollPosition: 0,
 
+            // Today's date for min date restriction
+            get today() {
+                return new Date().toISOString().split('T')[0];
+            },
+
             form: {
                 name: '',
                 email: '',
                 phone: '',
                 contact: '',
-                dates: '',
+                startDate: '',
+                endDate: '',
+                travelPeriod: '',
                 destination: '',
                 pax: '',
                 archetype: '',
@@ -525,6 +659,49 @@
                 }
             },
 
+            // Tambahkan fungsi-fungsi ini ke dalam Alpine data
+            formatDate(dateString) {
+                if (!dateString) return '';
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+            },
+
+            getDayDetails(dateString) {
+                if (!dateString) return '';
+                const date = new Date(dateString);
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+                return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+            },
+
+            calculateDuration() {
+                if (!this.form.startDate || !this.form.endDate) return '';
+
+                const start = new Date(this.form.startDate);
+                const end = new Date(this.form.endDate);
+                const diffTime = Math.abs(end - start);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+
+                if (diffDays === 1) return '1 day';
+                return `${diffDays} days`;
+            },
+
+            updateEndDateMin() {
+                // Fungsi ini dipanggil ketika startDate berubah
+                if (this.form.startDate && this.form.endDate) {
+                    const start = new Date(this.form.startDate);
+                    const end = new Date(this.form.endDate);
+                    if (end < start) {
+                        this.form.endDate = this.form.startDate;
+                    }
+                }
+            },
+
             submitForm() {
                 this.loading = true;
                 this.error = {};
@@ -536,9 +713,27 @@
                     return;
                 }
 
+                // Format travel dates for display
+                let travelDatesDisplay = '';
+                if (this.form.startDate && this.form.endDate) {
+                    const start = new Date(this.form.startDate).toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    });
+                    const end = new Date(this.form.endDate).toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    });
+                    travelDatesDisplay = `${start} to ${end}`;
+                } else if (this.form.travelPeriod) {
+                    travelDatesDisplay = this.form.travelPeriod;
+                }
+
                 setTimeout(() => {
                     this.loading = false;
-                    alert("✨ Your request has been received! Our travel designers will reach out within 24 hours to begin crafting your journey.");
+                    alert(`✨ Your request has been received!\n\nTravel Dates: ${travelDatesDisplay}\n\nOur travel designers will reach out within 24 hours to begin crafting your journey.`);
                     this.closeModal();
 
                     // Reset form
@@ -547,7 +742,9 @@
                         email: '',
                         phone: '',
                         contact: '',
-                        dates: '',
+                        startDate: '',
+                        endDate: '',
+                        travelPeriod: '',
                         destination: '',
                         pax: '',
                         archetype: '',
@@ -590,6 +787,43 @@
 </script>
 
 <style>
+    /* Style untuk kalender input yang lebih premium */
+    input[type="date"] {
+        color-scheme: dark;
+        cursor: pointer;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+        opacity: 0;
+    }
+
+    input[type="date"]::-webkit-datetime-edit {
+        opacity: 0;
+    }
+
+    input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+        opacity: 0;
+    }
+
+    /* Efek hover dan focus yang lebih halus */
+    input[type="date"]:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    }
+
+    input[type="date"]:focus {
+        box-shadow: 0 0 0 2px rgba(183, 154, 91, 0.2), 0 4px 20px rgba(183, 154, 91, 0.1);
+    }
+
     /* Style untuk mengatasi scroll mouse */
     #modal-scroll-content {
         scroll-behavior: smooth;

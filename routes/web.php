@@ -33,6 +33,8 @@ Route::get('/payment/processing/{invoice}', [App\Http\Controllers\PaymentControl
 Route::post('/payment/create-doku', [App\Http\Controllers\PaymentController::class, 'createDoku']);
 Route::get('/payment/simulate-notify', [App\Http\Controllers\PaymentController::class, 'simulateNotification']);
 
+Route::get('/form-event', [App\Http\Controllers\FormEventController::class, 'showForm'])->name('form.event');
+
 Route::any('/payment/doku/debug', function (Request $req) {
     $logFile = storage_path('logs/doku_debug_raw.txt');
     $logContent = "[" . date('Y-m-d H:i:s') . "]\n";
