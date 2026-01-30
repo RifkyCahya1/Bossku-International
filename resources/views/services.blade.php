@@ -22,10 +22,10 @@
         </div>
 
         <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Desktop Sidebar Filter (hidden on mobile) -->
+            <!-- Desktop Sidebar Filter (hidden on mobile/tablet) -->
             <aside
                 class="hidden lg:block relative
-                w-full lg:max-w-sm
+                w-full lg:max-w-xs
                 bg-gradient-to-b from-[#FAF9F6] to-white
                 border border-[#E6D8A8]/40
                 rounded-2xl lg:rounded-[28px]
@@ -33,7 +33,8 @@
                 shadow-[0_20px_60px_-25px_rgba(201,162,77,0.35)]
                 backdrop-blur-xl
                 space-y-6 lg:space-y-8
-                h-fit sticky top-24">
+                h-fit top-24
+                sticky">
 
                 <!-- Header -->
                 <div class="flex items-center justify-between gap-4">
@@ -44,12 +45,19 @@
                         <div class="mt-1 w-10 lg:w-12 h-[1px] bg-[#C9A24D]"></div>
                     </div>
 
-                    <button
-                        @click="resetFilters()"
-                        class="text-xs uppercase tracking-[0.25em]
-                      text-[#9E7C32] hover:text-[#0B1D26] transition">
-                        Reset
-                    </button>
+                    <!-- Active filters indicator -->
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-500"
+                            x-show="activeFilterCount() > 0">
+                            <span x-text="activeFilterCount()"></span> active
+                        </span>
+                        <button
+                            @click="resetFilters()"
+                            class="text-xs uppercase tracking-[0.25em]
+                            text-[#9E7C32] hover:text-[#0B1D26] transition">
+                            Reset
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Destination -->
@@ -91,15 +99,17 @@
                         Investment Range
                     </label>
 
-                    <input type="range"
-                        min="200000"
-                        max="20000000"
-                        step="100000"
-                        x-model="filters.harga_final"
-                        class="w-full h-2 accent-[#C9A24D]">
+                    <div class="flex items-center gap-3">
+                        <input type="range"
+                            min="200000"
+                            max="20000000"
+                            step="100000"
+                            x-model="filters.harga_final"
+                            class="flex-1 h-2 accent-[#C9A24D]">
+                    </div>
 
                     <div class="text-sm font-medium text-[#0B1D26]">
-                        IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
+                        Up to IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
                     </div>
                 </div>
 
@@ -156,6 +166,57 @@
                 </div>
             </aside>
 
+            <!-- Tablet Filter Bar (hidden on mobile and desktop) -->
+            <div class="lg:hidden">
+                <div class="flex flex-wrap gap-2 mb-6 p-3 bg-white rounded-xl border border-[#E6D8A8]/40">
+                    <!-- Filter Toggle Button for Tablet -->
+                    <button
+                        @click="openFilter = true"
+                        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full
+                        bg-[#0B1D26] text-white text-sm font-medium
+                        hover:bg-opacity-90 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                        </svg>
+                        Filter
+                        <template x-if="activeFilterCount() > 0">
+                            <span class="ml-1 px-1.5 py-0.5 text-xs bg-[#C9A24D] rounded-full"
+                                x-text="activeFilterCount()"></span>
+                        </template>
+                    </button>
+
+                    <!-- Active Filter Chips -->
+                    <template x-if="filters.destination">
+                        <div class="inline-flex items-center gap-1 px-3 py-1.5 bg-[#FAF9F6] rounded-full text-sm">
+                            <span class="text-[#0B1D26]" x-text="filters.destination"></span>
+                            <button @click="filters.destination = ''" class="text-gray-400 hover:text-red-500">
+                                ×
+                            </button>
+                        </div>
+                    </template>
+
+                    <template x-if="filters.duration">
+                        <div class="inline-flex items-center gap-1 px-3 py-1.5 bg-[#FAF9F6] rounded-full text-sm">
+                            <span class="text-[#0B1D26]" x-text="getDurationLabel(filters.duration)"></span>
+                            <button @click="filters.duration = ''" class="text-gray-400 hover:text-red-500">
+                                ×
+                            </button>
+                        </div>
+                    </template>
+
+                    <template x-if="filters.themes.length > 0">
+                        <div class="inline-flex items-center gap-1 px-3 py-1.5 bg-[#FAF9F6] rounded-full text-sm">
+                            <span class="text-[#0B1D26]">
+                                <span x-text="filters.themes.length"></span> themes
+                            </span>
+                            <button @click="filters.themes = []" class="text-gray-400 hover:text-red-500">
+                                ×
+                            </button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
             <!-- Mobile Filter Modal -->
             <div
                 x-show="openFilter"
@@ -165,171 +226,180 @@
                 x-transition:leave="transition ease-in duration-200"
                 x-transition:leave-start="translate-y-0"
                 x-transition:leave-end="translate-y-full"
+                @click.away="openFilter = false"
                 x-cloak
-                class="fixed bottom-0 inset-x-0 z-50 lg:hidden
-                bg-gradient-to-b from-[#FAF9F6] to-white
-                rounded-t-3xl
-                max-h-[85vh] overflow-y-auto
-                p-5 space-y-6 shadow-2xl">
+                class="fixed inset-0 z-50 lg:hidden"
+                style="background-color: rgba(0,0,0,0.5);">
 
-                <!-- drag handle -->
-                <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-2"></div>
+                <div class="absolute bottom-0 inset-x-0
+                    bg-gradient-to-b from-[#FAF9F6] to-white
+                    rounded-t-3xl
+                    max-h-[85vh] overflow-y-auto
+                    p-5 space-y-6 shadow-2xl">
 
-                <!-- header -->
-                <div class="flex items-center justify-between mb-2">
-                    <h2 class="text-lg font-semibold text-[#0B1D26]">
-                        Refine Your Journey
-                    </h2>
-                    <button
-                        @click="openFilter = false"
-                        class="text-sm text-[#9E7C32] hover:text-[#0B1D26]">
-                        Tutup
-                    </button>
-                </div>
+                    <!-- drag handle -->
+                    <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-2"></div>
 
-                <!-- Mobile Filter Content -->
-                <div class="space-y-5 pb-6">
-                    <!-- Destination -->
-                    <div class="space-y-2">
-                        <label class="block text-xs uppercase tracking-widest text-gray-500">
-                            Destination
-                        </label>
-                        <input
-                            type="text"
-                            x-model="filters.destination"
-                            placeholder="Bali, Flores, Raja Ampat"
-                            class="w-full rounded-full px-4 py-3 text-sm
-                            border border-[#E6D8A8]/60 bg-white
-                            focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]">
-                    </div>
-
-                    <!-- Duration -->
-                    <div class="space-y-2">
-                        <label class="block text-xs uppercase tracking-widest text-gray-500">
-                            Duration
-                        </label>
-                        <select
-                            x-model="filters.duration"
-                            class="w-full rounded-full px-4 py-3 text-sm
-                            border border-[#E6D8A8]/60 bg-white">
-                            <option value="">Any duration</option>
-                            <option value="weekend">Weekend Escape (2-3 days)</option>
-                            <option value="short">Short Break (4-6 days)</option>
-                            <option value="week">One Week (7-9 days)</option>
-                            <option value="extended">Extended Journey (10+ days)</option>
-                        </select>
-                    </div>
-
-                    <!-- Price -->
-                    <div class="space-y-3">
-                        <label class="block text-xs uppercase tracking-widest text-gray-500">
-                            Investment Range
-                        </label>
-
-                        <input type="range"
-                            min="200000"
-                            max="20000000"
-                            step="100000"
-                            x-model="filters.harga_final"
-                            class="w-full h-2 accent-[#C9A24D]">
-
-                        <div class="text-sm font-medium text-[#0B1D26]">
-                            IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
+                    <!-- header -->
+                    <div class="flex items-center justify-between mb-2">
+                        <h2 class="text-lg font-semibold text-[#0B1D26]">
+                            Refine Your Journey
+                        </h2>
+                        <div class="flex items-center gap-3">
+                            <button
+                                @click="resetFilters()"
+                                class="text-sm text-[#9E7C32] hover:text-[#0B1D26]">
+                                Reset
+                            </button>
+                            <button
+                                @click="openFilter = false"
+                                class="text-sm text-gray-500 hover:text-[#0B1D26]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Departure -->
-                    <div class="space-y-2">
-                        <label class="block text-xs uppercase tracking-widest text-gray-500">
-                            Departure
-                        </label>
+                    <!-- Mobile Filter Content -->
+                    <div class="space-y-5 pb-6">
+                        <!-- Destination -->
+                        <div class="space-y-2">
+                            <label class="block text-xs uppercase tracking-widest text-gray-500">
+                                Destination
+                            </label>
+                            <input
+                                type="text"
+                                x-model="filters.destination"
+                                placeholder="Bali, Flores, Raja Ampat"
+                                class="w-full rounded-full px-4 py-3 text-sm
+                                border border-[#E6D8A8]/60 bg-white
+                                focus:ring-2 focus:ring-[#C9A24D]/40 focus:border-[#C9A24D]">
+                        </div>
 
-                        <select
-                            x-model="filters.departure"
-                            class="w-full rounded-full px-4 py-3 text-sm
-                            border border-[#E6D8A8]/60 bg-white">
-                            <option value="">Flexible</option>
-                            <option value="soon">Within 30 Days</option>
-                            <option value="season">This Season</option>
-                            <option value="next">Next Season</option>
-                            <option value="specific">Specific Date</option>
-                        </select>
+                        <!-- Duration -->
+                        <div class="space-y-2">
+                            <label class="block text-xs uppercase tracking-widest text-gray-500">
+                                Duration
+                            </label>
+                            <select
+                                x-model="filters.duration"
+                                class="w-full rounded-full px-4 py-3 text-sm
+                                border border-[#E6D8A8]/60 bg-white">
+                                <option value="">Any duration</option>
+                                <option value="weekend">Weekend Escape (2-3 days)</option>
+                                <option value="short">Short Break (4-6 days)</option>
+                                <option value="week">One Week (7-9 days)</option>
+                                <option value="extended">Extended Journey (10+ days)</option>
+                            </select>
+                        </div>
 
-                        <input
-                            x-show="filters.departure === 'specific'"
-                            type="date"
-                            x-model="filters.departure_date"
-                            class="w-full mt-2 rounded-full px-4 py-3 text-sm
-                            border border-[#E6D8A8]/60 bg-white">
-                    </div>
+                        <!-- Price -->
+                        <div class="space-y-3">
+                            <label class="block text-xs uppercase tracking-widest text-gray-500">
+                                Investment Range
+                            </label>
 
-                    <!-- Themes -->
-                    <div class="space-y-4">
-                        <label class="block text-xs uppercase tracking-widest text-gray-500">
-                            Signature Themes
-                        </label>
+                            <input type="range"
+                                min="200000"
+                                max="20000000"
+                                step="100000"
+                                x-model="filters.harga_final"
+                                class="w-full h-2 accent-[#C9A24D]">
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <template x-for="theme in themes" :key="theme.key">
-                                <label class="flex gap-3 items-start text-sm cursor-pointer">
-                                    <input
-                                        type="checkbox"
-                                        x-model="filters.themes"
-                                        :value="theme.key"
-                                        class="mt-1 rounded accent-[#C9A24D]">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">IDR 200K</span>
+                                <span class="font-medium text-[#0B1D26]">
+                                    IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')"></span>
+                                </span>
+                            </div>
+                        </div>
 
-                                    <div>
-                                        <div class="font-medium text-[#0B1D26]"
-                                            x-text="theme.label"></div>
-                                        <div class="text-xs text-gray-400"
-                                            x-text="theme.desc"></div>
-                                    </div>
+                        <!-- Departure -->
+                        <div class="space-y-2">
+                            <label class="block text-xs uppercase tracking-widest text-gray-500">
+                                Departure
+                            </label>
+
+                            <select
+                                x-model="filters.departure"
+                                class="w-full rounded-full px-4 py-3 text-sm
+                                border border-[#E6D8A8]/60 bg-white">
+                                <option value="">Flexible</option>
+                                <option value="soon">Within 30 Days</option>
+                                <option value="season">This Season</option>
+                                <option value="next">Next Season</option>
+                                <option value="specific">Specific Date</option>
+                            </select>
+
+                            <input
+                                x-show="filters.departure === 'specific'"
+                                type="date"
+                                x-model="filters.departure_date"
+                                class="w-full mt-2 rounded-full px-4 py-3 text-sm
+                                border border-[#E6D8A8]/60 bg-white">
+                        </div>
+
+                        <!-- Themes -->
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <label class="block text-xs uppercase tracking-widest text-gray-500">
+                                    Signature Themes
                                 </label>
-                            </template>
-                        </div>
-                    </div>
+                                <button
+                                    @click="filters.themes = []"
+                                    class="text-xs text-[#9E7C32] hover:text-[#0B1D26]">
+                                    Clear
+                                </button>
+                            </div>
 
-                    <!-- Action Buttons -->
-                    <div class="flex gap-3 pt-4">
-                        <button
-                            @click="resetFilters()"
-                            class="flex-1 rounded-full px-4 py-3 text-sm
-                            border border-[#E6D8A8] text-[#9E7C32]
-                            hover:bg-[#FAF9F6]">
-                            Reset Filters
-                        </button>
-                        <button
-                            @click="openFilter = false"
-                            class="flex-1 rounded-full px-4 py-3 text-sm
-                            bg-[#0B1D26] text-white
-                            hover:bg-opacity-90">
-                            Apply Filters
-                        </button>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <template x-for="theme in themes" :key="theme.key">
+                                    <label class="flex gap-3 items-start text-sm cursor-pointer p-3 rounded-lg border border-[#E6D8A8]/40 hover:border-[#C9A24D] transition">
+                                        <input
+                                            type="checkbox"
+                                            x-model="filters.themes"
+                                            :value="theme.key"
+                                            class="mt-1 rounded accent-[#C9A24D]">
+
+                                        <div>
+                                            <div class="font-medium text-[#0B1D26]"
+                                                x-text="theme.label"></div>
+                                            <div class="text-xs text-gray-400"
+                                                x-text="theme.desc"></div>
+                                        </div>
+                                    </label>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-3 pt-4 border-t border-[#E6D8A8]/40">
+                            <button
+                                @click="resetFilters()"
+                                class="flex-1 rounded-full px-4 py-3 text-sm
+                                border border-[#E6D8A8] text-[#9E7C32]
+                                hover:bg-[#FAF9F6]">
+                                Reset Filters
+                            </button>
+                            <button
+                                @click="openFilter = false"
+                                class="flex-1 rounded-full px-4 py-3 text-sm
+                                bg-[#0B1D26] text-white
+                                hover:bg-opacity-90">
+                                Apply Filters
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Mobile Filter Toggle Button -->
-            <button
-                @click="openFilter = true"
-                class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40
-                        flex items-center justify-center gap-2
-                        px-6 py-3 rounded-full
-                        bg-[#0B1D26] text-white text-sm font-medium
-                        shadow-lg hover:shadow-xl hover:scale-105
-                        transition-all duration-300 lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-                </svg>
-                Filter Journeys
-            </button>
-
             <!-- Main Content -->
             <main class="flex-1 space-y-8">
-                <!-- Search Bar -->
+                <!-- Search Bar with Filter Button (Mobile) -->
                 <div class="relative">
-                    <div class="flex items-center gap-4">
-                        <div class="relative flex-1">
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <div class="relative flex-1 w-full">
                             <input
                                 type="text"
                                 x-model="search"
@@ -347,15 +417,57 @@
                             </svg>
                         </div>
 
-                        <!-- Results Count -->
-                        <div class="hidden md:block text-sm text-gray-600 whitespace-nowrap">
-                            <span x-text="filteredTours().length"></span> journeys found
+                        <!-- Results Count and Filter Button (Mobile) -->
+                        <div class="flex items-center justify-between w-full sm:w-auto gap-4">
+                            <div class="text-sm text-gray-600 whitespace-nowrap">
+                                <span x-text="filteredTours().length"></span> journeys found
+                            </div>
+
+                            <!-- Mobile Filter Button (only on mobile) -->
+                            <button
+                                @click="openFilter = true"
+                                class="sm:hidden flex items-center gap-2
+                                px-4 py-2 rounded-full
+                                bg-[#0B1D26] text-white text-sm font-medium
+                                hover:bg-opacity-90">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                                </svg>
+                                Filter
+                                <template x-if="activeFilterCount() > 0">
+                                    <span class="ml-1 px-1.5 py-0.5 text-xs bg-[#C9A24D] rounded-full"
+                                        x-text="activeFilterCount()"></span>
+                                </template>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Mobile Results Count -->
-                    <div class="mt-2 md:hidden text-xs text-gray-500">
-                        <span x-text="filteredTours().length"></span> journeys match your criteria
+                    <!-- Active Filters for Mobile -->
+                    <div class="mt-3 flex flex-wrap gap-2" x-show="activeFilterCount() > 0">
+                        <template x-if="filters.destination">
+                            <span class="inline-flex items-center gap-1 px-3 py-1 bg-[#FAF9F6] rounded-full text-sm">
+                                Destination: <span x-text="filters.destination" class="font-medium"></span>
+                                <button @click="filters.destination = ''" class="text-gray-400 hover:text-red-500 ml-1">
+                                    ×
+                                </button>
+                            </span>
+                        </template>
+                        <template x-if="filters.duration">
+                            <span class="inline-flex items-center gap-1 px-3 py-1 bg-[#FAF9F6] rounded-full text-sm">
+                                Duration: <span x-text="getDurationLabel(filters.duration)" class="font-medium"></span>
+                                <button @click="filters.duration = ''" class="text-gray-400 hover:text-red-500 ml-1">
+                                    ×
+                                </button>
+                            </span>
+                        </template>
+                        <template x-if="filters.harga_final < 20000000">
+                            <span class="inline-flex items-center gap-1 px-3 py-1 bg-[#FAF9F6] rounded-full text-sm">
+                                Max: IDR <span x-text="Number(filters.harga_final).toLocaleString('id-ID')" class="font-medium"></span>
+                                <button @click="filters.harga_final = 20000000" class="text-gray-400 hover:text-red-500 ml-1">
+                                    ×
+                                </button>
+                            </span>
+                        </template>
                     </div>
                 </div>
 
@@ -629,6 +741,27 @@
                 this.openFilter = false;
             },
 
+            // New helper methods
+            activeFilterCount() {
+                let count = 0;
+                if (this.filters.destination) count++;
+                if (this.filters.duration) count++;
+                if (this.filters.harga_final < 20000000) count++;
+                if (this.filters.departure) count++;
+                if (this.filters.themes.length > 0) count++;
+                return count;
+            },
+
+            getDurationLabel(value) {
+                const labels = {
+                    'weekend': 'Weekend Escape',
+                    'short': 'Short Break',
+                    'week': 'One Week',
+                    'extended': 'Extended Journey'
+                };
+                return labels[value] || value;
+            },
+
             filteredTours() {
                 return this.filtered.filter(t => {
                     // Search filter
@@ -747,6 +880,30 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+
+    /* Prevent body scroll when modal is open */
+    body.modal-open {
+        overflow: hidden;
+    }
+
+    /* Custom scrollbar for modal */
+    .overflow-y-auto::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-thumb {
+        background: #c9a24d;
+        border-radius: 4px;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+        background: #9e7c32;
     }
 </style>
 

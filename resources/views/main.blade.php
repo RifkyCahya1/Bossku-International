@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    {!! app('seotools')->generate() !!}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +18,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if (env('APP_ENV') === 'production')
+        <link rel="stylesheet" href="{{ asset('build/assets/app-B875Js0p.css') }}">
+    @else
+        @vite('resources/css/app.css')
+    @endif
+
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -43,14 +50,21 @@
 <body class="bg-[#f4f4f4] scroll-smooth">
 
     @if (!isset($excludeNavbar))
-    @include('Layout.navbar')
+    @include('layout.navbar')
     @endif
 
     @yield('content')
 
     @if (!isset($excludeFooter))
-    @include('Layout.Footer')
+    @include('layout.footer')
     @endif
+
+	@if (env('APP_ENV') === 'production')
+        <script src="{{ asset('build/assets/app-C4jk1yJQ.js') }}" defer></script>
+    @else
+        @vite('resources/js/app.js')
+    @endif
+
 
     <script>
         const lenis = new Lenis({

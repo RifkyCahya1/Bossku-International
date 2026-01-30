@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-<section class="relative min-h-[100svh] w-full overflow-hidden">
+<section class="relative min-h-[100svh] w-full overflow-hidden" style="scroll-margin-top: 10px;">
 
     <video autoplay muted loop playsinline
         class="absolute inset-0 w-full h-full object-cover scale-105 md:scale-110">
@@ -11,9 +11,6 @@
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/30"></div>
 
     <div class="relative z-10 flex min-h-[100svh] flex-col justify-center px-5 sm:px-8 md:px-16 lg:px-24 mx-auto">
-        <p class="text-white/60 text-[10px] sm:text-xs tracking-[0.35em] uppercase mb-6 sm:mb-8">
-            Curated Experiences
-        </p>
 
         <h1 class="text-white font-extralight leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-xl md:max-w-3xl lg:max-w-4xl">
             Every journey has its own rhythm.<br>
@@ -27,7 +24,7 @@
         </p>
 
         <div class="mt-8 sm:mt-10">
-            <a href="#experiences" class="inline-flex items-center gap-3 text-xs sm:text-sm tracking-widest uppercase text-white/80 hover:text-white transition">
+            <a href="#SlowSoulful" class="inline-flex items-center gap-3 text-xs sm:text-sm tracking-widest uppercase text-white/80 hover:text-white transition">
                 Explore Experiences
                 <span class="block w-10 sm:w-12 h-[1px] bg-white/40"></span>
             </a>
@@ -57,11 +54,11 @@
 
     <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 space-y-36 md:space-y-44">
         <!-- ITEM 1 - Slow & Soulful -->
-        <div class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center">
+        <div id="SlowSoulful" class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center scroll-mt-24">
             <div class="absolute -left-4 md:left-10 -top-10 md:top-auto md:-left-12 text-[180px] md:text-[220px] font-serif font-bold text-amber-900/5 leading-none select-none z-0">
                 01
             </div>
-            
+
             <div class="relative z-10 overflow-hidden rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-black/5 group-hover:shadow-amber-900/10 transition-all duration-700">
                 <div class="relative overflow-hidden rounded-3xl md:rounded-[2.5rem]">
                     <img
@@ -70,12 +67,12 @@
                         class="w-full h-[320px] sm:h-[400px] md:h-[520px]
                                object-cover transition-all duration-1000 ease-out
                                group-hover:scale-110 group-hover:brightness-110" />
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500"></div>
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-tr from-amber-900/0 via-transparent to-amber-900/0 group-hover:from-amber-900/5 group-hover:to-amber-900/5 transition-all duration-700"></div>
                 </div>
-                
+
                 <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                     <p class="text-xs font-medium text-amber-900 tracking-widest">MINDFUL LUXURY</p>
                 </div>
@@ -97,7 +94,7 @@
                 <p class="text-neutral-600 text-base md:text-lg leading-relaxed mb-10">
                     Quiet mornings, gentle days, and moments meticulously designed to slow the world down. An intimate journey inward through tranquil landscapes and mindful presence.
                 </p>
-                
+
                 <div class="space-y-4 mb-10">
                     <div class="flex items-center gap-3">
                         <div class="w-2 h-2 rounded-full bg-amber-700"></div>
@@ -112,23 +109,23 @@
                         <p class="text-sm text-neutral-700">Custom wellness itineraries</p>
                     </div>
                 </div>
-                
+
                 <div class="mt-12">
-                    <button class="group/btn relative px-8 py-4 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/30">
+                    <a class="group/btn relative px-8 py-4 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/30">
                         <span class="relative z-10 font-medium tracking-wide">Explore This Journey</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute -inset-1 bg-gradient-to-r from-amber-900/20 to-amber-800/20 rounded-full blur-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- ITEM 2 - Nature & Silence -->
-        <div class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center">
+        <div id="WildernessRetreats" class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center scroll-mt-24">
             <div class="absolute -right-4 md:right-10 -top-10 md:top-auto md:-right-12 text-[180px] md:text-[220px] font-serif font-bold text-emerald-900/5 leading-none select-none z-0 text-right">
                 02
             </div>
-            
+
             <div class="relative z-10 md:order-2 max-w-lg md:max-w-xl">
                 <div class="flex items-center gap-2 mb-6">
                     <div class="w-8 h-px bg-gradient-to-r from-emerald-700 to-emerald-700/40"></div>
@@ -145,7 +142,7 @@
                 <p class="text-neutral-600 text-base md:text-lg leading-relaxed mb-10">
                     Mountains, ancient forests, and expansive horizons where silence becomes the ultimate luxury. Disconnect to reconnect in untouched natural sanctuaries.
                 </p>
-                
+
                 <div class="grid grid-cols-3 gap-6 mb-10">
                     <div class="text-center">
                         <div class="text-2xl font-light text-emerald-900 mb-1">72h</div>
@@ -160,13 +157,13 @@
                         <div class="text-xs text-neutral-500 tracking-wider">EXPERT GUIDANCE</div>
                     </div>
                 </div>
-                
+
                 <div class="mt-8">
-                    <button class="group/btn relative px-8 py-4 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/30">
+                    <a class="group/btn relative px-8 py-4 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/30">
                         <span class="relative z-10 font-medium tracking-wide">Discover Solitude</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-emerald-800 to-emerald-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute -inset-1 bg-gradient-to-r from-emerald-900/20 to-emerald-800/20 rounded-full blur-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -178,9 +175,9 @@
                         class="w-full h-[320px] sm:h-[400px] md:h-[520px]
                                object-cover transition-all duration-1000 ease-out
                                group-hover:scale-110 group-hover:brightness-110" />
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    
+
                     <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 max-w-[200px] shadow-2xl shadow-black/20">
                         <div class="text-white font-light text-sm leading-relaxed">
                             "The silence here speaks louder than any city."
@@ -188,7 +185,7 @@
                         <div class="text-white/70 text-xs mt-3">— Guest Review</div>
                     </div>
                 </div>
-                
+
                 <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                     <p class="text-xs font-medium text-emerald-900 tracking-widest">EXCLUSIVE ACCESS</p>
                 </div>
@@ -196,11 +193,11 @@
         </div>
 
         <!-- ITEM 3 - Culture & Depth -->
-        <div class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center">
+        <div id="ImmersiveEncounters" class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center scroll-mt-24">
             <div class="absolute -left-4 md:left-10 -top-10 md:top-auto md:-left-12 text-[180px] md:text-[220px] font-serif font-bold text-amber-900/5 leading-none select-none z-0">
                 03
             </div>
-            
+
             <div class="relative z-10 overflow-hidden rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-black/5 group-hover:shadow-amber-900/10 transition-all duration-700">
                 <div class="relative overflow-hidden rounded-3xl md:rounded-[2.5rem]">
                     <img
@@ -209,7 +206,7 @@
                         class="w-full h-[320px] sm:h-[400px] md:h-[520px]
                                object-cover transition-all duration-1000 ease-out
                                group-hover:scale-110 group-hover:brightness-110" />
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-tr from-amber-900/10 via-transparent to-amber-900/10 group-hover:from-amber-900/20 group-hover:to-amber-900/20 transition-all duration-1000"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
                 </div>
@@ -231,7 +228,7 @@
                 <p class="text-neutral-600 text-base md:text-lg leading-relaxed mb-10">
                     Traditions, rituals, and stories shared authentically — never staged. Engage with local communities through meaningful exchanges and immersive cultural experiences.
                 </p>
-                
+
                 <div class="space-y-6 mb-10">
                     <div class="flex items-start gap-4 group/feature">
                         <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center group-hover/feature:bg-amber-100 transition-colors duration-300">
@@ -244,7 +241,7 @@
                             <p class="text-sm text-neutral-600">Learn traditional crafts from master artisans in intimate settings.</p>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-start gap-4 group/feature">
                         <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center group-hover/feature:bg-amber-100 transition-colors duration-300">
                             <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -257,23 +254,23 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="mt-8">
-                    <button class="group/btn relative px-8 py-4 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/30">
+                    <a class="group/btn relative px-8 py-4 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/30">
                         <span class="relative z-10 font-medium tracking-wide">Discover Heritage</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute -inset-1 bg-gradient-to-r from-amber-900/20 to-amber-800/20 rounded-full blur-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- ITEM 4 - Island Escapes -->
-        <div class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center">
+        <div id="CoastalSanctuaries" class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center scroll-mt-24">
             <div class="absolute -right-4 md:right-10 -top-10 md:top-auto md:-right-12 text-[180px] md:text-[220px] font-serif font-bold text-blue-900/5 leading-none select-none z-0 text-right">
                 04
             </div>
-            
+
             <div class="relative z-10 md:order-2 max-w-lg md:max-w-xl">
                 <div class="flex items-center gap-2 mb-6">
                     <div class="w-8 h-px bg-gradient-to-r from-blue-600 to-blue-600/40"></div>
@@ -290,7 +287,7 @@
                 <p class="text-neutral-600 text-base md:text-lg leading-relaxed mb-10">
                     Salt air, barefoot days, and endless horizons that soften everything. Experience the rhythm of island life in secluded paradises where time moves with the tides.
                 </p>
-                
+
                 <div class="grid grid-cols-2 gap-8 mb-10">
                     <div class="text-center">
                         <div class="text-2xl font-light text-blue-900 mb-1">Private</div>
@@ -301,7 +298,7 @@
                         <div class="text-xs text-neutral-500 tracking-wider">COVES & BAYS</div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-4 mb-10">
                     <div class="flex items-center gap-3">
                         <div class="w-2 h-2 rounded-full bg-blue-600"></div>
@@ -316,13 +313,13 @@
                         <p class="text-sm text-neutral-700">Traditional fishing with local communities</p>
                     </div>
                 </div>
-                
+
                 <div class="mt-8">
-                    <button class="group/btn relative px-8 py-4 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-blue-900/30">
+                    <a class="group/btn relative px-8 py-4 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-blue-900/30">
                         <span class="relative z-10 font-medium tracking-wide">Explore Islands</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute -inset-1 bg-gradient-to-r from-blue-900/20 to-blue-800/20 rounded-full blur-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -334,16 +331,16 @@
                         class="w-full h-[320px] sm:h-[400px] md:h-[520px]
                                object-cover transition-all duration-1000 ease-out
                                group-hover:scale-110 group-hover:brightness-110" />
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-blue-900/20 to-transparent"></div>
-                    
+
                     <div class="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 max-w-[200px] shadow-2xl shadow-black/20">
                         <div class="text-white font-light text-sm leading-relaxed">
                             "Where the ocean whispers secrets to the shore."
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                     <p class="text-xs font-medium text-blue-900 tracking-widest">OCEANFRONT RETREAT</p>
                 </div>
@@ -351,11 +348,11 @@
         </div>
 
         <!-- ITEM 5 - Adventure & Movement -->
-        <div class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center">
+        <div id="ActiveJourneys" class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center scroll-mt-24">
             <div class="absolute -left-4 md:left-10 -top-10 md:top-auto md:-left-12 text-[180px] md:text-[220px] font-serif font-bold text-emerald-900/5 leading-none select-none z-0">
                 05
             </div>
-            
+
             <div class="relative z-10 overflow-hidden rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-black/5 group-hover:shadow-emerald-900/10 transition-all duration-700">
                 <div class="relative overflow-hidden rounded-3xl md:rounded-[2.5rem]">
                     <img
@@ -364,12 +361,12 @@
                         class="w-full h-[320px] sm:h-[400px] md:h-[520px]
                                object-cover transition-all duration-1000 ease-out
                                group-hover:scale-110 group-hover:brightness-110" />
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-emerald-900/20 to-transparent"></div>
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/0 via-transparent to-emerald-900/0 group-hover:from-emerald-900/5 group-hover:to-emerald-900/5 transition-all duration-700"></div>
                 </div>
-                
+
                 <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                     <p class="text-xs font-medium text-emerald-900 tracking-widest">ACTIVE EXPEDITION</p>
                 </div>
@@ -391,7 +388,7 @@
                 <p class="text-neutral-600 text-base md:text-lg leading-relaxed mb-10">
                     Trails, tides, climbs, and moments that stay with you forever. Challenge yourself in breathtaking landscapes with expert guidance and premium equipment.
                 </p>
-                
+
                 <div class="grid grid-cols-2 gap-8 mb-10">
                     <div class="text-center">
                         <div class="text-3xl font-light text-emerald-900 mb-1">Heli-Hiking</div>
@@ -402,7 +399,7 @@
                         <div class="text-xs text-neutral-500 tracking-wider">DIVING EXPEDITIONS</div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-4 mb-10">
                     <div class="flex items-center gap-3">
                         <div class="w-2 h-2 rounded-full bg-emerald-700"></div>
@@ -413,23 +410,23 @@
                         <p class="text-sm text-neutral-700">Multi-day trekking with luxury camp setups</p>
                     </div>
                 </div>
-                
+
                 <div class="mt-8">
-                    <button class="group/btn relative px-8 py-4 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/30">
+                    <a class="group/btn relative px-8 py-4 bg-gradient-to-r from-emerald-900 to-emerald-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/30">
                         <span class="relative z-10 font-medium tracking-wide">Start Adventure</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-emerald-800 to-emerald-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute -inset-1 bg-gradient-to-r from-emerald-900/20 to-emerald-800/20 rounded-full blur-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- ITEM 6 - Luxury & Comfort -->
-        <div class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center">
+        <div id="RefinedStays" class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center scroll-mt-24">
             <div class="absolute -right-4 md:right-10 -top-10 md:top-auto md:-right-12 text-[180px] md:text-[220px] font-serif font-bold text-amber-900/5 leading-none select-none z-0 text-right">
                 06
             </div>
-            
+
             <div class="relative z-10 md:order-2 max-w-lg md:max-w-xl">
                 <div class="flex items-center gap-2 mb-6">
                     <div class="w-8 h-px bg-gradient-to-r from-amber-800 to-amber-800/40"></div>
@@ -446,7 +443,7 @@
                 <p class="text-neutral-600 text-base md:text-lg leading-relaxed mb-10">
                     Thoughtful stays, seamless flow, and space to exhale completely. Experience accommodation that feels less like a hotel and more like a personal sanctuary.
                 </p>
-                
+
                 <div class="grid grid-cols-3 gap-6 mb-10">
                     <div class="text-center">
                         <div class="text-2xl font-light text-amber-900 mb-1">24/7</div>
@@ -461,7 +458,7 @@
                         <div class="text-xs text-neutral-500 tracking-wider">DINING EXPERIENCE</div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-4 mb-10">
                     <div class="flex items-center gap-3">
                         <div class="w-2 h-2 rounded-full bg-amber-800"></div>
@@ -472,13 +469,13 @@
                         <p class="text-sm text-neutral-700">Customized aromatherapy and sleep programs</p>
                     </div>
                 </div>
-                
+
                 <div class="mt-8">
-                    <button class="group/btn relative px-8 py-4 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/30">
+                    <a class="group/btn relative px-8 py-4 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/30">
                         <span class="relative z-10 font-medium tracking-wide">Experience Luxury</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute -inset-1 bg-gradient-to-r from-amber-900/20 to-amber-800/20 rounded-full blur-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -490,27 +487,27 @@
                         class="w-full h-[320px] sm:h-[400px] md:h-[520px]
                                object-cover transition-all duration-1000 ease-out
                                group-hover:scale-110 group-hover:brightness-110" />
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-amber-900/10 to-transparent"></div>
-                    
+
                     <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 max-w-[200px] shadow-2xl shadow-black/20">
                         <div class="text-white font-light text-sm leading-relaxed">
                             "Every detail considered, every comfort anticipated."
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                     <p class="text-xs font-medium text-amber-900 tracking-widest">FIVE-STAR SANCTUARY</p>
                 </div>
             </div>
         </div>
-        
-        <div class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center">
+
+        <div id="BondingExperiences" class="group relative grid md:grid-cols-2 gap-16 md:gap-28 items-center scroll-mt-24">
             <div class="absolute -left-4 md:left-10 -top-10 md:top-auto md:-left-12 text-[180px] md:text-[220px] font-serif font-bold text-rose-900/5 leading-none select-none z-0">
                 07
             </div>
-            
+
             <div class="relative z-10 overflow-hidden rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-black/5 group-hover:shadow-rose-900/10 transition-all duration-700">
                 <div class="relative overflow-hidden rounded-3xl md:rounded-[2.5rem]">
                     <img
@@ -519,12 +516,12 @@
                         class="w-full h-[320px] sm:h-[400px] md:h-[520px]
                                object-cover transition-all duration-1000 ease-out
                                group-hover:scale-110 group-hover:brightness-110" />
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-rose-900/20 to-transparent"></div>
-                    
+
                     <div class="absolute inset-0 bg-gradient-to-tr from-rose-900/0 via-transparent to-rose-900/0 group-hover:from-rose-900/5 group-hover:to-rose-900/5 transition-all duration-700"></div>
                 </div>
-                
+
                 <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                     <p class="text-xs font-medium text-rose-900 tracking-widest">MULTI-GENERATIONAL</p>
                 </div>
@@ -546,7 +543,7 @@
                 <p class="text-neutral-600 text-base md:text-lg leading-relaxed mb-10">
                     Create lasting memories with loved ones through thoughtfully curated experiences that cater to all ages while maintaining the highest standards of luxury and comfort.
                 </p>
-                
+
                 <div class="grid grid-cols-2 gap-8 mb-10">
                     <div class="text-center">
                         <div class="text-2xl font-light text-rose-900 mb-1">Custom</div>
@@ -557,7 +554,7 @@
                         <div class="text-xs text-neutral-500 tracking-wider">EDUTAINMENT GUIDES</div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-4 mb-10">
                     <div class="flex items-center gap-3">
                         <div class="w-2 h-2 rounded-full bg-rose-600"></div>
@@ -572,13 +569,13 @@
                         <p class="text-sm text-neutral-700">Child-friendly adventure activities with expert supervision</p>
                     </div>
                 </div>
-                
+
                 <div class="mt-8">
-                    <button class="group/btn relative px-8 py-4 bg-gradient-to-r from-rose-900 to-rose-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-rose-900/30">
+                    <a class="group/btn relative px-8 py-4 bg-gradient-to-r from-rose-900 to-rose-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-rose-900/30">
                         <span class="relative z-10 font-medium tracking-wide">Plan Family Trip</span>
                         <div class="absolute inset-0 bg-gradient-to-r from-rose-800 to-rose-700 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute -inset-1 bg-gradient-to-r from-rose-900/20 to-rose-800/20 rounded-full blur-md opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -587,53 +584,50 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 mt-36 md:mt-44">
         <div class="border-t border-neutral-200 pt-16">
             <h3 class="text-2xl font-light text-neutral-900 mb-10 text-center">Explore By Interest</h3>
-            
+
             <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-20">
-                <button class="px-6 py-3 rounded-full border border-amber-200 text-amber-900 bg-amber-50 hover:bg-amber-100 transition-all duration-300 hover:scale-105 font-medium">
-                    Wellness & Mindfulness
-                </button>
-                <button class="px-6 py-3 rounded-full border border-emerald-200 text-emerald-900 bg-emerald-50 hover:bg-emerald-100 transition-all duration-300 hover:scale-105 font-medium">
-                    Nature & Wildlife
-                </button>
-                <button class="px-6 py-3 rounded-full border border-amber-200 text-amber-900 bg-amber-50 hover:bg-amber-100 transition-all duration-300 hover:scale-105 font-medium">
-                    Cultural Immersion
-                </button>
-                <button class="px-6 py-3 rounded-full border border-blue-200 text-blue-900 bg-blue-50 hover:bg-blue-100 transition-all duration-300 hover:scale-105 font-medium">
-                    Coastal & Island
-                </button>
-                <button class="px-6 py-3 rounded-full border border-emerald-200 text-emerald-900 bg-emerald-50 hover:bg-emerald-100 transition-all duration-300 hover:scale-105 font-medium">
-                    Adventure & Sports
-                </button>
-                <button class="px-6 py-3 rounded-full border border-amber-200 text-amber-900 bg-amber-50 hover:bg-amber-100 transition-all duration-300 hover:scale-105 font-medium">
-                    Luxury Stays
-                </button>
-                <button class="px-6 py-3 rounded-full border border-rose-200 text-rose-900 bg-rose-50 hover:bg-rose-100 transition-all duration-300 hover:scale-105 font-medium">
-                    Family Travel
-                </button>
+                <a href="#SlowSoulful" class="px-6 py-3 rounded-full border border-amber-200 text-amber-900 bg-amber-50 hover:bg-amber-100 transition-all duration-300 hover:scale-105 font-medium">
+                    Mindful Escapes
+                </a>
+                <a href="#WildernessRetreats" class="px-6 py-3 rounded-full border border-emerald-200 text-emerald-900 bg-emerald-50 hover:bg-emerald-100 transition-all duration-300 hover:scale-105 font-medium">
+                    Wilderness Retreats
+                </a>
+                <a href="#ImmersiveEncounters" class="px-6 py-3 rounded-full border border-amber-200 text-amber-900 bg-amber-50 hover:bg-amber-100 transition-all duration-300 hover:scale-105 font-medium">
+                    Immersive Encounters
+                </a>
+                <a href="#CoastalSanctuaries" class="px-6 py-3 rounded-full border border-blue-200 text-blue-900 bg-blue-50 hover:bg-blue-100 transition-all duration-300 hover:scale-105 font-medium">
+                    Coastal Sanctuaries
+                </a>
+                <a href="#ActiveJourneys" class="px-6 py-3 rounded-full border border-emerald-200 text-emerald-900 bg-emerald-50 hover:bg-emerald-100 transition-all duration-300 hover:scale-105 font-medium">
+                    Active Journeys
+                </a>
+                <a href="#RefinedStays" class="px-6 py-3 rounded-full border border-amber-200 text-amber-900 bg-amber-50 hover:bg-amber-100 transition-all duration-300 hover:scale-105 font-medium">
+                    Refined Stays
+                </a>
+                <a href="#BondingExperiences" class="px-6 py-3 rounded-full border border-rose-200 text-rose-900 bg-rose-50 hover:bg-rose-100 transition-all duration-300 hover:scale-105 font-medium">
+                    Bonding Experiences
+                </a>
             </div>
         </div>
     </div>
-    
+
     <div class="max-w-4xl mx-auto px-5 sm:px-8 md:px-12 mt-20 md:mt-28 text-center">
         <div class="relative bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 rounded-3xl md:rounded-[2.5rem] p-12 md:p-16 shadow-2xl shadow-black/5">
-            <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-900 text-white px-8 py-2 rounded-full text-sm font-medium tracking-wider">
-                LIMITED AVAILABILITY
-            </div>
-            
+
             <h3 class="text-3xl md:text-4xl font-light text-neutral-900 mb-6">
                 Begin Your Curated Journey
             </h3>
             <p class="text-neutral-600 text-lg mb-10 max-w-2xl mx-auto">
                 Connect with our experience designers to craft a personalized journey that reflects your deepest aspirations and creates memories that last a lifetime.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="Custom-Form" class="group/cta relative px-10 py-5 bg-gradient-to-r from-neutral-900 to-neutral-800 text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-neutral-900/30">
                     <span class="relative z-10 font-medium tracking-wide text-lg">Schedule Your Journey</span>
                     <div class="absolute inset-0 bg-gradient-to-r from-neutral-800 to-neutral-700 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute -inset-1 bg-gradient-to-r from-neutral-900/20 to-neutral-800/20 rounded-full blur-xl opacity-0 group-hover/cta:opacity-100 transition-opacity duration-700"></div>
                 </a>
-                
+
                 <a href="Tour" class="group/cta2 relative px-10 py-5 bg-white border border-neutral-300 text-neutral-900 rounded-full overflow-hidden transition-all duration-500 hover:border-neutral-400">
                     <span class="relative z-10 font-medium tracking-wide text-lg">View All Journey</span>
                     <div class="absolute inset-0 bg-neutral-50 opacity-0 group-hover/cta2:opacity-100 transition-opacity duration-500"></div>
@@ -665,7 +659,7 @@
             el.style.transform = 'translateY(40px)';
             el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             el.style.transitionDelay = `${index * 0.15}s`;
-            
+
             observer.observe(el);
         });
 
@@ -674,7 +668,7 @@
             img.parentElement.addEventListener('mouseenter', () => {
                 img.style.transform = 'scale(1.05) translateZ(0)';
             });
-            
+
             img.parentElement.addEventListener('mouseleave', () => {
                 img.style.transform = 'scale(1) translateZ(0)';
             });
@@ -685,52 +679,148 @@
             button.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-3px)';
             });
-            
+
             button.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
         });
 
-        // Filter category interaction
-        const filterButtons = document.querySelectorAll('.flex-wrap button');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('bg-amber-100', 'bg-emerald-100', 'bg-blue-100', 'bg-rose-100');
-                    btn.classList.add('bg-amber-50', 'bg-emerald-50', 'bg-blue-50', 'bg-rose-50');
-                });
-                
-                // Add active class to clicked button
-                if (this.classList.contains('border-amber-200')) {
-                    this.classList.remove('bg-amber-50');
-                    this.classList.add('bg-amber-100');
-                } else if (this.classList.contains('border-emerald-200')) {
-                    this.classList.remove('bg-emerald-50');
-                    this.classList.add('bg-emerald-100');
-                } else if (this.classList.contains('border-blue-200')) {
-                    this.classList.remove('bg-blue-50');
-                    this.classList.add('bg-blue-100');
-                } else if (this.classList.contains('border-rose-200')) {
-                    this.classList.remove('bg-rose-50');
-                    this.classList.add('bg-rose-100');
+        // Smooth scroll untuk anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 100; // Adjust based on your header height
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
                 }
-                
-                // Scroll to experiences section
-                document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' });
             });
         });
-    });
 
-    // Efek scroll progress
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        
-        document.querySelectorAll('#experiences .group').forEach((group, index) => {
-            if (group.getBoundingClientRect().top < window.innerHeight * 0.8) {
-                const parallaxValue = scrolled * 0.03 * (index + 1);
-                group.style.transform = `translateY(${Math.min(parallaxValue, 40)}px)`;
+        // Efek scroll progress
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+
+            document.querySelectorAll('#experiences .group').forEach((group, index) => {
+                if (group.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                    const parallaxValue = scrolled * 0.03 * (index + 1);
+                    group.style.transform = `translateY(${Math.min(parallaxValue, 40)}px)`;
+                }
+            });
+        });
+
+        // Scroll snapping dengan vanilla JavaScript
+        const experiencesSection = document.getElementById('experiences');
+        let isScrolling = false;
+
+        // Fungsi untuk handle scroll snapping
+        function handleScrollSnap() {
+            if (isScrolling) return;
+
+            isScrolling = true;
+
+            // Cari semua section yang ada
+            const sections = document.querySelectorAll('.group[id]');
+            const currentScroll = window.scrollY;
+
+            let closestSection = null;
+            let closestDistance = Infinity;
+
+            // Cari section yang paling dekat dengan posisi scroll
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const sectionTop = window.scrollY + rect.top;
+                const distance = Math.abs(currentScroll - sectionTop);
+
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestSection = section;
+                }
+            });
+
+            // Jika ada section yang ditemukan, snap ke section tersebut
+            if (closestSection) {
+                const rect = closestSection.getBoundingClientRect();
+                const targetScroll = window.scrollY + rect.top - 100; // 100px offset untuk header
+
+                window.scrollTo({
+                    top: targetScroll,
+                    behavior: 'smooth'
+                });
             }
+
+            // Reset flag setelah delay
+            setTimeout(() => {
+                isScrolling = false;
+            }, 1000);
+        }
+
+        // Debounce function untuk menghindari terlalu banyak event
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Handle wheel event untuk scroll snapping
+        let wheelTimeout;
+        document.addEventListener('wheel', debounce(function(e) {
+            // Cek jika user sedang scroll di experiences section
+            const isInExperiences = experiencesSection.getBoundingClientRect().top <= 0;
+
+            if (isInExperiences) {
+                handleScrollSnap();
+            }
+        }, 150));
+
+        // Handle keyboard navigation (arrow keys)
+        document.addEventListener('keydown', function(e) {
+            const isInExperiences = experiencesSection.getBoundingClientRect().top <= 0;
+
+            if (isInExperiences && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+                e.preventDefault();
+                handleScrollSnap();
+            }
+        });
+
+        // Touch/swipe support untuk mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        }, {
+            passive: true
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndY = e.changedTouches[0].clientY;
+            const swipeDistance = touchStartY - touchEndY;
+
+            const isInExperiences = experiencesSection.getBoundingClientRect().top <= 0;
+
+            // Jika swipe cukup jauh dan di experiences section
+            if (isInExperiences && Math.abs(swipeDistance) > 50) {
+                handleScrollSnap();
+            }
+        }, {
+            passive: true
         });
     });
 </script>
@@ -742,6 +832,7 @@
             opacity: 0;
             transform: translateY(40px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
@@ -790,12 +881,6 @@
         text-shadow: 0 0 40px rgba(120, 53, 15, 0.1);
     }
 
-    /* Custom scrollbar untuk section */
-    #experiences {
-        scroll-behavior: smooth;
-        scroll-margin-top: 100px;
-    }
-
     /* Efek glassmorphism yang lebih refined */
     .backdrop-blur-sm {
         backdrop-filter: blur(8px);
@@ -809,14 +894,28 @@
         will-change: transform;
     }
 
+    /* Scroll snapping dengan CSS */
+    html {
+        scroll-behavior: smooth;
+        scroll-snap-type: y proximity;
+    }
+
+    .scroll-mt-24 {
+        scroll-margin-top: 6rem;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
         #experiences .group {
             transform: none !important;
         }
-        
+
         #experiences .group:hover {
             transform: translateY(-4px) !important;
+        }
+
+        .scroll-mt-24 {
+            scroll-margin-top: 4rem;
         }
     }
 </style>

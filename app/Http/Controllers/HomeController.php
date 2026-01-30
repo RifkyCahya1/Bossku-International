@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOTools;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $attractions = DB::table('list_tempat as lt')
-            ->leftJoin('list_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
+
+        SEOTools::setTitle('Bossku Tours');
+        SEOTools::setDescription('Jelajahi paket tour Bali, Jepang, Eropa dengan harga terbaik');
+        SEOTools::setCanonical(url()->current());
+
+        $attractions = DB::table('List_tempat as lt')
+            ->leftJoin('List_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
             ->select(
                 'lt.id',
                 'lt.tempat as name',
@@ -126,12 +132,12 @@ class HomeController extends Controller
 
     public function terms()
     {
-        return view ('terms');
+        return view('terms');
     }
 
     public function privacy()
     {
-        return view ('policy');
+        return view('policy');
     }
 
     public function profil()

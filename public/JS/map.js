@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         Object.keys(destinationsByIsland).forEach((island) => {
             const sortedDestinations = [...destinationsByIsland[island]].sort(
-                (a, b) => a.priority - b.priority
+                (a, b) => a.priority - b.priority,
             );
             const topDestinations = sortedDestinations.slice(0, 3);
 
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const map = L.map("map", mapOptions).setView(
             [-2.5, 118],
-            cfg.initialZoom
+            cfg.initialZoom,
         );
 
         if (!cfg.isDesktop) {
@@ -231,8 +231,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const map = createMap();
 
     function getDestinationIcon(type, isMobile, isDesktop) {
-        const size = isDesktop ? 32 : isMobile ? 28 : 30;
-
         const colors = {
             beach: "#FF6B6B",
             temple: "#4ECDC4",
@@ -247,65 +245,40 @@ document.addEventListener("DOMContentLoaded", function () {
             water: "#29B6F6",
         };
 
-        if (isDesktop) {
-            return L.divIcon({
-                className: "custom-marker",
-                html: `
-                    <div style="
-                        width: ${size}px;
-                        height: ${size}px;
-                        background: ${colors[type] || "#666"};
-                        border-radius: 50%;
-                        border: 2px solid white;
-                        position: relative;
-                        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    ">
-                        <span style="
-                            color: white;
-                            font-size: ${size / 2}px;
-                        ">
-                            ${getIconSymbol(type)}
-                        </span>
-                    </div>
-                `,
-                iconSize: [size, size],
-                iconAnchor: [size / 2, size / 2],
-                popupAnchor: [0, -size / 2],
-            });
-        }
+        const color = colors[type] || "#666";
 
+        // Perkecil ukuran marker
+        const size = isDesktop ? 24 : isMobile ? 18 : 22; // Dikurangi 4-6px dari sebelumnya
+
+        // Marker pin standar yang lebih kecil
         return L.divIcon({
             className: "custom-marker",
             html: `
+            <div style="
+                width: ${size}px;
+                height: ${size}px;
+                background: ${color};
+                border-radius: 50% 50% 50% 0;
+                transform: rotate(-45deg);
+                position: relative;
+                border: 2px solid white;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            ">
                 <div style="
-                    width: ${size}px;
-                    height: ${size}px;
-                    background: ${colors[type] || "#666"};
-                    border-radius: 50% 50% 50% 0;
-                    position: relative;
-                    transform: rotate(-45deg);
-                    border: 2px solid white;
-                    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-                ">
-                    <div style="
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%) rotate(45deg);
-                        color: white;
-                        font-weight: bold;
-                        font-size: ${size / 2}px;
-                    ">
-                        ${getIconSymbol(type)}
-                    </div>
-                </div>
-            `,
+                    position: absolute;
+                    width: ${size / 3.5}px;  /* Lebih kecil */
+                    height: ${size / 3.5}px; /* Lebih kecil */
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    background: white;
+                    border-radius: 50%;
+                "></div>
+            </div>
+        `,
             iconSize: [size, size],
             iconAnchor: [size / 2, size],
-            popupAnchor: [0, -size],
+            popupAnchor: [0, -size / 2],
         });
     }
 
@@ -384,14 +357,14 @@ document.addEventListener("DOMContentLoaded", function () {
         filteredDestinations.forEach((dest) => {
             const island = getIslandByCoordinates(
                 dest.latlng[0],
-                dest.latlng[1]
+                dest.latlng[1],
             );
 
             const marker = L.marker(dest.latlng, {
                 icon: getDestinationIcon(
                     dest.icon,
                     cfg.isMobile,
-                    cfg.isDesktop
+                    cfg.isDesktop,
                 ),
                 title: dest.name,
             }).addTo(map);
@@ -403,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="popup-container desktop-popup">
                         <div class="popup-header">
                             <div class="popup-icon" style="background: ${getIconColor(
-                                dest.icon
+                                dest.icon,
                             )}">
                                 ${getIconSymbol(dest.icon)}
                             </div>
@@ -416,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="popup-info">
                             <div class="info-item">
                                 <span class="info-icon">${getCategoryIcon(
-                                    dest.type
+                                    dest.type,
                                 )}</span>
                                 <div class="info-content">
                                     <span class="info-label">Type</span>
@@ -435,7 +408,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="popup-container mobile-popup">
                         <div class="popup-header">
                             <div class="popup-icon" style="background: ${getIconColor(
-                                dest.icon
+                                dest.icon,
                             )}">
                                 ${getIconSymbol(dest.icon)}
                             </div>
@@ -461,8 +434,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                         dest.priority === 1
                                             ? "High"
                                             : dest.priority === 2
-                                            ? "Medium"
-                                            : "Low"
+                                              ? "Medium"
+                                              : "Low"
                                     }
                                 </span>
                             </div>
@@ -576,7 +549,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         icon: getDestinationIcon(
                             dest.icon,
                             cfg.isMobile,
-                            false
+                            false,
                         ),
                         title: dest.name,
                     });
@@ -585,7 +558,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="popup-container cluster-popup">
                             <div class="popup-header">
                                 <div class="popup-icon" style="background: ${getIconColor(
-                                    dest.icon
+                                    dest.icon,
                                 )}">
                                     ${getIconSymbol(dest.icon)}
                                 </div>
@@ -593,7 +566,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <h3>${dest.name}</h3>
                                     <p>${getIslandByCoordinates(
                                         dest.latlng[0],
-                                        dest.latlng[1]
+                                        dest.latlng[1],
                                     )}</p>
                                 </div>
                             </div>
@@ -635,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             map.invalidateSize();
-        }, 200)
+        }, 200),
     );
 
     window.addEventListener("orientationchange", () => {
@@ -787,7 +760,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div>
                                 <h6 class="font-semibold text-gray-700 text-sm">Population</h6>
                                 <p class="text-gray-600 text-sm font-medium">${formatNumber(
-                                    data.population
+                                    data.population,
                                 )}</p>
                             </div>
                         </div>
@@ -804,7 +777,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div>
                                 <h6 class="font-semibold text-gray-700 text-sm">Area</h6>
                                 <p class="text-gray-600 text-sm font-medium">${formatArea(
-                                    data.area
+                                    data.area,
                                 )}</p>
                             </div>
                         </div>
@@ -832,7 +805,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </p>
                     </div>
                     <button onclick="window.location.href='/Province/${encodeURIComponent(
-                        data.name_en
+                        data.name_en,
                     )}'"
                         class="group relative bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-semibold px-6 py-3 md:px-8 md:py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-out text-sm md:text-base min-w-[140px]">
                         <span class="flex items-center justify-center">
@@ -1011,7 +984,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     fetch(
-        "https://raw.githubusercontent.com/superpikar/indonesia-geojson/master/indonesia.geojson"
+        "https://raw.githubusercontent.com/superpikar/indonesia-geojson/master/indonesia.geojson",
     )
         .then((res) => res.json())
         .then((data) => {
@@ -1055,7 +1028,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             const data = provinceData.find(
                                 (p) =>
                                     p.id.toLowerCase() ===
-                                    englishName.toLowerCase()
+                                    englishName.toLowerCase(),
                             );
                             if (data) showModal(data);
                             else alert("No data found for " + englishName);
@@ -1087,7 +1060,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let targetDest = null;
         Object.keys(destinationsByIsland).forEach((island) => {
             const dest = destinationsByIsland[island].find(
-                (d) => d.name === destinationName
+                (d) => d.name === destinationName,
             );
             if (dest) targetDest = dest;
         });
@@ -1303,8 +1276,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             .info-icon {
-                width: 32px;
-                height: 32px;
+                width: 20px;
+                height: 20px;
                 font-size: 18px;
             }
             
@@ -1370,8 +1343,8 @@ document.addEventListener("DOMContentLoaded", function () {
             border: none !important;
             border-radius: 6px !important;
             margin: 4px !important;
-            width: 32px !important;
-            height: 32px !important;
+            width: 20px !important;
+            height: 20px !important;
             line-height: 32px !important;
         }
         

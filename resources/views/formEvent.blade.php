@@ -245,10 +245,10 @@ $excludeNavbar = true;
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
           </svg>
-          Premium Packages
+          Marathon Packages
         </div>
         <h2 class="text-5xl md:text-6xl font-bold mb-6">
-          Tailored <span class="text-amber-600">Solutions</span>
+          Jakarta <span class="text-amber-600">Marathon Week</span>
         </h2>
         <p class="text-lg text-slate-600 max-w-2xl mx-auto">
           Choose from our curated packages designed for every type of runner.
@@ -258,152 +258,163 @@ $excludeNavbar = true;
       <!-- PACKAGE COMPARISON TABLE -->
       <div class="mb-16">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <!-- Package 1 -->
+          <!-- Package 1 - Basic -->
           <div class="package-card relative group" data-package="basic">
             <div class="relative rounded-3xl bg-white border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
               <div class="mb-6">
                 <h3 class="text-2xl font-bold mb-2">Basic Stay</h3>
-                <div class="text-sm text-slate-500">Essential accommodation package</div>
+                <div class="text-sm text-slate-500">
+                  Simple marathon base for independent runners
+                </div>
               </div>
 
               <div class="mb-8">
-                <div class="text-4xl font-bold mb-2">IDR 2.5M<span class="text-lg text-slate-500">/runner</span></div>
+                <div class="text-4xl font-bold mb-2">
+                  IDR 2.5M<span class="text-lg text-slate-500">/pax</span>
+                </div>
                 <div class="text-sm text-slate-400">2 nights minimum</div>
               </div>
 
               <ul class="space-y-4 mb-8 flex-grow">
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-600">Strategic hotel (2–3 nights)</span>
+                  <span class="text-sm text-slate-600">Strategic hotel (2 nights)</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-600">Welcome runner kit</span>
+                  <span class="text-sm text-slate-600">Airport shuttle (roundtrip)</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-600">Runner info pack</span>
+                  <span class="text-sm text-slate-600">Runner kit & info pack</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-red-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
                   </svg>
-                  <span class="text-sm text-slate-400">No race-day transport</span>
+                  <span class="text-sm text-slate-400">No race-day assistance</span>
                 </li>
               </ul>
 
-              <button class="package-select-btn w-full py-4 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold hover:bg-slate-800 hover:text-white hover:border-slate-800 transition-all duration-300">
+              <button class="package-select-btn w-full py-4 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold hover:bg-slate-800 hover:text-white transition">
                 Choose Basic
               </button>
             </div>
           </div>
 
-          <!-- Package 2 (Featured) -->
+          <!-- Package 2 - Comfort -->
           <div class="package-card relative group lg:scale-105 lg:-translate-y-4" data-package="comfort">
             <div class="absolute -top-5 left-1/2 -translate-x-1/2 z-20">
-              <div class="px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-semibold shadow-lg ring-4 ring-slate-900">
+              <div class="px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-semibold shadow-lg">
                 MOST POPULAR
               </div>
             </div>
 
             <div class="relative rounded-3xl bg-gradient-to-br from-slate-900 to-black border-2 border-amber-500/30 p-8 shadow-2xl h-full flex flex-col">
-              <div class="absolute -top-0.5 left-6 right-6 h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 rounded-full"></div>
-
               <div class="mb-6">
                 <h3 class="text-2xl font-bold text-white mb-2">Comfort Logistics</h3>
-                <div class="text-sm text-slate-300">Complete race-day experience</div>
+                <div class="text-sm text-slate-300">
+                  Stress-free race morning logistics
+                </div>
               </div>
 
               <div class="mb-8">
-                <div class="text-4xl font-bold text-white mb-2">IDR 4.2M<span class="text-lg text-slate-300">/runner</span></div>
-                <div class="text-sm text-slate-400">Includes all essentials</div>
+                <div class="text-4xl font-bold text-white mb-2">
+                  IDR 4.2M<span class="text-lg text-slate-300">/pax</span>
+                </div>
+                <div class="text-sm text-slate-400">Best for first-timers</div>
               </div>
 
               <ul class="space-y-4 mb-8 flex-grow">
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-amber-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
                   <span class="text-sm text-slate-300">Hotel near official drop point</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-amber-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-300">Race-day shuttle service</span>
+                  <span class="text-sm text-slate-300">Scheduled race-day shuttle</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-amber-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-300">Timing & logistics briefing</span>
+                  <span class="text-sm text-slate-300">Timing & walking route briefing</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-amber-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-300">Priority WhatsApp support</span>
+                  <span class="text-sm text-slate-300">WhatsApp coordination support</span>
                 </li>
               </ul>
 
-              <button class="package-select-btn w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold hover:from-amber-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button class="package-select-btn w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold hover:opacity-90">
                 Choose Comfort
               </button>
             </div>
           </div>
 
-          <!-- Package 3 -->
+          <!-- Package 3 - Premium -->
           <div class="package-card relative group" data-package="premium">
-            <div class="relative rounded-3xl bg-white border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+            <div class="relative rounded-3xl bg-white border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition h-full flex flex-col">
               <div class="mb-6">
                 <h3 class="text-2xl font-bold mb-2">Premium Assist</h3>
-                <div class="text-sm text-slate-500">VIP treatment & personal service</div>
+                <div class="text-sm text-slate-500">
+                  Priority coordination & personal planning
+                </div>
               </div>
 
               <div class="mb-8">
-                <div class="text-4xl font-bold mb-2">IDR 6.8M<span class="text-lg text-slate-500">/runner</span></div>
-                <div class="text-sm text-slate-400">Limited slots available</div>
+                <div class="text-4xl font-bold mb-2">
+                  IDR 6.8M<span class="text-lg text-slate-500">/pax</span>
+                </div>
+                <div class="text-sm text-red-500">Limited slots</div>
               </div>
 
               <ul class="space-y-4 mb-8 flex-grow">
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-600">Dedicated personal coordinator</span>
+                  <span class="text-sm text-slate-600">Dedicated coordinator</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-600">Custom departure & recovery plan</span>
+                  <span class="text-sm text-slate-600">Personalized departure plan</span>
                 </li>
+
                 <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  <svg class="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
                   </svg>
-                  <span class="text-sm text-slate-600">Priority coordination</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <div class="w-5 h-5 flex items-center justify-center">
-                    <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  </div>
-                  <span class="text-sm text-red-500 font-semibold">Limited availability</span>
+                  <span class="text-sm text-slate-600">Priority response window</span>
                 </li>
               </ul>
 
-              <button class="package-select-btn w-full py-4 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold hover:bg-slate-800 hover:text-white hover:border-slate-800 transition-all duration-300">
+              <button class="package-select-btn w-full py-4 rounded-xl border-2 border-slate-200 hover:bg-slate-800 hover:text-white transition">
                 Choose Premium
               </button>
             </div>
           </div>
-
           <!-- Comparison Table -->
           <div class="lg:col-span-1">
             <div class="rounded-3xl bg-gradient-to-b from-slate-50 to-white border border-slate-200 p-8 shadow-lg h-full">

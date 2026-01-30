@@ -18,13 +18,13 @@
 
     <div class="absolute inset-0 flex flex-col items-center justify-center px-6 text-white text-center animate-fadeIn">
 
-        <div class="absolute left-0 right-0 bottom-12 md:bottom-40 flex flex-col items-center gap-6">
+        <div class="absolute left-0 right-0 bottom-12 md:bottom-30 flex flex-col items-center gap-6">
 
             <!-- BUTTONS -->
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
                 <!-- PRIMARY -->
                 <a href="/Tour"
-                    class="group bg-[#BFA46F]/40 hover:bg-[#a89258] text-black font-semibold tracking-wide px-10 py-3 rounded-xl shadow-xl transition-all duration-300 uppercase flex items-center gap-2">
+                    class="group bg-[#BFA46F]/50 hover:bg-[#a89258] text-black font-bold tracking-wide px-10 py-3 rounded-xl shadow-xl transition-all duration-300 uppercase flex items-center gap-2">
                     <span>Explore My Journey</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -36,7 +36,7 @@
 
                 <!-- SECONDARY -->
                 <a href="/Custom-Form"
-                    class="group bg-[#1A1A1D]/40 hover:bg-[#242428] text-sm text-white font-semibold tracking-wide px-10 py-3 rounded-xl border border-[#BFA46F]/40 shadow-lg transition-all duration-300 uppercase flex items-center gap-2">
+                    class="group bg-[#1A1A1D]/40 hover:bg-[#242428] text-sm text-white tracking-wide px-10 py-3 rounded-xl border border-[#BFA46F]/40 shadow-lg transition-all duration-300 uppercase flex items-center gap-2">
                     <span>Design My Journey</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-5 h-5 transition-transform group-hover:translate-x-1"

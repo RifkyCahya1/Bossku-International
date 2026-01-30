@@ -21,7 +21,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
                     <p class="text-sm uppercase tracking-widest text-gray-500">The Soul Behind Bossku</p>
-                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Born from legacy. Driven by meaning.<br class="hidden md:inline"> Designed for travelers who feel more than they say.</h1>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-pretty leading-tight">Born from legacy. <br>Driven by meaning.<br class="hidden md:inline"> Designed for travelers who feel more than they say.</h1>
 
                     <p class="text-lg text-gray-600 max-w-prose">We design journeys that restore something inside you not merely take you somewhere new. For curious travelers who want to feel again.</p>
 

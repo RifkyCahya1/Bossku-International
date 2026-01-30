@@ -135,7 +135,7 @@ class TourController extends Controller
         LEFT JOIN lt_rute AS r ON r.id = i.id
         LEFT JOIN lt_add_rute AS ar ON ar.id = r.id
         LEFT JOIN lt_add_listtmp AS alt ON alt.id = i.id
-        LEFT JOIN list_tempat AS lt ON lt.id = alt.id
+        LEFT JOIN List_tempat AS lt ON lt.id = alt.id
         LEFT JOIN list_tempat_img AS lti ON lti.id = lt.id
         LEFT JOIN lt_add_meal AS am ON am.id = i.id
         WHERE i.kode = ?
