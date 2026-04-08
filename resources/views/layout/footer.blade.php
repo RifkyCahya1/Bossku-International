@@ -149,7 +149,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Partnership" class="text-sm text-gray-400 hover:text-white transition-colors duration-200 block py-1.5">
+                                <a href="/partnership" class="text-sm text-gray-400 hover:text-white transition-colors duration-200 block py-1.5">
                                     Partnership
                                 </a>
                             </li>

@@ -31,8 +31,12 @@ class AuthController extends Controller
 
             Auth::login($user);
 
-            if ($user->role === 'superadmin' || $user->role === 'admin') {
+            if (in_array($user->role, ['superadmin', 'admin'])) {
                 return redirect()->route('admin.app');
+            }
+
+            if ($user->role === 'partner') {
+                return redirect()->route('partner.app');
             }
 
             return redirect()->route('home');
@@ -50,25 +54,27 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        // Register publik selalu menghasilkan role 'user'
+        // Minimal password 8 karakter untuk user & partner
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:boss_users,email',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:boss_users,email',
             'password' => 'required|string|min:8|confirmed',
         ], [
-            'name.required' => 'Nama wajib diisi.',
-            'email.required' => 'Email wajib diisi.',
-            'email.email' => 'Format email tidak valid.',
-            'email.unique' => 'Email sudah terdaftar.',
-            'password.required' => 'Password wajib diisi.',
-            'password.min' => 'Password minimal 8 karakter.',
+            'name.required'      => 'Nama wajib diisi.',
+            'email.required'     => 'Email wajib diisi.',
+            'email.email'        => 'Format email tidak valid.',
+            'email.unique'       => 'Email sudah terdaftar.',
+            'password.required'  => 'Password wajib diisi.',
+            'password.min'       => 'Password minimal 8 karakter.',
             'password.confirmed' => 'Konfirmasi password tidak sama.',
         ]);
 
         $user = BossUser::create([
-            'name' => $request->name,
-            'email' => $request->email,
+            'name'     => $request->name,
+            'email'    => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user',
+            'role'     => 'user', // selalu 'user', tidak bisa dimanipulasi
         ]);
 
         Auth::login($user);
@@ -76,36 +82,95 @@ class AuthController extends Controller
         return redirect()->route('home');
     }
 
+    // Khusus superadmin: membuat akun admin, partner, atau user baru
+    public function showCreateUser()
+    {
+        // Pastikan hanya superadmin yang bisa akses
+        if (Auth::user()->role !== 'superadmin') {
+            abort(403, 'Akses ditolak.');
+        }
+
+        return view('admin.create-user');
+    }
+
+    public function createUser(Request $request)
+    {
+        // Pastikan hanya superadmin yang bisa akses
+        if (Auth::user()->role !== 'superadmin') {
+            abort(403, 'Akses ditolak.');
+        }
+
+        $role = $request->input('role', 'user');
+
+        // Minimal password berdasarkan role (server-side, tidak bisa dimanipulasi)
+        $minPassword = in_array($role, ['superadmin', 'admin']) ? 4 : 8;
+
+        $request->validate([
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:boss_users,email',
+            'password' => "required|string|min:{$minPassword}|confirmed",
+            'role'     => 'required|in:superadmin,admin,partner,user',
+        ], [
+            'name.required'      => 'Nama wajib diisi.',
+            'email.required'     => 'Email wajib diisi.',
+            'email.email'        => 'Format email tidak valid.',
+            'email.unique'       => 'Email sudah terdaftar.',
+            'password.required'  => 'Password wajib diisi.',
+            'password.min'       => "Password minimal {$minPassword} karakter untuk role {$role}.",
+            'password.confirmed' => 'Konfirmasi password tidak sama.',
+            'role.required'      => 'Role wajib dipilih.',
+            'role.in'            => 'Role tidak valid.',
+        ]);
+
+        BossUser::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
+            'role'     => $role,
+        ]);
+
+        return redirect()->back()->with('success', "Akun {$role} berhasil dibuat.");
+    }
+
     public function updateProfile(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name'  => 'required',
             'email' => 'required|email',
         ]);
 
         $user = Auth::user();
 
-        $user->name = $request->name;
+        $user->name  = $request->name;
         $user->email = $request->email;
         $user->save();
 
         return back()->with('success', 'Profile updated!');
     }
 
-
     public function updatePassword(Request $request)
     {
+        $user = Auth::user();
+
+        // Minimal password berdasarkan role user yang sedang login
+        $minPassword = in_array($user->role, ['superadmin', 'admin']) ? 4 : 8;
+
         $request->validate([
             'current_password' => 'required',
-            'password' => 'required|min:8|confirmed',
+            'password'         => "required|min:{$minPassword}|confirmed",
+        ], [
+            'current_password.required' => 'Password lama wajib diisi.',
+            'password.required'         => 'Password baru wajib diisi.',
+            'password.min'              => "Password minimal {$minPassword} karakter.",
+            'password.confirmed'        => 'Konfirmasi password tidak sama.',
         ]);
 
-        if (!Hash::check($request->current_password, Auth::user()->password)) {
+        if (!Hash::check($request->current_password, $user->password)) {
             return back()->with('error', 'Password lama salah!');
         }
 
-        Auth::user()->update([
-            'password' => Hash::make($request->password)
+        $user->update([
+            'password' => Hash::make($request->password),
         ]);
 
         return back()->with('success', 'Password updated!');
@@ -119,8 +184,8 @@ class AuthController extends Controller
 
         $user = Auth::user();
 
-        if (! Hash::check($request->password, $user->password)) {
-            return back()->with('success', 'Password salah, bro. Coba dicek maneh. 😅');
+        if (!Hash::check($request->password, $user->password)) {
+            return back()->with('error', 'Password salah, bro. Coba dicek maneh. 😅');
         }
 
         Auth::logout();

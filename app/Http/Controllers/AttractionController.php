@@ -9,8 +9,8 @@ class AttractionController extends Controller
 {
     public function experience(Request $req)
     { 
-        $experiences = DB::table('list_tempat as lt')
-            ->leftJoin('list_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
+        $experiences = DB::table('List_tempat as lt')
+            ->leftJoin('List_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
             ->select(
                 'lt.id',
                 'lt.tempat as name',
@@ -28,8 +28,8 @@ class AttractionController extends Controller
             ->take(10)
             ->get();
  
-        $all = DB::table('list_tempat as lt')
-            ->leftJoin('list_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
+        $all = DB::table('List_tempat as lt')
+            ->leftJoin('List_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
             ->select(
                 'lt.id',
                 'lt.tempat as name',
@@ -63,7 +63,7 @@ class AttractionController extends Controller
  
         $allProducts = $all->paginate(6)->withQueryString();
  
-        $cities = DB::table('list_tempat')
+        $cities = DB::table('List_tempat')
             ->where('tempat', 'LIKE', '%WNA%')
             ->where('price', '>', 0)
             ->where('negara', 'LIKE', '%INDONESIA%')
@@ -78,8 +78,8 @@ class AttractionController extends Controller
 
     public function show($id)
     {
-        $attraction = DB::table('list_tempat as lt')
-            ->leftJoin('list_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
+        $attraction = DB::table('List_tempat as lt')
+            ->leftJoin('List_tempat_img as lti', 'lt.id', '=', 'lti.tmp_id')
             ->select(
                 'lt.id',
                 'lt.tempat as name',

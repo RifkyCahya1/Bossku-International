@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->default('user');
+        Schema::table('boss_bookevent', function (Blueprint $table) {
+            $table->unsignedBigInteger('referral_discount')->default(0)->after('referral_code');
+            $table->unsignedBigInteger('price_before_discount')->default(0)->after('referral_discount');
         });
     }
 
@@ -21,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('boss_bookevent', function (Blueprint $table) {
             //
         });
     }

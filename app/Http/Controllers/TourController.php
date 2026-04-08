@@ -130,14 +130,14 @@ class TourController extends Controller
             am.ln,
             am.dn,
             am.ket
-        FROM lt_itinnew AS i
-        LEFT JOIN lt_itinerary2 AS it ON it.landtour = i.kode
-        LEFT JOIN lt_rute AS r ON r.id = i.id
-        LEFT JOIN lt_add_rute AS ar ON ar.id = r.id
-        LEFT JOIN lt_add_listtmp AS alt ON alt.id = i.id
+        FROM LT_itinnew AS i
+        LEFT JOIN LT_itinerary2 AS it ON it.landtour = i.kode
+        LEFT JOIN LT_Rute AS r ON r.id = i.id
+        LEFT JOIN LT_add_rute AS ar ON ar.id = r.id
+        LEFT JOIN LT_add_listTmp AS alt ON alt.id = i.id
         LEFT JOIN List_tempat AS lt ON lt.id = alt.id
-        LEFT JOIN list_tempat_img AS lti ON lti.id = lt.id
-        LEFT JOIN lt_add_meal AS am ON am.id = i.id
+        LEFT JOIN List_tempat_img AS lti ON lti.id = lt.id
+        LEFT JOIN LT_add_meal AS am ON am.id = i.id
         WHERE i.kode = ?
         ORDER BY r.hari, alt.hari
         ",
@@ -164,7 +164,7 @@ class TourController extends Controller
             ->first();
 
         // cari profit percent berdasarkan range harga
-        $profitRow = DB::table('lt_itin_profit_range')
+        $profitRow = DB::table('LT_itin_profit_range')
             ->where('price1', '<=', $hargaDasar)
             ->where('price2', '>=', $hargaDasar)
             ->first();

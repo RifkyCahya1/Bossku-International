@@ -2,348 +2,355 @@
 
 @section('content')
 
-<div class="bg-[#0E0E10] relative overflow-hidden min-h-screen">
-   <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-purple-600/20 rounded-full blur-[100px] sm:blur-[140px] -top-10 -left-10 sm:-top-20 sm:-left-20"></div>
-      <div class="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-blue-500/20 rounded-full blur-[120px] sm:blur-[160px] -bottom-10 -right-10 sm:bottom-0 sm:right-0"></div>
-   </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono&display=swap" rel="stylesheet">
 
-   @include('admin.Layout.topbar')
+<style>
+   body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #F2F4F8;
+   }
+</style>
 
-   <div class="flex flex-col lg:flex-row mx-auto my-4 sm:my-6 lg:my-10 px-3 sm:px-4 lg:px-6 gap-4 lg:gap-8">
+<div class="flex min-h-screen">
 
-      <div class="lg:hidden flex items-center gap-4 mb-4">
-         <button id="toggleSidebar"
-            class="bg-white/10 backdrop-blur-md border border-white/20 text-white py-3 px-4 rounded-xl hover:bg-white/20 transition-all">
-            <i class="fa-solid fa-bars"></i>
+   @include('admin.Layout.sidebar')
+
+   <main class="flex-1 overflow-x-hidden px-5 py-6 sm:px-7 sm:py-7 lg:px-9 lg:py-8">
+
+      {{-- Mobile topbar --}}
+      <div class="flex items-center gap-3 mb-6 lg:hidden">
+         <button id="toggleSidebar" class="w-10 h-10 rounded-xl bg-white border border-black/[0.07] shadow-sm flex items-center justify-center text-gray-600 hover:bg-gray-50 transition">
+            <i class="fa-solid fa-bars text-sm"></i>
          </button>
-
          <div>
-            <h1 class="text-xl font-bold text-white">Dashboard</h1>
-            <p class="text-sm text-gray-400">Control Center</p>
+            <h1 class="text-lg font-extrabold text-gray-900 leading-tight">Dashboard</h1>
+            <p class="text-xs text-gray-500">Control Center</p>
          </div>
       </div>
 
-      <!-- Sidebar (kode di atas) -->
-      @include('admin.Layout.sidebar')
+      {{-- Desktop header --}}
+      <div class="hidden lg:flex items-end justify-between mb-8">
+         <div>
+            <h1 class="text-2xl font-extrabold text-gray-900 tracking-tight">Dashboard</h1>
+            <p class="text-sm text-gray-500 mt-0.5">Selamat datang kembali, <span class="font-semibold text-gray-700">{{ auth()->user()->name }}</span></p>
+         </div>
+         <span class="text-xs text-gray-400 bg-white border border-black/[0.07] px-4 py-2 rounded-full font-mono" id="live-date"></span>
+      </div>
 
-      <main class="flex-1 w-full overflow-x-hidden">
-         <!-- Header Dashboard -->
-         <div class="mb-6 lg:mb-8 lg:block hidden">
-            <h1 class="text-xl sm:text-2xl font-bold text-white mb-2">Dashboard</h1>
+      @include('admin.Layout.topbar')
+
+      {{-- ── STAT CARDS ── --}}
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-7">
+
+         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative overflow-hidden group">
+            <div class="absolute top-0 inset-x-0 h-[3px] bg-[#0ABFA3] rounded-t-2xl"></div>
+            <div class="flex justify-end mb-3">
+               <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#D4F5EE] flex items-center justify-center text-[#05796A] group-hover:scale-110 transition-transform">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0Zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0Z" />
+                  </svg>
+               </div>
+            </div>
+            <p class="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Total Users</p>
+            <p class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">{{ number_format($totalUsers) }}</p>
+            <p class="text-xs text-gray-400 mt-0.5">Accounts terdaftar</p>
+            <span class="inline-flex mt-2 text-[10px] font-bold bg-[#D4F5EE] text-[#05796A] px-2.5 py-0.5 rounded-full">↑ +24 minggu ini</span>
          </div>
 
-         <!-- STATS CARDS -->
-         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 lg:mb-10">
-            <!-- Card 1 -->
-            <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10 text-white hover:border-blue-500/50 transition-all duration-300">
-               <div class="flex justify-between items-start">
-                  <div>
-                     <p class="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">Total Users</p>
-                     <h3 class="text-2xl sm:text-3xl font-bold">{{ number_format($totalUsers) }}</h3>
-                     <p class="text-xs sm:text-sm text-gray-400 mt-1">Accounts</p>
-                  </div>
-                  <div class="p-2 sm:p-3 bg-blue-500/20 rounded-xl">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                     </svg>
-                  </div>
+         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative overflow-hidden group">
+            <div class="absolute top-0 inset-x-0 h-[3px] bg-[#FF6B6B] rounded-t-2xl"></div>
+            <div class="flex justify-end mb-3">
+               <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#FFE8E8] flex items-center justify-center text-[#CC3B3B] group-hover:scale-110 transition-transform">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
                </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10 text-white hover:border-purple-500/50 transition-all duration-300">
-               <div class="flex justify-between items-start">
-                  <div>
-                     <p class="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">Active Tours</p>
-                     <h3 class="text-2xl sm:text-3xl font-bold">{{ $activeTours }}</h3>
-                     <p class="text-xs sm:text-sm text-gray-400 mt-1">Products</p>
-                  </div>
-                  <div class="p-2 sm:p-3 bg-purple-500/20 rounded-xl">
-                     <svg class="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                     </svg>
-                  </div>
-               </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10 text-white hover:border-green-500/50 transition-all duration-300">
-               <div class="flex justify-between items-start">
-                  <div>
-                     <p class="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">Pending Orders</p>
-                     <h3 class="text-2xl sm:text-3xl font-bold">{{ $pendingOrders ?? 12 }}</h3>
-                     <p class="text-xs sm:text-sm text-gray-400 mt-1">Needs Review</p>
-                  </div>
-                  <div class="p-2 sm:p-3 bg-green-500/20 rounded-xl">
-                     <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                     </svg>
-                  </div>
-               </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10 text-white hover:border-yellow-500/50 transition-all duration-300">
-               <div class="flex justify-between items-start">
-                  <div>
-                     <p class="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">Admin Status</p>
-                     <h3 class="text-xl sm:text-2xl font-bold">{{ auth()->user()->role }}</h3>
-                     <p class="text-xs sm:text-sm text-gray-400 mt-1">{{ auth()->user()->name }}</p>
-                  </div>
-                  <div class="p-2 sm:p-3 bg-yellow-500/20 rounded-xl">
-                     <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                     </svg>
-                  </div>
-               </div>
-            </div>
+            <p class="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Active Tours</p>
+            <p class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">{{ $activeTours }}</p>
+            <p class="text-xs text-gray-400 mt-0.5">Produk aktif</p>
+            <span class="inline-flex mt-2 text-[10px] font-bold bg-[#D4F5EE] text-[#05796A] px-2.5 py-0.5 rounded-full">↑ 3 baru bulan ini</span>
          </div>
 
-         <!-- ALERT SECTION -->
-         <div class="mb-8 lg:mb-10">
-            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
-               <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                  <span class="text-red-500">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative overflow-hidden group">
+            <div class="absolute top-0 inset-x-0 h-[3px] bg-[#FFBA08] rounded-t-2xl"></div>
+            <div class="flex justify-end mb-3">
+               <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#FFF3C4] flex items-center justify-center text-[#A07800] group-hover:scale-110 transition-transform">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+               </div>
+            </div>
+            <p class="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Pending Orders</p>
+            <p class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">{{ $pendingOrders ?? 12 }}</p>
+            <p class="text-xs text-gray-400 mt-0.5">Perlu direview</p>
+            <span class="inline-flex mt-2 text-[10px] font-bold bg-[#FFF3C4] text-[#A07800] px-2.5 py-0.5 rounded-full">⚠ Perlu tindakan</span>
+         </div>
+
+         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 relative overflow-hidden group">
+            <div class="absolute top-0 inset-x-0 h-[3px] bg-[#5B5BD6] rounded-t-2xl"></div>
+            <div class="flex justify-end mb-3">
+               <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#EDEDFF] flex items-center justify-center text-[#3B3BAA] group-hover:scale-110 transition-transform">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+               </div>
+            </div>
+            <p class="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Admin Status</p>
+            <p class="text-lg sm:text-xl font-extrabold text-gray-900 leading-tight truncate">{{ auth()->user()->name }}</p>
+            <p class="text-xs text-gray-400 mt-0.5 truncate">{{ auth()->user()->email }}</p>
+            <span class="inline-flex mt-2 text-[10px] font-bold bg-[#EDEDFF] text-[#3B3BAA] px-2.5 py-0.5 rounded-full">{{ auth()->user()->role }}</span>
+         </div>
+
+      </div>
+
+      {{-- ── ISSUES ── --}}
+      <div class="mb-7">
+         <div class="flex items-center justify-between mb-4">
+            <h2 class="text-sm sm:text-base font-bold text-gray-800 flex items-center gap-2">
+               <span class="w-2 h-2 rounded-full bg-[#FF6B6B] shrink-0"></span>
+               Masalah yang Perlu Perhatian
+            </h2>
+            <span class="text-[10px] font-semibold bg-red-50 text-red-500 border border-red-200 px-2.5 py-1 rounded-full">3 Issues</span>
+         </div>
+
+         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+
+            <a href="/admin/orders?status=pending" class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] border-l-[3px] border-l-[var(--color-red)] shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 block group">
+               <div class="flex items-center justify-between mb-2.5">
+                  <div class="flex items-center gap-2.5">
+                     <div class="w-8 h-8 rounded-lg bg-[#FFE8E8] flex items-center justify-center text-[var(--color-red)] shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                     </div>
+                     <span class="text-sm font-bold text-gray-800">Pending Payment</span>
+                  </div>
+                  <span class="text-[10px] font-bold bg-red-50 text-[var(--color-red)] px-2 py-0.5 rounded-full">High</span>
+               </div>
+               <p class="text-xs text-gray-500 leading-relaxed mb-3">5 pesanan menunggu konfirmasi pembayaran lebih dari 24 jam.</p>
+               <div class="flex items-center justify-between">
+                  <span class="text-[10px] text-gray-400">Klik untuk review</span>
+                  <div class="w-6 h-6 rounded-lg bg-[#FFE8E8] flex items-center justify-center text-[var(--color-red)] group-hover:brightness-90 transition">
+                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                      </svg>
-                  </span> Masalah yang Perlu Perhatian
+                  </div>
+               </div>
+            </a>
+
+            <a href="/admin/tours" class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] border-l-[3px] border-l-[#FFBA08] shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 block group">
+               <div class="flex items-center justify-between mb-2.5">
+                  <div class="flex items-center gap-2.5">
+                     <div class="w-8 h-8 rounded-lg bg-[#FFF3C4] flex items-center justify-center text-[#A07800] shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.342 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                        </svg>
+                     </div>
+                     <span class="text-sm font-bold text-gray-800">Low Stock Alert</span>
+                  </div>
+                  <span class="text-[10px] font-bold bg-[#FFF3C4] text-[#A07800] px-2 py-0.5 rounded-full">Medium</span>
+               </div>
+               <p class="text-xs text-gray-500 leading-relaxed mb-3">2 produk tour kuota hampir habis, segera perbarui stok.</p>
+               <div class="flex items-center justify-between">
+                  <span class="text-[10px] text-gray-400">Klik untuk kelola</span>
+                  <div class="w-6 h-6 rounded-lg bg-[#FFF3C4] flex items-center justify-center text-[#A07800] group-hover:brightness-90 transition">
+                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                     </svg>
+                  </div>
+               </div>
+            </a>
+
+            <a href="/admin/support" class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] border-l-[3px] border-l-[#5B5BD6] shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 block group sm:col-span-2 lg:col-span-1">
+               <div class="flex items-center justify-between mb-2.5">
+                  <div class="flex items-center gap-2.5">
+                     <div class="w-8 h-8 rounded-lg bg-[#EDEDFF] flex items-center justify-center text-[#5B5BD6] shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                        </svg>
+                     </div>
+                     <span class="text-sm font-bold text-gray-800">Unread Messages</span>
+                  </div>
+                  <span class="text-[10px] font-bold bg-[#EDEDFF] text-[#5B5BD6] px-2 py-0.5 rounded-full">Low</span>
+               </div>
+               <p class="text-xs text-gray-500 leading-relaxed mb-3">8 pesan belum dibalas dari customer, perlu respons segera.</p>
+               <div class="flex items-center justify-between">
+                  <span class="text-[10px] text-gray-400">Klik untuk balas</span>
+                  <div class="w-6 h-6 rounded-lg bg-[#EDEDFF] flex items-center justify-center text-[#5B5BD6] group-hover:brightness-90 transition">
+                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                     </svg>
+                  </div>
+               </div>
+            </a>
+
+         </div>
+      </div>
+
+      {{-- ── MONITORING + ACTIVITY ── --}}
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-7">
+
+         <div class="bg-white rounded-2xl p-5 sm:p-6 border border-black/[0.07] shadow-sm">
+            <div class="flex items-center justify-between mb-5">
+               <h2 class="text-sm font-bold text-gray-800 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#0ABFA3] shrink-0"></span>
+                  Monitoring Progres
                </h2>
-               <span class="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full w-fit">3 Issue</span>
+               <span class="text-[10px] font-semibold text-gray-400 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-full">Real-time</span>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-               <!-- Issue Card 1 -->
-               <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-5 rounded-xl border border-red-500/30 text-white hover:border-red-500/50 transition-all duration-300 group cursor-pointer" onclick="window.location.href='/admin/orders?status=pending'">
-                  <div class="flex items-start justify-between mb-3">
-                     <div class="flex items-center gap-2 sm:gap-3">
-                        <div class="p-1.5 sm:p-2 bg-red-500/20 rounded-lg">
-                           <svg class="w-4 h-4 sm:w-5 sm:h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                           </svg>
-                        </div>
-                        <span class="font-semibold text-sm sm:text-base">Pending Payment</span>
-                     </div>
-                     <span class="text-xs text-red-400">High</span>
+            <div class="space-y-5">
+               <div>
+                  <div class="flex justify-between items-center mb-2">
+                     <span class="text-sm font-semibold text-gray-700">Order Completion Rate</span>
+                     <span class="text-sm font-extrabold text-[#0ABFA3]">78%</span>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-400 mb-3">5 pesanan menunggu konfirmasi pembayaran lebih dari 24 jam</p>
-                  <div class="flex justify-between items-center">
-                     <span class="text-xs text-gray-500">Klik untuk review →</span>
-                     <div class="p-1 bg-red-500/20 rounded group-hover:bg-red-500/30 transition-colors">
-                        <svg class="w-3 h-3 sm:w-4 sm:h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                     </div>
+                  <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                     <div class="h-full bg-[#0ABFA3] rounded-full" style="width:78%"></div>
+                  </div>
+                  <div class="flex justify-between text-[11px] text-gray-400 mt-1.5">
+                     <span>32/41 orders selesai</span><span>Target: 85%</span>
                   </div>
                </div>
-
-               <!-- Issue Card 2 -->
-               <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-5 rounded-xl border border-yellow-500/30 text-white hover:border-yellow-500/50 transition-all duration-300 group cursor-pointer" onclick="window.location.href='/admin/tours'">
-                  <div class="flex items-start justify-between mb-3">
-                     <div class="flex items-center gap-2 sm:gap-3">
-                        <div class="p-1.5 sm:p-2 bg-yellow-500/20 rounded-lg">
-                           <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.342 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                           </svg>
-                        </div>
-                        <span class="font-semibold text-sm sm:text-base">Low Stock Alert</span>
-                     </div>
-                     <span class="text-xs text-yellow-400">Medium</span>
+               <div>
+                  <div class="flex justify-between items-center mb-2">
+                     <span class="text-sm font-semibold text-gray-700">User Growth (7 hari)</span>
+                     <span class="text-sm font-extrabold text-[#5B5BD6]">+12.5%</span>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-400 mb-3">2 produk tour kuota hampir habis</p>
-                  <div class="flex justify-between items-center">
-                     <span class="text-xs text-gray-500">Klik untuk kelola →</span>
-                     <div class="p-1 bg-yellow-500/20 rounded group-hover:bg-yellow-500/30 transition-colors">
-                        <svg class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                     </div>
+                  <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                     <div class="h-full bg-[#5B5BD6] rounded-full" style="width:65%"></div>
+                  </div>
+                  <div class="flex justify-between text-[11px] text-gray-400 mt-1.5">
+                     <span>+24 user baru</span><span>Total: {{ number_format($totalUsers) }}</span>
                   </div>
                </div>
-
-               <!-- Issue Card 3 -->
-               <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-5 rounded-xl border border-blue-500/30 text-white hover:border-blue-500/50 transition-all duration-300 group cursor-pointer" onclick="window.location.href='/admin/support'">
-                  <div class="flex items-start justify-between mb-3">
-                     <div class="flex items-center gap-2 sm:gap-3">
-                        <div class="p-1.5 sm:p-2 bg-blue-500/20 rounded-lg">
-                           <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                           </svg>
-                        </div>
-                        <span class="font-semibold text-sm sm:text-base">Unread Messages</span>
-                     </div>
-                     <span class="text-xs text-blue-400">Low</span>
+               <div>
+                  <div class="flex justify-between items-center mb-2">
+                     <span class="text-sm font-semibold text-gray-700">Tour Booking Rate</span>
+                     <span class="text-sm font-extrabold text-[#FF6B6B]">45%</span>
                   </div>
-                  <p class="text-xs sm:text-sm text-gray-400 mb-3">8 pesan belum dibalas dari customer</p>
-                  <div class="flex justify-between items-center">
-                     <span class="text-xs text-gray-500">Klik untuk balas →</span>
-                     <div class="p-1 bg-blue-500/20 rounded group-hover:bg-blue-500/30 transition-colors">
-                        <svg class="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                     </div>
+                  <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                     <div class="h-full bg-[#FF6B6B] rounded-full" style="width:45%"></div>
+                  </div>
+                  <div class="flex justify-between text-[11px] text-gray-400 mt-1.5">
+                     <span>18/40 slot terisi</span><span>Populer: Bali Tour</span>
                   </div>
                </div>
             </div>
          </div>
 
-         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            <!-- Monitoring Progress -->
-            <div>
-               <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
-                  <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                     <span class="text-green-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
-                        </svg>
-                     </span> Monitoring Progres
-                  </h2>
-                  <span class="text-xs sm:text-sm text-gray-400">Real-time Update</span>
-               </div>
-
-               <div class="space-y-3 sm:space-y-4">
-                  <!-- Progress Item 1 -->
-                  <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-5 rounded-xl border border-white/10">
-                     <div class="flex justify-between items-center mb-2">
-                        <span class="font-medium text-white text-sm sm:text-base">Order Completion Rate</span>
-                        <span class="text-xs sm:text-sm font-bold text-green-400">78%</span>
-                     </div>
-                     <div class="w-full bg-gray-700/50 rounded-full h-1.5 sm:h-2 mb-2 sm:mb-3">
-                        <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-1.5 sm:h-2 rounded-full" style="width: 78%"></div>
-                     </div>
-                     <div class="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-gray-400 gap-1">
-                        <span>32/41 orders completed</span>
-                        <span>Target: 85%</span>
-                     </div>
-                  </div>
-
-                  <!-- Progress Item 2 -->
-                  <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-5 rounded-xl border border-white/10">
-                     <div class="flex justify-between items-center mb-2">
-                        <span class="font-medium text-white text-sm sm:text-base">User Growth (7 days)</span>
-                        <span class="text-xs sm:text-sm font-bold text-blue-400">+12.5%</span>
-                     </div>
-                     <div class="w-full bg-gray-700/50 rounded-full h-1.5 sm:h-2 mb-2 sm:mb-3">
-                        <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-1.5 sm:h-2 rounded-full" style="width: 65%"></div>
-                     </div>
-                     <div class="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-gray-400 gap-1">
-                        <span>+24 new users</span>
-                        <span>Total: {{ number_format($totalUsers) }}</span>
-                     </div>
-                  </div>
-
-                  <!-- Progress Item 3 -->
-                  <div class="backdrop-blur-xl bg-white/5 p-4 sm:p-5 rounded-xl border border-white/10">
-                     <div class="flex justify-between items-center mb-2">
-                        <span class="font-medium text-white text-sm sm:text-base">Tour Booking Rate</span>
-                        <span class="text-xs sm:text-sm font-bold text-purple-400">45%</span>
-                     </div>
-                     <div class="w-full bg-gray-700/50 rounded-full h-1.5 sm:h-2 mb-2 sm:mb-3">
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-400 h-1.5 sm:h-2 rounded-full" style="width: 45%"></div>
-                     </div>
-                     <div class="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-gray-400 gap-1">
-                        <span>18/40 slots filled</span>
-                        <span>Popular: Bali Tour</span>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <!-- Aktivitas Terbaru -->
-            <div>
-               <h3 class="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
-                  <x-carbon-activity class="w-5 h-5 sm:w-6 sm:h-6" />
+         <div class="bg-white rounded-2xl p-5 sm:p-6 border border-black/[0.07] shadow-sm">
+            <div class="flex items-center justify-between mb-5">
+               <h2 class="text-sm font-bold text-gray-800 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#FFBA08] shrink-0"></span>
                   Aktivitas Terbaru
-               </h3>
-
-               <div class="space-y-2 sm:space-y-3 max-h-[400px] overflow-y-auto pr-2">
-                  
-               </div>
-            </div>
-         </div>
-
-         <!-- QUICK ACTIONS -->
-         <div class="mt-6 lg:mt-8">
-            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
-               <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                  <span class="text-yellow-500">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 sm:w-6 sm:h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-                     </svg>
-                  </span> Klik Cepat ke Menu
                </h2>
-               <span class="text-xs sm:text-sm text-gray-400">Shortcut Actions</span>
             </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-               <!-- Quick Action 1 -->
-               <a href="/admin/orders/create" class="backdrop-blur-xl bg-white/5 p-3 sm:p-5 rounded-xl border border-white/10 text-white hover:border-green-500/50 hover:bg-white/10 transition-all duration-300 group">
-                  <div class="flex flex-col items-center text-center">
-                     <div class="p-2 sm:p-3 bg-green-500/20 rounded-xl mb-2 sm:mb-3 group-hover:bg-green-500/30 transition-colors">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                        </svg>
-                     </div>
-                     <span class="font-medium text-sm sm:text-base">Tambah Order</span>
-                     <span class="text-xs text-gray-400 mt-0.5 sm:mt-1">Manual booking</span>
+            <div class="divide-y divide-gray-100 max-h-72 overflow-y-auto pr-1">
+               @forelse($recentActivities ?? [] as $act)
+               <div class="flex items-start gap-3 py-3">
+                  <div class="w-2 h-2 rounded-full mt-1.5 shrink-0" style="background:{{ $act['hex'] ?? '#0ABFA3' }}"></div>
+                  <div>
+                     <p class="text-xs text-gray-700 leading-relaxed">{{ $act['text'] }}</p>
+                     <p class="text-[11px] text-gray-400 mt-0.5 font-mono">{{ $act['time'] }}</p>
                   </div>
-               </a>
-
-               <!-- Quick Action 2 -->
-               <a href="/admin/tours/create" class="backdrop-blur-xl bg-white/5 p-3 sm:p-5 rounded-xl border border-white/10 text-white hover:border-blue-500/50 hover:bg-white/10 transition-all duration-300 group">
-                  <div class="flex flex-col items-center text-center">
-                     <div class="p-2 sm:p-3 bg-blue-500/20 rounded-xl mb-2 sm:mb-3 group-hover:bg-blue-500/30 transition-colors">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                     </div>
-                     <span class="font-medium text-sm sm:text-base">Buat Tour</span>
-                     <span class="text-xs text-gray-400 mt-0.5 sm:mt-1">Produk baru</span>
+               </div>
+               @empty
+               @foreach([
+               ['dot'=>'bg-[#0ABFA3]','text'=>'Booking baru #BK-2840 dari Andi Susanto', 'time'=>'2 menit lalu'],
+               ['dot'=>'bg-[#5B5BD6]','text'=>'Partner "Bali Explore" berhasil mendaftar', 'time'=>'15 menit lalu'],
+               ['dot'=>'bg-[#FFBA08]','text'=>'Proposal Raja Ampat dikirim ke klien', 'time'=>'1 jam lalu'],
+               ['dot'=>'bg-[#FF6B6B]','text'=>'Booking #BK-2837 dibatalkan oleh user', 'time'=>'2 jam lalu'],
+               ['dot'=>'bg-[#0ABFA3]','text'=>'Itinerary Lombok 7D6N berhasil dibuat', 'time'=>'3 jam lalu'],
+               ['dot'=>'bg-[#5B5BD6]','text'=>'User baru Siti Rahayu bergabung', 'time'=>'4 jam lalu'],
+               ] as $act)
+               <div class="flex items-start gap-3 py-3">
+                  <div class="w-2 h-2 rounded-full mt-1.5 shrink-0 {{ $act['dot'] }}"></div>
+                  <div>
+                     <p class="text-xs text-gray-700 leading-relaxed">{{ $act['text'] }}</p>
+                     <p class="text-[11px] text-gray-400 mt-0.5 font-mono">{{ $act['time'] }}</p>
                   </div>
-               </a>
-
-               <!-- Quick Action 3 -->
-               <a href="/admin/users" class="backdrop-blur-xl bg-white/5 p-3 sm:p-5 rounded-xl border border-white/10 text-white hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 group">
-                  <div class="flex flex-col items-center text-center">
-                     <div class="p-2 sm:p-3 bg-purple-500/20 rounded-xl mb-2 sm:mb-3 group-hover:bg-purple-500/30 transition-colors">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.67 3.137a4 4 0 00-5.665-5.665" />
-                        </svg>
-                     </div>
-                     <span class="font-medium text-sm sm:text-base">Kelola User</span>
-                     <span class="text-xs text-gray-400 mt-0.5 sm:mt-1">Lihat semua user</span>
-                  </div>
-               </a>
-
-               <!-- Quick Action 4 -->
-               <a href="/admin/reports" class="backdrop-blur-xl bg-white/5 p-3 sm:p-5 rounded-xl border border-white/10 text-white hover:border-yellow-500/50 hover:bg-white/10 transition-all duration-300 group">
-                  <div class="flex flex-col items-center text-center">
-                     <div class="p-2 sm:p-3 bg-yellow-500/20 rounded-xl mb-2 sm:mb-3 group-hover:bg-yellow-500/30 transition-colors">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                     </div>
-                     <span class="font-medium text-sm sm:text-base">Laporan</span>
-                     <span class="text-xs text-gray-400 mt-0.5 sm:mt-1">Analytics & reports</span>
-                  </div>
-               </a>
+               </div>
+               @endforeach
+               @endforelse
             </div>
          </div>
-      </main>
-   </div>
+
+      </div>
+
+      {{-- ── QUICK ACTIONS ── --}}
+      <div>
+         <div class="flex items-center justify-between mb-4">
+            <h2 class="text-sm sm:text-base font-bold text-gray-800 flex items-center gap-2">
+               <span class="w-2 h-2 rounded-full bg-[#FFBA08] shrink-0"></span>
+               Klik Cepat ke Menu
+            </h2>
+            <span class="text-[10px] font-semibold text-gray-400 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-full">Shortcut</span>
+         </div>
+         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+
+            <a href="/admin/orders/create" class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-[#0ABFA3] transition-all duration-200 text-center group">
+               <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#D4F5EE] flex items-center justify-center text-[#05796A] mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+               </div>
+               <p class="text-sm font-bold text-gray-800">Tambah Order</p>
+               <p class="text-xs text-gray-400 mt-0.5">Manual booking</p>
+            </a>
+
+            <a href="/admin/tours/create" class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-[#5B5BD6] transition-all duration-200 text-center group">
+               <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#EDEDFF] flex items-center justify-center text-[#5B5BD6] mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+               </div>
+               <p class="text-sm font-bold text-gray-800">Buat Tour</p>
+               <p class="text-xs text-gray-400 mt-0.5">Produk baru</p>
+            </a>
+
+            <a href="/admin/users" class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-[#7B3FE4] transition-all duration-200 text-center group">
+               <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#F0E8FF] flex items-center justify-center text-[#7B3FE4] mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+               </div>
+               <p class="text-sm font-bold text-gray-800">Kelola User</p>
+               <p class="text-xs text-gray-400 mt-0.5">Lihat semua user</p>
+            </a>
+
+            <a href="/admin/reports" class="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.07] shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-[#FFBA08] transition-all duration-200 text-center group">
+               <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#FFF3C4] flex items-center justify-center text-[#A07800] mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+               </div>
+               <p class="text-sm font-bold text-gray-800">Laporan</p>
+               <p class="text-xs text-gray-400 mt-0.5">Analytics & reports</p>
+            </a>
+
+         </div>
+      </div>
+
+   </main>
 </div>
 
-<!-- JavaScript untuk mobile sidebar toggle -->
 <script>
-   // Inisialisasi toggle button di file utama
    document.addEventListener('DOMContentLoaded', function() {
-      const toggleBtn = document.getElementById('toggleSidebar');
+      const btn = document.getElementById('toggleSidebar');
+      if (btn) btn.addEventListener('click', () => {
+         if (typeof openSidebar === 'function') openSidebar();
+      });
 
-      if (toggleBtn) {
-         toggleBtn.addEventListener('click', openSidebar);
-      }
+      const el = document.getElementById('live-date');
+      if (el) el.textContent = new Date().toLocaleDateString('id-ID', {
+         weekday: 'long',
+         day: 'numeric',
+         month: 'long',
+         year: 'numeric'
+      });
    });
 </script>
 

@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
     @if (env('APP_ENV') === 'production')
-        <link rel="stylesheet" href="{{ asset('build/assets/app-B875Js0p.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app-CQ9eekaG.css') }}">
     @else
         @vite('resources/css/app.css')
     @endif

@@ -13,12 +13,15 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'isAdmin' => \App\Http\Middleware\IsAdmin::class,
+            'isSuperAdmin' => \App\Http\Middleware\IsSuperAdmin::class,
+            'isPartner' => \App\Http\Middleware\IsPartner::class,
         ]);
 
         $middleware->validateCsrfTokens(except: [
             'payment/doku/callback',
             'payment/doku/notify',
             'payment/doku/*',
+            'payment/notify',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

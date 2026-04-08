@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('boss_users', function (Blueprint $table) {
+        Schema::create('itinerary_days', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('email', 150)->unique();
-            $table->string('password');
-            $table->enum('role', ['admin', 'user'])->default('user');
-            $table->unsignedInteger('id_level')->default(1);
+            $table->foreignId('itinerary_id')->constrained('itineraries')->onDelete('cascade');
+            $table->integer('day_number');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->json('places')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('boss_users');
+        Schema::dropIfExists('itinerary_days');
     }
 };

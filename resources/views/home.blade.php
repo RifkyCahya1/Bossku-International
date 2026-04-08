@@ -4,13 +4,11 @@
 @include('component.loadingScreen')
 
 <div class="relative overflow-hidden">
-    <!-- DESKTOP -->
     <video autoplay muted loop playsinline preload="metadata"
         src="{{ asset('Videos/IMG_9552.MOV') }}"
         class="hidden md:block w-full h-screen object-cover">
     </video>
 
-    <!-- MOBILE -->
     <video autoplay muted loop playsinline preload="metadata"
         src="{{ asset('Videos/IMG_9486.MOV') }}"
         class="block md:hidden w-full h-screen object-cover">
@@ -20,9 +18,7 @@
 
         <div class="absolute left-0 right-0 bottom-12 md:bottom-30 flex flex-col items-center gap-6">
 
-            <!-- BUTTONS -->
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <!-- PRIMARY -->
                 <a href="/Tour"
                     class="group bg-[#BFA46F]/50 hover:bg-[#a89258] text-black font-bold tracking-wide px-10 py-3 rounded-xl shadow-xl transition-all duration-300 uppercase flex items-center gap-2">
                     <span>Explore My Journey</span>
@@ -49,6 +45,144 @@
         </div>
     </div>
 </div>
+
+{{-- PREMIUM MARATHON EVENT --}}
+<section class="relative bg-[#0b0f14] text-white py-24 overflow-hidden">
+
+    <!-- BACKGROUND LAYERS -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0b0f14] via-[#111827] to-[#020617]"></div>
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,rgba(191,164,111,0.25),transparent_60%)]"></div>
+
+    <div class="relative container mx-auto px-6 md:px-20">
+
+        <!-- HEADER -->
+        <div class="max-w-3xl mb-16">
+
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+                Bossku Marathon <span class="text-[#BFA46F]">2026</span>
+            </h2>
+
+            <p class="text-gray-300 text-lg leading-relaxed">
+                A long term commitment to health, discipline, and collective growth.
+                Not a race of speed but a statement of consistency.
+            </p>
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
+
+            <!-- LEFT : EVENT DETAIL -->
+            <div class="lg:col-span-2 bg-white/5 backdrop-blur-xl rounded-3xl p-10 border border-white/10 shadow-2xl">
+
+                <div class="grid md:grid-cols-2 gap-8 mb-10">
+
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Event Period</p>
+                        <p class="text-2xl font-semibold text-[#BFA46F]">June 13 - 14, 2026</p>
+                        <p class="text-gray-400 text-sm mt-1">Start • Finish • Celebrate</p>
+                    </div>
+
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Location</p>
+                        <p class="text-2xl font-semibold">Jakarta</p>
+                        <p class="text-gray-400 text-sm mt-1">Monas - GBK Jogging Track</p>
+                    </div>
+
+                </div>
+
+                <!-- TIMELINE -->
+                <div class="border-t border-white/10 pt-8">
+                    <p class="text-sm uppercase tracking-widest text-gray-400 mb-6">Event Flow</p>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="rounded-xl bg-white/5 p-5 border border-white/10">
+                            <p class="text-[#BFA46F] font-semibold mb-1">Warm Up</p>
+                            <p class="text-sm text-gray-400">Preparation & briefing</p>
+                        </div>
+
+                        <div class="rounded-xl bg-white/5 p-5 border border-white/10">
+                            <p class="text-[#BFA46F] font-semibold mb-1">Marathon Run</p>
+                            <p class="text-sm text-gray-400">Endurance & pacing</p>
+                        </div>
+
+                        <div class="rounded-xl bg-white/5 p-5 border border-white/10">
+                            <p class="text-[#BFA46F] font-semibold mb-1">Celebration</p>
+                            <p class="text-sm text-gray-400">Recognition & bonding</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="/form-event"
+                        class="bg-[#BFA46F] text-black font-semibold px-8 py-4 rounded-full shadow-lg hover:scale-105 transition">
+                        View Program Detail
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- RIGHT : STATS -->
+            <div class="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-2xl 
+            rounded-3xl p-10 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.6)] 
+            flex flex-col justify-between">
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.35em] text-gray-400 mb-8">
+                        Event Overview
+                    </p>
+
+                    <!-- PARTICIPANTS -->
+                    <div class="mb-10">
+                        <p class="text-5xl font-light text-[#E6D5A3] leading-none">30.000+</p>
+                        <p class="text-gray-400 text-sm mt-3 tracking-wide">
+                            Estimated Participants
+                        </p>
+                    </div>
+
+                    <!-- RACE CATEGORIES -->
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.35em] text-gray-400 mb-6">
+                            Race Categories
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                                <p class="text-lg font-light text-white">5K</p>
+                            </div>
+
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                                <p class="text-lg font-light text-white">10K</p>
+                            </div>
+
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                                <p class="text-lg font-light text-white">Half Marathon</p>
+                            </div>
+
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                                <p class="text-lg font-light text-white">Full Marathon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COUNTDOWN -->
+                <div class="mt-12 pt-8 border-t border-white/10 text-center">
+                    <p class="text-xs uppercase tracking-[0.35em] text-gray-400 mb-3">
+                        Event Countdown
+                    </p>
+                    <p id="countdown"
+                        class="text-2xl font-light tracking-[0.3em] text-[#E6D5A3]">
+                        -- : -- : -- : --
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
 
 <div class="container mx-auto max-w-xl py-12 px-4 md:px-12">
     <div class="flex flex-col items-center text-center">
@@ -127,5 +261,41 @@
         animation: fadeIn 1.2s ease-out both;
     }
 </style>
+
+<script>
+    (function() {
+
+        const targetDate = new Date("June 13, 2026 00:00:00").getTime();
+        const countdownEl = document.getElementById("countdown");
+
+        if (!countdownEl) return;
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance <= 0) {
+                countdownEl.innerHTML = "00 : 00 : 00 : 00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownEl.innerHTML =
+                String(days).padStart(2, '0') + " : " +
+                String(hours).padStart(2, '0') + " : " +
+                String(minutes).padStart(2, '0') + " : " +
+                String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+    })();
+</script>
+
 
 @endsection

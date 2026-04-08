@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 @else
-                <a href="/Login"
+                <a href="/login"
                     :class="scrolled 
                     ? 'bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a1a] text-white' 
                     : 'bg-gradient-to-r from-[#a89258] via-[#c8b375] to-[#f5e7b0] text-black'"
@@ -123,7 +123,7 @@
             <a href="/Explore" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Travel In Indonesia</a>
             <a href="/Tour" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Tour Packages</a>
             <a href="/About" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">About</a>
-            <a href="/Login" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Login</a>
+            <a href="/login" class="block px-4 py-2 text-sm font-medium hover:bg-gray-100">Login</a>
             <a href="/Custom-Form" class="block px-4 py-2 text-sm font-medium rounded bg-[#FFCA10] text-black mt-2">Design My Journey</a>
         </div>
     </div>
